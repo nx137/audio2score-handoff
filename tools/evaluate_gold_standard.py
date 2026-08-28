@@ -156,7 +156,7 @@ def eval_segment(sid: str) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=str(ROOT / "results" / "pedal_gold_standard_eval_v1.json"))
+    ap.add_argument("--out", default=str(BASE / "evaluation" / "gold_standard_eval_v1.json"))
     ap.add_argument("--segments", default=None)
     args = ap.parse_args()
 
