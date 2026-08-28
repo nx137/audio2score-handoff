@@ -54,402 +54,6 @@
   }
  },
  {
-  "index": 31,
-  "segment_id": "Haydn_Keyboard_Sonatas_32-1_28",
-  "built_at": "2026-08-28T13:33:50",
-  "elapsed_sec": 2.8,
-  "selection_score": 326.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Haydn\u001fKeyboard_Sonatas_32-1",
-   "composer": "Haydn",
-   "title": "Keyboard_Sonatas_32-1",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "5",
-   "midi_performance": "Haydn/Keyboard_Sonatas/32-1/SUDBIN01.mid",
-   "midi_score": "Haydn/Keyboard_Sonatas/32-1/midi_score.mid",
-   "xml_score": "Haydn/Keyboard_Sonatas/32-1/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 27,
-   "end_measure": 30,
-   "start_ql": 81.0,
-   "end_ql": 93.0,
-   "bar_ql": 3.0,
-   "time_signature": [
-    3,
-    4
-   ],
-   "tempo_bpm": 117.00034515101821,
-   "selection_score": 326.0,
-   "alignment": {
-    "rows": 605
-   },
-   "candidate_stats": {
-    "rows": 548,
-    "events": 160,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "reference-duration-not-candidate": 56,
-    "labeled": 38,
-    "ambiguous-candidate": 53,
-    "unmatched": 13
-   }
-  }
- },
- {
-  "index": 32,
-  "segment_id": "Chopin_Etudes_op_10_12_114",
-  "built_at": "2026-08-28T13:33:51",
-  "elapsed_sec": 3.3,
-  "selection_score": 316.5,
-  "manifest": {
-   "split": "validation",
-   "piece_key": "Chopin\u001fEtudes_op_10_12",
-   "composer": "Chopin",
-   "title": "Etudes_op_10_12",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "13",
-   "midi_performance": "Chopin/Etudes_op_10/12/Floril02.mid",
-   "midi_score": "Chopin/Etudes_op_10/12/midi_score.mid",
-   "xml_score": "Chopin/Etudes_op_10/12/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 113,
-   "end_measure": 116,
-   "start_ql": 226.0,
-   "end_ql": 234.0,
-   "bar_ql": 2.0,
-   "time_signature": [
-    2,
-    4
-   ],
-   "tempo_bpm": 117.00011700011699,
-   "selection_score": 316.5,
-   "alignment": {
-    "rows": 1986
-   },
-   "candidate_stats": {
-    "rows": 762,
-    "events": 288,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 25,
-    "ambiguous-candidate": 122,
-    "reference-duration-not-candidate": 37,
-    "labeled": 104
-   }
-  }
- },
- {
-  "index": 37,
-  "segment_id": "Bach_Prelude_bwv_854_34",
-  "built_at": "2026-08-28T13:34:19",
-  "elapsed_sec": 0.4,
-  "selection_score": 148.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Bach\u001fPrelude_bwv_854",
-   "composer": "Bach",
-   "title": "Prelude_bwv_854",
-   "performance_rank_in_piece": "5",
-   "performances_in_piece": "5",
-   "midi_performance": "Bach/Prelude/bwv_854/WangA01M.mid",
-   "midi_score": "Bach/Prelude/bwv_854/midi_score.mid",
-   "xml_score": "Bach/Prelude/bwv_854/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 33,
-   "end_measure": 36,
-   "start_ql": 132.0,
-   "end_ql": 148.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 148.0,
-   "alignment": {
-    "rows": 429
-   },
-   "candidate_stats": {
-    "rows": 364,
-    "events": 112,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "ambiguous-candidate": 42,
-    "reference-duration-not-candidate": 26,
-    "labeled": 22,
-    "unmatched": 22
-   }
-  }
- },
- {
-  "index": 36,
-  "segment_id": "Bach_Prelude_bwv_860_7",
-  "built_at": "2026-08-28T13:34:19",
-  "elapsed_sec": 0.6,
-  "selection_score": 202.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Bach\u001fPrelude_bwv_860",
-   "composer": "Bach",
-   "title": "Prelude_bwv_860",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "6",
-   "midi_performance": "Bach/Prelude/bwv_860/Ko04M.mid",
-   "midi_score": "Bach/Prelude/bwv_860/midi_score.mid",
-   "xml_score": "Bach/Prelude/bwv_860/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 6,
-   "end_measure": 9,
-   "start_ql": 24.0,
-   "end_ql": 40.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 202.0,
-   "alignment": {
-    "rows": 604
-   },
-   "candidate_stats": {
-    "rows": 663,
-    "events": 298,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "labeled": 110,
-    "ambiguous-candidate": 161,
-    "reference-duration-not-candidate": 19,
-    "unmatched": 8
-   }
-  }
- },
- {
-  "index": 39,
-  "segment_id": "Bach_Fugue_bwv_884_23",
-  "built_at": "2026-08-28T13:34:19",
-  "elapsed_sec": 0.7,
-  "selection_score": 136.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Bach\u001fFugue_bwv_884",
-   "composer": "Bach",
-   "title": "Fugue_bwv_884",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "1",
-   "midi_performance": "Bach/Fugue/bwv_884/LiA01M.mid",
-   "midi_score": "Bach/Fugue/bwv_884/midi_score.mid",
-   "xml_score": "Bach/Fugue/bwv_884/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 22,
-   "end_measure": 25,
-   "start_ql": 88.0,
-   "end_ql": 104.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 136.0,
-   "alignment": {
-    "rows": 670
-   },
-   "candidate_stats": {
-    "rows": 742,
-    "events": 324,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "labeled": 110,
-    "ambiguous-candidate": 124,
-    "reference-duration-not-candidate": 27,
-    "unmatched": 63
-   }
-  }
- },
- {
-  "index": 38,
-  "segment_id": "Bach_Fugue_bwv_848_55",
-  "built_at": "2026-08-28T13:34:19",
-  "elapsed_sec": 1.0,
-  "selection_score": 141.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Bach\u001fFugue_bwv_848",
-   "composer": "Bach",
-   "title": "Fugue_bwv_848",
-   "performance_rank_in_piece": "8",
-   "performances_in_piece": "9",
-   "midi_performance": "Bach/Fugue/bwv_848/SunY01M.mid",
-   "midi_score": "Bach/Fugue/bwv_848/midi_score.mid",
-   "xml_score": "Bach/Fugue/bwv_848/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 54,
-   "end_measure": 57,
-   "start_ql": 162.0,
-   "end_ql": 174.0,
-   "bar_ql": 3.0,
-   "time_signature": [
-    3,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 141.5,
-   "alignment": {
-    "rows": 1396
-   },
-   "candidate_stats": {
-    "rows": 634,
-    "events": 278,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "labeled": 107,
-    "ambiguous-candidate": 158,
-    "reference-duration-not-candidate": 6,
-    "unmatched": 7
-   }
-  }
- },
- {
-  "index": 35,
-  "segment_id": "Haydn_Keyboard_Sonatas_31-1_40",
-  "built_at": "2026-08-28T13:34:20",
-  "elapsed_sec": 1.2,
-  "selection_score": 279.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Haydn\u001fKeyboard_Sonatas_31-1",
-   "composer": "Haydn",
-   "title": "Keyboard_Sonatas_31-1",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "4",
-   "midi_performance": "Haydn/Keyboard_Sonatas/31-1/Masycheva01.mid",
-   "midi_score": "Haydn/Keyboard_Sonatas/31-1/midi_score.mid",
-   "xml_score": "Haydn/Keyboard_Sonatas/31-1/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 39,
-   "end_measure": 42,
-   "start_ql": 156.0,
-   "end_ql": 172.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 117.00011700011699,
-   "selection_score": 279.5,
-   "alignment": {
-    "rows": 1492
-   },
-   "candidate_stats": {
-    "rows": 538,
-    "events": 224,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "reference-duration-not-candidate": 34,
-    "labeled": 106,
-    "ambiguous-candidate": 73,
-    "unmatched": 11
-   }
-  }
- },
- {
-  "index": 34,
-  "segment_id": "Mozart_Piano_Sonatas_12-3_113",
-  "built_at": "2026-08-28T13:34:20",
-  "elapsed_sec": 1.5,
-  "selection_score": 280.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Mozart\u001fPiano_Sonatas_12-3",
-   "composer": "Mozart",
-   "title": "Piano_Sonatas_12-3",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "3",
-   "midi_performance": "Mozart/Piano_Sonatas/12-3/MunA05M.mid",
-   "midi_score": "Mozart/Piano_Sonatas/12-3/midi_score.mid",
-   "xml_score": "Mozart/Piano_Sonatas/12-3/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 112,
-   "end_measure": 115,
-   "start_ql": 448.0,
-   "end_ql": 464.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 280.5,
-   "alignment": {
-    "rows": 2846
-   },
-   "candidate_stats": {
-    "rows": 720,
-    "events": 247,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "labeled": 98,
-    "ambiguous-candidate": 81,
-    "reference-duration-not-candidate": 54,
-    "unmatched": 14
-   }
-  }
- },
- {
-  "index": 33,
-  "segment_id": "Beethoven_Piano_Sonatas_17-1_107",
-  "built_at": "2026-08-28T13:34:20",
-  "elapsed_sec": 1.6,
-  "selection_score": 308.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Beethoven\u001fPiano_Sonatas_17-1",
-   "composer": "Beethoven",
-   "title": "Piano_Sonatas_17-1",
-   "performance_rank_in_piece": "5",
-   "performances_in_piece": "14",
-   "midi_performance": "Beethoven/Piano_Sonatas/17-1_no_repeat/GuoE02M.mid",
-   "midi_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/midi_score.mid",
-   "xml_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 106,
-   "end_measure": 109,
-   "start_ql": 212.0,
-   "end_ql": 220.0,
-   "bar_ql": 2.0,
-   "time_signature": [
-    2,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 308.0,
-   "alignment": {
-    "rows": 1298
-   },
-   "candidate_stats": {
-    "rows": 669,
-    "events": 228,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "reference-duration-not-candidate": 187,
-    "labeled": 28,
-    "ambiguous-candidate": 9,
-    "unmatched": 4
-   }
-  }
- },
- {
   "index": 10,
   "segment_id": "Rachmaninoff_Preludes_op_23_6_50",
   "built_at": "2026-08-28T13:38:19",
@@ -1764,6 +1368,402 @@
     "labeled": 112,
     "ambiguous-candidate": 76,
     "unmatched": 22
+   }
+  }
+ },
+ {
+  "index": 37,
+  "segment_id": "Bach_Prelude_bwv_854_34",
+  "built_at": "2026-08-28T13:40:49",
+  "elapsed_sec": 11.4,
+  "selection_score": 148.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fPrelude_bwv_854",
+   "composer": "Bach",
+   "title": "Prelude_bwv_854",
+   "performance_rank_in_piece": "5",
+   "performances_in_piece": "5",
+   "midi_performance": "Bach/Prelude/bwv_854/WangA01M.mid",
+   "midi_score": "Bach/Prelude/bwv_854/midi_score.mid",
+   "xml_score": "Bach/Prelude/bwv_854/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 33,
+   "end_measure": 36,
+   "start_ql": 132.0,
+   "end_ql": 148.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 148.0,
+   "alignment": {
+    "rows": 429
+   },
+   "candidate_stats": {
+    "rows": 364,
+    "events": 112,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 42,
+    "reference-duration-not-candidate": 26,
+    "labeled": 22,
+    "unmatched": 22
+   }
+  }
+ },
+ {
+  "index": 36,
+  "segment_id": "Bach_Prelude_bwv_860_7",
+  "built_at": "2026-08-28T13:40:49",
+  "elapsed_sec": 11.5,
+  "selection_score": 202.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fPrelude_bwv_860",
+   "composer": "Bach",
+   "title": "Prelude_bwv_860",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "6",
+   "midi_performance": "Bach/Prelude/bwv_860/Ko04M.mid",
+   "midi_score": "Bach/Prelude/bwv_860/midi_score.mid",
+   "xml_score": "Bach/Prelude/bwv_860/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 6,
+   "end_measure": 9,
+   "start_ql": 24.0,
+   "end_ql": 40.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 202.0,
+   "alignment": {
+    "rows": 604
+   },
+   "candidate_stats": {
+    "rows": 663,
+    "events": 298,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 110,
+    "ambiguous-candidate": 161,
+    "reference-duration-not-candidate": 19,
+    "unmatched": 8
+   }
+  }
+ },
+ {
+  "index": 38,
+  "segment_id": "Bach_Fugue_bwv_848_55",
+  "built_at": "2026-08-28T13:40:50",
+  "elapsed_sec": 12.3,
+  "selection_score": 141.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fFugue_bwv_848",
+   "composer": "Bach",
+   "title": "Fugue_bwv_848",
+   "performance_rank_in_piece": "8",
+   "performances_in_piece": "9",
+   "midi_performance": "Bach/Fugue/bwv_848/SunY01M.mid",
+   "midi_score": "Bach/Fugue/bwv_848/midi_score.mid",
+   "xml_score": "Bach/Fugue/bwv_848/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 54,
+   "end_measure": 57,
+   "start_ql": 162.0,
+   "end_ql": 174.0,
+   "bar_ql": 3.0,
+   "time_signature": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 141.5,
+   "alignment": {
+    "rows": 1396
+   },
+   "candidate_stats": {
+    "rows": 634,
+    "events": 278,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 107,
+    "ambiguous-candidate": 158,
+    "reference-duration-not-candidate": 6,
+    "unmatched": 7
+   }
+  }
+ },
+ {
+  "index": 39,
+  "segment_id": "Bach_Fugue_bwv_884_23",
+  "built_at": "2026-08-28T13:40:50",
+  "elapsed_sec": 12.4,
+  "selection_score": 136.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fFugue_bwv_884",
+   "composer": "Bach",
+   "title": "Fugue_bwv_884",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Bach/Fugue/bwv_884/LiA01M.mid",
+   "midi_score": "Bach/Fugue/bwv_884/midi_score.mid",
+   "xml_score": "Bach/Fugue/bwv_884/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 22,
+   "end_measure": 25,
+   "start_ql": 88.0,
+   "end_ql": 104.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 136.0,
+   "alignment": {
+    "rows": 670
+   },
+   "candidate_stats": {
+    "rows": 742,
+    "events": 324,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 110,
+    "ambiguous-candidate": 124,
+    "reference-duration-not-candidate": 27,
+    "unmatched": 63
+   }
+  }
+ },
+ {
+  "index": 32,
+  "segment_id": "Chopin_Etudes_op_10_12_114",
+  "built_at": "2026-08-28T13:40:51",
+  "elapsed_sec": 13.9,
+  "selection_score": 316.5,
+  "manifest": {
+   "split": "validation",
+   "piece_key": "Chopin\u001fEtudes_op_10_12",
+   "composer": "Chopin",
+   "title": "Etudes_op_10_12",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "13",
+   "midi_performance": "Chopin/Etudes_op_10/12/Floril02.mid",
+   "midi_score": "Chopin/Etudes_op_10/12/midi_score.mid",
+   "xml_score": "Chopin/Etudes_op_10/12/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 113,
+   "end_measure": 116,
+   "start_ql": 226.0,
+   "end_ql": 234.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 316.5,
+   "alignment": {
+    "rows": 1986
+   },
+   "candidate_stats": {
+    "rows": 762,
+    "events": 288,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 25,
+    "ambiguous-candidate": 122,
+    "reference-duration-not-candidate": 37,
+    "labeled": 104
+   }
+  }
+ },
+ {
+  "index": 31,
+  "segment_id": "Haydn_Keyboard_Sonatas_32-1_28",
+  "built_at": "2026-08-28T13:40:52",
+  "elapsed_sec": 14.3,
+  "selection_score": 326.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Haydn\u001fKeyboard_Sonatas_32-1",
+   "composer": "Haydn",
+   "title": "Keyboard_Sonatas_32-1",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "5",
+   "midi_performance": "Haydn/Keyboard_Sonatas/32-1/SUDBIN01.mid",
+   "midi_score": "Haydn/Keyboard_Sonatas/32-1/midi_score.mid",
+   "xml_score": "Haydn/Keyboard_Sonatas/32-1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 27,
+   "end_measure": 30,
+   "start_ql": 81.0,
+   "end_ql": 93.0,
+   "bar_ql": 3.0,
+   "time_signature": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "selection_score": 326.0,
+   "alignment": {
+    "rows": 605
+   },
+   "candidate_stats": {
+    "rows": 548,
+    "events": 160,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 56,
+    "labeled": 38,
+    "ambiguous-candidate": 53,
+    "unmatched": 13
+   }
+  }
+ },
+ {
+  "index": 33,
+  "segment_id": "Beethoven_Piano_Sonatas_17-1_107",
+  "built_at": "2026-08-28T13:40:52",
+  "elapsed_sec": 14.6,
+  "selection_score": 308.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Beethoven\u001fPiano_Sonatas_17-1",
+   "composer": "Beethoven",
+   "title": "Piano_Sonatas_17-1",
+   "performance_rank_in_piece": "5",
+   "performances_in_piece": "14",
+   "midi_performance": "Beethoven/Piano_Sonatas/17-1_no_repeat/GuoE02M.mid",
+   "midi_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/midi_score.mid",
+   "xml_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 106,
+   "end_measure": 109,
+   "start_ql": 212.0,
+   "end_ql": 220.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 308.0,
+   "alignment": {
+    "rows": 1298
+   },
+   "candidate_stats": {
+    "rows": 669,
+    "events": 228,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 187,
+    "labeled": 28,
+    "ambiguous-candidate": 9,
+    "unmatched": 4
+   }
+  }
+ },
+ {
+  "index": 35,
+  "segment_id": "Haydn_Keyboard_Sonatas_31-1_40",
+  "built_at": "2026-08-28T13:40:52",
+  "elapsed_sec": 14.6,
+  "selection_score": 279.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Haydn\u001fKeyboard_Sonatas_31-1",
+   "composer": "Haydn",
+   "title": "Keyboard_Sonatas_31-1",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "4",
+   "midi_performance": "Haydn/Keyboard_Sonatas/31-1/Masycheva01.mid",
+   "midi_score": "Haydn/Keyboard_Sonatas/31-1/midi_score.mid",
+   "xml_score": "Haydn/Keyboard_Sonatas/31-1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 39,
+   "end_measure": 42,
+   "start_ql": 156.0,
+   "end_ql": 172.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 279.5,
+   "alignment": {
+    "rows": 1492
+   },
+   "candidate_stats": {
+    "rows": 538,
+    "events": 224,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 34,
+    "labeled": 106,
+    "ambiguous-candidate": 73,
+    "unmatched": 11
+   }
+  }
+ },
+ {
+  "index": 34,
+  "segment_id": "Mozart_Piano_Sonatas_12-3_113",
+  "built_at": "2026-08-28T13:40:53",
+  "elapsed_sec": 15.1,
+  "selection_score": 280.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Mozart\u001fPiano_Sonatas_12-3",
+   "composer": "Mozart",
+   "title": "Piano_Sonatas_12-3",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "3",
+   "midi_performance": "Mozart/Piano_Sonatas/12-3/MunA05M.mid",
+   "midi_score": "Mozart/Piano_Sonatas/12-3/midi_score.mid",
+   "xml_score": "Mozart/Piano_Sonatas/12-3/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 112,
+   "end_measure": 115,
+   "start_ql": 448.0,
+   "end_ql": 464.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 280.5,
+   "alignment": {
+    "rows": 2846
+   },
+   "candidate_stats": {
+    "rows": 720,
+    "events": 247,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 98,
+    "ambiguous-candidate": 81,
+    "reference-duration-not-candidate": 54,
+    "unmatched": 14
    }
   }
  }
