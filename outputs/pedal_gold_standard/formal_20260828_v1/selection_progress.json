@@ -688,6 +688,244 @@
    ],
    "tempo_bpm": 120.0,
    "error": null
+  },
+  "49": {
+   "window": [
+    158,
+    161,
+    422.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "50": {
+   "window": [
+    70,
+    73,
+    629.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "51": {
+   "window": [
+    419,
+    422,
+    677.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null
+  },
+  "52": {
+   "window": [
+    146,
+    149,
+    508.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "53": {
+   "window": [
+    424,
+    427,
+    562.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "54": {
+   "window": [
+    168,
+    171,
+    806.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "55": {
+   "window": [
+    112,
+    115,
+    280.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "56": {
+   "window": [
+    129,
+    132,
+    225.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
+  },
+  "57": {
+   "window": [
+    402,
+    405,
+    143.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null
+  },
+  "58": {
+   "window": [
+    94,
+    97,
+    164.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
+  },
+  "59": {
+   "window": [
+    153,
+    156,
+    220.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "60": {
+   "window": [
+    329,
+    332,
+    311.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "61": {
+   "window": [
+    66,
+    69,
+    418.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "62": {
+   "window": [
+    161,
+    164,
+    208.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "63": {
+   "window": [
+    43,
+    46,
+    576.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "64": {
+   "window": [
+    357,
+    360,
+    139.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null
+  },
+  "65": {
+   "window": [
+    234,
+    237,
+    673.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
   }
  }
 }
