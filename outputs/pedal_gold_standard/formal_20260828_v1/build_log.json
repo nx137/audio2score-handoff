@@ -159,5 +159,357 @@
     "ambiguous-candidate": 376
    }
   }
+ },
+ {
+  "index": 11,
+  "segment_id": "Bach_Prelude_bwv_846_2",
+  "built_at": "2026-08-28T13:32:46",
+  "elapsed_sec": 0.7,
+  "selection_score": 245.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fPrelude_bwv_846",
+   "composer": "Bach",
+   "title": "Prelude_bwv_846",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Bach/Prelude/bwv_846/Shi05M.mid",
+   "midi_score": "Bach/Prelude/bwv_846/midi_score.mid",
+   "xml_score": "Bach/Prelude/bwv_846/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 1,
+   "end_measure": 4,
+   "start_ql": 4.0,
+   "end_ql": 20.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 245.0,
+   "alignment": {
+    "rows": 544
+   },
+   "candidate_stats": {
+    "rows": 300,
+    "events": 76,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 1,
+    "reference-duration-not-candidate": 65,
+    "labeled": 6,
+    "ambiguous-candidate": 4
+   }
+  }
+ },
+ {
+  "index": 10,
+  "segment_id": "Rachmaninoff_Preludes_op_23_6_50",
+  "built_at": "2026-08-28T13:32:47",
+  "elapsed_sec": 1.2,
+  "selection_score": 298.5,
+  "manifest": {
+   "split": "validation",
+   "piece_key": "Rachmaninoff\u001fPreludes_op_23_6",
+   "composer": "Rachmaninoff",
+   "title": "Preludes_op_23_6",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Rachmaninoff/Preludes_op_23/6/Nikiforov14M.mid",
+   "midi_score": "Rachmaninoff/Preludes_op_23/6/midi_score.mid",
+   "xml_score": "Rachmaninoff/Preludes_op_23/6/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 49,
+   "end_measure": 52,
+   "start_ql": 98.0,
+   "end_ql": 106.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 298.5,
+   "alignment": {
+    "rows": 1003
+   },
+   "candidate_stats": {
+    "rows": 684,
+    "events": 196,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 82,
+    "unmatched": 43,
+    "labeled": 40,
+    "reference-duration-not-candidate": 31
+   }
+  }
+ },
+ {
+  "index": 5,
+  "segment_id": "Schumann_Kreisleriana_7_32",
+  "built_at": "2026-08-28T13:32:47",
+  "elapsed_sec": 1.4,
+  "selection_score": 667.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Schumann\u001fKreisleriana_7",
+   "composer": "Schumann",
+   "title": "Kreisleriana_7",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "3",
+   "midi_performance": "Schumann/Kreisleriana/7/ParkJH10.mid",
+   "midi_score": "Schumann/Kreisleriana/7/midi_score.mid",
+   "xml_score": "Schumann/Kreisleriana/7/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 31,
+   "end_measure": 34,
+   "start_ql": 124.0,
+   "end_ql": 140.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 667.5,
+   "alignment": {
+    "rows": 29
+   },
+   "candidate_stats": {
+    "rows": 1048,
+    "events": 384,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 374,
+    "ambiguous-candidate": 3,
+    "labeled": 3,
+    "reference-duration-not-candidate": 4
+   }
+  }
+ },
+ {
+  "index": 8,
+  "segment_id": "Haydn_Keyboard_Sonatas_6-1_18",
+  "built_at": "2026-08-28T13:32:47",
+  "elapsed_sec": 1.5,
+  "selection_score": 578.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Haydn\u001fKeyboard_Sonatas_6-1",
+   "composer": "Haydn",
+   "title": "Keyboard_Sonatas_6-1",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Haydn/Keyboard_Sonatas/6-1/ChenC01.mid",
+   "midi_score": "Haydn/Keyboard_Sonatas/6-1/midi_score.mid",
+   "xml_score": "Haydn/Keyboard_Sonatas/6-1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 17,
+   "end_measure": 20,
+   "start_ql": 68.0,
+   "end_ql": 84.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 578.0,
+   "alignment": {
+    "rows": 159
+   },
+   "candidate_stats": {
+    "rows": 710,
+    "events": 312,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 279,
+    "reference-duration-not-candidate": 7,
+    "ambiguous-candidate": 17,
+    "labeled": 9
+   }
+  }
+ },
+ {
+  "index": 9,
+  "segment_id": "Mozart_Piano_Sonatas_8-1_44",
+  "built_at": "2026-08-28T13:32:47",
+  "elapsed_sec": 1.9,
+  "selection_score": 576.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Mozart\u001fPiano_Sonatas_8-1",
+   "composer": "Mozart",
+   "title": "Piano_Sonatas_8-1",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "5",
+   "midi_performance": "Mozart/Piano_Sonatas/8-1/Jia01.mid",
+   "midi_score": "Mozart/Piano_Sonatas/8-1/midi_score.mid",
+   "xml_score": "Mozart/Piano_Sonatas/8-1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 43,
+   "end_measure": 46,
+   "start_ql": 172.0,
+   "end_ql": 188.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 576.5,
+   "alignment": {
+    "rows": 3157
+   },
+   "candidate_stats": {
+    "rows": 980,
+    "events": 385,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 233,
+    "reference-duration-not-candidate": 22,
+    "ambiguous-candidate": 115,
+    "unmatched": 15
+   }
+  }
+ },
+ {
+  "index": 6,
+  "segment_id": "Liszt_Transcendental_Etudes_10_71",
+  "built_at": "2026-08-28T13:32:48",
+  "elapsed_sec": 2.4,
+  "selection_score": 629.0,
+  "manifest": {
+   "split": "validation",
+   "piece_key": "Liszt\u001fTranscendental_Etudes_10",
+   "composer": "Liszt",
+   "title": "Transcendental_Etudes_10",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "16",
+   "midi_performance": "Liszt/Transcendental_Etudes/10/CaoJ03M.mid",
+   "midi_score": "Liszt/Transcendental_Etudes/10/midi_score.mid",
+   "xml_score": "Liszt/Transcendental_Etudes/10/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 70,
+   "end_measure": 73,
+   "start_ql": 210.0,
+   "end_ql": 222.0,
+   "bar_ql": 3.0,
+   "time_signature": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 629.0,
+   "alignment": {
+    "rows": 1820
+   },
+   "candidate_stats": {
+    "rows": 1108,
+    "events": 432,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 177,
+    "ambiguous-candidate": 111,
+    "unmatched": 74,
+    "reference-duration-not-candidate": 70
+   }
+  }
+ },
+ {
+  "index": 7,
+  "segment_id": "Prokofiev_Toccata_197",
+  "built_at": "2026-08-28T13:32:48",
+  "elapsed_sec": 2.5,
+  "selection_score": 594.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Prokofiev\u001fToccata",
+   "composer": "Prokofiev",
+   "title": "Toccata",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "8",
+   "midi_performance": "Prokofiev/Toccata/Colafelice11.mid",
+   "midi_score": "Prokofiev/Toccata/midi_score.mid",
+   "xml_score": "Prokofiev/Toccata/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 196,
+   "end_measure": 199,
+   "start_ql": 392.0,
+   "end_ql": 400.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 594.0,
+   "alignment": {
+    "rows": 3433
+   },
+   "candidate_stats": {
+    "rows": 1546,
+    "events": 604,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 490,
+    "ambiguous-candidate": 74,
+    "labeled": 35,
+    "reference-duration-not-candidate": 5
+   }
+  }
+ },
+ {
+  "index": 12,
+  "segment_id": "Chopin_Sonata_3_4th_109",
+  "built_at": "2026-08-28T13:32:48",
+  "elapsed_sec": 2.5,
+  "selection_score": 903.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fSonata_3_4th",
+   "composer": "Chopin",
+   "title": "Sonata_3_4th",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "9",
+   "midi_performance": "Chopin/Sonata_3/4th/GarritsonL11M.mid",
+   "midi_score": "Chopin/Sonata_3/4th/midi_score.mid",
+   "xml_score": "Chopin/Sonata_3/4th/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 108,
+   "end_measure": 111,
+   "start_ql": 432.0,
+   "end_ql": 448.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 903.0,
+   "alignment": {
+    "rows": 1290
+   },
+   "candidate_stats": {
+    "rows": 1489,
+    "events": 529,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 500,
+    "reference-duration-not-candidate": 13,
+    "labeled": 11,
+    "ambiguous-candidate": 5
+   }
+  }
  }
 ]

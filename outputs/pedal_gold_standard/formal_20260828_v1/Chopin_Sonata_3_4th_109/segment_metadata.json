@@ -1,0 +1,38 @@
+{
+  "segment_id": "Chopin_Sonata_3_4th_109",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Chopin\u001fSonata_3_4th",
+    "composer": "Chopin",
+    "title": "Sonata_3_4th",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "9",
+    "midi_performance": "Chopin/Sonata_3/4th/GarritsonL11M.mid",
+    "midi_score": "Chopin/Sonata_3/4th/midi_score.mid",
+    "xml_score": "Chopin/Sonata_3/4th/xml_score.musicxml"
+  },
+  "start_measure": 108,
+  "end_measure": 111,
+  "start_ql": 432.0,
+  "end_ql": 448.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 903.0,
+  "alignment": {
+    "rows": 1290
+  },
+  "candidate_stats": {
+    "rows": 1489,
+    "events": 529,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 500,
+    "reference-duration-not-candidate": 13,
+    "labeled": 11,
+    "ambiguous-candidate": 5
+  }
+}

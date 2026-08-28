@@ -1,0 +1,38 @@
+{
+  "segment_id": "Schumann_Kreisleriana_7_32",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Schumann\u001fKreisleriana_7",
+    "composer": "Schumann",
+    "title": "Kreisleriana_7",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "3",
+    "midi_performance": "Schumann/Kreisleriana/7/ParkJH10.mid",
+    "midi_score": "Schumann/Kreisleriana/7/midi_score.mid",
+    "xml_score": "Schumann/Kreisleriana/7/xml_score.musicxml"
+  },
+  "start_measure": 31,
+  "end_measure": 34,
+  "start_ql": 124.0,
+  "end_ql": 140.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 667.5,
+  "alignment": {
+    "rows": 29
+  },
+  "candidate_stats": {
+    "rows": 1048,
+    "events": 384,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 374,
+    "ambiguous-candidate": 3,
+    "labeled": 3,
+    "reference-duration-not-candidate": 4
+  }
+}

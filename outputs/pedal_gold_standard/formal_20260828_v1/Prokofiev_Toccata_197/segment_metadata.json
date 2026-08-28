@@ -1,0 +1,38 @@
+{
+  "segment_id": "Prokofiev_Toccata_197",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Prokofiev\u001fToccata",
+    "composer": "Prokofiev",
+    "title": "Toccata",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "8",
+    "midi_performance": "Prokofiev/Toccata/Colafelice11.mid",
+    "midi_score": "Prokofiev/Toccata/midi_score.mid",
+    "xml_score": "Prokofiev/Toccata/xml_score.musicxml"
+  },
+  "start_measure": 196,
+  "end_measure": 199,
+  "start_ql": 392.0,
+  "end_ql": 400.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 594.0,
+  "alignment": {
+    "rows": 3433
+  },
+  "candidate_stats": {
+    "rows": 1546,
+    "events": 604,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 490,
+    "ambiguous-candidate": 74,
+    "labeled": 35,
+    "reference-duration-not-candidate": 5
+  }
+}

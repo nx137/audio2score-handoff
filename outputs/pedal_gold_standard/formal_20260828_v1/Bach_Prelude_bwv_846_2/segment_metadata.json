@@ -1,0 +1,38 @@
+{
+  "segment_id": "Bach_Prelude_bwv_846_2",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Bach\u001fPrelude_bwv_846",
+    "composer": "Bach",
+    "title": "Prelude_bwv_846",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Bach/Prelude/bwv_846/Shi05M.mid",
+    "midi_score": "Bach/Prelude/bwv_846/midi_score.mid",
+    "xml_score": "Bach/Prelude/bwv_846/xml_score.musicxml"
+  },
+  "start_measure": 1,
+  "end_measure": 4,
+  "start_ql": 4.0,
+  "end_ql": 20.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 245.0,
+  "alignment": {
+    "rows": 544
+  },
+  "candidate_stats": {
+    "rows": 300,
+    "events": 76,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 1,
+    "reference-duration-not-candidate": 65,
+    "labeled": 6,
+    "ambiguous-candidate": 4
+  }
+}

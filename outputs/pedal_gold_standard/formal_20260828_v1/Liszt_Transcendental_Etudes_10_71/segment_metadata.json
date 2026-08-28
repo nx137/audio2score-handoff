@@ -1,0 +1,38 @@
+{
+  "segment_id": "Liszt_Transcendental_Etudes_10_71",
+  "manifest": {
+    "split": "validation",
+    "piece_key": "Liszt\u001fTranscendental_Etudes_10",
+    "composer": "Liszt",
+    "title": "Transcendental_Etudes_10",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "16",
+    "midi_performance": "Liszt/Transcendental_Etudes/10/CaoJ03M.mid",
+    "midi_score": "Liszt/Transcendental_Etudes/10/midi_score.mid",
+    "xml_score": "Liszt/Transcendental_Etudes/10/xml_score.musicxml"
+  },
+  "start_measure": 70,
+  "end_measure": 73,
+  "start_ql": 210.0,
+  "end_ql": 222.0,
+  "bar_ql": 3.0,
+  "time_signature": [
+    3,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 629.0,
+  "alignment": {
+    "rows": 1820
+  },
+  "candidate_stats": {
+    "rows": 1108,
+    "events": 432,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 177,
+    "ambiguous-candidate": 111,
+    "unmatched": 74,
+    "reference-duration-not-candidate": 70
+  }
+}

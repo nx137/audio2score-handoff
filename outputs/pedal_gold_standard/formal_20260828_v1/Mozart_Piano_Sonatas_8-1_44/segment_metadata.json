@@ -1,0 +1,38 @@
+{
+  "segment_id": "Mozart_Piano_Sonatas_8-1_44",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Mozart\u001fPiano_Sonatas_8-1",
+    "composer": "Mozart",
+    "title": "Piano_Sonatas_8-1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "5",
+    "midi_performance": "Mozart/Piano_Sonatas/8-1/Jia01.mid",
+    "midi_score": "Mozart/Piano_Sonatas/8-1/midi_score.mid",
+    "xml_score": "Mozart/Piano_Sonatas/8-1/xml_score.musicxml"
+  },
+  "start_measure": 43,
+  "end_measure": 46,
+  "start_ql": 172.0,
+  "end_ql": 188.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 576.5,
+  "alignment": {
+    "rows": 3157
+  },
+  "candidate_stats": {
+    "rows": 980,
+    "events": 385,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 233,
+    "reference-duration-not-candidate": 22,
+    "ambiguous-candidate": 115,
+    "unmatched": 15
+  }
+}

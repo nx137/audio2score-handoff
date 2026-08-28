@@ -1,0 +1,38 @@
+{
+  "segment_id": "Haydn_Keyboard_Sonatas_6-1_18",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_6-1",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_6-1",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Haydn/Keyboard_Sonatas/6-1/ChenC01.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/6-1/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/6-1/xml_score.musicxml"
+  },
+  "start_measure": 17,
+  "end_measure": 20,
+  "start_ql": 68.0,
+  "end_ql": 84.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 578.0,
+  "alignment": {
+    "rows": 159
+  },
+  "candidate_stats": {
+    "rows": 710,
+    "events": 312,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 279,
+    "reference-duration-not-candidate": 7,
+    "ambiguous-candidate": 17,
+    "labeled": 9
+  }
+}
