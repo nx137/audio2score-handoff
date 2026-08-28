@@ -40,6 +40,8 @@ def main() -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT))
     parser.add_argument("--keep-svg", action="store_true", help="keep render SVGs (default: delete)")
     parser.add_argument("--keep-work", action="store_true", help="keep _work intermediates (default: delete)")
+    parser.add_argument("--skip-render", action="store_true",
+                        help="skip MusicXML->SVG rendering (lean policy removes SVGs anyway)")
     args = parser.parse_args()
 
     payload = json.loads(Path(args.selection).read_text(encoding="utf-8"))
@@ -52,7 +54,19 @@ def main() -> int:
     out_root.mkdir(parents=True, exist_ok=True)
 
     started = time.time()
-    metadata = build_segment(segment, out_root)
+    seg_id = f"{segment.row['composer']}_{segment.row['title']}_{segment.start_measure + 1}"
+    align_src = out_root / '_alignments' / f'{seg_id}.csv'
+    copied = False
+    if align_src.exists():
+        work_dir = out_root / seg_id / '_work'
+        work_dir.mkdir(parents=True, exist_ok=True)
+        dst = work_dir / 'alignment.csv'
+        if not dst.exists():
+            shutil.copy2(align_src, dst)
+        copied = True
+    metadata = build_segment(segment, out_root,
+                             skip_align_if_present=copied,
+                             skip_render=args.skip_render)
     elapsed = time.time() - started
 
     segment_dir = out_root / metadata["segment_id"]

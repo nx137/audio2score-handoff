@@ -512,7 +512,9 @@ def run_checked(cmd: list[str]) -> None:
         )
 
 
-def build_segment(segment: Segment, out_root: Path) -> dict:
+def build_segment(segment: Segment, out_root: Path,
+                    skip_align_if_present: bool = False,
+                    skip_render: bool = False) -> dict:
     row = segment.row
     performance = ROOT / "data" / "ASAP" / row["midi_performance"]
     reference_xml = ROOT / "data" / "ASAP" / row["xml_score"]
@@ -530,13 +532,16 @@ def build_segment(segment: Segment, out_root: Path) -> dict:
 
     alignment = work / "alignment.csv"
     rejected = work / "rejected.csv"
-    align_stats = build_asap_alignment(
-        ROOT / "data" / "ASAP",
-        row["midi_performance"],
-        alignment,
-        rejected,
-        divisors=DIVISORS,
-    )
+    if skip_align_if_present and alignment.exists():
+        align_stats = {"rows": max(0, sum(1 for _ in alignment.open(encoding="utf-8", newline="")) - 1)}
+    else:
+        align_stats = build_asap_alignment(
+            ROOT / "data" / "ASAP",
+            row["midi_performance"],
+            alignment,
+            rejected,
+            divisors=DIVISORS,
+        )
     if align_stats["rows"] < 10:
         raise RuntimeError(f"alignment too sparse: {align_stats['rows']} rows")
 
@@ -588,21 +593,22 @@ def build_segment(segment: Segment, out_root: Path) -> dict:
                          "--no-pedal",
                          "--max-voices", "12", "--divisors", "8,4,3"]),
     ]
-    for stem, args in commands:
-        run_checked([sys.executable, str(SCRIPTS / "p4_multivoice_score.py"), *args])
+    if not skip_render:
+        for stem, args in commands:
+            run_checked([sys.executable, str(SCRIPTS / "p4_multivoice_score.py"), *args])
+            run_checked([
+                sys.executable,
+                str(SCRIPTS / "render_score.py"),
+                "--musicxml", str(segment_dir / f"{stem}.musicxml"),
+                "--out-svg", str(segment_dir / f"{stem}.svg"),
+            ])
         run_checked([
             sys.executable,
             str(SCRIPTS / "render_score.py"),
-            "--musicxml", str(segment_dir / f"{stem}.musicxml"),
-            "--out-svg", str(segment_dir / f"{stem}.svg"),
+            "--musicxml", str(segment_dir / "reference_score.musicxml"),
+            "--out-svg", str(segment_dir / "reference_score.svg"),
         ])
-    run_checked([
-        sys.executable,
-        str(SCRIPTS / "render_score.py"),
-        "--musicxml", str(segment_dir / "reference_score.musicxml"),
-        "--out-svg", str(segment_dir / "reference_score.svg"),
-    ])
-
+    
     metadata = {
         "segment_id": segment_dir.name,
         "manifest": row,
