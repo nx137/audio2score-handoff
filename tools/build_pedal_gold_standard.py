@@ -37,6 +37,7 @@ from score_metrics import pedal_events  # noqa: E402
 
 EPS = 1e-7
 DIVISORS = (8, 4, 3)
+WINDOW_MARGIN_QL = 16.0  # 候选生成保留窗口前后各 4 小节上下文
 
 
 @dataclass(frozen=True)
@@ -555,6 +556,7 @@ def build_segment(segment: Segment, out_root: Path,
         divisors=DIVISORS,
         max_voices=12,
         bar_ql=segment.bar_ql,
+        window=(segment.start_ql - WINDOW_MARGIN_QL, segment.end_ql + WINDOW_MARGIN_QL),
     )
     with candidates.open(encoding="utf-8", newline="") as handle:
         cand_rows = list(csv.DictReader(handle))

@@ -75,8 +75,11 @@ def _next_onsets(events):
             for i, onset in enumerate(onsets)}
 
 
-def build_records(midi_path: str, divisors=(8, 4, 3)) -> list[DurationRecord]:
+def build_records(midi_path: str, divisors=(8, 4, 3), window=None) -> list[DurationRecord]:
     raw_notes, pedals, _meta = midi_to_events(midi_path)
+    if window is not None:
+        lo, hi = window
+        raw_notes = [n for n in raw_notes if lo <= n[1] < hi]
     qnotes = quantize_events(raw_notes, divisors=divisors)
     raw = _raw_by_hand(raw_notes, pedals)
     notation = _notation_by_hand(qnotes, divisors)

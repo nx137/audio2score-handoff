@@ -197,19 +197,23 @@ def _onset_alignment(performance, reference, onset_tolerance: float) -> dict:
 def build_auto_labeled_dataset(midi_path: str, reference_xml_path: str, output_path: str,
                                piece: str, alignment_path: str | None = None,
                                divisors=(8, 4, 3), max_voices=6, bar_ql=4.0,
-                               onset_tolerance=0.125, duration_tolerance=0.125) -> dict:
+                               onset_tolerance=0.125, duration_tolerance=0.125,
+                               window=None) -> dict:
     """构建附带参考谱标签的候选表，并返回统计。
 
     每个唯一对齐事件至多标记一个候选为 ``label=1``。若参考时值未落入当前候选集、
     对齐缺失或候选并列，标签保持空，记录具体 ``auto_label_status``。
     """
     notes, pedals, _meta = midi_to_events(midi_path)
+    if window is not None:
+        lo, hi = window
+        notes = [n for n in notes if lo <= n[1] < hi]
     qnotes = quantize_events(notes, divisors=divisors)
     rh, lh = split_hands(qnotes)
     rh, rh_merged = _deduplicate_notation_events(rh)
     lh, lh_merged = _deduplicate_notation_events(lh)
     merged_duplicate_events = rh_merged + lh_merged
-    records = build_records(midi_path, divisors=divisors)
+    records = build_records(midi_path, divisors=divisors, window=window)
     by_record = {(row.hand, row.pitch, round(row.onset_ql, 6)): row for row in records}
     reference = reference_score_events(reference_xml_path)
     reference_index = {(event.part_id, event.voice, event.pitch, round(event.start_ql, 6)): event
