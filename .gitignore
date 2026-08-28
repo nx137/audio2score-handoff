@@ -1,1 +1,8 @@
 # Keep the full project snapshot in version control.
+# --- added 2026-08-28 cleanup: local env & regenerable artifacts ---
+.venv-backend/
+.venv-frontend/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
