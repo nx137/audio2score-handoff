@@ -338,6 +338,356 @@
    ],
    "tempo_bpm": 117.00011700011699,
    "error": null
+  },
+  "24": {
+   "window": [
+    63,
+    66,
+    423.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null
+  },
+  "25": {
+   "window": [
+    50,
+    53,
+    616.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "26": {
+   "window": [
+    130,
+    133,
+    751.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "27": {
+   "window": [
+    28,
+    31,
+    415.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "28": {
+   "window": [
+    113,
+    116,
+    316.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "29": {
+   "window": [
+    1,
+    4,
+    768.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "30": {
+   "window": [
+    108,
+    111,
+    903.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "31": {
+   "window": [
+    88,
+    91,
+    543.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "32": {
+   "window": [
+    64,
+    67,
+    489.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "33": {
+   "window": [
+    241,
+    244,
+    695.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "34": {
+   "window": [
+    143,
+    146,
+    844.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "35": {
+   "window": [
+    27,
+    30,
+    326.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null
+  },
+  "36": {
+   "window": [
+    79,
+    82,
+    414.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "37": {
+   "window": [
+    333,
+    336,
+    229.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null
+  },
+  "38": {
+   "window": [
+    39,
+    42,
+    279.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "39": {
+   "window": [
+    39,
+    42,
+    143.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
+  },
+  "40": {
+   "window": [
+    106,
+    109,
+    167.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "41": {
+   "window": [
+    216,
+    219,
+    179.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "42": {
+   "window": [
+    76,
+    79,
+    331.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "43": {
+   "window": [
+    74,
+    77,
+    437.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "44": {
+   "window": [
+    17,
+    20,
+    578.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "45": {
+   "window": [
+    384,
+    387,
+    674.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "46": {
+   "window": [
+    66,
+    69,
+    570.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
+  },
+  "47": {
+   "window": [
+    21,
+    24,
+    452.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "48": {
+   "window": [
+    161,
+    164,
+    778.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
   }
  }
 }
