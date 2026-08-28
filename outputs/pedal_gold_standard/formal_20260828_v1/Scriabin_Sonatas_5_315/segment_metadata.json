@@ -1,0 +1,38 @@
+{
+  "segment_id": "Scriabin_Sonatas_5_315",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Scriabin\u001fSonatas_5",
+    "composer": "Scriabin",
+    "title": "Sonatas_5",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "7",
+    "midi_performance": "Scriabin/Sonatas/5/Yeletskiy07M.mid",
+    "midi_score": "Scriabin/Sonatas/5/midi_score.mid",
+    "xml_score": "Scriabin/Sonatas/5/xml_score.musicxml"
+  },
+  "start_measure": 314,
+  "end_measure": 317,
+  "start_ql": 1256.0,
+  "end_ql": 1272.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 1099.5,
+  "alignment": {
+    "rows": 5919
+  },
+  "candidate_stats": {
+    "rows": 1271,
+    "events": 531,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 195,
+    "reference-duration-not-candidate": 141,
+    "unmatched": 42,
+    "ambiguous-candidate": 153
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "segment_id": "Ravel_Miroirs_3_Une_Barque_181",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Ravel\u001fMiroirs_3_Une_Barque",
+    "composer": "Ravel",
+    "title": "Miroirs_3_Une_Barque",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "3",
+    "midi_performance": "Ravel/Miroirs/3_Une_Barque/ShevchenkoO07.mid",
+    "midi_score": "Ravel/Miroirs/3_Une_Barque/midi_score.mid",
+    "xml_score": "Ravel/Miroirs/3_Une_Barque/xml_score.musicxml"
+  },
+  "start_measure": 180,
+  "end_measure": 183,
+  "start_ql": 360.0,
+  "end_ql": 368.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 711.5,
+  "alignment": {
+    "rows": 2203
+  },
+  "candidate_stats": {
+    "rows": 882,
+    "events": 436,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 300,
+    "labeled": 101,
+    "reference-duration-not-candidate": 26,
+    "ambiguous-candidate": 9
+  }
+}

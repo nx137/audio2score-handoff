@@ -1,0 +1,38 @@
+{
+  "segment_id": "Schubert_Wanderer_fantasie_1189",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Schubert\u001fWanderer_fantasie",
+    "composer": "Schubert",
+    "title": "Wanderer_fantasie",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Schubert/Wanderer_fantasie/Kolessova02.mid",
+    "midi_score": "Schubert/Wanderer_fantasie/midi_score.mid",
+    "xml_score": "Schubert/Wanderer_fantasie/xml_score.musicxml"
+  },
+  "start_measure": 1188,
+  "end_measure": 1191,
+  "start_ql": 2376.0,
+  "end_ql": 2384.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011702,
+  "selection_score": 669.5,
+  "alignment": {
+    "rows": 13062
+  },
+  "candidate_stats": {
+    "rows": 1399,
+    "events": 521,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 271,
+    "unmatched": 72,
+    "labeled": 147,
+    "reference-duration-not-candidate": 31
+  }
+}
