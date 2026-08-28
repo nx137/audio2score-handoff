@@ -595,15 +595,16 @@ def build_segment(segment: Segment, out_root: Path,
                          "--no-pedal",
                          "--max-voices", "12", "--divisors", "8,4,3"]),
     ]
-    if not skip_render:
-        for stem, args in commands:
-            run_checked([sys.executable, str(SCRIPTS / "p4_multivoice_score.py"), *args])
+    for stem, args in commands:
+        run_checked([sys.executable, str(SCRIPTS / "p4_multivoice_score.py"), *args])
+        if not skip_render:
             run_checked([
                 sys.executable,
                 str(SCRIPTS / "render_score.py"),
                 "--musicxml", str(segment_dir / f"{stem}.musicxml"),
                 "--out-svg", str(segment_dir / f"{stem}.svg"),
             ])
+    if not skip_render:
         run_checked([
             sys.executable,
             str(SCRIPTS / "render_score.py"),
