@@ -83,4 +83,5 @@
 
 ## 7. 附录：预填算法复现要点
 
-预填由三列规则（2.1-2.3）+ 边界区（2.4）确定，输入为 `events.csv`、`pedal_intervals.csv`、`reference_pedals.csv`、`segment_metadata.json`（start_ql/end_ql）。若本地 events.csv 与仓库版本行数不一致，可用本算法在本地重算，避免手工粘贴。
+预填由三列规则（2.1-2.3）+ 边界区（2.4）确定，输入为 `events.csv`、`pedal_intervals.csv`、`reference_pedals.csv`、`segment_metadata.json`（start_ql/end_ql）。**正式实现：`tools/prefill_events.py <片段目录>`**（规则 2.1-2.4 的脚本化；`--dry-run` 只报告不写入，`--overwrite` 强制重算）。若本地 events.csv 与仓库版本行数不一致，或需要为新片段生成预填，直接运行该脚本，避免手工粘贴。
+> 修复记录：perf 快速再踩判定（2.2）中，音符接近区间 k 结尾时应查**下一区间** gap（`ivs[k+1].start - ivs[k].end`），而非当前区间自身的 `retake_gap_ql`（该列记录区间**之前**的 gap，首个区间为空）。pilot v2 标注时该 bug 曾把 Liszt 7 行误标为 `release`，现已在脚本中修复。
