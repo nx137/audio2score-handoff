@@ -1178,6 +1178,146 @@
    ],
    "tempo_bpm": 117.00011700011699,
    "error": null
+  },
+  "84": {
+   "window": [
+    176,
+    179,
+    1056.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "85": {
+   "window": [
+    605,
+    608,
+    407.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null
+  },
+  "86": {
+   "window": [
+    180,
+    183,
+    711.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "87": {
+   "window": [
+    204,
+    207,
+    645.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "88": {
+   "window": [
+    280,
+    283,
+    227.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "89": {
+   "window": [
+    599,
+    602,
+    323.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "90": {
+   "window": [
+    126,
+    129,
+    503.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "91": {
+   "window": [
+    132,
+    135,
+    577.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "92": {
+   "window": [
+    154,
+    157,
+    637.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "93": {
+   "window": [
+    31,
+    34,
+    546.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
   }
  }
 }
