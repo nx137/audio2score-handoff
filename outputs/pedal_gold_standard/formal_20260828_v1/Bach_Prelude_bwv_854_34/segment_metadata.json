@@ -1,0 +1,38 @@
+{
+  "segment_id": "Bach_Prelude_bwv_854_34",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Bach\u001fPrelude_bwv_854",
+    "composer": "Bach",
+    "title": "Prelude_bwv_854",
+    "performance_rank_in_piece": "5",
+    "performances_in_piece": "5",
+    "midi_performance": "Bach/Prelude/bwv_854/WangA01M.mid",
+    "midi_score": "Bach/Prelude/bwv_854/midi_score.mid",
+    "xml_score": "Bach/Prelude/bwv_854/xml_score.musicxml"
+  },
+  "start_measure": 33,
+  "end_measure": 36,
+  "start_ql": 132.0,
+  "end_ql": 148.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 148.0,
+  "alignment": {
+    "rows": 429
+  },
+  "candidate_stats": {
+    "rows": 364,
+    "events": 112,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 42,
+    "reference-duration-not-candidate": 26,
+    "labeled": 22,
+    "unmatched": 22
+  }
+}

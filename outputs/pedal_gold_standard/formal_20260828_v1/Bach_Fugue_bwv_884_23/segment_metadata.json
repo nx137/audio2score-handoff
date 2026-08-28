@@ -1,0 +1,38 @@
+{
+  "segment_id": "Bach_Fugue_bwv_884_23",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Bach\u001fFugue_bwv_884",
+    "composer": "Bach",
+    "title": "Fugue_bwv_884",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Bach/Fugue/bwv_884/LiA01M.mid",
+    "midi_score": "Bach/Fugue/bwv_884/midi_score.mid",
+    "xml_score": "Bach/Fugue/bwv_884/xml_score.musicxml"
+  },
+  "start_measure": 22,
+  "end_measure": 25,
+  "start_ql": 88.0,
+  "end_ql": 104.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 136.0,
+  "alignment": {
+    "rows": 670
+  },
+  "candidate_stats": {
+    "rows": 742,
+    "events": 324,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 110,
+    "ambiguous-candidate": 124,
+    "reference-duration-not-candidate": 27,
+    "unmatched": 63
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "segment_id": "Bach_Prelude_bwv_860_7",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Bach\u001fPrelude_bwv_860",
+    "composer": "Bach",
+    "title": "Prelude_bwv_860",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "6",
+    "midi_performance": "Bach/Prelude/bwv_860/Ko04M.mid",
+    "midi_score": "Bach/Prelude/bwv_860/midi_score.mid",
+    "xml_score": "Bach/Prelude/bwv_860/xml_score.musicxml"
+  },
+  "start_measure": 6,
+  "end_measure": 9,
+  "start_ql": 24.0,
+  "end_ql": 40.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 202.0,
+  "alignment": {
+    "rows": 604
+  },
+  "candidate_stats": {
+    "rows": 663,
+    "events": 298,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 110,
+    "ambiguous-candidate": 161,
+    "reference-duration-not-candidate": 19,
+    "unmatched": 8
+  }
+}

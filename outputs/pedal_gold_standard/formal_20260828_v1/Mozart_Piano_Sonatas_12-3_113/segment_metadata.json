@@ -1,0 +1,38 @@
+{
+  "segment_id": "Mozart_Piano_Sonatas_12-3_113",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Mozart\u001fPiano_Sonatas_12-3",
+    "composer": "Mozart",
+    "title": "Piano_Sonatas_12-3",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "3",
+    "midi_performance": "Mozart/Piano_Sonatas/12-3/MunA05M.mid",
+    "midi_score": "Mozart/Piano_Sonatas/12-3/midi_score.mid",
+    "xml_score": "Mozart/Piano_Sonatas/12-3/xml_score.musicxml"
+  },
+  "start_measure": 112,
+  "end_measure": 115,
+  "start_ql": 448.0,
+  "end_ql": 464.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 280.5,
+  "alignment": {
+    "rows": 2846
+  },
+  "candidate_stats": {
+    "rows": 720,
+    "events": 247,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 98,
+    "ambiguous-candidate": 81,
+    "reference-duration-not-candidate": 54,
+    "unmatched": 14
+  }
+}

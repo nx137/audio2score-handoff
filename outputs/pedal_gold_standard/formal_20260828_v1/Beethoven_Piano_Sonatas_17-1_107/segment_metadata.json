@@ -1,0 +1,38 @@
+{
+  "segment_id": "Beethoven_Piano_Sonatas_17-1_107",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_17-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_17-1",
+    "performance_rank_in_piece": "5",
+    "performances_in_piece": "14",
+    "midi_performance": "Beethoven/Piano_Sonatas/17-1_no_repeat/GuoE02M.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/17-1_no_repeat/xml_score.musicxml"
+  },
+  "start_measure": 106,
+  "end_measure": 109,
+  "start_ql": 212.0,
+  "end_ql": 220.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 308.0,
+  "alignment": {
+    "rows": 1298
+  },
+  "candidate_stats": {
+    "rows": 669,
+    "events": 228,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 187,
+    "labeled": 28,
+    "ambiguous-candidate": 9,
+    "unmatched": 4
+  }
+}

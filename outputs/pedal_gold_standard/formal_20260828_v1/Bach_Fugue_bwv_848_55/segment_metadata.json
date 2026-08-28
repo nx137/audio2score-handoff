@@ -1,0 +1,38 @@
+{
+  "segment_id": "Bach_Fugue_bwv_848_55",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Bach\u001fFugue_bwv_848",
+    "composer": "Bach",
+    "title": "Fugue_bwv_848",
+    "performance_rank_in_piece": "8",
+    "performances_in_piece": "9",
+    "midi_performance": "Bach/Fugue/bwv_848/SunY01M.mid",
+    "midi_score": "Bach/Fugue/bwv_848/midi_score.mid",
+    "xml_score": "Bach/Fugue/bwv_848/xml_score.musicxml"
+  },
+  "start_measure": 54,
+  "end_measure": 57,
+  "start_ql": 162.0,
+  "end_ql": 174.0,
+  "bar_ql": 3.0,
+  "time_signature": [
+    3,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 141.5,
+  "alignment": {
+    "rows": 1396
+  },
+  "candidate_stats": {
+    "rows": 634,
+    "events": 278,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 107,
+    "ambiguous-candidate": 158,
+    "reference-duration-not-candidate": 6,
+    "unmatched": 7
+  }
+}

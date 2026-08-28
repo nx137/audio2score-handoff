@@ -1,0 +1,38 @@
+{
+  "segment_id": "Haydn_Keyboard_Sonatas_31-1_40",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_31-1",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_31-1",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "4",
+    "midi_performance": "Haydn/Keyboard_Sonatas/31-1/Masycheva01.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/31-1/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/31-1/xml_score.musicxml"
+  },
+  "start_measure": 39,
+  "end_measure": 42,
+  "start_ql": 156.0,
+  "end_ql": 172.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 279.5,
+  "alignment": {
+    "rows": 1492
+  },
+  "candidate_stats": {
+    "rows": 538,
+    "events": 224,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 34,
+    "labeled": 106,
+    "ambiguous-candidate": 73,
+    "unmatched": 11
+  }
+}
