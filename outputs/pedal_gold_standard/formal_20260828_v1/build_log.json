@@ -52,5 +52,112 @@
     "ambiguous-candidate": 376
    }
   }
+ },
+ {
+  "index": 2,
+  "segment_id": "Beethoven_Piano_Sonatas_16-1_73",
+  "built_at": "2026-08-28T12:45:41",
+  "elapsed_sec": 15.4,
+  "selection_score": 748.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Beethoven\u001fPiano_Sonatas_16-1",
+   "composer": "Beethoven",
+   "title": "Piano_Sonatas_16-1",
+   "performance_rank_in_piece": "5",
+   "performances_in_piece": "7",
+   "midi_performance": "Beethoven/Piano_Sonatas/16-1/Shybayeva02.mid",
+   "midi_score": "Beethoven/Piano_Sonatas/16-1/midi_score.mid",
+   "xml_score": "Beethoven/Piano_Sonatas/16-1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 72,
+   "end_measure": 75,
+   "start_ql": 288.0,
+   "end_ql": 304.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 748.5,
+   "alignment": {
+    "performance": "Beethoven/Piano_Sonatas/16-1/Shybayeva02.mid",
+    "rows": 127,
+    "rejected": 3274,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "outside-or-invalid-beat-map": 5,
+    "musicxml-no-match": 3200,
+    "score-midi-no-match": 69,
+    "aligned": 127
+   },
+   "candidate_stats": {
+    "rows": 8979,
+    "events": 3401,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 3274,
+    "labeled": 36,
+    "reference-duration-not-candidate": 29,
+    "ambiguous-candidate": 62
+   }
+  }
+ },
+ {
+  "index": 1,
+  "segment_id": "Scriabin_Sonatas_5_315",
+  "built_at": "2026-08-28T12:45:49",
+  "elapsed_sec": 23.2,
+  "selection_score": 1099.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Scriabin\u001fSonatas_5",
+   "composer": "Scriabin",
+   "title": "Sonatas_5",
+   "performance_rank_in_piece": "7",
+   "performances_in_piece": "7",
+   "midi_performance": "Scriabin/Sonatas/5/Yeletskiy07M.mid",
+   "midi_score": "Scriabin/Sonatas/5/midi_score.mid",
+   "xml_score": "Scriabin/Sonatas/5/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 314,
+   "end_measure": 317,
+   "start_ql": 1256.0,
+   "end_ql": 1272.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 1099.5,
+   "alignment": {
+    "performance": "Scriabin/Sonatas/5/Yeletskiy07M.mid",
+    "rows": 5919,
+    "rejected": 1629,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "aligned": 5919,
+    "outside-or-invalid-beat-map": 10,
+    "score-midi-no-match": 1330,
+    "musicxml-no-match": 246,
+    "musicxml-ambiguous": 41,
+    "ambiguous-quantized-performance-event": 1,
+    "duplicate-alignment-key": 1
+   },
+   "candidate_stats": {
+    "rows": 19938,
+    "events": 7548,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 1628,
+    "labeled": 1895,
+    "reference-duration-not-candidate": 3228,
+    "ambiguous-candidate": 797
+   }
+  }
  }
 ]
