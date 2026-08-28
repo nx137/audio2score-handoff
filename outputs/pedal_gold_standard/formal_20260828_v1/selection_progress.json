@@ -1,0 +1,1792 @@
+{
+ "seed": 20260828,
+ "per_composer": 10,
+ "pool_size": 119,
+ "results": {
+  "0": {
+   "window": [
+    6,
+    9,
+    202.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 84
+  },
+  "1": {
+   "window": [
+    33,
+    36,
+    148.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 21
+  },
+  "2": {
+   "window": [
+    128,
+    131,
+    152.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 0
+  },
+  "3": {
+   "window": [
+    1,
+    4,
+    245.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 64
+  },
+  "4": {
+   "window": [
+    83,
+    86,
+    131.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 30
+  },
+  "5": {
+   "window": [
+    22,
+    25,
+    136.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 113
+  },
+  "6": {
+   "window": [
+    54,
+    57,
+    141.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 77
+  },
+  "7": {
+   "window": [
+    89,
+    92,
+    91.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "8": {
+   "window": [
+    94,
+    97,
+    166.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "9": {
+   "window": [
+    27,
+    30,
+    138.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 79
+  },
+  "10": {
+   "window": [
+    290,
+    293,
+    456.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 25
+  },
+  "11": {
+   "window": [
+    79,
+    82,
+    488.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 122
+  },
+  "12": {
+   "window": [
+    106,
+    109,
+    308.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 28
+  },
+  "13": {
+   "window": [
+    30,
+    33,
+    551.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 48
+  },
+  "14": {
+   "window": [
+    95,
+    98,
+    607.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 128
+  },
+  "15": {
+   "window": [
+    72,
+    75,
+    748.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 111
+  },
+  "16": {
+   "window": [
+    50,
+    53,
+    389.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 55
+  },
+  "17": {
+   "window": [
+    219,
+    222,
+    520.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "18": {
+   "window": [
+    142,
+    145,
+    180.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "19": {
+   "window": [
+    408,
+    411,
+    328.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "20": {
+   "window": [
+    139,
+    142,
+    357.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "21": {
+   "window": [
+    205,
+    208,
+    526.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "22": {
+   "window": [
+    78,
+    81,
+    631.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 102
+  },
+  "23": {
+   "window": [
+    253,
+    256,
+    1184.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 53
+  },
+  "24": {
+   "window": [
+    63,
+    66,
+    423.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null,
+   "ref_count": 66
+  },
+  "25": {
+   "window": [
+    50,
+    53,
+    616.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 74
+  },
+  "26": {
+   "window": [
+    130,
+    133,
+    751.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "27": {
+   "window": [
+    28,
+    31,
+    415.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 49
+  },
+  "28": {
+   "window": [
+    113,
+    116,
+    316.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 39
+  },
+  "29": {
+   "window": [
+    1,
+    4,
+    768.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 128
+  },
+  "30": {
+   "window": [
+    108,
+    111,
+    903.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 74
+  },
+  "31": {
+   "window": [
+    88,
+    91,
+    543.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "32": {
+   "window": [
+    64,
+    67,
+    489.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "33": {
+   "window": [
+    241,
+    244,
+    695.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "34": {
+   "window": [
+    143,
+    146,
+    844.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "35": {
+   "window": [
+    27,
+    30,
+    326.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null,
+   "ref_count": 64
+  },
+  "36": {
+   "window": [
+    79,
+    82,
+    414.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "37": {
+   "window": [
+    333,
+    336,
+    229.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 0
+  },
+  "38": {
+   "window": [
+    39,
+    42,
+    279.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 84
+  },
+  "39": {
+   "window": [
+    39,
+    42,
+    143.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 84
+  },
+  "40": {
+   "window": [
+    106,
+    109,
+    167.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 59
+  },
+  "41": {
+   "window": [
+    216,
+    219,
+    179.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "42": {
+   "window": [
+    76,
+    79,
+    331.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "43": {
+   "window": [
+    74,
+    77,
+    437.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "44": {
+   "window": [
+    17,
+    20,
+    578.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 67
+  },
+  "45": {
+   "window": [
+    384,
+    387,
+    674.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "46": {
+   "window": [
+    66,
+    69,
+    570.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 39
+  },
+  "47": {
+   "window": [
+    21,
+    24,
+    452.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 81
+  },
+  "48": {
+   "window": [
+    161,
+    164,
+    778.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "49": {
+   "window": [
+    158,
+    161,
+    422.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "50": {
+   "window": [
+    70,
+    73,
+    629.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 112
+  },
+  "51": {
+   "window": [
+    419,
+    422,
+    677.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null,
+   "ref_count": 0
+  },
+  "52": {
+   "window": [
+    146,
+    149,
+    508.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 76
+  },
+  "53": {
+   "window": [
+    424,
+    427,
+    562.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "54": {
+   "window": [
+    168,
+    171,
+    806.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "55": {
+   "window": [
+    112,
+    115,
+    280.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 80
+  },
+  "56": {
+   "window": [
+    129,
+    132,
+    225.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 69
+  },
+  "57": {
+   "window": [
+    402,
+    405,
+    143.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "58": {
+   "window": [
+    94,
+    97,
+    164.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 49
+  },
+  "59": {
+   "window": [
+    153,
+    156,
+    220.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 41
+  },
+  "60": {
+   "window": [
+    329,
+    332,
+    311.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "61": {
+   "window": [
+    66,
+    69,
+    418.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 99
+  },
+  "62": {
+   "window": [
+    161,
+    164,
+    208.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "63": {
+   "window": [
+    43,
+    46,
+    576.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 111
+  },
+  "64": {
+   "window": [
+    357,
+    360,
+    139.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "65": {
+   "window": [
+    234,
+    237,
+    673.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "66": {
+   "window": [
+    118,
+    121,
+    1008.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 0
+  },
+  "67": {
+   "window": [
+    117,
+    120,
+    1020.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "68": {
+   "window": [
+    113,
+    116,
+    1305.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "69": {
+   "window": [
+    196,
+    199,
+    594.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 61
+  },
+  "70": {
+   "window": [
+    122,
+    125,
+    1100.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "71": {
+   "window": [
+    118,
+    121,
+    601.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "72": {
+   "window": [
+    126,
+    129,
+    1160.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 0
+  },
+  "73": {
+   "window": [
+    80,
+    83,
+    428.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "74": {
+   "window": [
+    73,
+    76,
+    630.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "75": {
+   "window": [
+    163,
+    166,
+    265.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "76": {
+   "window": [
+    107,
+    110,
+    531.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 0
+  },
+  "77": {
+   "window": [
+    67,
+    70,
+    504.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "78": {
+   "window": [
+    49,
+    52,
+    298.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 47
+  },
+  "79": {
+   "window": [
+    226,
+    229,
+    742.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "80": {
+   "window": [
+    309,
+    312,
+    568.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "81": {
+   "window": [
+    174,
+    177,
+    1013.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "82": {
+   "window": [
+    162,
+    165,
+    1049.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "83": {
+   "window": [
+    200,
+    203,
+    786.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "84": {
+   "window": [
+    176,
+    179,
+    1056.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "85": {
+   "window": [
+    605,
+    608,
+    407.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 400.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "86": {
+   "window": [
+    180,
+    183,
+    711.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 82
+  },
+  "87": {
+   "window": [
+    204,
+    207,
+    645.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "88": {
+   "window": [
+    280,
+    283,
+    227.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "89": {
+   "window": [
+    599,
+    602,
+    323.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "90": {
+   "window": [
+    126,
+    129,
+    503.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "91": {
+   "window": [
+    132,
+    135,
+    577.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 61
+  },
+  "92": {
+   "window": [
+    154,
+    157,
+    637.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 94
+  },
+  "93": {
+   "window": [
+    31,
+    34,
+    546.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 67
+  },
+  "94": {
+   "window": [
+    124,
+    127,
+    413.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 79
+  },
+  "95": {
+   "window": [
+    320,
+    323,
+    262.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 13
+  },
+  "96": {
+   "window": [
+    1188,
+    1191,
+    669.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 82
+  },
+  "97": {
+   "window": [
+    215,
+    218,
+    384.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 27
+  },
+  "98": {
+   "window": [
+    53,
+    56,
+    441.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 71
+  },
+  "99": {
+   "window": [
+    341,
+    344,
+    317.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 0
+  },
+  "100": {
+   "window": [
+    187,
+    190,
+    887.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "101": {
+   "window": [
+    133,
+    136,
+    550.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null,
+   "ref_count": 68
+  },
+  "102": {
+   "window": [
+    203,
+    206,
+    415.0
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "103": {
+   "window": [
+    63,
+    66,
+    328.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 64
+  },
+  "104": {
+   "window": [
+    31,
+    34,
+    667.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 121
+  },
+  "105": {
+   "window": [
+    86,
+    89,
+    322.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 0
+  },
+  "106": {
+   "window": [
+    55,
+    58,
+    635.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 67
+  },
+  "107": {
+   "window": [
+    232,
+    235,
+    479.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "108": {
+   "window": [
+    98,
+    101,
+    325.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "109": {
+   "window": [
+    28,
+    31,
+    385.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "error": null,
+   "ref_count": 157
+  },
+  "110": {
+   "window": [
+    601,
+    604,
+    722.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null,
+   "ref_count": 85
+  },
+  "111": {
+   "window": [
+    342,
+    345,
+    1329.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "112": {
+   "window": [
+    87,
+    90,
+    352.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "113": {
+   "window": [
+    592,
+    595,
+    717.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 37
+  },
+  "114": {
+   "window": [
+    314,
+    317,
+    1099.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 16
+  },
+  "115": {
+   "window": [
+    61,
+    64,
+    471.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  },
+  "116": {
+   "window": [
+    681,
+    684,
+    710.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null,
+   "ref_count": 0
+  },
+  "117": {
+   "window": [
+    610,
+    613,
+    711.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 107
+  },
+  "118": {
+   "window": [
+    689,
+    692,
+    815.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null,
+   "ref_count": 0
+  }
+ }
+}
