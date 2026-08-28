@@ -1318,6 +1318,48 @@
    ],
    "tempo_bpm": 120.0,
    "error": null
+  },
+  "94": {
+   "window": [
+    124,
+    127,
+    413.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "95": {
+   "window": [
+    320,
+    323,
+    262.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "96": {
+   "window": [
+    1188,
+    1191,
+    669.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
   }
  }
 }
