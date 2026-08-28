@@ -33,6 +33,55 @@ from build_pedal_gold_standard import (  # same-directory import
     stratified_pool,
 )
 
+
+
+def finalize_selection(pool: list[dict], results: dict, count: int,
+                       min_ref_events: int = 10) -> list[Segment]:
+    """Selection policy shared by select_gold_standard.py and validate_selection.py.
+
+    Filters windowed candidates (optionally requiring ``ref_count >= min_ref_events``),
+    sorts by score, picks one segment per composer first, then fills remaining
+    capacity with the next best unused pieces (same policy as
+    ``build_pedal_gold_standard.select_segments``).
+    """
+    candidates = []
+    for index, row in enumerate(pool):
+        entry = results.get(str(index), {})
+        window = entry.get("window")
+        if not window:
+            continue
+        if entry.get("ref_count") is not None and entry["ref_count"] < min_ref_events:
+            continue
+        start_measure, end_measure, score = window
+        candidates.append(Segment(
+            row=row, start_measure=start_measure, end_measure=end_measure,
+            score=score, bar_ql=entry["bar_ql"],
+            time_sig=tuple(entry["time_sig"]), tempo_bpm=entry["tempo_bpm"],
+        ))
+    candidates.sort(key=lambda item: item.score, reverse=True)
+
+    selected = []
+    used_pieces: set[str] = set()
+    used_composers: set[str] = set()
+    for candidate in candidates:
+        piece, composer = candidate.row["piece_key"], candidate.row["composer"]
+        if piece in used_pieces or composer in used_composers:
+            continue
+        selected.append(candidate)
+        used_pieces.add(piece)
+        used_composers.add(composer)
+        if len(selected) == count:
+            break
+    if len(selected) < count:
+        for candidate in candidates:
+            if candidate in selected or candidate.row["piece_key"] in used_pieces:
+                continue
+            selected.append(candidate)
+            used_pieces.add(candidate.row["piece_key"])
+            if len(selected) == count:
+                break
+    return selected
+
 PILOT_PIECE_KEYS = (
     "Chopin\x1fEtudes_op_25_10",
     "Balakirev\x1fIslamey",
@@ -98,41 +147,7 @@ def main() -> int:
         print(f"[partial] {len(results)}/{len(pool)} rows analysed", file=sys.stderr)
         return 2
 
-    # ---- finalize: same selection policy as build_pedal_gold_standard.select_segments
-    candidates = []
-    for index, row in enumerate(pool):
-        entry = results.get(str(index), {})
-        window = entry.get("window")
-        if not window:
-            continue
-        start_measure, end_measure, score = window
-        candidates.append(Segment(
-            row=row, start_measure=start_measure, end_measure=end_measure,
-            score=score, bar_ql=entry["bar_ql"],
-            time_sig=tuple(entry["time_sig"]), tempo_bpm=entry["tempo_bpm"],
-        ))
-    candidates.sort(key=lambda item: item.score, reverse=True)
-
-    selected = []
-    used_pieces: set[str] = set()
-    used_composers: set[str] = set()
-    for candidate in candidates:
-        piece, composer = candidate.row["piece_key"], candidate.row["composer"]
-        if piece in used_pieces or composer in used_composers:
-            continue
-        selected.append(candidate)
-        used_pieces.add(piece)
-        used_composers.add(composer)
-        if len(selected) == args.count:
-            break
-    if len(selected) < args.count:
-        for candidate in candidates:
-            if candidate in selected or candidate.row["piece_key"] in used_pieces:
-                continue
-            selected.append(candidate)
-            used_pieces.add(candidate.row["piece_key"])
-            if len(selected) == args.count:
-                break
+    selected = finalize_selection(pool, results, args.count)
 
     payload = {
         "seed": args.seed,
