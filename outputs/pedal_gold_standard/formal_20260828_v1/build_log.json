@@ -1,59 +1,5 @@
 [
  {
-  "index": 0,
-  "segment_id": "Chopin_Scherzos_20_254",
-  "built_at": "2026-08-28T12:43:17",
-  "elapsed_sec": 16.9,
-  "selection_score": 1184.5,
-  "manifest": {
-   "split": "validation",
-   "piece_key": "Chopin\u001fScherzos_20",
-   "composer": "Chopin",
-   "title": "Scherzos_20",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "3",
-   "midi_performance": "Chopin/Scherzos/20/Wong03.mid",
-   "midi_score": "Chopin/Scherzos/20/midi_score.mid",
-   "xml_score": "Chopin/Scherzos/20/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 253,
-   "end_measure": 256,
-   "start_ql": 1012.0,
-   "end_ql": 1028.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 117.00011700011699,
-   "selection_score": 1184.5,
-   "alignment": {
-    "performance": "Chopin/Scherzos/20/Wong03.mid",
-    "rows": 4542,
-    "rejected": 621,
-    "score_note_tolerance_sec": 0.08,
-    "xml_note_tolerance_ql": 0.125,
-    "outside-or-invalid-beat-map": 9,
-    "aligned": 4542,
-    "score-midi-no-match": 477,
-    "musicxml-no-match": 85,
-    "musicxml-ambiguous": 49,
-    "duplicate-alignment-key": 1
-   },
-   "candidate_stats": {
-    "rows": 15496,
-    "events": 5163,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 620,
-    "reference-duration-not-candidate": 2987,
-    "labeled": 1180,
-    "ambiguous-candidate": 376
-   }
-  }
- },
- {
   "index": 2,
   "segment_id": "Beethoven_Piano_Sonatas_16-1_73",
   "built_at": "2026-08-28T12:45:41",
@@ -157,6 +103,60 @@
     "labeled": 1895,
     "reference-duration-not-candidate": 3228,
     "ambiguous-candidate": 797
+   }
+  }
+ },
+ {
+  "index": 0,
+  "segment_id": "Chopin_Scherzos_20_254",
+  "built_at": "2026-08-28T13:16:21",
+  "elapsed_sec": 13.7,
+  "selection_score": 1184.5,
+  "manifest": {
+   "split": "validation",
+   "piece_key": "Chopin\u001fScherzos_20",
+   "composer": "Chopin",
+   "title": "Scherzos_20",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "3",
+   "midi_performance": "Chopin/Scherzos/20/Wong03.mid",
+   "midi_score": "Chopin/Scherzos/20/midi_score.mid",
+   "xml_score": "Chopin/Scherzos/20/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 253,
+   "end_measure": 256,
+   "start_ql": 1012.0,
+   "end_ql": 1028.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 1184.5,
+   "alignment": {
+    "performance": "Chopin/Scherzos/20/Wong03.mid",
+    "rows": 4542,
+    "rejected": 621,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "outside-or-invalid-beat-map": 9,
+    "aligned": 4542,
+    "score-midi-no-match": 477,
+    "musicxml-no-match": 85,
+    "musicxml-ambiguous": 49,
+    "duplicate-alignment-key": 1
+   },
+   "candidate_stats": {
+    "rows": 15496,
+    "events": 5163,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 620,
+    "reference-duration-not-candidate": 2987,
+    "labeled": 1180,
+    "ambiguous-candidate": 376
    }
   }
  }
