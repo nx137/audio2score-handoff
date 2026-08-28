@@ -1,0 +1,889 @@
+{
+ "seed": 20260828,
+ "per_composer": 6,
+ "count": 40,
+ "excluded_pilot_pieces": true,
+ "created": "2026-08-28T12:21:38",
+ "segments": [
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Prokofiev\u001fToccata",
+    "composer": "Prokofiev",
+    "title": "Toccata",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "8",
+    "midi_performance": "Prokofiev/Toccata/Fab13.mid",
+    "midi_score": "Prokofiev/Toccata/midi_score.mid",
+    "xml_score": "Prokofiev/Toccata/xml_score.musicxml"
+   },
+   "start_measure": 113,
+   "end_measure": 116,
+   "score": 1305.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Liszt\u001fTranscendental_Etudes_5",
+    "composer": "Liszt",
+    "title": "Transcendental_Etudes_5",
+    "performance_rank_in_piece": "8",
+    "performances_in_piece": "11",
+    "midi_performance": "Liszt/Transcendental_Etudes/5/Park03M.mid",
+    "midi_score": "Liszt/Transcendental_Etudes/5/midi_score.mid",
+    "xml_score": "Liszt/Transcendental_Etudes/5/xml_score.musicxml"
+   },
+   "start_measure": 81,
+   "end_measure": 84,
+   "score": 1092.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Ravel\u001fGaspard_de_la_Nuit_1_Ondine",
+    "composer": "Ravel",
+    "title": "Gaspard_de_la_Nuit_1_Ondine",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "7",
+    "midi_performance": "Ravel/Gaspard_de_la_Nuit/1_Ondine/KharselM09.mid",
+    "midi_score": "Ravel/Gaspard_de_la_Nuit/1_Ondine/midi_score.mid",
+    "xml_score": "Ravel/Gaspard_de_la_Nuit/1_Ondine/xml_score.musicxml"
+   },
+   "start_measure": 174,
+   "end_measure": 177,
+   "score": 1013.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Chopin\u001fBallades_4",
+    "composer": "Chopin",
+    "title": "Ballades_4",
+    "performance_rank_in_piece": "11",
+    "performances_in_piece": "12",
+    "midi_performance": "Chopin/Ballades/4/Yang03.mid",
+    "midi_score": "Chopin/Ballades/4/midi_score.mid",
+    "xml_score": "Chopin/Ballades/4/xml_score.musicxml"
+   },
+   "start_measure": 319,
+   "end_measure": 322,
+   "score": 970.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Glinka\u001fThe_Lark",
+    "composer": "Glinka",
+    "title": "The_Lark",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "2",
+    "midi_performance": "Glinka/The_Lark/Kleisen07M.mid",
+    "midi_score": "Glinka/The_Lark/midi_score.mid",
+    "xml_score": "Glinka/The_Lark/xml_score.musicxml"
+   },
+   "start_measure": 143,
+   "end_measure": 146,
+   "score": 844.0,
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Scriabin\u001fSonatas_5",
+    "composer": "Scriabin",
+    "title": "Sonatas_5",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "7",
+    "midi_performance": "Scriabin/Sonatas/5/Na03.mid",
+    "midi_score": "Scriabin/Sonatas/5/midi_score.mid",
+    "xml_score": "Scriabin/Sonatas/5/xml_score.musicxml"
+   },
+   "start_measure": 689,
+   "end_measure": 692,
+   "score": 815.5,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schumann\u001fToccata",
+    "composer": "Schumann",
+    "title": "Toccata",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "4",
+    "midi_performance": "Schumann/Toccata/Dulu03.mid",
+    "midi_score": "Schumann/Toccata/midi_score.mid",
+    "xml_score": "Schumann/Toccata/xml_score.musicxml"
+   },
+   "start_measure": 126,
+   "end_measure": 129,
+   "score": 814.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Rachmaninoff\u001fPreludes_op_32_5",
+    "composer": "Rachmaninoff",
+    "title": "Preludes_op_32_5",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "2",
+    "midi_performance": "Rachmaninoff/Preludes_op_32/5/Namirovsky06M.mid",
+    "midi_score": "Rachmaninoff/Preludes_op_32/5/midi_score.mid",
+    "xml_score": "Rachmaninoff/Preludes_op_32/5/xml_score.musicxml"
+   },
+   "start_measure": 73,
+   "end_measure": 76,
+   "score": 630.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Mozart\u001fPiano_Sonatas_8-1",
+    "composer": "Mozart",
+    "title": "Piano_Sonatas_8-1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "5",
+    "midi_performance": "Mozart/Piano_Sonatas/8-1/Jia01.mid",
+    "midi_score": "Mozart/Piano_Sonatas/8-1/midi_score.mid",
+    "xml_score": "Mozart/Piano_Sonatas/8-1/xml_score.musicxml"
+   },
+   "start_measure": 43,
+   "end_measure": 46,
+   "score": 576.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op.90_D.899_2",
+    "composer": "Schubert",
+    "title": "Impromptu_op.90_D.899_2",
+    "performance_rank_in_piece": "5",
+    "performances_in_piece": "7",
+    "midi_performance": "Schubert/Impromptu_op.90_D.899/2/KaiRuiR05M.mid",
+    "midi_score": "Schubert/Impromptu_op.90_D.899/2/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op.90_D.899/2/xml_score.musicxml"
+   },
+   "start_measure": 31,
+   "end_measure": 34,
+   "score": 546.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Debussy\u001fImages_Book_1_1_Reflets_dans_lEau",
+    "composer": "Debussy",
+    "title": "Images_Book_1_1_Reflets_dans_lEau",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "2",
+    "midi_performance": "Debussy/Images_Book_1/1_Reflets_dans_lEau/Kleisen11M.mid",
+    "midi_score": "Debussy/Images_Book_1/1_Reflets_dans_lEau/midi_score.mid",
+    "xml_score": "Debussy/Images_Book_1/1_Reflets_dans_lEau/xml_score.musicxml"
+   },
+   "start_measure": 88,
+   "end_measure": 91,
+   "score": 543.0,
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_26-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_26-1",
+    "performance_rank_in_piece": "8",
+    "performances_in_piece": "11",
+    "midi_performance": "Beethoven/Piano_Sonatas/26-1_no_repeat/Broberg01.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/26-1_no_repeat/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/26-1_no_repeat/xml_score.musicxml"
+   },
+   "start_measure": 99,
+   "end_measure": 102,
+   "score": 507.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_32-1",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_32-1",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "5",
+    "midi_performance": "Haydn/Keyboard_Sonatas/32-1/Pavlovic02.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/32-1/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/32-1/xml_score.musicxml"
+   },
+   "start_measure": 79,
+   "end_measure": 82,
+   "score": 414.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Brahms\u001fSix_Pieces_op_118_2",
+    "composer": "Brahms",
+    "title": "Six_Pieces_op_118_2",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Brahms/Six_Pieces_op_118/2/Shilyaev03.mid",
+    "midi_score": "Brahms/Six_Pieces_op_118/2/midi_score.mid",
+    "xml_score": "Brahms/Six_Pieces_op_118/2/xml_score.musicxml"
+   },
+   "start_measure": 139,
+   "end_measure": 142,
+   "score": 357.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Bach\u001fPrelude_bwv_846",
+    "composer": "Bach",
+    "title": "Prelude_bwv_846",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Bach/Prelude/bwv_846/Shi05M.mid",
+    "midi_score": "Bach/Prelude/bwv_846/midi_score.mid",
+    "xml_score": "Bach/Prelude/bwv_846/xml_score.musicxml"
+   },
+   "start_measure": 1,
+   "end_measure": 4,
+   "score": 245.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Chopin\u001fEtudes_op_10_8",
+    "composer": "Chopin",
+    "title": "Etudes_op_10_8",
+    "performance_rank_in_piece": "13",
+    "performances_in_piece": "28",
+    "midi_performance": "Chopin/Etudes_op_10/8/LiuLangning02.mid",
+    "midi_score": "Chopin/Etudes_op_10/8/midi_score.mid",
+    "xml_score": "Chopin/Etudes_op_10/8/xml_score.musicxml"
+   },
+   "start_measure": 37,
+   "end_measure": 40,
+   "score": 957.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Ravel\u001fMiroirs_3_Une_Barque",
+    "composer": "Ravel",
+    "title": "Miroirs_3_Une_Barque",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Ravel/Miroirs/3_Une_Barque/DupreeF20.mid",
+    "midi_score": "Ravel/Miroirs/3_Une_Barque/midi_score.mid",
+    "xml_score": "Ravel/Miroirs/3_Une_Barque/xml_score.musicxml"
+   },
+   "start_measure": 200,
+   "end_measure": 203,
+   "score": 786.0,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Liszt\u001fGran_Etudes_de_Paganini_2_La_campanella",
+    "composer": "Liszt",
+    "title": "Gran_Etudes_de_Paganini_2_La_campanella",
+    "performance_rank_in_piece": "10",
+    "performances_in_piece": "29",
+    "midi_performance": "Liszt/Gran_Etudes_de_Paganini/2_La_campanella/Hao03.mid",
+    "midi_score": "Liszt/Gran_Etudes_de_Paganini/2_La_campanella/midi_score.mid",
+    "xml_score": "Liszt/Gran_Etudes_de_Paganini/2_La_campanella/xml_score.musicxml"
+   },
+   "start_measure": 162,
+   "end_measure": 165,
+   "score": 779.0,
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Liszt\u001fTranscendental_Etudes_9",
+    "composer": "Liszt",
+    "title": "Transcendental_Etudes_9",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "3",
+    "midi_performance": "Liszt/Transcendental_Etudes/9/WongDoe02_2009.mid",
+    "midi_score": "Liszt/Transcendental_Etudes/9/midi_score.mid",
+    "xml_score": "Liszt/Transcendental_Etudes/9/xml_score.musicxml"
+   },
+   "start_measure": 347,
+   "end_measure": 350,
+   "score": 552.0,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schubert\u001fPiano_Sonatas_894-2",
+    "composer": "Schubert",
+    "title": "Piano_Sonatas_894-2",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "9",
+    "midi_performance": "Schubert/Piano_Sonatas/894-2/Yeletskiy08M.mid",
+    "midi_score": "Schubert/Piano_Sonatas/894-2/midi_score.mid",
+    "xml_score": "Schubert/Piano_Sonatas/894-2/xml_score.musicxml"
+   },
+   "start_measure": 168,
+   "end_measure": 171,
+   "score": 521.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schumann\u001fArabeske",
+    "composer": "Schumann",
+    "title": "Arabeske",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "2",
+    "midi_performance": "Schumann/Arabeske/ParkS15M.mid",
+    "midi_score": "Schumann/Arabeske/midi_score.mid",
+    "xml_score": "Schumann/Arabeske/xml_score.musicxml"
+   },
+   "start_measure": 62,
+   "end_measure": 65,
+   "score": 521.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Rachmaninoff\u001fPreludes_op_23_4",
+    "composer": "Rachmaninoff",
+    "title": "Preludes_op_23_4",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "3",
+    "midi_performance": "Rachmaninoff/Preludes_op_23/4/MorozovS09.mid",
+    "midi_score": "Rachmaninoff/Preludes_op_23/4/midi_score.mid",
+    "xml_score": "Rachmaninoff/Preludes_op_23/4/xml_score.musicxml"
+   },
+   "start_measure": 67,
+   "end_measure": 70,
+   "score": 504.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schumann\u001fKreisleriana_7",
+    "composer": "Schumann",
+    "title": "Kreisleriana_7",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Schumann/Kreisleriana/7/JohannsonP08.mid",
+    "midi_score": "Schumann/Kreisleriana/7/midi_score.mid",
+    "xml_score": "Schumann/Kreisleriana/7/xml_score.musicxml"
+   },
+   "start_measure": 41,
+   "end_measure": 44,
+   "score": 502.5,
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Chopin\u001fSonata_3_2nd",
+    "composer": "Chopin",
+    "title": "Sonata_3_2nd",
+    "performance_rank_in_piece": "9",
+    "performances_in_piece": "9",
+    "midi_performance": "Chopin/Sonata_3/2nd/mikahailoff01.mid",
+    "midi_score": "Chopin/Sonata_3/2nd/midi_score.mid",
+    "xml_score": "Chopin/Sonata_3/2nd/xml_score.musicxml"
+   },
+   "start_measure": 11,
+   "end_measure": 14,
+   "score": 478.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Scriabin\u001fEtudes_op_8_11",
+    "composer": "Scriabin",
+    "title": "Etudes_op_8_11",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "3",
+    "midi_performance": "Scriabin/Etudes_op_8/11/YeF09.mid",
+    "midi_score": "Scriabin/Etudes_op_8/11/midi_score.mid",
+    "xml_score": "Scriabin/Etudes_op_8/11/xml_score.musicxml"
+   },
+   "start_measure": 61,
+   "end_measure": 64,
+   "score": 471.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op.90_D.899_3",
+    "composer": "Schubert",
+    "title": "Impromptu_op.90_D.899_3",
+    "performance_rank_in_piece": "9",
+    "performances_in_piece": "12",
+    "midi_performance": "Schubert/Impromptu_op.90_D.899/3/Woo10M.mid",
+    "midi_score": "Schubert/Impromptu_op.90_D.899/3/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op.90_D.899/3/xml_score.musicxml"
+   },
+   "start_measure": 72,
+   "end_measure": 75,
+   "score": 459.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_23-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_23-1",
+    "performance_rank_in_piece": "6",
+    "performances_in_piece": "17",
+    "midi_performance": "Beethoven/Piano_Sonatas/23-1/Huangci02.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/23-1/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/23-1/xml_score.musicxml"
+   },
+   "start_measure": 285,
+   "end_measure": 288,
+   "score": 421.5,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_5-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_5-1",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Beethoven/Piano_Sonatas/5-1/Colafelice02M.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/5-1/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/5-1/xml_score.musicxml"
+   },
+   "start_measure": 60,
+   "end_measure": 63,
+   "score": 414.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op142_1",
+    "composer": "Schubert",
+    "title": "Impromptu_op142_1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "3",
+    "midi_performance": "Schubert/Impromptu_op142/1/Kleisen10M.mid",
+    "midi_score": "Schubert/Impromptu_op142/1/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op142/1/xml_score.musicxml"
+   },
+   "start_measure": 124,
+   "end_measure": 127,
+   "score": 413.5,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_21-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_21-1",
+    "performance_rank_in_piece": "9",
+    "performances_in_piece": "25",
+    "midi_performance": "Beethoven/Piano_Sonatas/21-1_no_repeat/RichardsonC02M.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/21-1_no_repeat/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/21-1_no_repeat/xml_score.musicxml"
+   },
+   "start_measure": 115,
+   "end_measure": 118,
+   "score": 393.5,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_7-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_7-1",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "9",
+    "midi_performance": "Beethoven/Piano_Sonatas/7-1/Wang02M.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/7-1/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/7-1/xml_score.musicxml"
+   },
+   "start_measure": 91,
+   "end_measure": 94,
+   "score": 374.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_31-1",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_31-1",
+    "performance_rank_in_piece": "4",
+    "performances_in_piece": "4",
+    "midi_performance": "Haydn/Keyboard_Sonatas/31-1/Zagalskaia02.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/31-1/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/31-1/xml_score.musicxml"
+   },
+   "start_measure": 43,
+   "end_measure": 46,
+   "score": 359.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Ravel\u001fPavane",
+    "composer": "Ravel",
+    "title": "Pavane",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "2",
+    "midi_performance": "Ravel/Pavane/ChenS03.mid",
+    "midi_score": "Ravel/Pavane/midi_score.mid",
+    "xml_score": "Ravel/Pavane/xml_score.musicxml"
+   },
+   "start_measure": 154,
+   "end_measure": 157,
+   "score": 341.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_11-2",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_11-2",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Beethoven/Piano_Sonatas/11-2/MaximovI04.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/11-2/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/11-2/xml_score.musicxml"
+   },
+   "start_measure": 144,
+   "end_measure": 147,
+   "score": 334.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op142_3",
+    "composer": "Schubert",
+    "title": "Impromptu_op142_3",
+    "performance_rank_in_piece": "5",
+    "performances_in_piece": "6",
+    "midi_performance": "Schubert/Impromptu_op142/3/WangH06M.mid",
+    "midi_score": "Schubert/Impromptu_op142/3/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op142/3/xml_score.musicxml"
+   },
+   "start_measure": 599,
+   "end_measure": 602,
+   "score": 323.0,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Mozart\u001fFantasie_475",
+    "composer": "Mozart",
+    "title": "Fantasie_475",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Mozart/Fantasie_475/Huangci05M.mid",
+    "midi_score": "Mozart/Fantasie_475/midi_score.mid",
+    "xml_score": "Mozart/Fantasie_475/xml_score.musicxml"
+   },
+   "start_measure": 329,
+   "end_measure": 332,
+   "score": 311.0,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "validation",
+    "piece_key": "Rachmaninoff\u001fPreludes_op_23_6",
+    "composer": "Rachmaninoff",
+    "title": "Preludes_op_23_6",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Rachmaninoff/Preludes_op_23/6/Nikiforov14M.mid",
+    "midi_score": "Rachmaninoff/Preludes_op_23/6/midi_score.mid",
+    "xml_score": "Rachmaninoff/Preludes_op_23/6/xml_score.musicxml"
+   },
+   "start_measure": 49,
+   "end_measure": 52,
+   "score": 298.5,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Mozart\u001fPiano_Sonatas_12-1",
+    "composer": "Mozart",
+    "title": "Piano_Sonatas_12-1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "4",
+    "midi_performance": "Mozart/Piano_Sonatas/12-1/MunA03M.mid",
+    "midi_score": "Mozart/Piano_Sonatas/12-1/midi_score.mid",
+    "xml_score": "Mozart/Piano_Sonatas/12-1/xml_score.musicxml"
+   },
+   "start_measure": 95,
+   "end_measure": 98,
+   "score": 262.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Schumann\u001fKreisleriana_6",
+    "composer": "Schumann",
+    "title": "Kreisleriana_6",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Schumann/Kreisleriana/6/JohannsonP07.mid",
+    "midi_score": "Schumann/Kreisleriana/6/midi_score.mid",
+    "xml_score": "Schumann/Kreisleriana/6/xml_score.musicxml"
+   },
+   "start_measure": 118,
+   "end_measure": 121,
+   "score": 251.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_39-2",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_39-2",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Haydn/Keyboard_Sonatas/39-2/Yarden07.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/39-2/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/39-2/xml_score.musicxml"
+   },
+   "start_measure": 333,
+   "end_measure": 336,
+   "score": 229.0,
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558
+  }
+ ]
+}
