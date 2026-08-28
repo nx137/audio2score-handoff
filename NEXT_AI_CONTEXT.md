@@ -55,3 +55,16 @@ C 阶段只读 `data/asap_piece_manifest.csv` 中 `split == test` 的 120 条演
 - MusicXML tie 对账必须将 tie-chain 合并；不要把跨小节拆分记作“多写音”。
 - 历史运行曾因磁盘不足中断。完整证据很大；新实验开始前确认至少 12 GB 空闲空间。
 - 旧脚本或历史 config 中可能保留旧机器绝对路径；新运行必须改为本包根目录下的相对路径。当前 `tools/transcribe_wav.py` 已做到这一点。
+
+
+## 踏板金标准（2026-08-28 正式版）
+
+- 正式金标准：`outputs/pedal_gold_standard/formal_20260828_v1/`，40 片段 / 4672 事件 / 12 作曲家（train 34 / validation 6）；`selection.json` 冻结（per_composer=10、ref≥10、排除 pilot 作品）。
+- 管线：`select_gold_standard.py` → `validate_selection.py` → `precompute_alignments.py`（外部对齐冻结 `_alignments/`）→ `build_formal_segments.py --index N [--skip-render]`（候选生成窗口裁剪 ±16 QL，已验证窗口内输出与全曲一致）→ `prefill_events.py`（语义三列）→ `annotate_events.py`（决策三列）→ `evaluate_gold_standard.py`。
+- 标注：六列全填；uncertain 131/4672（2.8%）；review_class：notation-shortening 1775 / pedal-only 1479 / independent-voice 136 / blank 1282；报告 `annotation_report_v1.md`。
+- 评测（`evaluation/gold_standard_eval_v1.{json,md}`）：rule 时值一致率 43.5% > learned 34.3%（LightGBM 候选模型无正向增益，与 CC64 消融一致）；踏板 start F1 0.36–0.41 / stop F1 0.22–0.23；语义错配 acoustic-yes&score-none 3334、perf-change&score-none 864。
+- 已知注意：
+  1. `p4_learned` 必须在装有 `lightgbm` 的环境生成（缺包会静默回退规则评分，曾导致 rule/learned 结果相同）。
+  2. 评测/报告输出必须写在 `outputs/` 内（sparse-checkout cone）；`results/` 不在 cone，git 不会跟踪。
+  3. 并行构建有 `build_log.json` 写竞争风险（按 index 去重），慢片段可串行重跑补录。
+- 待办：inter-annotator agreement 未做（论文声明"规则预填+专家复核"）；SVG 渲染可后补；token（github_pat_... 过期 2026-09-27）用完后请 revoke。
