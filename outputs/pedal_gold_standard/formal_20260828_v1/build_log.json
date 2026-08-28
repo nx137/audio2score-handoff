@@ -54,138 +54,6 @@
   }
  },
  {
-  "index": 11,
-  "segment_id": "Bach_Prelude_bwv_846_2",
-  "built_at": "2026-08-28T13:32:46",
-  "elapsed_sec": 0.7,
-  "selection_score": 245.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Bach\u001fPrelude_bwv_846",
-   "composer": "Bach",
-   "title": "Prelude_bwv_846",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "1",
-   "midi_performance": "Bach/Prelude/bwv_846/Shi05M.mid",
-   "midi_score": "Bach/Prelude/bwv_846/midi_score.mid",
-   "xml_score": "Bach/Prelude/bwv_846/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 1,
-   "end_measure": 4,
-   "start_ql": 4.0,
-   "end_ql": 20.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 245.0,
-   "alignment": {
-    "rows": 544
-   },
-   "candidate_stats": {
-    "rows": 300,
-    "events": 76,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 1,
-    "reference-duration-not-candidate": 65,
-    "labeled": 6,
-    "ambiguous-candidate": 4
-   }
-  }
- },
- {
-  "index": 12,
-  "segment_id": "Chopin_Sonata_3_4th_109",
-  "built_at": "2026-08-28T13:32:48",
-  "elapsed_sec": 2.5,
-  "selection_score": 903.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Chopin\u001fSonata_3_4th",
-   "composer": "Chopin",
-   "title": "Sonata_3_4th",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "9",
-   "midi_performance": "Chopin/Sonata_3/4th/GarritsonL11M.mid",
-   "midi_score": "Chopin/Sonata_3/4th/midi_score.mid",
-   "xml_score": "Chopin/Sonata_3/4th/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 108,
-   "end_measure": 111,
-   "start_ql": 432.0,
-   "end_ql": 448.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 903.0,
-   "alignment": {
-    "rows": 1290
-   },
-   "candidate_stats": {
-    "rows": 1489,
-    "events": 529,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 500,
-    "reference-duration-not-candidate": 13,
-    "labeled": 11,
-    "ambiguous-candidate": 5
-   }
-  }
- },
- {
-  "index": 17,
-  "segment_id": "Chopin_Etudes_op_10_1_51",
-  "built_at": "2026-08-28T13:33:16",
-  "elapsed_sec": 1.3,
-  "selection_score": 616.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Chopin\u001fEtudes_op_10_1",
-   "composer": "Chopin",
-   "title": "Etudes_op_10_1",
-   "performance_rank_in_piece": "17",
-   "performances_in_piece": "24",
-   "midi_performance": "Chopin/Etudes_op_10/1/SunY03M.mid",
-   "midi_score": "Chopin/Etudes_op_10/1/midi_score.mid",
-   "xml_score": "Chopin/Etudes_op_10/1/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 50,
-   "end_measure": 53,
-   "start_ql": 200.0,
-   "end_ql": 216.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 616.0,
-   "alignment": {
-    "rows": 1328
-   },
-   "candidate_stats": {
-    "rows": 596,
-    "events": 245,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "ambiguous-candidate": 124,
-    "labeled": 82,
-    "unmatched": 18,
-    "reference-duration-not-candidate": 21
-   }
-  }
- },
- {
   "index": 21,
   "segment_id": "Beethoven_Piano_Sonatas_29-2_31",
   "built_at": "2026-08-28T13:33:17",
@@ -226,312 +94,6 @@
     "labeled": 31,
     "reference-duration-not-candidate": 18,
     "ambiguous-candidate": 23
-   }
-  }
- },
- {
-  "index": 16,
-  "segment_id": "Chopin_Etudes_op_10_5_79",
-  "built_at": "2026-08-28T13:33:17",
-  "elapsed_sec": 2.4,
-  "selection_score": 631.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Chopin\u001fEtudes_op_10_5",
-   "composer": "Chopin",
-   "title": "Etudes_op_10_5",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "11",
-   "midi_performance": "Chopin/Etudes_op_10/5/Bach02.mid",
-   "midi_score": "Chopin/Etudes_op_10/5/midi_score.mid",
-   "xml_score": "Chopin/Etudes_op_10/5/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 78,
-   "end_measure": 81,
-   "start_ql": 156.0,
-   "end_ql": 164.0,
-   "bar_ql": 2.0,
-   "time_signature": [
-    2,
-    4
-   ],
-   "tempo_bpm": 117.00011700011699,
-   "selection_score": 631.0,
-   "alignment": {
-    "rows": 1582
-   },
-   "candidate_stats": {
-    "rows": 710,
-    "events": 299,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "ambiguous-candidate": 98,
-    "labeled": 158,
-    "unmatched": 31,
-    "reference-duration-not-candidate": 12
-   }
-  }
- },
- {
-  "index": 15,
-  "segment_id": "Schumann_Kreisleriana_5_56",
-  "built_at": "2026-08-28T13:33:17",
-  "elapsed_sec": 2.7,
-  "selection_score": 635.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Schumann\u001fKreisleriana_5",
-   "composer": "Schumann",
-   "title": "Kreisleriana_5",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "2",
-   "midi_performance": "Schumann/Kreisleriana/5/Yarden09.mid",
-   "midi_score": "Schumann/Kreisleriana/5/midi_score.mid",
-   "xml_score": "Schumann/Kreisleriana/5/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 55,
-   "end_measure": 58,
-   "start_ql": 220.0,
-   "end_ql": 236.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 116.99988885010558,
-   "selection_score": 635.0,
-   "alignment": {
-    "rows": 208
-   },
-   "candidate_stats": {
-    "rows": 754,
-    "events": 240,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 231,
-    "ambiguous-candidate": 2,
-    "reference-duration-not-candidate": 7
-   }
-  }
- },
- {
-  "index": 13,
-  "segment_id": "Chopin_Etudes_op_25_12_2",
-  "built_at": "2026-08-28T13:33:17",
-  "elapsed_sec": 2.9,
-  "selection_score": 768.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Chopin\u001fEtudes_op_25_12",
-   "composer": "Chopin",
-   "title": "Etudes_op_25_12",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "9",
-   "midi_performance": "Chopin/Etudes_op_25/12/BorickC04M.mid",
-   "midi_score": "Chopin/Etudes_op_25/12/midi_score.mid",
-   "xml_score": "Chopin/Etudes_op_25/12/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 1,
-   "end_measure": 4,
-   "start_ql": 4.0,
-   "end_ql": 20.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 768.5,
-   "alignment": {
-    "rows": 2296
-   },
-   "candidate_stats": {
-    "rows": 712,
-    "events": 345,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "ambiguous-candidate": 153,
-    "labeled": 161,
-    "unmatched": 20,
-    "reference-duration-not-candidate": 11
-   }
-  }
- },
- {
-  "index": 19,
-  "segment_id": "Schubert_Impromptu_op.90_D.899_2_133",
-  "built_at": "2026-08-28T13:33:18",
-  "elapsed_sec": 3.8,
-  "selection_score": 577.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Schubert\u001fImpromptu_op.90_D.899_2",
-   "composer": "Schubert",
-   "title": "Impromptu_op.90_D.899_2",
-   "performance_rank_in_piece": "7",
-   "performances_in_piece": "7",
-   "midi_performance": "Schubert/Impromptu_op.90_D.899/2/Nikiforov09M.mid",
-   "midi_score": "Schubert/Impromptu_op.90_D.899/2/midi_score.mid",
-   "xml_score": "Schubert/Impromptu_op.90_D.899/2/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 132,
-   "end_measure": 135,
-   "start_ql": 528.0,
-   "end_ql": 544.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 577.0,
-   "alignment": {
-    "rows": 341
-   },
-   "candidate_stats": {
-    "rows": 842,
-    "events": 280,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 233,
-    "ambiguous-candidate": 4,
-    "labeled": 9,
-    "reference-duration-not-candidate": 34
-   }
-  }
- },
- {
-  "index": 18,
-  "segment_id": "Beethoven_Piano_Sonatas_26-3_96",
-  "built_at": "2026-08-28T13:33:19",
-  "elapsed_sec": 4.1,
-  "selection_score": 607.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Beethoven\u001fPiano_Sonatas_26-3",
-   "composer": "Beethoven",
-   "title": "Piano_Sonatas_26-3",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "4",
-   "midi_performance": "Beethoven/Piano_Sonatas/26-3/LEE_K05.mid",
-   "midi_score": "Beethoven/Piano_Sonatas/26-3/midi_score.mid",
-   "xml_score": "Beethoven/Piano_Sonatas/26-3/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 95,
-   "end_measure": 98,
-   "start_ql": 380.0,
-   "end_ql": 396.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 116.99988885010558,
-   "selection_score": 607.5,
-   "alignment": {
-    "rows": 1765
-   },
-   "candidate_stats": {
-    "rows": 913,
-    "events": 345,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 334,
-    "ambiguous-candidate": 6,
-    "reference-duration-not-candidate": 3,
-    "labeled": 2
-   }
-  }
- },
- {
-  "index": 14,
-  "segment_id": "Schubert_Impromptu_op.90_D.899_1_155",
-  "built_at": "2026-08-28T13:33:19",
-  "elapsed_sec": 4.2,
-  "selection_score": 637.0,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Schubert\u001fImpromptu_op.90_D.899_1",
-   "composer": "Schubert",
-   "title": "Impromptu_op.90_D.899_1",
-   "performance_rank_in_piece": "2",
-   "performances_in_piece": "4",
-   "midi_performance": "Schubert/Impromptu_op.90_D.899/1/Jin05M.mid",
-   "midi_score": "Schubert/Impromptu_op.90_D.899/1/midi_score.mid",
-   "xml_score": "Schubert/Impromptu_op.90_D.899/1/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 154,
-   "end_measure": 157,
-   "start_ql": 616.0,
-   "end_ql": 632.0,
-   "bar_ql": 4.0,
-   "time_signature": [
-    4,
-    4
-   ],
-   "tempo_bpm": 120.0,
-   "selection_score": 637.0,
-   "alignment": {
-    "rows": 3459
-   },
-   "candidate_stats": {
-    "rows": 1029,
-    "events": 399,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "labeled": 54,
-    "ambiguous-candidate": 46,
-    "unmatched": 212,
-    "reference-duration-not-candidate": 87
-   }
-  }
- },
- {
-  "index": 20,
-  "segment_id": "Liszt_Transcendental_Etudes_9_67",
-  "built_at": "2026-08-28T13:33:19",
-  "elapsed_sec": 4.4,
-  "selection_score": 570.5,
-  "manifest": {
-   "split": "train",
-   "piece_key": "Liszt\u001fTranscendental_Etudes_9",
-   "composer": "Liszt",
-   "title": "Transcendental_Etudes_9",
-   "performance_rank_in_piece": "1",
-   "performances_in_piece": "3",
-   "midi_performance": "Liszt/Transcendental_Etudes/9/ADIG07.mid",
-   "midi_score": "Liszt/Transcendental_Etudes/9/midi_score.mid",
-   "xml_score": "Liszt/Transcendental_Etudes/9/xml_score.musicxml"
-  },
-  "metadata": {
-   "start_measure": 66,
-   "end_measure": 69,
-   "start_ql": 132.0,
-   "end_ql": 140.0,
-   "bar_ql": 2.0,
-   "time_signature": [
-    2,
-    4
-   ],
-   "tempo_bpm": 117.00011700011702,
-   "selection_score": 570.5,
-   "alignment": {
-    "rows": 151
-   },
-   "candidate_stats": {
-    "rows": 595,
-    "events": 261,
-    "alignment_method": "external",
-    "merged_duplicate_events": 0,
-    "unmatched": 256,
-    "reference-duration-not-candidate": 4,
-    "labeled": 1
    }
   }
  },
@@ -1764,6 +1326,444 @@
     "unmatched": 72,
     "labeled": 147,
     "reference-duration-not-candidate": 31
+   }
+  }
+ },
+ {
+  "index": 11,
+  "segment_id": "Bach_Prelude_bwv_846_2",
+  "built_at": "2026-08-28T13:39:05",
+  "elapsed_sec": 10.1,
+  "selection_score": 245.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Bach\u001fPrelude_bwv_846",
+   "composer": "Bach",
+   "title": "Prelude_bwv_846",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Bach/Prelude/bwv_846/Shi05M.mid",
+   "midi_score": "Bach/Prelude/bwv_846/midi_score.mid",
+   "xml_score": "Bach/Prelude/bwv_846/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 1,
+   "end_measure": 4,
+   "start_ql": 4.0,
+   "end_ql": 20.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 245.0,
+   "alignment": {
+    "rows": 544
+   },
+   "candidate_stats": {
+    "rows": 300,
+    "events": 76,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 1,
+    "reference-duration-not-candidate": 65,
+    "labeled": 6,
+    "ambiguous-candidate": 4
+   }
+  }
+ },
+ {
+  "index": 16,
+  "segment_id": "Chopin_Etudes_op_10_5_79",
+  "built_at": "2026-08-28T13:39:06",
+  "elapsed_sec": 11.0,
+  "selection_score": 631.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fEtudes_op_10_5",
+   "composer": "Chopin",
+   "title": "Etudes_op_10_5",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "11",
+   "midi_performance": "Chopin/Etudes_op_10/5/Bach02.mid",
+   "midi_score": "Chopin/Etudes_op_10/5/midi_score.mid",
+   "xml_score": "Chopin/Etudes_op_10/5/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 78,
+   "end_measure": 81,
+   "start_ql": 156.0,
+   "end_ql": 164.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "selection_score": 631.0,
+   "alignment": {
+    "rows": 1582
+   },
+   "candidate_stats": {
+    "rows": 710,
+    "events": 299,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 98,
+    "labeled": 158,
+    "unmatched": 31,
+    "reference-duration-not-candidate": 12
+   }
+  }
+ },
+ {
+  "index": 17,
+  "segment_id": "Chopin_Etudes_op_10_1_51",
+  "built_at": "2026-08-28T13:39:06",
+  "elapsed_sec": 11.7,
+  "selection_score": 616.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fEtudes_op_10_1",
+   "composer": "Chopin",
+   "title": "Etudes_op_10_1",
+   "performance_rank_in_piece": "17",
+   "performances_in_piece": "24",
+   "midi_performance": "Chopin/Etudes_op_10/1/SunY03M.mid",
+   "midi_score": "Chopin/Etudes_op_10/1/midi_score.mid",
+   "xml_score": "Chopin/Etudes_op_10/1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 50,
+   "end_measure": 53,
+   "start_ql": 200.0,
+   "end_ql": 216.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 616.0,
+   "alignment": {
+    "rows": 1328
+   },
+   "candidate_stats": {
+    "rows": 596,
+    "events": 245,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 124,
+    "labeled": 82,
+    "unmatched": 18,
+    "reference-duration-not-candidate": 21
+   }
+  }
+ },
+ {
+  "index": 13,
+  "segment_id": "Chopin_Etudes_op_25_12_2",
+  "built_at": "2026-08-28T13:39:07",
+  "elapsed_sec": 11.9,
+  "selection_score": 768.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fEtudes_op_25_12",
+   "composer": "Chopin",
+   "title": "Etudes_op_25_12",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "9",
+   "midi_performance": "Chopin/Etudes_op_25/12/BorickC04M.mid",
+   "midi_score": "Chopin/Etudes_op_25/12/midi_score.mid",
+   "xml_score": "Chopin/Etudes_op_25/12/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 1,
+   "end_measure": 4,
+   "start_ql": 4.0,
+   "end_ql": 20.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 768.5,
+   "alignment": {
+    "rows": 2296
+   },
+   "candidate_stats": {
+    "rows": 712,
+    "events": 345,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 153,
+    "labeled": 161,
+    "unmatched": 20,
+    "reference-duration-not-candidate": 11
+   }
+  }
+ },
+ {
+  "index": 15,
+  "segment_id": "Schumann_Kreisleriana_5_56",
+  "built_at": "2026-08-28T13:39:07",
+  "elapsed_sec": 12.1,
+  "selection_score": 635.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Schumann\u001fKreisleriana_5",
+   "composer": "Schumann",
+   "title": "Kreisleriana_5",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "2",
+   "midi_performance": "Schumann/Kreisleriana/5/Yarden09.mid",
+   "midi_score": "Schumann/Kreisleriana/5/midi_score.mid",
+   "xml_score": "Schumann/Kreisleriana/5/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 55,
+   "end_measure": 58,
+   "start_ql": 220.0,
+   "end_ql": 236.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "selection_score": 635.0,
+   "alignment": {
+    "rows": 208
+   },
+   "candidate_stats": {
+    "rows": 754,
+    "events": 240,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 231,
+    "ambiguous-candidate": 2,
+    "reference-duration-not-candidate": 7
+   }
+  }
+ },
+ {
+  "index": 20,
+  "segment_id": "Liszt_Transcendental_Etudes_9_67",
+  "built_at": "2026-08-28T13:39:07",
+  "elapsed_sec": 12.5,
+  "selection_score": 570.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Liszt\u001fTranscendental_Etudes_9",
+   "composer": "Liszt",
+   "title": "Transcendental_Etudes_9",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "3",
+   "midi_performance": "Liszt/Transcendental_Etudes/9/ADIG07.mid",
+   "midi_score": "Liszt/Transcendental_Etudes/9/midi_score.mid",
+   "xml_score": "Liszt/Transcendental_Etudes/9/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 66,
+   "end_measure": 69,
+   "start_ql": 132.0,
+   "end_ql": 140.0,
+   "bar_ql": 2.0,
+   "time_signature": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "selection_score": 570.5,
+   "alignment": {
+    "rows": 151
+   },
+   "candidate_stats": {
+    "rows": 595,
+    "events": 261,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 256,
+    "reference-duration-not-candidate": 4,
+    "labeled": 1
+   }
+  }
+ },
+ {
+  "index": 14,
+  "segment_id": "Schubert_Impromptu_op.90_D.899_1_155",
+  "built_at": "2026-08-28T13:39:08",
+  "elapsed_sec": 12.8,
+  "selection_score": 637.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Schubert\u001fImpromptu_op.90_D.899_1",
+   "composer": "Schubert",
+   "title": "Impromptu_op.90_D.899_1",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "4",
+   "midi_performance": "Schubert/Impromptu_op.90_D.899/1/Jin05M.mid",
+   "midi_score": "Schubert/Impromptu_op.90_D.899/1/midi_score.mid",
+   "xml_score": "Schubert/Impromptu_op.90_D.899/1/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 154,
+   "end_measure": 157,
+   "start_ql": 616.0,
+   "end_ql": 632.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 637.0,
+   "alignment": {
+    "rows": 3459
+   },
+   "candidate_stats": {
+    "rows": 1029,
+    "events": 399,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 54,
+    "ambiguous-candidate": 46,
+    "unmatched": 212,
+    "reference-duration-not-candidate": 87
+   }
+  }
+ },
+ {
+  "index": 19,
+  "segment_id": "Schubert_Impromptu_op.90_D.899_2_133",
+  "built_at": "2026-08-28T13:39:08",
+  "elapsed_sec": 12.8,
+  "selection_score": 577.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Schubert\u001fImpromptu_op.90_D.899_2",
+   "composer": "Schubert",
+   "title": "Impromptu_op.90_D.899_2",
+   "performance_rank_in_piece": "7",
+   "performances_in_piece": "7",
+   "midi_performance": "Schubert/Impromptu_op.90_D.899/2/Nikiforov09M.mid",
+   "midi_score": "Schubert/Impromptu_op.90_D.899/2/midi_score.mid",
+   "xml_score": "Schubert/Impromptu_op.90_D.899/2/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 132,
+   "end_measure": 135,
+   "start_ql": 528.0,
+   "end_ql": 544.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 577.0,
+   "alignment": {
+    "rows": 341
+   },
+   "candidate_stats": {
+    "rows": 842,
+    "events": 280,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 233,
+    "ambiguous-candidate": 4,
+    "labeled": 9,
+    "reference-duration-not-candidate": 34
+   }
+  }
+ },
+ {
+  "index": 18,
+  "segment_id": "Beethoven_Piano_Sonatas_26-3_96",
+  "built_at": "2026-08-28T13:39:08",
+  "elapsed_sec": 13.2,
+  "selection_score": 607.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Beethoven\u001fPiano_Sonatas_26-3",
+   "composer": "Beethoven",
+   "title": "Piano_Sonatas_26-3",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "4",
+   "midi_performance": "Beethoven/Piano_Sonatas/26-3/LEE_K05.mid",
+   "midi_score": "Beethoven/Piano_Sonatas/26-3/midi_score.mid",
+   "xml_score": "Beethoven/Piano_Sonatas/26-3/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 95,
+   "end_measure": 98,
+   "start_ql": 380.0,
+   "end_ql": 396.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 116.99988885010558,
+   "selection_score": 607.5,
+   "alignment": {
+    "rows": 1765
+   },
+   "candidate_stats": {
+    "rows": 913,
+    "events": 345,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 334,
+    "ambiguous-candidate": 6,
+    "reference-duration-not-candidate": 3,
+    "labeled": 2
+   }
+  }
+ },
+ {
+  "index": 12,
+  "segment_id": "Chopin_Sonata_3_4th_109",
+  "built_at": "2026-08-28T13:39:08",
+  "elapsed_sec": 13.6,
+  "selection_score": 903.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fSonata_3_4th",
+   "composer": "Chopin",
+   "title": "Sonata_3_4th",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "9",
+   "midi_performance": "Chopin/Sonata_3/4th/GarritsonL11M.mid",
+   "midi_score": "Chopin/Sonata_3/4th/midi_score.mid",
+   "xml_score": "Chopin/Sonata_3/4th/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 108,
+   "end_measure": 111,
+   "start_ql": 432.0,
+   "end_ql": 448.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 903.0,
+   "alignment": {
+    "rows": 1290
+   },
+   "candidate_stats": {
+    "rows": 1489,
+    "events": 529,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 500,
+    "reference-duration-not-candidate": 13,
+    "labeled": 11,
+    "ambiguous-candidate": 5
    }
   }
  }
