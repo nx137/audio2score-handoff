@@ -842,6 +842,160 @@
    ],
    "tempo_bpm": 116.99988885010558,
    "error": null
+  },
+  "60": {
+   "window": [
+    31,
+    34,
+    546.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "61": {
+   "window": [
+    168,
+    171,
+    521.5
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "62": {
+   "window": [
+    72,
+    75,
+    459.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "63": {
+   "window": [
+    599,
+    602,
+    323.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "64": {
+   "window": [
+    124,
+    127,
+    413.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "65": {
+   "window": [
+    118,
+    121,
+    251.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "66": {
+   "window": [
+    133,
+    136,
+    550.5
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00011700011702,
+   "error": null
+  },
+  "67": {
+   "window": [
+    62,
+    65,
+    521.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "error": null
+  },
+  "68": {
+   "window": [
+    126,
+    129,
+    814.0
+   ],
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "69": {
+   "window": [
+    41,
+    44,
+    502.5
+   ],
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 117.00011700011699,
+   "error": null
+  },
+  "70": {
+   "window": [
+    126,
+    129,
+    491.0
+   ],
+   "bar_ql": 2.0,
+   "time_sig": [
+    2,
+    4
+   ],
+   "tempo_bpm": 117.00034515101821,
+   "error": null
   }
  }
 }
