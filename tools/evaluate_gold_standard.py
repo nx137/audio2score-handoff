@@ -108,10 +108,13 @@ def match_gold(gold: list[dict], notes: list[dict]) -> tuple[int, int]:
 
 def eval_segment(sid: str) -> dict:
     sd = BASE / sid
+    meta = json.loads((sd / "segment_metadata.json").read_text(encoding="utf-8"))
+    start_ql = float(meta["start_ql"])
     with (sd / "events.csv").open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
     gold = [{"hand": r["hand"], "pitch": int(r["pitch"]),
-             "onset": float(r["onset_ql"]), "notation": float(r["notation_decision"])}
+             "onset": float(r["onset_ql"]) - start_ql,  # absolute -> segment-local
+             "notation": float(r["notation_decision"])}
             for r in rows if r["notation_decision"]]
     feas = sum(1 for r in rows
                if float(r["notation_decision"]) in
@@ -129,8 +132,8 @@ def eval_segment(sid: str) -> dict:
         notes = parse_notes(sd / f"{pipe}.musicxml")
         matched, dur_ok = match_gold(gold, notes)
         ped = parse_pedals(sd / f"{pipe}.musicxml")
-        starts = [o for t, o in ped if t == "start"]
-        stops = [o for t, o in ped if t == "stop"]
+        starts = [o + start_ql for t, o in ped if t == "start"]
+        stops = [o + start_ql for t, o in ped if t == "stop"]
         tp_s = sum(1 for s in starts if any(abs(s - x) <= PEDAL_TOL for x in perf_starts))
         tp_p = sum(1 for s in stops if any(abs(s - x) <= PEDAL_TOL for x in perf_stops))
         pr_s = tp_s / len(starts) if starts else 1.0
