@@ -631,10 +631,18 @@ def main() -> int:
     parser.add_argument("--count", type=int, default=5)
     parser.add_argument("--seed", type=int, default=20260820)
     parser.add_argument("--max-attempts", type=int, default=20)
+    parser.add_argument("--selection", default=None,
+                        help="frozen selection JSON (from tools/select_gold_standard.py); "
+                             "skips the expensive selection pass")
     args = parser.parse_args()
 
-    rows = load_train_validation(Path(args.manifest))
-    selected = select_segments(rows, args.count * 3, args.seed)
+    if args.selection:
+        payload = json.loads(Path(args.selection).read_text(encoding="utf-8"))
+        segments = payload["segments"] if isinstance(payload, dict) else payload
+        selected = [Segment(**item) for item in segments]
+    else:
+        rows = load_train_validation(Path(args.manifest))
+        selected = select_segments(rows, args.count * 3, args.seed)
     out_root = Path(args.out)
     out_root.mkdir(parents=True, exist_ok=True)
 
