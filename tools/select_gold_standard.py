@@ -77,12 +77,14 @@ def main() -> int:
     results = progress.setdefault("results", {})
     for index, row in enumerate(pool):
         key = str(index)
-        if key in results:
+        if key in results and results[key].get("bar_ql") is not None:
             continue
         try:
             records, pedals, time_sig, bar_ql, measure_count, tempo_bpm = analyze_performance(row)
             window = best_window(records, pedals, bar_ql, measure_count)
-            results[key] = {"window": window, "error": None}
+            results[key] = {"window": window, "bar_ql": bar_ql,
+                            "time_sig": list(time_sig), "tempo_bpm": tempo_bpm,
+                            "error": None}
         except Exception as exc:  # noqa: BLE001 - record and continue
             results[key] = {"window": None, "error": str(exc)[:300]}
         if time.time() - start > args.time_budget:
@@ -104,13 +106,10 @@ def main() -> int:
         if not window:
             continue
         start_measure, end_measure, score = window
-        try:
-            records, pedals, time_sig, bar_ql, measure_count, tempo_bpm = analyze_performance(row)
-        except Exception:  # noqa: BLE001
-            continue
         candidates.append(Segment(
             row=row, start_measure=start_measure, end_measure=end_measure,
-            score=score, bar_ql=bar_ql, time_sig=time_sig, tempo_bpm=tempo_bpm,
+            score=score, bar_ql=entry["bar_ql"],
+            time_sig=tuple(entry["time_sig"]), tempo_bpm=entry["tempo_bpm"],
         ))
     candidates.sort(key=lambda item: item.score, reverse=True)
 
