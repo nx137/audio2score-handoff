@@ -1,0 +1,38 @@
+{
+  "segment_id": "Schubert_Impromptu_op.90_D.899_3_54",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op.90_D.899_3",
+    "composer": "Schubert",
+    "title": "Impromptu_op.90_D.899_3",
+    "performance_rank_in_piece": "10",
+    "performances_in_piece": "12",
+    "midi_performance": "Schubert/Impromptu_op.90_D.899/3/WuuE10M.mid",
+    "midi_score": "Schubert/Impromptu_op.90_D.899/3/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op.90_D.899/3/xml_score.musicxml"
+  },
+  "start_measure": 53,
+  "end_measure": 56,
+  "start_ql": 212.0,
+  "end_ql": 228.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 441.0,
+  "alignment": {
+    "rows": 1426
+  },
+  "candidate_stats": {
+    "rows": 691,
+    "events": 199,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 69,
+    "unmatched": 68,
+    "labeled": 23,
+    "reference-duration-not-candidate": 39
+  }
+}

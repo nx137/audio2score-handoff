@@ -1,0 +1,3 @@
+interval_index,start_ql,end_ql,start_location,end_location,clipped_start_ql,clipped_end_ql,retake_gap_ql
+188,552.638021,586.929688,m.277 beat 1.638,m.294 beat 1.930,580.000000,586.929688,
+189,587.205729,588.953125,m.294 beat 2.206,m.295 beat 1.953,587.205729,588.000000,0.276042

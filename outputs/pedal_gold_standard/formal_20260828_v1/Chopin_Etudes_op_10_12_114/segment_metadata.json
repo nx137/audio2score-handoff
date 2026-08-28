@@ -1,0 +1,38 @@
+{
+  "segment_id": "Chopin_Etudes_op_10_12_114",
+  "manifest": {
+    "split": "validation",
+    "piece_key": "Chopin\u001fEtudes_op_10_12",
+    "composer": "Chopin",
+    "title": "Etudes_op_10_12",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "13",
+    "midi_performance": "Chopin/Etudes_op_10/12/Floril02.mid",
+    "midi_score": "Chopin/Etudes_op_10/12/midi_score.mid",
+    "xml_score": "Chopin/Etudes_op_10/12/xml_score.musicxml"
+  },
+  "start_measure": 113,
+  "end_measure": 116,
+  "start_ql": 226.0,
+  "end_ql": 234.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 316.5,
+  "alignment": {
+    "rows": 1986
+  },
+  "candidate_stats": {
+    "rows": 762,
+    "events": 288,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 25,
+    "ambiguous-candidate": 122,
+    "reference-duration-not-candidate": 37,
+    "labeled": 104
+  }
+}

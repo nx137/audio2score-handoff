@@ -1,0 +1,38 @@
+{
+  "segment_id": "Liszt_Gran_Etudes_de_Paganini_6_Theme_and_Variations_147",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Liszt\u001fGran_Etudes_de_Paganini_6_Theme_and_Variations",
+    "composer": "Liszt",
+    "title": "Gran_Etudes_de_Paganini_6_Theme_and_Variations",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "5",
+    "midi_performance": "Liszt/Gran_Etudes_de_Paganini/6_Theme_and_Variations/Krasnitsky03.mid",
+    "midi_score": "Liszt/Gran_Etudes_de_Paganini/6_Theme_and_Variations/midi_score.mid",
+    "xml_score": "Liszt/Gran_Etudes_de_Paganini/6_Theme_and_Variations/xml_score.musicxml"
+  },
+  "start_measure": 146,
+  "end_measure": 149,
+  "start_ql": 292.0,
+  "end_ql": 300.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 508.0,
+  "alignment": {
+    "rows": 3799
+  },
+  "candidate_stats": {
+    "rows": 1111,
+    "events": 451,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 275,
+    "labeled": 52,
+    "unmatched": 100,
+    "reference-duration-not-candidate": 24
+  }
+}

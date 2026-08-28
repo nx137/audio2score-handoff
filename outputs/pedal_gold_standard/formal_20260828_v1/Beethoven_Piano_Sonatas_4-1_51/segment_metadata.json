@@ -1,0 +1,38 @@
+{
+  "segment_id": "Beethoven_Piano_Sonatas_4-1_51",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_4-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_4-1",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "9",
+    "midi_performance": "Beethoven/Piano_Sonatas/4-1/Shamray01.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/4-1/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/4-1/xml_score.musicxml"
+  },
+  "start_measure": 50,
+  "end_measure": 53,
+  "start_ql": 200.0,
+  "end_ql": 216.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 389.0,
+  "alignment": {
+    "rows": 3875
+  },
+  "candidate_stats": {
+    "rows": 700,
+    "events": 343,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 139,
+    "ambiguous-candidate": 155,
+    "unmatched": 8,
+    "reference-duration-not-candidate": 41
+  }
+}

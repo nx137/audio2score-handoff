@@ -1,0 +1,38 @@
+{
+  "segment_id": "Haydn_Keyboard_Sonatas_32-1_28",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Haydn\u001fKeyboard_Sonatas_32-1",
+    "composer": "Haydn",
+    "title": "Keyboard_Sonatas_32-1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "5",
+    "midi_performance": "Haydn/Keyboard_Sonatas/32-1/SUDBIN01.mid",
+    "midi_score": "Haydn/Keyboard_Sonatas/32-1/midi_score.mid",
+    "xml_score": "Haydn/Keyboard_Sonatas/32-1/xml_score.musicxml"
+  },
+  "start_measure": 27,
+  "end_measure": 30,
+  "start_ql": 81.0,
+  "end_ql": 93.0,
+  "bar_ql": 3.0,
+  "time_signature": [
+    3,
+    4
+  ],
+  "tempo_bpm": 117.00034515101821,
+  "selection_score": 326.0,
+  "alignment": {
+    "rows": 605
+  },
+  "candidate_stats": {
+    "rows": 548,
+    "events": 160,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 56,
+    "labeled": 38,
+    "ambiguous-candidate": 53,
+    "unmatched": 13
+  }
+}

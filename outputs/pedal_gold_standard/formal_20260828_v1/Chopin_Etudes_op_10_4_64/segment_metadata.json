@@ -1,0 +1,38 @@
+{
+  "segment_id": "Chopin_Etudes_op_10_4_64",
+  "manifest": {
+    "split": "validation",
+    "piece_key": "Chopin\u001fEtudes_op_10_4",
+    "composer": "Chopin",
+    "title": "Etudes_op_10_4",
+    "performance_rank_in_piece": "8",
+    "performances_in_piece": "22",
+    "midi_performance": "Chopin/Etudes_op_10/4/EVSTIO02.mid",
+    "midi_score": "Chopin/Etudes_op_10/4/midi_score.mid",
+    "xml_score": "Chopin/Etudes_op_10/4/xml_score.musicxml"
+  },
+  "start_measure": 63,
+  "end_measure": 66,
+  "start_ql": 126.0,
+  "end_ql": 134.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00034515101821,
+  "selection_score": 423.5,
+  "alignment": {
+    "rows": 241
+  },
+  "candidate_stats": {
+    "rows": 867,
+    "events": 390,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 351,
+    "reference-duration-not-candidate": 7,
+    "labeled": 9,
+    "ambiguous-candidate": 23
+  }
+}

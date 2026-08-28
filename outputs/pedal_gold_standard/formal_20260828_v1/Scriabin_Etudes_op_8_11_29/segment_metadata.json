@@ -1,0 +1,38 @@
+{
+  "segment_id": "Scriabin_Etudes_op_8_11_29",
+  "manifest": {
+    "split": "validation",
+    "piece_key": "Scriabin\u001fEtudes_op_8_11",
+    "composer": "Scriabin",
+    "title": "Etudes_op_8_11",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Scriabin/Etudes_op_8/11/Shi03.mid",
+    "midi_score": "Scriabin/Etudes_op_8/11/midi_score.mid",
+    "xml_score": "Scriabin/Etudes_op_8/11/xml_score.musicxml"
+  },
+  "start_measure": 28,
+  "end_measure": 31,
+  "start_ql": 112.0,
+  "end_ql": 128.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 116.99988885010558,
+  "selection_score": 385.0,
+  "alignment": {
+    "rows": 885
+  },
+  "candidate_stats": {
+    "rows": 589,
+    "events": 168,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 65,
+    "ambiguous-candidate": 25,
+    "reference-duration-not-candidate": 61,
+    "labeled": 17
+  }
+}
