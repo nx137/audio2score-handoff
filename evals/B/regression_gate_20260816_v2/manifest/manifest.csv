@@ -1,0 +1,4 @@
+piece_id,midi_path,midi_sha256
+mozart_k4,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/mozart_k4_source.mid,ca90fe44dad7861c6759a78b50009437cc3d03fc3de8cbae248b0ce661b8f70d
+scarlatti_k79,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/scarlatti_k79_source.mid,9f1c76eb0223415e2a831e5675301f4568c48babb80b6bf67ed8547a296e7c0d
+schubert_d979,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/schubert_d979_source.mid,fe03dfaee653501073c9e42b08b40cb67ba4e849fff2cb9baeb67041be40f96c

@@ -1,0 +1,91 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Bach\u001fFugue_bwv_893",
+  "midi_performance": "Bach/Fugue/bwv_893/Wong01M.mid",
+  "pipeline": "P4-L-NP",
+  "midi_sha256": "66439b9b779e049b7b653d86fefed1d2e8272ba295363dfd9177f5a045dcd17c",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0080_0096/alignments/Bach__Fugue__bwv_893__Wong01M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Bach/Fugue/bwv_893/Wong01M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Bach__Fugue_bwv_893/Bach__Fugue__bwv_893__Wong01M/P4-L-NP/output.musicxml",
+    "--title",
+    "P4-L-NP C-stage: Bach__Fugue__bwv_893__Wong01M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1",
+    "--no-pedal"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 987,
+      "reference_events_reliably_aligned": 134,
+      "system_events_total": 1031,
+      "system_events_mapped_to_reference_axis": 1018,
+      "system_events_outside_alignment_span": 13
+    },
+    "pitch": {
+      "tp": 134,
+      "predicted": 1018,
+      "reference": 134,
+      "precision": 0.13163064833005894,
+      "recall": 1.0,
+      "f1": 0.2326388888888889
+    },
+    "onset": {
+      "tp": 134,
+      "predicted": 1018,
+      "reference": 134,
+      "precision": 0.13163064833005894,
+      "recall": 1.0,
+      "f1": 0.2326388888888889
+    },
+    "note": {
+      "tp": 91,
+      "predicted": 1018,
+      "reference": 134,
+      "precision": 0.0893909626719057,
+      "recall": 0.6791044776119403,
+      "f1": 0.15798611111111113
+    },
+    "duration": {
+      "matched_events": 134,
+      "accuracy": 0.6791044776119403,
+      "mae_ql": 0.2748756218880597,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 3,
+      "correct_chain_role_events": 2,
+      "accuracy": 0.6666666666666666
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 91,
+      "majority_consistent_events": 43,
+      "accuracy": 0.4725274725274725
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 0,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

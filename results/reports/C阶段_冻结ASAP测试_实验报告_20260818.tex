@@ -1,0 +1,176 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{booktabs,longtable,array}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\definecolor{accent}{HTML}{1F5A7A}
+\definecolor{light}{HTML}{EDF4F7}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em}
+\newcommand{\metric}[1]{\texttt{#1}}
+\newcommand{\best}[1]{\textbf{#1}}
+\title{C 阶段冻结 ASAP 测试实验报告\\\large P3、P4-R 与 P4-L 的参考谱符号一致性评估}
+\author{钢琴转录项目}
+\date{2026年8月18日}
+\begin{document}
+\maketitle
+\begin{center}\colorbox{light}{\parbox{0.91\linewidth}{\centering\textcolor{accent}{\textbf{结论摘要}}：冻结评测在 120 条演奏、31 首作品上完成 360/360 个系统输出，零失败。三条管线的 pitch/onset 结果几乎相同；P4-L 的事件微平均 note F1 与时值正确率最高，但以作品为配对单位的 bootstrap 下，其相对 P3 的优势均未得到 95\% CI 支持。P4-R 在 tie 与 voice 一致性上呈现稳定优势。}}
+\end{center}
+
+\section{评测目的与证据边界}
+本报告给出 C 阶段的\textbf{最终 MusicXML 相对冻结 ASAP 参考谱的符号一致性}结果。它回答的是“系统导出的整谱，在符号层面与人工参考谱有多接近”，不回答候选排序器本身是否有效，也不回答量化 MIDI 到 MusicXML 的导出是否忠实。
+
+因此，以下三类证据严格分开解释：
+\begin{itemize}
+  \item \textbf{候选级排序质量}：历史 LightGBM 的 ROC-AUC=0.868960、AP=0.857762、Top-1=0.738746（规则基线 Top-1=0.625078）。这是候选排序的证据，不能与本报告的整谱指标相加或换算。
+  \item \textbf{B 阶段导出忠实性}：评估 MIDI 量化输入到 XML 输出的结构对账；它不是参考谱比较，不能替代本报告。
+  \item \textbf{C 阶段参考谱一致性}：本报告的对象。它使用冻结 ASAP test 参考 MusicXML，比较最终导出的谱面符号。
+\end{itemize}
+
+\section{冻结设置与完整性核验}
+\begin{table}[h]
+\centering
+\caption{冻结评测设置与资产核验}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+项目 & 设置 / 结果\\
+\midrule
+测试集 & ASAP test：120 条演奏、31 首作品；作品为宏平均和配对重采样的统计单位\\
+系统 & P3、P4-R、P4-L\\
+运行总量 & 120 $\times$ 3 = 360 个 (演奏，系统) 输出\\
+完成情况 & 360/360 完成；0 条演奏含任一系统失败；无 \texttt{failures.csv}\\
+对齐 & 复用独立于系统输出的 ASAP 演奏--参考谱对齐 CSV；未从 P3/P4 输出重建或选择对齐\\
+时值格点 & divisors=8,4,3；最多 12 个声部\\
+容差 & onset $\leq0.125$ QL；duration $\leq0.25$ QL；pedal $\leq0.25$ QL\\
+统计 & 作品等权宏平均；事件汇总微平均；1,000 次 paired bootstrap，seed=20260817\\
+P4-L 溯源 & 冻结模型文件 SHA-256 已核验；120/120 项均在审计日志中确认加载 LightGBM，未发现规则评分回退\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+P4-L 使用的冻结候选模型为 \texttt{p4\_asap\_cross\_piece\_v1}；模型文本与元数据的 SHA-256 分别为 \texttt{31f58c...7b666} 与 \texttt{7dbead...c6fe6}。运行目录保留配置、冻结 manifest、模型副本与校验和、命令审计日志、逐项 MusicXML/metrics，以及逐演奏、逐作品和总汇总文件，形成可复核证据包。
+
+\section{指标与统计方法}
+\paragraph{事件匹配。}预测和参考事件按一对一最小代价贪婪匹配。pitch 要求同手与同音高；onset 进一步要求起音误差不超过 0.125 QL；note 进一步要求时值误差不超过 0.25 QL。duration 在 onset 成功匹配的事件上评估。对齐有效区间外的系统事件单独作为 coverage 处理，不伪装为普通匹配错误。
+
+\paragraph{符号语义。}tie 以 tie-chain 语义计分。voice 不直接比较 MusicXML 原始编号，而以系统 voice 映射到参考 voice 的多数类纯度衡量，以消除编号置换造成的伪差异。相同时点的 pedal stop+start 规范为 change。
+
+\paragraph{两种汇总。}作品宏平均先在同一作品的多条演奏内聚合，再对 31 首作品等权平均；它是本报告主要比较口径。事件微平均则从全体事件 TP/预测数/参考数或正确数/匹配数重新计算，会使事件较多的演奏权重更大。报告二者，避免以一个替代另一个。
+
+\section{主要结果：作品等权宏平均}
+\begin{table}[h]
+\centering
+\caption{31 首作品等权宏平均（高者更好；Duration MAE 低者更好）}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+指标 & P3 & P4-R & P4-L\\
+\midrule
+Pitch F1 & \best{0.662274} & 0.662273 & 0.662273\\
+Onset F1 & \best{0.660684} & \best{0.660684} & \best{0.660684}\\
+Note F1 & \best{0.399564} & 0.373617 & 0.386087\\
+Duration accuracy & 0.590685 & 0.560802 & \best{0.591500}\\
+Tie accuracy$^{a}$ & 0.331496 & \best{0.534950} & 0.376042\\
+Voice accuracy & 0.538052 & \best{0.611472} & 0.579449\\
+Pedal F1$^{b}$ & 0.002216 & \best{0.002336} & 0.001698\\
+Duration MAE (QL) & 0.350600 & 0.397249 & \best{0.350542}\\
+\bottomrule
+\end{tabular}
+\begin{flushleft}\footnotesize $^{a}$仅 29 首作品有可用 tie 指标。$^{b}$仅 7 首作品有可用 pedal 指标，且绝对值很低。\end{flushleft}
+\end{table}
+
+宏平均下，P3 的 note F1 为 0.399564，高于 P4-L（0.386087）和 P4-R（0.373617）。P4-L 的时值正确率（0.591500）及 duration MAE（0.350542 QL）略优于 P3；P4-R 则在 tie 和 voice 上最高。三管线的 pitch/onset 几乎一致，说明差异主要落在时值、tie-chain 与声部决策，而不是本研究的音高或起音匹配层。
+
+\section{补充结果：事件汇总微平均}
+\begin{table}[h]
+\centering
+\caption{120 条演奏的事件微平均}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+指标 & P3 & P4-R & P4-L\\
+\midrule
+Pitch F1 & 0.655314 & 0.655314 & 0.655314\\
+Onset F1 & 0.652351 & 0.652351 & 0.652351\\
+Note F1 & 0.420610 & 0.417104 & \best{0.441057}\\
+Duration accuracy & 0.644361 & 0.638879 & \best{0.675225}\\
+Tie accuracy & 0.325070 & \best{0.537071} & 0.354727\\
+Voice accuracy & 0.539307 & \best{0.587400} & 0.555315\\
+Pedal F1 & 0.002207 & \best{0.002295} & 0.001809\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+微平均在事件量较大的演奏上改变了权重：P4-L 的 note F1 为 0.441057，高于 P3 的 0.420610，且时值正确率为 0.675225。这与作品宏平均的 note F1 排序不同，正是报告两种口径的原因；不能从微平均单独推导“所有作品均获益”。
+
+\section{作品层分布与不确定性}
+\begin{table}[h]
+\centering
+\caption{作品层主要指标分布：中位数 [Q1, Q3]}
+\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+指标 & 统计量 & P3 & P4-R & P4-L\\
+\midrule
+Note F1 & median [Q1,Q3] & 0.386 [0.152,0.641] & 0.307 [0.158,0.609] & 0.276 [0.182,0.607]\\
+Duration acc. & median [Q1,Q3] & 0.616 [0.462,0.724] & 0.601 [0.456,0.714] & 0.640 [0.469,0.739]\\
+Tie acc.$^{a}$ & median [Q1,Q3] & 0.377 [0.142,0.500] & 0.600 [0.312,0.704] & 0.354 [0.300,0.415]\\
+Voice acc. & median [Q1,Q3] & 0.486 [0.430,0.649] & 0.624 [0.509,0.728] & 0.590 [0.489,0.699]\\
+\bottomrule
+\end{tabular}
+\begin{flushleft}\footnotesize $^{a}$29 首有可用 tie 指标。\end{flushleft}
+\end{table}
+
+作品间异质性明显。例如 P3 的 note F1 范围为 0.032--0.854，P4-R 为 0.029--0.897，P4-L 为 0.034--0.883。因此，均值差异必须配合按作品配对的 bootstrap 区间阅读。
+
+\begin{table}[h]
+\centering
+\caption{配对 bootstrap：观察到的作品均值差（A$-$B）及 95\% CI}
+\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+指标 & 比较 & 配对作品数 & 差值 & 95\% CI\\
+\midrule
+Note F1 & P4-L $-$ P4-R & 31 & +0.012470 & [-0.018513, +0.041865]\\
+ & P4-L $-$ P3 & 31 & -0.013477 & [-0.050506, +0.023496]\\
+ & P4-R $-$ P3 & 31 & -0.025947 & [-0.050247, -0.006162]\\
+\addlinespace
+Duration acc. & P4-L $-$ P4-R & 31 & +0.030699 & [-0.016888, +0.080394]\\
+ & P4-L $-$ P3 & 31 & +0.000816 & [-0.050778, +0.052795]\\
+ & P4-R $-$ P3 & 31 & -0.029883 & [-0.054262, -0.009713]\\
+\addlinespace
+Tie acc. & P4-L $-$ P4-R & 29 & -0.158909 & [-0.264621, -0.040519]\\
+ & P4-L $-$ P3 & 29 & +0.044546 & [-0.057797, +0.157235]\\
+ & P4-R $-$ P3 & 29 & +0.203454 & [+0.148012, +0.260277]\\
+\addlinespace
+Voice acc. & P4-L $-$ P4-R & 31 & -0.032023 & [-0.054232, -0.014275]\\
+ & P4-L $-$ P3 & 31 & +0.041397 & [+0.013056, +0.070065]\\
+ & P4-R $-$ P3 & 31 & +0.073420 & [+0.053768, +0.094161]\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{受统计支持的解释}
+\begin{itemize}
+  \item \textbf{P4-R 的结构性优势集中在 tie 与 voice。}相对 P3，P4-R 的 tie accuracy 差值为 +0.203454（95\% CI [+0.148012, +0.260277]），voice accuracy 为 +0.073420（[+0.053768, +0.094161]）；两者区间均不跨零。
+  \item \textbf{P4-L 未显示相对 P3 的全局 note/timing 优势。}P4-L 相对 P3 的 note F1 差值为 -0.013477（[-0.050506, +0.023496]），duration accuracy 为 +0.000816（[-0.050778, +0.052795]）；二者均跨零。
+  \item \textbf{P4-L 相对 P4-R 的时值优势尚不确定，声部/tie 劣势更稳定。}前者 duration accuracy 的区间跨零；后者在 tie（-0.158909，[-0.264621, -0.040519]）与 voice（-0.032023，[-0.054232, -0.014275]）上均不利。
+  \item \textbf{踏板结论不能强化。}可配对作品仅 7 首，三种比较的 pedal F1 区间均跨零，且 F1 约为 0.002 量级。
+\end{itemize}
+
+\section{局限与后续纪律}
+\begin{itemize}
+  \item 该结果的外推对象是冻结 ASAP test 上的参考谱符号一致性，不等于主观可读性、演奏表达质量或 B 阶段的导出忠实性。
+  \item pitch/onset 在三管线间几乎恒定，故本报告不支持关于候选评分函数改变音高/起音识别能力的论断。
+  \item tie 与 pedal 的可用作品数分别为 29 与 7；特别是 pedal 的统计功效与绝对指标水平均有限。
+  \item 冻结 test 已用于本次一次性结论性评估。任何后续模型、规则或阈值改进必须回到 train/valid 集设计与选择，再以新的、预先约定的流程评估；不得使用本报告的 test 指标作调参信号。
+\end{itemize}
+
+\section{复核入口}
+冻结证据目录：\texttt{evals/C/frozen\_test\_20260817/}。其中 \texttt{config.json} 固化评测参数与模型哈希，\texttt{commands.log} 保存导出审计，\texttt{pieces/} 保存逐项输出与指标，\texttt{summary/performance\_level.csv}、\texttt{summary/piece\_level.csv} 与 \texttt{summary/aggregate\_summary.json} 分别保存逐演奏、逐作品与总汇总结果。
+
+\end{document}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "C-stage-piece-v1",
+  "piece_key": "Bach\u001fPrelude_bwv_862",
+  "midi_performance": "Bach/Prelude/bwv_862/Song04M.mid",
+  "pipeline": "P4-L",
+  "midi_sha256": "cc0bfc38cb5fc15dd7028747859d4440034c858ebbbd5738c67ff5ba56682f30",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0112_0128/alignments/Bach__Prelude__bwv_862__Song04M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Bach/Prelude/bwv_862/Song04M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/frozen_test_20260817/pieces/Bach__Prelude_bwv_862/Bach__Prelude__bwv_862__Song04M/P4-L/output.musicxml",
+    "--title",
+    "P4-L C-stage: Bach__Prelude__bwv_862__Song04M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 687,
+      "reference_events_reliably_aligned": 663,
+      "system_events_total": 675,
+      "system_events_mapped_to_reference_axis": 671,
+      "system_events_outside_alignment_span": 4
+    },
+    "pitch": {
+      "tp": 662,
+      "predicted": 671,
+      "reference": 663,
+      "precision": 0.9865871833084948,
+      "recall": 0.9984917043740573,
+      "f1": 0.9925037481259371
+    },
+    "onset": {
+      "tp": 661,
+      "predicted": 671,
+      "reference": 663,
+      "precision": 0.9850968703427719,
+      "recall": 0.9969834087481146,
+      "f1": 0.9910044977511243
+    },
+    "note": {
+      "tp": 531,
+      "predicted": 671,
+      "reference": 663,
+      "precision": 0.7913561847988078,
+      "recall": 0.8009049773755657,
+      "f1": 0.7961019490254873
+    },
+    "duration": {
+      "matched_events": 661,
+      "accuracy": 0.8018154311649016,
+      "mae_ql": 0.14952092789409985,
+      "median_absolute_error_ql": 0.08333333300000001
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 7,
+      "correct_chain_role_events": 3,
+      "accuracy": 0.42857142857142855
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 531,
+      "majority_consistent_events": 388,
+      "accuracy": 0.7306967984934086
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 25,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

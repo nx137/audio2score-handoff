@@ -1,0 +1,91 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Chopin\u001fEtudes_op_10_2",
+  "midi_performance": "Chopin/Etudes_op_10/2/Hebert03M.mid",
+  "pipeline": "P4-L-NP",
+  "midi_sha256": "3c5d3ad242576c098e7347acab11fd72bf049824814df6dbaeb9ea9d89aa2a56",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0528_0544/alignments/Chopin__Etudes_op_10__2__Hebert03M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Chopin/Etudes_op_10/2/Hebert03M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Chopin__Etudes_op_10_2/Chopin__Etudes_op_10__2__Hebert03M/P4-L-NP/output.musicxml",
+    "--title",
+    "P4-L-NP C-stage: Chopin__Etudes_op_10__2__Hebert03M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1",
+    "--no-pedal"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 1460,
+      "reference_events_reliably_aligned": 1366,
+      "system_events_total": 1391,
+      "system_events_mapped_to_reference_axis": 1390,
+      "system_events_outside_alignment_span": 1
+    },
+    "pitch": {
+      "tp": 1366,
+      "predicted": 1390,
+      "reference": 1366,
+      "precision": 0.9827338129496402,
+      "recall": 1.0,
+      "f1": 0.9912917271407837
+    },
+    "onset": {
+      "tp": 1344,
+      "predicted": 1390,
+      "reference": 1366,
+      "precision": 0.9669064748201439,
+      "recall": 0.9838945827232797,
+      "f1": 0.9753265602322206
+    },
+    "note": {
+      "tp": 1060,
+      "predicted": 1390,
+      "reference": 1366,
+      "precision": 0.762589928057554,
+      "recall": 0.7759882869692533,
+      "f1": 0.7692307692307693
+    },
+    "duration": {
+      "matched_events": 1344,
+      "accuracy": 0.7886904761904762,
+      "mae_ql": 0.2098214285654762,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 9,
+      "correct_chain_role_events": 4,
+      "accuracy": 0.4444444444444444
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 1060,
+      "majority_consistent_events": 702,
+      "accuracy": 0.6622641509433962
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 0,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

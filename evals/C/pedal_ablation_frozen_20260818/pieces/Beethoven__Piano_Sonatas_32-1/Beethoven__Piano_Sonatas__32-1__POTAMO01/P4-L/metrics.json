@@ -1,0 +1,122 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Beethoven\u001fPiano_Sonatas_32-1",
+  "midi_performance": "Beethoven/Piano_Sonatas/32-1/POTAMO01.mid",
+  "pipeline": "P4-L",
+  "midi_sha256": "15ee7314c0b3831da3110e7948660a5303fa6877b4e06d88969eb2e101d58060",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0400_0416/alignments/Beethoven__Piano_Sonatas__32-1__POTAMO01.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Beethoven/Piano_Sonatas/32-1/POTAMO01.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Beethoven__Piano_Sonatas_32-1/Beethoven__Piano_Sonatas__32-1__POTAMO01/P4-L/output.musicxml",
+    "--title",
+    "P4-L C-stage: Beethoven__Piano_Sonatas__32-1__POTAMO01",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 4118,
+      "reference_events_reliably_aligned": 291,
+      "system_events_total": 4147,
+      "system_events_mapped_to_reference_axis": 2586,
+      "system_events_outside_alignment_span": 1561
+    },
+    "pitch": {
+      "tp": 291,
+      "predicted": 2586,
+      "reference": 291,
+      "precision": 0.11252900232018562,
+      "recall": 1.0,
+      "f1": 0.20229405630865482
+    },
+    "onset": {
+      "tp": 284,
+      "predicted": 2586,
+      "reference": 291,
+      "precision": 0.10982211910286156,
+      "recall": 0.9759450171821306,
+      "f1": 0.19742787625999306
+    },
+    "note": {
+      "tp": 221,
+      "predicted": 2586,
+      "reference": 291,
+      "precision": 0.08546017014694508,
+      "recall": 0.7594501718213058,
+      "f1": 0.15363225582203682
+    },
+    "duration": {
+      "matched_events": 284,
+      "accuracy": 0.7535211267605634,
+      "mae_ql": 0.26963028168661973,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 12,
+      "correct_chain_role_events": 3,
+      "accuracy": 0.25
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 221,
+      "majority_consistent_events": 142,
+      "accuracy": 0.6425339366515838
+    },
+    "pedal": {
+      "available": true,
+      "reference_events": 7,
+      "system_events_mapped": 345,
+      "all": {
+        "tp": 0,
+        "predicted": 345,
+        "reference": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "by_type": {
+        "start": {
+          "tp": 0,
+          "predicted": 159,
+          "reference": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "change": {
+          "tp": 0,
+          "predicted": 34,
+          "reference": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "stop": {
+          "tp": 0,
+          "predicted": 152,
+          "reference": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    }
+  }
+}

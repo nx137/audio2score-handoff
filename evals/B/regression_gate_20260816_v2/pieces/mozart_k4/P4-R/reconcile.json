@@ -1,0 +1,16 @@
+{
+  "reference": "p4",
+  "input_event_count": 335,
+  "xml_tie_merged_event_count": 335,
+  "onset_tolerance_ql": 0.125,
+  "duration_tolerance_ql": 0.25,
+  "extra_count": 0,
+  "missing_count": 0,
+  "onset_drift_count": 0,
+  "duration_drift_count": 0,
+  "extra_examples": [],
+  "missing_examples": [],
+  "onset_drift_examples": [],
+  "duration_drift_examples": [],
+  "export_fidelity_pass": true
+}

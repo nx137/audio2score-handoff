@@ -1,0 +1,96 @@
+{
+  "schema_version": "B-baseline-v1",
+  "pipeline": "P3",
+  "input_midi": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/mozart_k4_source.mid",
+  "started_at_utc": "2026-08-16T15:42:23.072006+00:00",
+  "parameters": {
+    "divisors": "8,4,3",
+    "onset_tolerance_ql": 0.125,
+    "duration_tolerance_ql": 0.25,
+    "max_voices": null,
+    "candidate_model": null
+  },
+  "export": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/midi_to_score.py",
+      "--midi",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/mozart_k4_source.mid",
+      "--out",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816/pieces/mozart_k4/P3/output.musicxml",
+      "--title",
+      "P3 baseline: mozart_k4_source",
+      "--divisors",
+      "8,4,3"
+    ],
+    "returncode": 0
+  },
+  "status": "completed",
+  "reconciliation": {
+    "reference": "notation",
+    "input_event_count": 335,
+    "xml_tie_merged_event_count": 335,
+    "onset_tolerance_ql": 0.125,
+    "duration_tolerance_ql": 0.25,
+    "extra_count": 0,
+    "missing_count": 0,
+    "onset_drift_count": 0,
+    "duration_drift_count": 4,
+    "extra_examples": [],
+    "missing_examples": [],
+    "onset_drift_examples": [],
+    "duration_drift_examples": [
+      [
+        45,
+        54.875,
+        0.125,
+        1.375,
+        19
+      ],
+      [
+        58,
+        132.66666666666666,
+        0.875,
+        2.333333333333343,
+        45
+      ],
+      [
+        69,
+        19.375,
+        0.6666666666666666,
+        1.0,
+        7
+      ],
+      [
+        69,
+        63.666666666666664,
+        0.75,
+        1.125000000000007,
+        22
+      ]
+    ],
+    "export_fidelity_pass": true
+  },
+  "render_qa": {
+    "xml_parse_success": true,
+    "part_count": 2,
+    "measure_count": 109,
+    "overfull_measure_count": 0,
+    "overfull_measures": [],
+    "tie_orphan_stop_count": 0,
+    "tie_unclosed_start_count": 0,
+    "tie_cross_voice_count": 0,
+    "tie_complete": true,
+    "render_returncode": 0,
+    "render_success": true,
+    "page_count": 2,
+    "warnings": {
+      "ties_left_open": 6,
+      "unclosed": 0,
+      "beam_or_layout": 0
+    }
+  },
+  "acceptance_pass": false,
+  "acceptance_note": "导出、结构 QA 或渲染验收存在未通过项；结果仍保留用于基线比较。",
+  "finished_at_utc": "2026-08-16T15:42:26.580439+00:00"
+}

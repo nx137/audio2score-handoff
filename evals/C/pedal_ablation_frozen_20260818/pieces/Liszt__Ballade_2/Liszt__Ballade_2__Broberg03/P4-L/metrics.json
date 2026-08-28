@@ -1,0 +1,122 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Liszt\u001fBallade_2",
+  "midi_performance": "Liszt/Ballade_2/Broberg03.mid",
+  "pipeline": "P4-L",
+  "midi_sha256": "e8ad2141e1de0008c6ade39f6cd8388e89a8c98dd51449802d518e10d9b861b7",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0768_0784/alignments/Liszt__Ballade_2__Broberg03.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Liszt/Ballade_2/Broberg03.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Liszt__Ballade_2/Liszt__Ballade_2__Broberg03/P4-L/output.musicxml",
+    "--title",
+    "P4-L C-stage: Liszt__Ballade_2__Broberg03",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 7318,
+      "reference_events_reliably_aligned": 213,
+      "system_events_total": 6943,
+      "system_events_mapped_to_reference_axis": 6455,
+      "system_events_outside_alignment_span": 488
+    },
+    "pitch": {
+      "tp": 213,
+      "predicted": 6455,
+      "reference": 213,
+      "precision": 0.032997676219984506,
+      "recall": 1.0,
+      "f1": 0.06388722255548891
+    },
+    "onset": {
+      "tp": 212,
+      "predicted": 6455,
+      "reference": 213,
+      "precision": 0.03284275755228505,
+      "recall": 0.9953051643192489,
+      "f1": 0.0635872825434913
+    },
+    "note": {
+      "tp": 124,
+      "predicted": 6455,
+      "reference": 213,
+      "precision": 0.019209914794732764,
+      "recall": 0.5821596244131455,
+      "f1": 0.037192561487702454
+    },
+    "duration": {
+      "matched_events": 212,
+      "accuracy": 0.5849056603773585,
+      "mae_ql": 0.535878537735849,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 10,
+      "correct_chain_role_events": 2,
+      "accuracy": 0.2
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 124,
+      "majority_consistent_events": 88,
+      "accuracy": 0.7096774193548387
+    },
+    "pedal": {
+      "available": true,
+      "reference_events": 21,
+      "system_events_mapped": 767,
+      "all": {
+        "tp": 0,
+        "predicted": 767,
+        "reference": 21,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "by_type": {
+        "start": {
+          "tp": 0,
+          "predicted": 344,
+          "reference": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "change": {
+          "tp": 0,
+          "predicted": 83,
+          "reference": 13,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "stop": {
+          "tp": 0,
+          "predicted": 340,
+          "reference": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "run_count": 9,
+  "pipelines": {
+    "P3": {
+      "runs": 3,
+      "completed": 3,
+      "acceptance_passed": 0,
+      "input_events": 1484,
+      "xml_events": 1484,
+      "extra": 0,
+      "missing": 0,
+      "onset_drift": 0,
+      "duration_drift": 10,
+      "overfull_measures": 0,
+      "ties_left_open": 15,
+      "beam_or_layout_warnings": 0
+    },
+    "P4-R": {
+      "runs": 3,
+      "completed": 3,
+      "acceptance_passed": 3,
+      "input_events": 1484,
+      "xml_events": 1484,
+      "extra": 0,
+      "missing": 0,
+      "onset_drift": 0,
+      "duration_drift": 0,
+      "overfull_measures": 0,
+      "ties_left_open": 0,
+      "beam_or_layout_warnings": 0
+    },
+    "P4-L": {
+      "runs": 3,
+      "completed": 3,
+      "acceptance_passed": 3,
+      "input_events": 1484,
+      "xml_events": 1484,
+      "extra": 0,
+      "missing": 0,
+      "onset_drift": 0,
+      "duration_drift": 0,
+      "overfull_measures": 0,
+      "ties_left_open": 0,
+      "beam_or_layout_warnings": 9
+    }
+  }
+}

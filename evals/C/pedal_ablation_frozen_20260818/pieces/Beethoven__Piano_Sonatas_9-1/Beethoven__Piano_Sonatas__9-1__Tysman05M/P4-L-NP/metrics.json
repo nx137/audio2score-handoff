@@ -1,0 +1,91 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Beethoven\u001fPiano_Sonatas_9-1",
+  "midi_performance": "Beethoven/Piano_Sonatas/9-1/Tysman05M.mid",
+  "pipeline": "P4-L-NP",
+  "midi_sha256": "9425cb773081bef3ba7974ed217b99e434382b55f1cde89dcaa1a9f02fab392f",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0432_0448/alignments/Beethoven__Piano_Sonatas__9-1__Tysman05M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Beethoven/Piano_Sonatas/9-1/Tysman05M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Beethoven__Piano_Sonatas_9-1/Beethoven__Piano_Sonatas__9-1__Tysman05M/P4-L-NP/output.musicxml",
+    "--title",
+    "P4-L-NP C-stage: Beethoven__Piano_Sonatas__9-1__Tysman05M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1",
+    "--no-pedal"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 2643,
+      "reference_events_reliably_aligned": 2564,
+      "system_events_total": 2660,
+      "system_events_mapped_to_reference_axis": 2660,
+      "system_events_outside_alignment_span": 0
+    },
+    "pitch": {
+      "tp": 2564,
+      "predicted": 2660,
+      "reference": 2564,
+      "precision": 0.9639097744360903,
+      "recall": 1.0,
+      "f1": 0.9816232771822359
+    },
+    "onset": {
+      "tp": 2557,
+      "predicted": 2660,
+      "reference": 2564,
+      "precision": 0.9612781954887218,
+      "recall": 0.9972698907956318,
+      "f1": 0.9789433384379785
+    },
+    "note": {
+      "tp": 1456,
+      "predicted": 2660,
+      "reference": 2564,
+      "precision": 0.5473684210526316,
+      "recall": 0.5678627145085804,
+      "f1": 0.557427258805513
+    },
+    "duration": {
+      "matched_events": 2557,
+      "accuracy": 0.5690262025811498,
+      "mae_ql": 0.3998500847430583,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 53,
+      "correct_chain_role_events": 24,
+      "accuracy": 0.4528301886792453
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 1456,
+      "majority_consistent_events": 763,
+      "accuracy": 0.5240384615384616
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 0,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

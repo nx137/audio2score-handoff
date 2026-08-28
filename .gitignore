@@ -1,0 +1,19 @@
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.venv-backend/
+venv/
+env/
+
+# Generated or temporary run outputs
+outputs/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+

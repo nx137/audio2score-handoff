@@ -1,0 +1,10 @@
+piece_id,pipeline,status,acceptance_pass,input_events,xml_events,extra,missing,onset_drift,duration_drift,overfull_measures,tie_orphan_stop,tie_unclosed_start,tie_cross_voice,ties_left_open,beam_or_layout_warnings,xml_parse_success,render_success,page_count,metrics_path
+mozart_k4,P3,completed,False,335,335,0,0,0,4,0,0,0,0,6,0,True,True,2,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/mozart_k4/P3/metrics.json
+mozart_k4,P4-L,completed,True,335,335,0,0,0,0,0,0,0,0,0,0,True,True,3,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/mozart_k4/P4-L/metrics.json
+mozart_k4,P4-R,completed,True,335,335,0,0,0,0,0,0,0,0,0,0,True,True,3,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/mozart_k4/P4-R/metrics.json
+scarlatti_k79,P3,completed,False,759,759,0,0,0,0,0,0,0,0,1,0,True,True,4,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/scarlatti_k79/P3/metrics.json
+scarlatti_k79,P4-L,completed,True,759,759,0,0,0,0,0,0,0,0,0,9,True,True,4,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/scarlatti_k79/P4-L/metrics.json
+scarlatti_k79,P4-R,completed,True,759,759,0,0,0,0,0,0,0,0,0,0,True,True,5,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/scarlatti_k79/P4-R/metrics.json
+schubert_d979,P3,completed,False,390,390,0,0,0,6,0,0,0,0,8,0,True,True,2,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/schubert_d979/P3/metrics.json
+schubert_d979,P4-L,completed,True,390,390,0,0,0,0,0,0,0,0,0,0,True,True,2,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/schubert_d979/P4-L/metrics.json
+schubert_d979,P4-R,completed,True,390,390,0,0,0,0,0,0,0,0,0,0,True,True,3,/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816_v2/pieces/schubert_d979/P4-R/metrics.json

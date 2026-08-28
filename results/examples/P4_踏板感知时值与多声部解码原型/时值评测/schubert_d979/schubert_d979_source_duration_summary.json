@@ -1,0 +1,14 @@
+{
+  "note_count": 390,
+  "tolerance_ql": 0.25,
+  "notation_within_tolerance_of_key_release": 273,
+  "notation_within_tolerance_of_acoustic_end": 195,
+  "pedal_extended_notes": 97,
+  "notation_shorter_than_key_release": 117,
+  "notation_shorter_than_acoustic_end": 195,
+  "current_single_voice_truncation_candidates": 230,
+  "by_hand": {
+    "RH": 189,
+    "LH": 201
+  }
+}

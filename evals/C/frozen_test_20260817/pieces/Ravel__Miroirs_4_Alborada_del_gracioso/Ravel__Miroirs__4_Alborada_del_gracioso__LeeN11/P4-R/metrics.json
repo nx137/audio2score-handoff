@@ -1,0 +1,120 @@
+{
+  "schema_version": "C-stage-piece-v1",
+  "piece_key": "Ravel\u001fMiroirs_4_Alborada_del_gracioso",
+  "midi_performance": "Ravel/Miroirs/4_Alborada_del_gracioso/LeeN11.mid",
+  "pipeline": "P4-R",
+  "midi_sha256": "cd6d2245c439abf2becf4e6fa2c60544765913a5e4cdb478b25387cdc8d11fda",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0928_0944/alignments/Ravel__Miroirs__4_Alborada_del_gracioso__LeeN11.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Ravel/Miroirs/4_Alborada_del_gracioso/LeeN11.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/frozen_test_20260817/pieces/Ravel__Miroirs_4_Alborada_del_gracioso/Ravel__Miroirs__4_Alborada_del_gracioso__LeeN11/P4-R/output.musicxml",
+    "--title",
+    "P4-R C-stage: Ravel__Miroirs__4_Alborada_del_gracioso__LeeN11",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 4378,
+      "reference_events_reliably_aligned": 1436,
+      "system_events_total": 3865,
+      "system_events_mapped_to_reference_axis": 3775,
+      "system_events_outside_alignment_span": 90
+    },
+    "pitch": {
+      "tp": 1436,
+      "predicted": 3775,
+      "reference": 1436,
+      "precision": 0.38039735099337746,
+      "recall": 1.0,
+      "f1": 0.5511418153905201
+    },
+    "onset": {
+      "tp": 1428,
+      "predicted": 3775,
+      "reference": 1436,
+      "precision": 0.3782781456953642,
+      "recall": 0.9944289693593314,
+      "f1": 0.5480713874496257
+    },
+    "note": {
+      "tp": 1039,
+      "predicted": 3775,
+      "reference": 1436,
+      "precision": 0.2752317880794702,
+      "recall": 0.7235376044568245,
+      "f1": 0.39877182882364226
+    },
+    "duration": {
+      "matched_events": 1428,
+      "accuracy": 0.7275910364145658,
+      "mae_ql": 0.35576737201750697,
+      "median_absolute_error_ql": 0.25
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 107,
+      "correct_chain_role_events": 50,
+      "accuracy": 0.4672897196261682
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 1039,
+      "majority_consistent_events": 572,
+      "accuracy": 0.5505293551491819
+    },
+    "pedal": {
+      "available": true,
+      "reference_events": 20,
+      "system_events_mapped": 397,
+      "all": {
+        "tp": 2,
+        "predicted": 397,
+        "reference": 20,
+        "precision": 0.005037783375314861,
+        "recall": 0.1,
+        "f1": 0.009592326139088728
+      },
+      "by_type": {
+        "start": {
+          "tp": 0,
+          "predicted": 196,
+          "reference": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "change": {
+          "tp": 0,
+          "predicted": 6,
+          "reference": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "stop": {
+          "tp": 2,
+          "predicted": 195,
+          "reference": 10,
+          "precision": 0.010256410256410256,
+          "recall": 0.2,
+          "f1": 0.01951219512195122
+        }
+      }
+    }
+  }
+}

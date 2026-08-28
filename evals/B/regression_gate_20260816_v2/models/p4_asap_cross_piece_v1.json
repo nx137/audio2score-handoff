@@ -1,0 +1,21 @@
+{
+  "features": [
+    "pitch",
+    "velocity",
+    "voice",
+    "onset_ql",
+    "beat_position",
+    "key_duration_ql",
+    "acoustic_duration_ql",
+    "pedal_extension_ql",
+    "next_voice_gap_ql",
+    "candidate_duration_ql",
+    "candidate_key_gap_ql",
+    "candidate_acoustic_gap_ql",
+    "candidate_crosses_barline",
+    "candidate_has_barline",
+    "candidate_has_next_onset",
+    "rule_probability"
+  ],
+  "backend": "lightgbm"
+}

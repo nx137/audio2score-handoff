@@ -1,0 +1,91 @@
+{
+  "schema_version": "C-stage-pedal-ablation-piece-v1",
+  "piece_key": "Haydn\u001fKeyboard_Sonatas_50-1",
+  "midi_performance": "Haydn/Keyboard_Sonatas/50-1_no_repeat/KARYAG06M.mid",
+  "pipeline": "P4-L-NP",
+  "midi_sha256": "c9d5a3af4ac17e663d2c2e8790715d969ed4a832dea7b383bf0ebd0d55dbd26c",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0752_0768/alignments/Haydn__Keyboard_Sonatas__50-1_no_repeat__KARYAG06M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Haydn/Keyboard_Sonatas/50-1_no_repeat/KARYAG06M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/pedal_ablation_frozen_20260818/pieces/Haydn__Keyboard_Sonatas_50-1/Haydn__Keyboard_Sonatas__50-1_no_repeat__KARYAG06M/P4-L-NP/output.musicxml",
+    "--title",
+    "P4-L-NP C-stage: Haydn__Keyboard_Sonatas__50-1_no_repeat__KARYAG06M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1",
+    "--no-pedal"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 3377,
+      "reference_events_reliably_aligned": 3261,
+      "system_events_total": 3510,
+      "system_events_mapped_to_reference_axis": 3502,
+      "system_events_outside_alignment_span": 8
+    },
+    "pitch": {
+      "tp": 3261,
+      "predicted": 3502,
+      "reference": 3261,
+      "precision": 0.9311821816105083,
+      "recall": 1.0,
+      "f1": 0.9643649268076298
+    },
+    "onset": {
+      "tp": 3239,
+      "predicted": 3502,
+      "reference": 3261,
+      "precision": 0.9249000571102227,
+      "recall": 0.9932536031892057,
+      "f1": 0.9578589383409729
+    },
+    "note": {
+      "tp": 2599,
+      "predicted": 3502,
+      "reference": 3261,
+      "precision": 0.742147344374643,
+      "recall": 0.7969947868751917,
+      "f1": 0.7685938193109567
+    },
+    "duration": {
+      "matched_events": 3239,
+      "accuracy": 0.8020994133991973,
+      "mae_ql": 0.17653339508984253,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 31,
+      "correct_chain_role_events": 12,
+      "accuracy": 0.3870967741935484
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 2599,
+      "majority_consistent_events": 1275,
+      "accuracy": 0.49057329742208544
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 0,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "training_labeled_candidates": 364,
+  "splits": {
+    "train": {
+      "labeled_candidates": 364,
+      "positive_candidates": 194,
+      "negative_candidates": 170,
+      "labeled_events": 194,
+      "model_roc_auc": 0.9993632504548211,
+      "model_average_precision": 0.9994529542943467,
+      "model_top1_accuracy": 0.9896907216494846,
+      "rule_roc_auc": 0.920527592480291,
+      "rule_average_precision": 0.9216500336151106,
+      "rule_top1_accuracy": 0.9123711340206185,
+      "candidate_rows": 18192,
+      "scored_csv": "../../tmp/asap_cross_piece/pilot_eval/train_scored_candidates.csv"
+    },
+    "validation": {
+      "labeled_candidates": 272,
+      "positive_candidates": 123,
+      "negative_candidates": 149,
+      "labeled_events": 123,
+      "model_roc_auc": 0.6883014132154744,
+      "model_average_precision": 0.7295018422606416,
+      "model_top1_accuracy": 0.6016260162601627,
+      "rule_roc_auc": 0.5125225077754133,
+      "rule_average_precision": 0.5032556162199987,
+      "rule_top1_accuracy": 0.5609756097560976,
+      "candidate_rows": 27918,
+      "scored_csv": "../../tmp/asap_cross_piece/pilot_eval/validation_scored_candidates.csv"
+    },
+    "test": {
+      "labeled_candidates": 253,
+      "positive_candidates": 96,
+      "negative_candidates": 157,
+      "labeled_events": 96,
+      "model_roc_auc": 0.733943736730361,
+      "model_average_precision": 0.6972725659266295,
+      "model_top1_accuracy": 0.6458333333333334,
+      "rule_roc_auc": 0.6924429405520169,
+      "rule_average_precision": 0.6405052265323741,
+      "rule_top1_accuracy": 0.5520833333333334,
+      "candidate_rows": 11405,
+      "scored_csv": "../../tmp/asap_cross_piece/pilot_eval/test_scored_candidates.csv"
+    }
+  }
+}

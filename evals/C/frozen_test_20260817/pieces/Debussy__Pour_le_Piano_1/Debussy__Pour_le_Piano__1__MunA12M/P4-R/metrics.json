@@ -1,0 +1,88 @@
+{
+  "schema_version": "C-stage-piece-v1",
+  "piece_key": "Debussy\u001fPour_le_Piano_1",
+  "midi_performance": "Debussy/Pour_le_Piano/1/MunA12M.mid",
+  "pipeline": "P4-R",
+  "midi_sha256": "cecbb67061b66cfc6d5ff855dbff484a327f24aadf56b1ef9f14bddcd6e4a7ed",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0720_0736/alignments/Debussy__Pour_le_Piano__1__MunA12M.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Debussy/Pour_le_Piano/1/MunA12M.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/frozen_test_20260817/pieces/Debussy__Pour_le_Piano_1/Debussy__Pour_le_Piano__1__MunA12M/P4-R/output.musicxml",
+    "--title",
+    "P4-R C-stage: Debussy__Pour_le_Piano__1__MunA12M",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 3349,
+      "reference_events_reliably_aligned": 1236,
+      "system_events_total": 3203,
+      "system_events_mapped_to_reference_axis": 2980,
+      "system_events_outside_alignment_span": 223
+    },
+    "pitch": {
+      "tp": 1236,
+      "predicted": 2980,
+      "reference": 1236,
+      "precision": 0.4147651006711409,
+      "recall": 1.0,
+      "f1": 0.586337760910816
+    },
+    "onset": {
+      "tp": 1216,
+      "predicted": 2980,
+      "reference": 1236,
+      "precision": 0.4080536912751678,
+      "recall": 0.9838187702265372,
+      "f1": 0.5768500948766603
+    },
+    "note": {
+      "tp": 847,
+      "predicted": 2980,
+      "reference": 1236,
+      "precision": 0.2842281879194631,
+      "recall": 0.6852750809061489,
+      "f1": 0.40180265654648956
+    },
+    "duration": {
+      "matched_events": 1216,
+      "accuracy": 0.696546052631579,
+      "mae_ql": 0.38115919681578947,
+      "median_absolute_error_ql": 0.125
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 27,
+      "correct_chain_role_events": 19,
+      "accuracy": 0.7037037037037037
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 847,
+      "majority_consistent_events": 621,
+      "accuracy": 0.7331759149940968
+    },
+    "pedal": {
+      "available": false,
+      "reference_events": 0,
+      "system_events_mapped": 384,
+      "all": null,
+      "by_type": null
+    }
+  }
+}

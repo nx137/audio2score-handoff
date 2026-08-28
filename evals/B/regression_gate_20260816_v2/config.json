@@ -1,0 +1,20 @@
+{
+  "schema_version": "B-regression-v1",
+  "created_at_utc": "2026-08-16T15:44:52.774196+00:00",
+  "pipelines": [
+    "P3",
+    "P4-R",
+    "P4-L"
+  ],
+  "inputs_manifest": "manifest/manifest.csv",
+  "inputs_manifest_sha256": "d7909f8e1d5a8b20a237d0c97db1942b81dc11fa6c393ee09362024e319bdde0",
+  "divisors": "8,4,3",
+  "onset_tolerance_ql": 0.125,
+  "duration_tolerance_ql": 0.25,
+  "max_voices": 12,
+  "candidate_model_prefix": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1",
+  "candidate_model_files": {
+    "p4_asap_cross_piece_v1.txt": "31f58cf9bc022a686eedc60ed9af6c621eac69ba4569cccf24147bdd4877b666",
+    "p4_asap_cross_piece_v1.json": "7dbeadb4fd5549de5e984444d0c77921ad8b3dbdaa44e6798279fcec342c6fe6"
+  }
+}

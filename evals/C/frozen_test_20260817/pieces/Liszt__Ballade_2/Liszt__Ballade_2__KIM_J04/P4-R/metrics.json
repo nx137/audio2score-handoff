@@ -1,0 +1,120 @@
+{
+  "schema_version": "C-stage-piece-v1",
+  "piece_key": "Liszt\u001fBallade_2",
+  "midi_performance": "Liszt/Ballade_2/KIM_J04.mid",
+  "pipeline": "P4-R",
+  "midi_sha256": "4ed190a9d7221c9802e359f39a15980b3e21639d0dade4ba5a58fbddf1a72b2a",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0768_0784/alignments/Liszt__Ballade_2__KIM_J04.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Liszt/Ballade_2/KIM_J04.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/frozen_test_20260817/pieces/Liszt__Ballade_2/Liszt__Ballade_2__KIM_J04/P4-R/output.musicxml",
+    "--title",
+    "P4-R C-stage: Liszt__Ballade_2__KIM_J04",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 7318,
+      "reference_events_reliably_aligned": 179,
+      "system_events_total": 7025,
+      "system_events_mapped_to_reference_axis": 6528,
+      "system_events_outside_alignment_span": 497
+    },
+    "pitch": {
+      "tp": 179,
+      "predicted": 6528,
+      "reference": 179,
+      "precision": 0.0274203431372549,
+      "recall": 1.0,
+      "f1": 0.053377068734158345
+    },
+    "onset": {
+      "tp": 177,
+      "predicted": 6528,
+      "reference": 179,
+      "precision": 0.027113970588235295,
+      "recall": 0.9888268156424581,
+      "f1": 0.052780676904726403
+    },
+    "note": {
+      "tp": 82,
+      "predicted": 6528,
+      "reference": 179,
+      "precision": 0.012561274509803922,
+      "recall": 0.4581005586592179,
+      "f1": 0.024452065006709406
+    },
+    "duration": {
+      "matched_events": 177,
+      "accuracy": 0.4632768361581921,
+      "mae_ql": 0.5820268361525424,
+      "median_absolute_error_ql": 0.375
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 12,
+      "correct_chain_role_events": 0,
+      "accuracy": 0.0
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 82,
+      "majority_consistent_events": 56,
+      "accuracy": 0.6829268292682927
+    },
+    "pedal": {
+      "available": true,
+      "reference_events": 21,
+      "system_events_mapped": 846,
+      "all": {
+        "tp": 1,
+        "predicted": 846,
+        "reference": 21,
+        "precision": 0.001182033096926714,
+        "recall": 0.047619047619047616,
+        "f1": 0.002306805074971165
+      },
+      "by_type": {
+        "start": {
+          "tp": 0,
+          "predicted": 396,
+          "reference": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "change": {
+          "tp": 0,
+          "predicted": 54,
+          "reference": 13,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "stop": {
+          "tp": 1,
+          "predicted": 396,
+          "reference": 4,
+          "precision": 0.0025252525252525255,
+          "recall": 0.25,
+          "f1": 0.005
+        }
+      }
+    }
+  }
+}

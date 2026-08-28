@@ -1,0 +1,594 @@
+{
+  "schema_version": "C-stage-summary-v1",
+  "frozen_test_performance_count": 120,
+  "frozen_test_piece_count": 31,
+  "performances_with_at_least_one_pipeline_failure": 0,
+  "total_pipeline_run_failures": 0,
+  "macro_average_by_piece": {
+    "P3": {
+      "pipeline": "P3",
+      "piece_count": 31,
+      "pitch_f1": 0.6622736468148688,
+      "onset_f1": 0.6606839998876837,
+      "note_f1": 0.39956401212253845,
+      "pedal_f1": 0.0022157950224720967,
+      "duration_accuracy": 0.5906845578608982,
+      "tie_accuracy": 0.33149577547829284,
+      "voice_accuracy": 0.5380521692248906,
+      "duration_mae_ql": 0.35060041130432884
+    },
+    "P4-R": {
+      "pipeline": "P4-R",
+      "piece_count": 31,
+      "pitch_f1": 0.6622734113518228,
+      "onset_f1": 0.6606837675788707,
+      "note_f1": 0.37361685578084025,
+      "pedal_f1": 0.002335646892246013,
+      "duration_accuracy": 0.5608016759138823,
+      "tie_accuracy": 0.5349501576218856,
+      "voice_accuracy": 0.6114720093629716,
+      "duration_mae_ql": 0.39724890462036544
+    },
+    "P4-L": {
+      "pipeline": "P4-L",
+      "piece_count": 31,
+      "pitch_f1": 0.6622733932477881,
+      "onset_f1": 0.6606837519954231,
+      "note_f1": 0.3860865461020408,
+      "pedal_f1": 0.0016979513643238916,
+      "duration_accuracy": 0.5915002021079839,
+      "tie_accuracy": 0.37604152625639337,
+      "voice_accuracy": 0.5794489530455595,
+      "duration_mae_ql": 0.35054222332651974
+    }
+  },
+  "micro_average_by_event": {
+    "P3": {
+      "pipeline": "P3",
+      "performance_count": 120,
+      "pitch_f1": {
+        "tp": 168039,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.48734643449611953,
+        "recall": 0.9999583447389405,
+        "f1": 0.6553144194208833
+      },
+      "onset_f1": {
+        "tp": 167279,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.4851422837322073,
+        "recall": 0.9954357735381979,
+        "f1": 0.6523505898410842
+      },
+      "note_f1": {
+        "tp": 107855,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.31280089558125773,
+        "recall": 0.6418183116527617,
+        "f1": 0.4206103149068928
+      },
+      "pedal_f1": {
+        "tp": 29,
+        "predicted": 25849,
+        "reference": 433,
+        "precision": 0.0011219002669348912,
+        "recall": 0.06697459584295612,
+        "f1": 0.002206833574309414
+      },
+      "duration_accuracy": {
+        "correct": 107788,
+        "matched": 167279,
+        "accuracy": 0.6443606190854799
+      },
+      "tie_accuracy": {
+        "correct": 1403,
+        "matched": 4316,
+        "accuracy": 0.32506950880444857
+      },
+      "voice_accuracy": {
+        "correct": 58167,
+        "matched": 107855,
+        "accuracy": 0.5393074034583468
+      }
+    },
+    "P4-R": {
+      "pipeline": "P4-R",
+      "performance_count": 120,
+      "pitch_f1": {
+        "tp": 168039,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.48734643449611953,
+        "recall": 0.9999583447389405,
+        "f1": 0.6553144194208833
+      },
+      "onset_f1": {
+        "tp": 167279,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.4851422837322073,
+        "recall": 0.9954357735381979,
+        "f1": 0.6523505898410842
+      },
+      "note_f1": {
+        "tp": 106956,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.31019361724341943,
+        "recall": 0.6364685859824096,
+        "f1": 0.41710441649605146
+      },
+      "pedal_f1": {
+        "tp": 31,
+        "predicted": 26585,
+        "reference": 433,
+        "precision": 0.0011660710927214595,
+        "recall": 0.07159353348729793,
+        "f1": 0.0022947664519949664
+      },
+      "duration_accuracy": {
+        "correct": 106871,
+        "matched": 167279,
+        "accuracy": 0.6388787594378255
+      },
+      "tie_accuracy": {
+        "correct": 2318,
+        "matched": 4316,
+        "accuracy": 0.5370713623725671
+      },
+      "voice_accuracy": {
+        "correct": 62826,
+        "matched": 106956,
+        "accuracy": 0.5874004263435432
+      }
+    },
+    "P4-L": {
+      "pipeline": "P4-L",
+      "performance_count": 120,
+      "pitch_f1": {
+        "tp": 168039,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.48734643449611953,
+        "recall": 0.9999583447389405,
+        "f1": 0.6553144194208833
+      },
+      "onset_f1": {
+        "tp": 167279,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.4851422837322073,
+        "recall": 0.9954357735381979,
+        "f1": 0.6523505898410842
+      },
+      "note_f1": {
+        "tp": 113098,
+        "predicted": 344804,
+        "reference": 168046,
+        "precision": 0.3280066356538787,
+        "recall": 0.6730181021863061,
+        "f1": 0.4410568392317441
+      },
+      "pedal_f1": {
+        "tp": 23,
+        "predicted": 24989,
+        "reference": 433,
+        "precision": 0.0009204049781904038,
+        "recall": 0.053117782909930716,
+        "f1": 0.0018094563763669262
+      },
+      "duration_accuracy": {
+        "correct": 112951,
+        "matched": 167279,
+        "accuracy": 0.6752252225324159
+      },
+      "tie_accuracy": {
+        "correct": 1531,
+        "matched": 4316,
+        "accuracy": 0.35472659870250234
+      },
+      "voice_accuracy": {
+        "correct": 62805,
+        "matched": 113098,
+        "accuracy": 0.5553148596792162
+      }
+    }
+  },
+  "piece_level_distribution": {
+    "P3": {
+      "note_f1": {
+        "n": 31,
+        "median": 0.3855109961190168,
+        "q1": 0.1521646898505132,
+        "q3": 0.6406171545067051,
+        "min": 0.03153792210594882,
+        "max": 0.8535980148883374
+      },
+      "onset_f1": {
+        "n": 31,
+        "median": 0.9182162932694345,
+        "q1": 0.3073374458212518,
+        "q3": 0.978417223005077,
+        "min": 0.05980299125904032,
+        "max": 0.9923664122137404
+      },
+      "pitch_f1": {
+        "n": 31,
+        "median": 0.9184301055422589,
+        "q1": 0.3082214216074737,
+        "q3": 0.9788756465128656,
+        "min": 0.060143320051551506,
+        "max": 0.9928282914621416
+      },
+      "duration_accuracy": {
+        "n": 31,
+        "median": 0.6158164243024508,
+        "q1": 0.46192792784617237,
+        "q3": 0.7235302325403471,
+        "min": 0.10934145740814472,
+        "max": 0.8770642201834863
+      },
+      "tie_accuracy": {
+        "n": 29,
+        "median": 0.37735849056603776,
+        "q1": 0.14173789173789172,
+        "q3": 0.5,
+        "min": 0.0,
+        "max": 0.75
+      },
+      "voice_accuracy": {
+        "n": 31,
+        "median": 0.4863636363636364,
+        "q1": 0.4296031219636242,
+        "q3": 0.6494281045751634,
+        "min": 0.2602739726027397,
+        "max": 0.8425709418034583
+      },
+      "pedal_f1": {
+        "n": 7,
+        "median": 0.001174887307054031,
+        "q1": 0.0005868544600938967,
+        "q3": 0.002165249249047872,
+        "min": 0.0,
+        "max": 0.008831470431967109
+      }
+    },
+    "P4-R": {
+      "note_f1": {
+        "n": 31,
+        "median": 0.30707070707070705,
+        "q1": 0.1581118515397979,
+        "q3": 0.6089583155777184,
+        "min": 0.029397030327371187,
+        "max": 0.897370653095844
+      },
+      "onset_f1": {
+        "n": 31,
+        "median": 0.9182162932694345,
+        "q1": 0.3073374458212518,
+        "q3": 0.978417223005077,
+        "min": 0.05980299125904032,
+        "max": 0.9923664122137404
+      },
+      "pitch_f1": {
+        "n": 31,
+        "median": 0.9184301055422589,
+        "q1": 0.3082214216074737,
+        "q3": 0.9788756465128656,
+        "min": 0.060143320051551506,
+        "max": 0.9928282914621416
+      },
+      "duration_accuracy": {
+        "n": 31,
+        "median": 0.600880998624137,
+        "q1": 0.4564623961701626,
+        "q3": 0.7137681499913745,
+        "min": 0.08624781452625745,
+        "max": 0.9042735042735043
+      },
+      "tie_accuracy": {
+        "n": 29,
+        "median": 0.6,
+        "q1": 0.3121930279393353,
+        "q3": 0.7037037037037037,
+        "min": 0.0,
+        "max": 0.9375
+      },
+      "voice_accuracy": {
+        "n": 31,
+        "median": 0.6242774566473989,
+        "q1": 0.5094667079952022,
+        "q3": 0.7276990686081595,
+        "min": 0.3140495867768595,
+        "max": 0.849919170604245
+      },
+      "pedal_f1": {
+        "n": 7,
+        "median": 0.0013386651290859595,
+        "q1": 0.0005747126436781609,
+        "q3": 0.0021277105002841393,
+        "min": 0.0,
+        "max": 0.009606016828711532
+      }
+    },
+    "P4-L": {
+      "note_f1": {
+        "n": 31,
+        "median": 0.2757926522395571,
+        "q1": 0.182013414032836,
+        "q3": 0.6067529735608473,
+        "min": 0.03394953262287386,
+        "max": 0.8833746898263027
+      },
+      "onset_f1": {
+        "n": 31,
+        "median": 0.9182162932694345,
+        "q1": 0.3073374458212518,
+        "q3": 0.978417223005077,
+        "min": 0.05980299125904032,
+        "max": 0.9923664122137404
+      },
+      "pitch_f1": {
+        "n": 31,
+        "median": 0.9184301055422589,
+        "q1": 0.3082214216074737,
+        "q3": 0.9788756465128656,
+        "min": 0.060143320051551506,
+        "max": 0.9928282914621416
+      },
+      "duration_accuracy": {
+        "n": 31,
+        "median": 0.6400568786507356,
+        "q1": 0.4691779995573768,
+        "q3": 0.7390171160114547,
+        "min": 0.19657534246575342,
+        "max": 0.898989898989899
+      },
+      "tie_accuracy": {
+        "n": 29,
+        "median": 0.3541666666666667,
+        "q1": 0.3,
+        "q3": 0.41509433962264153,
+        "min": 0.125,
+        "max": 1.0
+      },
+      "voice_accuracy": {
+        "n": 31,
+        "median": 0.5900952053715844,
+        "q1": 0.4888301316715646,
+        "q3": 0.6991362922773285,
+        "min": 0.29015544041450775,
+        "max": 0.8314214135021097
+      },
+      "pedal_f1": {
+        "n": 7,
+        "median": 0.0009729576281158047,
+        "q1": 0.0,
+        "q3": 0.002490518582301878,
+        "min": 0.0,
+        "max": 0.0059316647575476805
+      }
+    }
+  },
+  "bootstrap_pairwise_mean_diff_ci95": [
+    {
+      "field": "note_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 31,
+      "observed_mean_diff": 0.0124696903212005,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.018512889782725434,
+      "ci95_upper": 0.0418652487856986
+    },
+    {
+      "field": "note_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -0.013477466020497667,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.05050645153653269,
+      "ci95_upper": 0.02349600264967016
+    },
+    {
+      "field": "note_f1",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -0.02594715634169817,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.05024715348068092,
+      "ci95_upper": -0.006161703070668887
+    },
+    {
+      "field": "onset_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -1.558344775801169e-08,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -4.675034327403507e-08,
+      "ci95_upper": 0.0
+    },
+    {
+      "field": "onset_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -2.4789226063973966e-07,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -1.1812469529193237e-06,
+      "ci95_upper": 4.3757017100010477e-07
+    },
+    {
+      "field": "onset_f1",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -2.3230881288172795e-07,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -1.1344966096452885e-06,
+      "ci95_upper": 4.3757017100010477e-07
+    },
+    {
+      "field": "pitch_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -1.810403469789775e-08,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -5.431210409369325e-08,
+      "ci95_upper": 0.0
+    },
+    {
+      "field": "pitch_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -2.5356708063537583e-07,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -1.2076927802215632e-06,
+      "ci95_upper": 4.469915383154358e-07
+    },
+    {
+      "field": "pitch_f1",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -2.3546304593747812e-07,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -1.15338067612787e-06,
+      "ci95_upper": 4.469915383154358e-07
+    },
+    {
+      "field": "duration_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 31,
+      "observed_mean_diff": 0.0306985261941016,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.016888459548500913,
+      "ci95_upper": 0.08039389039405108
+    },
+    {
+      "field": "duration_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": 0.0008156442470856949,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.050777754427318564,
+      "ci95_upper": 0.052794578402216914
+    },
+    {
+      "field": "duration_accuracy",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -0.029882881947015907,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.05426218935480707,
+      "ci95_upper": -0.009713422590337343
+    },
+    {
+      "field": "tie_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 29,
+      "observed_mean_diff": -0.15890863136549221,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.2646212936327164,
+      "ci95_upper": -0.04051947077971409
+    },
+    {
+      "field": "tie_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 29,
+      "observed_mean_diff": 0.04454575077810054,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.057796916397317565,
+      "ci95_upper": 0.15723503966377855
+    },
+    {
+      "field": "tie_accuracy",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 29,
+      "observed_mean_diff": 0.20345438214359274,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": 0.1480119505221431,
+      "ci95_upper": 0.2602771387103625
+    },
+    {
+      "field": "voice_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 31,
+      "observed_mean_diff": -0.03202305631741215,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.05423239993060335,
+      "ci95_upper": -0.014274580080475259
+    },
+    {
+      "field": "voice_accuracy",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": 0.04139678382066885,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": 0.013056440272177927,
+      "ci95_upper": 0.07006509409092886
+    },
+    {
+      "field": "voice_accuracy",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 31,
+      "observed_mean_diff": 0.07341984013808099,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": 0.05376805017991423,
+      "ci95_upper": 0.09416146555816005
+    },
+    {
+      "field": "pedal_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P4-R",
+      "paired_piece_count": 7,
+      "observed_mean_diff": -0.0006376955279221215,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.001781898172647549,
+      "ci95_upper": 0.00015507497530011432
+    },
+    {
+      "field": "pedal_f1",
+      "pipeline_a": "P4-L",
+      "pipeline_b": "P3",
+      "paired_piece_count": 7,
+      "observed_mean_diff": -0.0005178436581482051,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -0.0014104465633494397,
+      "ci95_upper": 0.00014375691354938567
+    },
+    {
+      "field": "pedal_f1",
+      "pipeline_a": "P4-R",
+      "pipeline_b": "P3",
+      "paired_piece_count": 7,
+      "observed_mean_diff": 0.00011985186977391636,
+      "bootstrap_iterations": 1000,
+      "ci95_lower": -2.8912299119044655e-05,
+      "ci95_upper": 0.0003553452874664568
+    }
+  ],
+  "interpretation_boundaries": [
+    "本表报告的是 P3/P4-R/P4-L 导出的 MusicXML 相对冻结 ASAP test 参考谱的符号一致性，不是导出忠实性（该结论属于 B 阶段 evals/B/regression_gate_20260816*，评估对象是MIDI 量化输入到 XML 输出的对账，不涉及参考谱）。",
+    "本表的 P4-L 与 P4-R 差异反映的是候选评分函数在改变整谱声部/时值决策后对参考谱的接近程度，不能与历史候选级 ROC-AUC=0.868960/AP=0.857762/Top-1=0.738746（vs 规则 Top-1=0.625078）直接换算或相加；候选级指标衡量的是排序质量，本表衡量的是最终整谱输出与参考谱的符号一致性，两者不是同一统计量。",
+    "B 阶段三曲（mozart_k4/scarlatti_k79/schubert_d979）生产回归集的结果不能替代本表；本表使用的是 31 首作品、120 条演奏的冻结 ASAP test 集，是唯一可用于泛化性结论的样本。",
+    "test 集在本次运行中只使用一次；任何指标不理想都不应引发针对 test 集的再次调参，调参必须回到 train/valid 集合后再重新走完整个 B/C 阶段协议。"
+  ]
+}

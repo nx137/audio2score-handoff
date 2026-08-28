@@ -1,0 +1,122 @@
+{
+  "schema_version": "C-stage-piece-v1",
+  "piece_key": "Chopin\u001fSonata_2_2nd",
+  "midi_performance": "Chopin/Sonata_2/2nd/KaszoS14.mid",
+  "pipeline": "P4-L",
+  "midi_sha256": "a0792bdd5d08e3ba7b44a97dde920697128169036024ce067a2c359a726d2b2e",
+  "alignment_csv": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap_cross_piece/full_run/chunks/chunk_0688_0704/alignments/Chopin__Sonata_2__2nd__KaszoS14.csv",
+  "export_command": [
+    "/usr/bin/python3",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+    "--midi",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/tmp/asap-dataset/Chopin/Sonata_2/2nd/KaszoS14.mid",
+    "--out",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/C/frozen_test_20260817/pieces/Chopin__Sonata_2_2nd/Chopin__Sonata_2__2nd__KaszoS14/P4-L/output.musicxml",
+    "--title",
+    "P4-L C-stage: Chopin__Sonata_2__2nd__KaszoS14",
+    "--divisors",
+    "8,4,3",
+    "--max-voices",
+    "12",
+    "--candidate-model",
+    "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/models/p4_asap_cross_piece_v1"
+  ],
+  "export_returncode": 0,
+  "status": "completed",
+  "score": {
+    "schema_version": "score-metrics-v1",
+    "parameters": {
+      "onset_tolerance_ql": 0.125,
+      "duration_tolerance_ql": 0.25,
+      "pedal_tolerance_ql": 0.25
+    },
+    "coverage": {
+      "reference_events_total": 4285,
+      "reference_events_reliably_aligned": 629,
+      "system_events_total": 4574,
+      "system_events_mapped_to_reference_axis": 3847,
+      "system_events_outside_alignment_span": 727
+    },
+    "pitch": {
+      "tp": 629,
+      "predicted": 3847,
+      "reference": 629,
+      "precision": 0.16350402911359502,
+      "recall": 1.0,
+      "f1": 0.2810545129579982
+    },
+    "onset": {
+      "tp": 628,
+      "predicted": 3847,
+      "reference": 629,
+      "precision": 0.16324408630101378,
+      "recall": 0.9984101748807631,
+      "f1": 0.28060768543342274
+    },
+    "note": {
+      "tp": 219,
+      "predicted": 3847,
+      "reference": 629,
+      "precision": 0.05692747595528984,
+      "recall": 0.3481717011128776,
+      "f1": 0.09785522788203753
+    },
+    "duration": {
+      "matched_events": 628,
+      "accuracy": 0.3487261146496815,
+      "mae_ql": 0.45508227176273885,
+      "median_absolute_error_ql": 0.375
+    },
+    "tie_chain": {
+      "available": true,
+      "reliably_mapped_reference_tied_events": 14,
+      "correct_chain_role_events": 7,
+      "accuracy": 0.5
+    },
+    "voice_consistency": {
+      "available": true,
+      "matched_note_events": 219,
+      "majority_consistent_events": 136,
+      "accuracy": 0.6210045662100456
+    },
+    "pedal": {
+      "available": true,
+      "reference_events": 1,
+      "system_events_mapped": 721,
+      "all": {
+        "tp": 0,
+        "predicted": 721,
+        "reference": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "by_type": {
+        "start": {
+          "tp": 0,
+          "predicted": 318,
+          "reference": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "change": {
+          "tp": 0,
+          "predicted": 92,
+          "reference": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "stop": {
+          "tp": 0,
+          "predicted": 311,
+          "reference": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    }
+  }
+}

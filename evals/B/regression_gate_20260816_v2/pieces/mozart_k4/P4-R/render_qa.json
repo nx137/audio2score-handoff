@@ -1,0 +1,19 @@
+{
+  "xml_parse_success": true,
+  "part_count": 2,
+  "measure_count": 109,
+  "overfull_measure_count": 0,
+  "overfull_measures": [],
+  "tie_orphan_stop_count": 0,
+  "tie_unclosed_start_count": 0,
+  "tie_cross_voice_count": 0,
+  "tie_complete": true,
+  "render_returncode": 0,
+  "render_success": true,
+  "page_count": 3,
+  "warnings": {
+    "ties_left_open": 0,
+    "unclosed": 0,
+    "beam_or_layout": 0
+  }
+}

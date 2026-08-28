@@ -1,0 +1,10 @@
+split,piece_key,composer,title,performance_rank_in_piece,performances_in_piece,midi_performance,midi_score,xml_score
+train,BachPrelude_bwv_887,Bach,Prelude_bwv_887,1,1,Bach/Prelude/bwv_887/LiYZ01M.mid,Bach/Prelude/bwv_887/midi_score.mid,Bach/Prelude/bwv_887/xml_score.musicxml
+train,LisztTranscendental_Etudes_5,Liszt,Transcendental_Etudes_5,1,11,Liszt/Transcendental_Etudes/5/Gryaznov02.mid,Liszt/Transcendental_Etudes/5/midi_score.mid,Liszt/Transcendental_Etudes/5/xml_score.musicxml
+train,DebussyImages_Book_1_1_Reflets_dans_lEau,Debussy,Images_Book_1_1_Reflets_dans_lEau,1,2,Debussy/Images_Book_1/1_Reflets_dans_lEau/Kleisen11M.mid,Debussy/Images_Book_1/1_Reflets_dans_lEau/midi_score.mid,Debussy/Images_Book_1/1_Reflets_dans_lEau/xml_score.musicxml
+validation,BachFugue_bwv_876,Bach,Fugue_bwv_876,1,2,Bach/Fugue/bwv_876/SirajA01M.mid,Bach/Fugue/bwv_876/midi_score.mid,Bach/Fugue/bwv_876/xml_score.musicxml
+validation,LisztTranscendental_Etudes_10,Liszt,Transcendental_Etudes_10,1,16,Liszt/Transcendental_Etudes/10/CaoJ03M.mid,Liszt/Transcendental_Etudes/10/midi_score.mid,Liszt/Transcendental_Etudes/10/xml_score.musicxml
+validation,ChopinScherzos_20,Chopin,Scherzos_20,1,3,Chopin/Scherzos/20/Kurz04M.mid,Chopin/Scherzos/20/midi_score.mid,Chopin/Scherzos/20/xml_score.musicxml
+test,BeethovenPiano_Sonatas_1-1,Beethoven,Piano_Sonatas_1-1,1,1,Beethoven/Piano_Sonatas/1-1/KimG01.mid,Beethoven/Piano_Sonatas/1-1/midi_score.mid,Beethoven/Piano_Sonatas/1-1/xml_score.musicxml
+test,BachFugue_bwv_889,Bach,Fugue_bwv_889,1,6,Bach/Fugue/bwv_889/Giesbrecht01M.mid,Bach/Fugue/bwv_889/midi_score.mid,Bach/Fugue/bwv_889/xml_score.musicxml
+test,HaydnKeyboard_Sonatas_39-1,Haydn,Keyboard_Sonatas_39-1,1,2,Haydn/Keyboard_Sonatas/39-1/Yarden02.mid,Haydn/Keyboard_Sonatas/39-1/midi_score.mid,Haydn/Keyboard_Sonatas/39-1/xml_score.musicxml

@@ -1,0 +1,68 @@
+{
+  "schema_version": "B-baseline-v1",
+  "pipeline": "P4-R",
+  "input_midi": "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/scarlatti_k79_source.mid",
+  "started_at_utc": "2026-08-16T15:42:45.882393+00:00",
+  "parameters": {
+    "divisors": "8,4,3",
+    "onset_tolerance_ql": 0.125,
+    "duration_tolerance_ql": 0.25,
+    "max_voices": 12,
+    "candidate_model": null
+  },
+  "export": {
+    "command": [
+      "/usr/bin/python3",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/audio2score/scripts/p4_multivoice_score.py",
+      "--midi",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/workspace/P3_真实曲谱MIDI到五线谱样例_小节边界修复版/scarlatti_k79_source.mid",
+      "--out",
+      "/home/user/.clawsgo/projects/a1c4aad0-038d-4c75-ab75-64ac0670657c/evals/B/regression_gate_20260816/pieces/scarlatti_k79/P4-R/output.musicxml",
+      "--title",
+      "P4-R baseline: scarlatti_k79_source",
+      "--divisors",
+      "8,4,3",
+      "--max-voices",
+      "12"
+    ],
+    "returncode": 0
+  },
+  "status": "completed",
+  "reconciliation": {
+    "reference": "p4",
+    "input_event_count": 759,
+    "xml_tie_merged_event_count": 759,
+    "onset_tolerance_ql": 0.125,
+    "duration_tolerance_ql": 0.25,
+    "extra_count": 0,
+    "missing_count": 0,
+    "onset_drift_count": 0,
+    "duration_drift_count": 0,
+    "extra_examples": [],
+    "missing_examples": [],
+    "onset_drift_examples": [],
+    "duration_drift_examples": [],
+    "export_fidelity_pass": true
+  },
+  "render_qa": {
+    "xml_parse_success": true,
+    "part_count": 2,
+    "measure_count": 56,
+    "overfull_measure_count": 0,
+    "overfull_measures": [],
+    "tie_orphan_stop_count": 0,
+    "tie_unclosed_start_count": 0,
+    "tie_cross_voice_count": 0,
+    "tie_complete": true,
+    "render_returncode": 0,
+    "render_success": true,
+    "page_count": 5,
+    "warnings": {
+      "ties_left_open": 0,
+      "unclosed": 0,
+      "beam_or_layout": 0
+    }
+  },
+  "acceptance_pass": true,
+  "finished_at_utc": "2026-08-16T15:42:50.791299+00:00"
+}

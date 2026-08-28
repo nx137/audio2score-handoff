@@ -1,0 +1,10 @@
+# Python 3.10--3.12 recommended for the notation/evaluation backend.
+# Install with: python -m pip install -r environment/requirements-backend.txt
+music21>=9.1,<10
+pretty_midi>=0.2.10
+mido>=1.2.10
+numpy>=1.24,<3
+lightgbm>=4.0,<5
+verovio>=4.3,<6
+cairosvg>=2.7,<3
+Pillow>=10,<12

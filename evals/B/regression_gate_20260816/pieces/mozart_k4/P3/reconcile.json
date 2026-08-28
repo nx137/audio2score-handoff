@@ -1,0 +1,45 @@
+{
+  "reference": "notation",
+  "input_event_count": 335,
+  "xml_tie_merged_event_count": 335,
+  "onset_tolerance_ql": 0.125,
+  "duration_tolerance_ql": 0.25,
+  "extra_count": 0,
+  "missing_count": 0,
+  "onset_drift_count": 0,
+  "duration_drift_count": 4,
+  "extra_examples": [],
+  "missing_examples": [],
+  "onset_drift_examples": [],
+  "duration_drift_examples": [
+    [
+      45,
+      54.875,
+      0.125,
+      1.375,
+      19
+    ],
+    [
+      58,
+      132.66666666666666,
+      0.875,
+      2.333333333333343,
+      45
+    ],
+    [
+      69,
+      19.375,
+      0.6666666666666666,
+      1.0,
+      7
+    ],
+    [
+      69,
+      63.666666666666664,
+      0.75,
+      1.125000000000007,
+      22
+    ]
+  ],
+  "export_fidelity_pass": true
+}

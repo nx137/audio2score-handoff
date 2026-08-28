@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[margin=2.25cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\definecolor{navy}{HTML}{18354A}
+\definecolor{teal}{HTML}{007C78}
+\definecolor{light}{HTML}{EEF4F6}
+\titleformat{\section}{\large\bfseries\color{navy}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{teal}}{\thesubsection}{0.7em}{}
+\setlist[itemize]{leftmargin=1.5em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small C 阶段冻结踏板消融实验}
+\rhead{\small 2026-08-18}
+\cfoot{\thepage}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{navy} C 阶段冻结踏板消融实验报告}\\[7pt]
+{\large P4 多声部记谱系统：CC64 信息的严格配对消融}\\[10pt]
+\colorbox{light}{\parbox{0.88\textwidth}{\centering\small
+\textbf{冻结证据包：}120 个演奏、31 首作品、4 条 P4 管线，共 480 个导出--评分组合；\\
+逐曲配对 bootstrap（1,000 次，seed=20260817）。}}
+\end{center}
+
+\section{目的与结论边界}
+本实验检验 MIDI CC64 踏板信息在 P4 后端中的作用。它衡量的是\textbf{生成 MusicXML 相对 ASAP 参考谱的符号一致性}，不衡量音频转 MIDI 前端误差，也不替代候选级排序指标或 B 阶段的导出忠实性。
+
+结果表明：在本冻结集和当前量化/候选设计下，规则评分（P4-R）有无 CC64 的音符、时值、连音与声部指标\textbf{完全一致}；冻结 LightGBM（P4-L）下，禁用 CC64 后的 note F1、时值准确率、tie 与 voice 指标均出现极小的数值上升，但所有相应 95\% 配对 bootstrap 区间均跨越 0。因而，\textbf{不能据此声称 CC64 为当前参考谱一致性带来了可检出的正向增益}。与此同时，有踏板管线确实输出了踏板标记，而无踏板条件严格输出零个 \texttt{<pedal>} 元素；踏板 F1 的绝对值极低，说明当前 MIDI CC64 与参考谱踏板标记之间存在显著语义/标注粒度错配，不能把该结果包装成踏板记谱质量的正面证据。
+
+\section{实验设计}
+\subsection{冻结资产与评价协议}
+\begin{itemize}
+  \item 冻结测试集：120 个演奏，31 首作品；统计宏平均的基本单位为\textbf{作品}。
+  \item 输入、参考谱、外部对齐、量化参数、手部分配、最大声部数、容差及随机种子在四条管线间固定。
+  \item 容差：onset $\leq 0.125$ QL，duration $\leq 0.25$ QL，pedal $\leq 0.25$ QL。
+  \item note/pitch/onset 使用同手、同 MIDI pitch 的事件匹配；tie 使用 tie-chain 语义；voice 使用映射后的多数类纯度。
+  \item 置信区间：按作品进行有放回配对重采样，1,000 次，seed=20260817，报告 A--B 的均值差及 95\% 区间。
+\end{itemize}
+
+\subsection{四条管线与干预定义}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+管线 & 候选评分 & CC64 处理 \\
+\midrule
+P4-R & 规则评分 & 进入声学时值、候选特征/排序，并输出 pedal \\
+P4-R-NP & 规则评分 & 解码器传入空 CC64 区间；不输出 pedal \\
+P4-L & 冻结 LightGBM & 同 P4-R 的 CC64 使用方式 \\
+P4-L-NP & 冻结 LightGBM & 同 P4-R-NP 的严格 CC64 禁用方式 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+无踏板并非事后删除 XML 标签：它在解码前向 \texttt{decode\_score\_hands} 传入空踏板区间，因此真实 CC64 不参与声学时值、候选生成、候选特征或规则/LightGBM 排序；同时不写出 MusicXML pedal。主要配对比较为 P4-R--P4-R-NP 与 P4-L--P4-L-NP；P4-L--P4-R 仅用于比较冻结学习评分与规则评分。
+
+\section{证据包完整性核验}
+\begin{center}
+\begin{tabular}{p{0.58\textwidth}r}
+\toprule
+核验项 & 结果 \\
+\midrule
+完成的 \texttt{metrics.json} 记录 & 480 / 480 \\
+每条管线完成数 & 120（四条管线均齐全） \\
+覆盖作品数 / 演奏数 & 31 / 120 \\
+导出或评分失败数 & 0 \\
+P4-L、P4-L-NP 的 LightGBM 回退记录 & 0 \\
+无踏板 XML 中含 \texttt{<pedal>} 的文件 & 0 / 240 \\
+冻结 LightGBM 文本/JSON SHA-256 & 均与配置记录一致 \\
+历史 C 阶段基线目录 & 保持为独立目录，未被本运行覆盖 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+运行配置固定为 divisors=8,4,3，max voices=12。冻结候选模型文本/JSON 的 SHA-256 均与配置记录一致。\texttt{commands.log} 中未观察到 ``候选模型不可用，回退规则评分''；无踏板输出的命令级审计与 LightGBM 加载审计均覆盖恢复运行产生的全部相关导出记录。
+
+\section{主要结果：作品宏平均}
+\begin{center}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+管线 & note F1 & 时值准确率 & tie 准确率 & voice 准确率 & pedal F1 \\
+\midrule
+P4-R & 0.3736 & 0.5608 & 0.5350 & 0.6115 & 0.00234 \\
+P4-R-NP & 0.3736 & 0.5608 & 0.5350 & 0.6115 & 0.00000 \\
+P4-L & 0.3861 & 0.5915 & 0.3760 & 0.5794 & 0.00170 \\
+P4-L-NP & 0.3871 & 0.5932 & 0.3766 & 0.5801 & 0.00000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pitch F1 与 onset F1 在同一候选评分条件下不受干预影响（P4-R：0.6623 / 0.6607；P4-L：0.6623 / 0.6607），符合本消融只作用于时值相关信息流的预期。事件 micro 平均也呈现相同格局：P4-R 的 note F1 为 0.4171，P4-L 为 0.4411，P4-L-NP 为 0.4416；但论文中的显著性判断应以预先定义的逐曲配对统计为准。
+
+\section{配对 bootstrap：主比较}
+\begin{center}
+\small
+\begin{tabular}{llrrr}
+\toprule
+配对 & 指标 & A--B 均值差 & 95\% CI & 解释 \\
+\midrule
+P4-R--P4-R-NP & note F1 & 0.00000 & [0.00000, 0.00000] & 完全相同 \\
+ & 时值准确率 & 0.00000 & [0.00000, 0.00000] & 完全相同 \\
+ & tie 准确率 & 0.00000 & [0.00000, 0.00000] & 完全相同 \\
+ & voice 准确率 & 0.00000 & [0.00000, 0.00000] & 完全相同 \\
+\midrule
+P4-L--P4-L-NP & note F1 & -0.00099 & [-0.00210, 0.00006] & CI 跨 0 \\
+ & 时值准确率 & -0.00171 & [-0.00417, 0.00092] & CI 跨 0 \\
+ & tie 准确率 & -0.00053 & [-0.00505, 0.00349] & CI 跨 0 \\
+ & voice 准确率 & -0.00066 & [-0.00185, 0.00039] & CI 跨 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+有踏板相对无踏板的 pedal F1 差异为 P4-R：+0.00234，95\% CI [0.00056, 0.00492]；P4-L：+0.00170，95\% CI [0.00028, 0.00341]。这只说明有踏板条件产生了极少量与参考 pedal 标记匹配的事件；由于绝对 F1 极低，不能将其解释为可靠的踏板记谱性能。
+
+\section{补充比较：冻结学习评分与规则评分}
+P4-L 相对 P4-R 的逐曲宏平均差为：note F1 +0.01247（95\% CI [-0.01766, 0.04268]），时值准确率 +0.03070（[-0.01505, 0.07868]），tie 准确率 -0.15891（[-0.26732, -0.02817]），voice 准确率 -0.03202（[-0.05384, -0.01269]）。因此，学习评分在此冻结测试上呈现更高的时值点估计，但其 note F1 / 时值区间仍跨 0，且 tie 与 voice 存在稳定下降；不应使用单一总体分数宣称全面优于规则评分。
+
+\section{可用于论文的表述与限制}
+\subsection{可成立的陈述}
+\begin{itemize}
+  \item 已完成可复核的严格 CC64 配对消融：无踏板条件在解码前屏蔽 CC64，且 XML 层零踏板输出。
+  \item 在 120 演奏、31 作品的冻结 ASAP 测试上，当前 CC64 使用方式未显示出对 note F1、时值、tie 或 voice 一致性的可检出正向提升。
+  \item 结果揭示了一个重要的负结果：performance MIDI 的 CC64 与参考谱中的 pedal 标记并非可直接互换的监督目标。
+\end{itemize}
+
+\subsection{不可成立的陈述}
+\begin{itemize}
+  \item 不可声称当前系统已经获得高质量或高保真的踏板记谱；pedal F1 约为 0.002，证据明确不足。
+  \item 不可把本 C 阶段结果外推为端到端音频转录质量，也不可替代候选级 LightGBM 排序评估。
+  \item 不可仅凭 P4-L 的较高点估计宣称其全面优于规则评分；关键指标存在区间跨 0，tie/voice 则显著更低。
+\end{itemize}
+
+\section{下一步建议}
+当前最有价值的推进不是继续强调 CC64 的平均增益，而是构建 30--50 个片段的踏板专用人工金标准：明确区分延音声学证据、演奏踏板动作与出版谱踏板标记，并对 retake/change、半踏与编辑性省略建立标注规则。随后在该金标准上重测 pedal event、延音时值及可读性，才能把踏板模块从“已实现、已严格消融”推进到“具有可辩护效果”的论文证据。
+
+\vfill
+{\footnotesize\color{gray}\raggedright
+证据位置：\texttt{evals/C/pedal\_ablation\_frozen\_20260818/}。核心文件：\texttt{config.json}、\texttt{manifest/}、\texttt{models/}、\texttt{commands.log}、\texttt{summary/aggregate\_summary.json}、\texttt{summary/performance\_level.csv}、\texttt{summary/piece\_level.csv}。\par}
+\end{document}
