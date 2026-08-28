@@ -48,6 +48,7 @@ def main() -> int:
             dst,
             None,
             divisors=(8, 4, 3),
+            annotations_rel="asap_annotations_gold40.json",
         )
         print(f"[align] {dst.name}", flush=True)
         if time.time() - start > args.time_budget:

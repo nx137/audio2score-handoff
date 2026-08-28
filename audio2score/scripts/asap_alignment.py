@@ -32,8 +32,9 @@ class AlignmentError(ValueError):
     """ASAP 条目的结构或对齐信息不满足训练使用条件。"""
 
 
-def _annotations_for(asap_root: Path, performance_rel: str) -> dict:
-    annotations_path = asap_root / "asap_annotations.json"
+def _annotations_for(asap_root: Path, performance_rel: str,
+                    annotations_rel: str = "asap_annotations.json") -> dict:
+    annotations_path = asap_root / annotations_rel
     data = json.loads(annotations_path.read_text(encoding="utf-8"))
     try:
         return data[performance_rel]
@@ -91,7 +92,8 @@ def build_asap_alignment(asap_root: str | Path, performance_rel: str, output_pat
                          rejected_path: str | Path | None = None,
                          score_note_tolerance_sec: float = 0.08,
                          xml_note_tolerance_ql: float = 0.125,
-                         divisors=(8, 4, 3), max_events: int | None = None) -> dict:
+                         divisors=(8, 4, 3), max_events: int | None = None,
+                         annotations_rel: str = "asap_annotations.json") -> dict:
     """为一个 ASAP 演奏生成保守外部对齐 CSV，并返回可追溯统计。"""
     root = Path(asap_root)
     metadata_path = root / "metadata.csv"
@@ -101,7 +103,7 @@ def build_asap_alignment(asap_root: str | Path, performance_rel: str, output_pat
     if len(rows) != 1:
         raise AlignmentError(f"metadata.csv 中演奏条目数应为 1，实际为 {len(rows)}：{performance_rel}")
     item = rows[0]
-    annotations = _annotations_for(root, performance_rel)
+    annotations = _annotations_for(root, performance_rel, annotations_rel)
     if not annotations.get("score_and_performance_aligned", False):
         raise AlignmentError("ASAP 标注声明该演奏与参考谱未完整对齐，不能用于 P4 自动监督")
     perf_beats = [float(value) for value in annotations["performance_beats"]]
