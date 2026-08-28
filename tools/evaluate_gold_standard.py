@@ -59,7 +59,7 @@ def parse_notes(xml_path: Path) -> list[dict]:
                         octave = pitch_el.findtext("octave")
                         alter = pitch_el.findtext("alter") or "0"
                         pitch = ({"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}[step]
-                                 + int(octave) * 12 + int(alter))
+                                 + (int(octave) + 1) * 12 + int(alter))
                         dur = int(child.findtext("duration") or 0) / divisions
                         out.append({"hand": hand, "pitch": pitch,
                                     "onset": cursor, "dur": dur})
