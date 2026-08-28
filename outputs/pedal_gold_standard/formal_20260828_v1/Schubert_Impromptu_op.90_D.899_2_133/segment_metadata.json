@@ -1,0 +1,38 @@
+{
+  "segment_id": "Schubert_Impromptu_op.90_D.899_2_133",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op.90_D.899_2",
+    "composer": "Schubert",
+    "title": "Impromptu_op.90_D.899_2",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "7",
+    "midi_performance": "Schubert/Impromptu_op.90_D.899/2/Nikiforov09M.mid",
+    "midi_score": "Schubert/Impromptu_op.90_D.899/2/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op.90_D.899/2/xml_score.musicxml"
+  },
+  "start_measure": 132,
+  "end_measure": 135,
+  "start_ql": 528.0,
+  "end_ql": 544.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 577.0,
+  "alignment": {
+    "rows": 341
+  },
+  "candidate_stats": {
+    "rows": 842,
+    "events": 280,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 233,
+    "ambiguous-candidate": 4,
+    "labeled": 9,
+    "reference-duration-not-candidate": 34
+  }
+}

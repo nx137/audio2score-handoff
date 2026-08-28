@@ -1,0 +1,38 @@
+{
+  "segment_id": "Chopin_Etudes_op_10_5_79",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Chopin\u001fEtudes_op_10_5",
+    "composer": "Chopin",
+    "title": "Etudes_op_10_5",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "11",
+    "midi_performance": "Chopin/Etudes_op_10/5/Bach02.mid",
+    "midi_score": "Chopin/Etudes_op_10/5/midi_score.mid",
+    "xml_score": "Chopin/Etudes_op_10/5/xml_score.musicxml"
+  },
+  "start_measure": 78,
+  "end_measure": 81,
+  "start_ql": 156.0,
+  "end_ql": 164.0,
+  "bar_ql": 2.0,
+  "time_signature": [
+    2,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 631.0,
+  "alignment": {
+    "rows": 1582
+  },
+  "candidate_stats": {
+    "rows": 710,
+    "events": 299,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 98,
+    "labeled": 158,
+    "unmatched": 31,
+    "reference-duration-not-candidate": 12
+  }
+}

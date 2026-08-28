@@ -1,0 +1,38 @@
+{
+  "segment_id": "Chopin_Etudes_op_10_1_51",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Chopin\u001fEtudes_op_10_1",
+    "composer": "Chopin",
+    "title": "Etudes_op_10_1",
+    "performance_rank_in_piece": "17",
+    "performances_in_piece": "24",
+    "midi_performance": "Chopin/Etudes_op_10/1/SunY03M.mid",
+    "midi_score": "Chopin/Etudes_op_10/1/midi_score.mid",
+    "xml_score": "Chopin/Etudes_op_10/1/xml_score.musicxml"
+  },
+  "start_measure": 50,
+  "end_measure": 53,
+  "start_ql": 200.0,
+  "end_ql": 216.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 616.0,
+  "alignment": {
+    "rows": 1328
+  },
+  "candidate_stats": {
+    "rows": 596,
+    "events": 245,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 124,
+    "labeled": 82,
+    "unmatched": 18,
+    "reference-duration-not-candidate": 21
+  }
+}

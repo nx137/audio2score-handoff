@@ -1,0 +1,38 @@
+{
+  "segment_id": "Beethoven_Piano_Sonatas_26-3_96",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_26-3",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_26-3",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "4",
+    "midi_performance": "Beethoven/Piano_Sonatas/26-3/LEE_K05.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/26-3/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/26-3/xml_score.musicxml"
+  },
+  "start_measure": 95,
+  "end_measure": 98,
+  "start_ql": 380.0,
+  "end_ql": 396.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 116.99988885010558,
+  "selection_score": 607.5,
+  "alignment": {
+    "rows": 1765
+  },
+  "candidate_stats": {
+    "rows": 913,
+    "events": 345,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 334,
+    "ambiguous-candidate": 6,
+    "reference-duration-not-candidate": 3,
+    "labeled": 2
+  }
+}

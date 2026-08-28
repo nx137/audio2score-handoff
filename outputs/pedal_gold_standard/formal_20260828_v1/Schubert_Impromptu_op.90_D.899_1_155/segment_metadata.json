@@ -1,0 +1,38 @@
+{
+  "segment_id": "Schubert_Impromptu_op.90_D.899_1_155",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Schubert\u001fImpromptu_op.90_D.899_1",
+    "composer": "Schubert",
+    "title": "Impromptu_op.90_D.899_1",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "4",
+    "midi_performance": "Schubert/Impromptu_op.90_D.899/1/Jin05M.mid",
+    "midi_score": "Schubert/Impromptu_op.90_D.899/1/midi_score.mid",
+    "xml_score": "Schubert/Impromptu_op.90_D.899/1/xml_score.musicxml"
+  },
+  "start_measure": 154,
+  "end_measure": 157,
+  "start_ql": 616.0,
+  "end_ql": 632.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 637.0,
+  "alignment": {
+    "rows": 3459
+  },
+  "candidate_stats": {
+    "rows": 1029,
+    "events": 399,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "labeled": 54,
+    "ambiguous-candidate": 46,
+    "unmatched": 212,
+    "reference-duration-not-candidate": 87
+  }
+}
