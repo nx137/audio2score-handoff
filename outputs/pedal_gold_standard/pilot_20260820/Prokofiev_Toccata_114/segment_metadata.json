@@ -1,0 +1,48 @@
+{
+  "segment_id": "Prokofiev_Toccata_114",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Prokofiev\u001fToccata",
+    "composer": "Prokofiev",
+    "title": "Toccata",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "8",
+    "midi_performance": "Prokofiev/Toccata/Fab13.mid",
+    "midi_score": "Prokofiev/Toccata/midi_score.mid",
+    "xml_score": "Prokofiev/Toccata/xml_score.musicxml"
+  },
+  "start_measure": 113,
+  "end_measure": 116,
+  "start_ql": 452.0,
+  "end_ql": 468.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 0.0,
+  "selection_score": 1305.0,
+  "alignment": {
+    "performance": "Prokofiev/Toccata/Fab13.mid",
+    "rows": 3619,
+    "rejected": 1104,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "outside-or-invalid-beat-map": 3,
+    "aligned": 3619,
+    "score-midi-no-match": 457,
+    "musicxml-no-match": 623,
+    "musicxml-ambiguous": 20,
+    "duplicate-alignment-key": 1
+  },
+  "candidate_stats": {
+    "rows": 9749,
+    "events": 4722,
+    "alignment_method": "external",
+    "merged_duplicate_events": 1,
+    "labeled": 1181,
+    "reference-duration-not-candidate": 211,
+    "ambiguous-candidate": 2228,
+    "unmatched": 1102
+  }
+}

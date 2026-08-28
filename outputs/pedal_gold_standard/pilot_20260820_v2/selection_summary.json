@@ -1,0 +1,240 @@
+{
+  "segments": [
+    {
+      "segment_id": "Chopin_Etudes_op_25_10_15",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Chopin\u001fEtudes_op_25_10",
+        "composer": "Chopin",
+        "title": "Etudes_op_25_10",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "12",
+        "midi_performance": "Chopin/Etudes_op_25/10/Goh01.mid",
+        "midi_score": "Chopin/Etudes_op_25/10/midi_score.mid",
+        "xml_score": "Chopin/Etudes_op_25/10/xml_score.musicxml"
+      },
+      "start_measure": 14,
+      "end_measure": 17,
+      "start_ql": 56.0,
+      "end_ql": 72.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 117.00011700011699,
+      "selection_score": 1378.5,
+      "alignment": {
+        "performance": "Chopin/Etudes_op_25/10/Goh01.mid",
+        "rows": 3228,
+        "rejected": 429,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 5,
+        "aligned": 3228,
+        "score-midi-no-match": 408,
+        "musicxml-ambiguous": 1,
+        "musicxml-no-match": 15
+      },
+      "candidate_stats": {
+        "rows": 9760,
+        "events": 3657,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 429,
+        "labeled": 1944,
+        "ambiguous-candidate": 531,
+        "reference-duration-not-candidate": 753
+      }
+    },
+    {
+      "segment_id": "Balakirev_Islamey_182",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Balakirev\u001fIslamey",
+        "composer": "Balakirev",
+        "title": "Islamey",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "10",
+        "midi_performance": "Balakirev/Islamey/Cho05.mid",
+        "midi_score": "Balakirev/Islamey/midi_score.mid",
+        "xml_score": "Balakirev/Islamey/xml_score.musicxml"
+      },
+      "start_measure": 181,
+      "end_measure": 184,
+      "start_ql": 724.0,
+      "end_ql": 740.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 117.00011700011702,
+      "selection_score": 1292.5,
+      "alignment": {
+        "performance": "Balakirev/Islamey/Cho05.mid",
+        "rows": 6929,
+        "rejected": 1592,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "aligned": 6929,
+        "score-midi-no-match": 1301,
+        "musicxml-ambiguous": 147,
+        "musicxml-no-match": 131,
+        "ambiguous-quantized-performance-event": 1,
+        "outside-or-invalid-beat-map": 12
+      },
+      "candidate_stats": {
+        "rows": 21104,
+        "events": 8521,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "ambiguous-candidate": 3438,
+        "unmatched": 1592,
+        "labeled": 2454,
+        "reference-duration-not-candidate": 1037
+      }
+    },
+    {
+      "segment_id": "Rachmaninoff_Preludes_op_32_10_61",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Rachmaninoff\u001fPreludes_op_32_10",
+        "composer": "Rachmaninoff",
+        "title": "Preludes_op_32_10",
+        "performance_rank_in_piece": "1",
+        "performances_in_piece": "1",
+        "midi_performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+        "midi_score": "Rachmaninoff/Preludes_op_32/10/midi_score.mid",
+        "xml_score": "Rachmaninoff/Preludes_op_32/10/xml_score.musicxml"
+      },
+      "start_measure": 60,
+      "end_measure": 63,
+      "start_ql": 240.0,
+      "end_ql": 256.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 117.00011700011699,
+      "selection_score": 1241.0,
+      "alignment": {
+        "performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+        "rows": 610,
+        "rejected": 2078,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 4,
+        "aligned": 610,
+        "score-midi-no-match": 983,
+        "musicxml-no-match": 1085,
+        "musicxml-ambiguous": 6
+      },
+      "candidate_stats": {
+        "rows": 8129,
+        "events": 2688,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 2078,
+        "reference-duration-not-candidate": 254,
+        "ambiguous-candidate": 87,
+        "labeled": 269
+      }
+    },
+    {
+      "segment_id": "Liszt_Mephisto_Waltz_222",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Liszt\u001fMephisto_Waltz",
+        "composer": "Liszt",
+        "title": "Mephisto_Waltz",
+        "performance_rank_in_piece": "7",
+        "performances_in_piece": "13",
+        "midi_performance": "Liszt/Mephisto_Waltz/Giltburg03.mid",
+        "midi_score": "Liszt/Mephisto_Waltz/midi_score.mid",
+        "xml_score": "Liszt/Mephisto_Waltz/xml_score.musicxml"
+      },
+      "start_measure": 221,
+      "end_measure": 224,
+      "start_ql": 884.0,
+      "end_ql": 900.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 117.00011700011702,
+      "selection_score": 1145.0,
+      "alignment": {
+        "performance": "Liszt/Mephisto_Waltz/Giltburg03.mid",
+        "rows": 2661,
+        "rejected": 7377,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "musicxml-no-match": 6025,
+        "outside-or-invalid-beat-map": 2,
+        "aligned": 2661,
+        "score-midi-no-match": 1348,
+        "musicxml-ambiguous": 2
+      },
+      "candidate_stats": {
+        "rows": 23563,
+        "events": 10038,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 7377,
+        "reference-duration-not-candidate": 1176,
+        "labeled": 1068,
+        "ambiguous-candidate": 417
+      }
+    },
+    {
+      "segment_id": "Beethoven_Piano_Sonatas_3-1_80",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Beethoven\u001fPiano_Sonatas_3-1",
+        "composer": "Beethoven",
+        "title": "Piano_Sonatas_3-1",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "8",
+        "midi_performance": "Beethoven/Piano_Sonatas/3-1/Jia02.mid",
+        "midi_score": "Beethoven/Piano_Sonatas/3-1/midi_score.mid",
+        "xml_score": "Beethoven/Piano_Sonatas/3-1/xml_score.musicxml"
+      },
+      "start_measure": 79,
+      "end_measure": 82,
+      "start_ql": 316.0,
+      "end_ql": 332.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 117.00011700011699,
+      "selection_score": 624.0,
+      "alignment": {
+        "performance": "Beethoven/Piano_Sonatas/3-1/Jia02.mid",
+        "rows": 3633,
+        "rejected": 711,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 7,
+        "aligned": 3633,
+        "musicxml-ambiguous": 78,
+        "score-midi-no-match": 149,
+        "musicxml-no-match": 477
+      },
+      "candidate_stats": {
+        "rows": 12508,
+        "events": 4344,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 711,
+        "ambiguous-candidate": 1217,
+        "labeled": 1504,
+        "reference-duration-not-candidate": 912
+      }
+    }
+  ]
+}

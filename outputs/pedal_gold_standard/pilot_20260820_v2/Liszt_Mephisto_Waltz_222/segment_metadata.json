@@ -1,0 +1,47 @@
+{
+  "segment_id": "Liszt_Mephisto_Waltz_222",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Liszt\u001fMephisto_Waltz",
+    "composer": "Liszt",
+    "title": "Mephisto_Waltz",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "13",
+    "midi_performance": "Liszt/Mephisto_Waltz/Giltburg03.mid",
+    "midi_score": "Liszt/Mephisto_Waltz/midi_score.mid",
+    "xml_score": "Liszt/Mephisto_Waltz/xml_score.musicxml"
+  },
+  "start_measure": 221,
+  "end_measure": 224,
+  "start_ql": 884.0,
+  "end_ql": 900.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011702,
+  "selection_score": 1145.0,
+  "alignment": {
+    "performance": "Liszt/Mephisto_Waltz/Giltburg03.mid",
+    "rows": 2661,
+    "rejected": 7377,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "musicxml-no-match": 6025,
+    "outside-or-invalid-beat-map": 2,
+    "aligned": 2661,
+    "score-midi-no-match": 1348,
+    "musicxml-ambiguous": 2
+  },
+  "candidate_stats": {
+    "rows": 23563,
+    "events": 10038,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 7377,
+    "reference-duration-not-candidate": 1176,
+    "labeled": 1068,
+    "ambiguous-candidate": 417
+  }
+}

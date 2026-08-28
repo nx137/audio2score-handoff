@@ -1,0 +1,242 @@
+{
+  "segments": [
+    {
+      "segment_id": "Chopin_Etudes_op_25_10_15",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Chopin\u001fEtudes_op_25_10",
+        "composer": "Chopin",
+        "title": "Etudes_op_25_10",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "12",
+        "midi_performance": "Chopin/Etudes_op_25/10/Goh01.mid",
+        "midi_score": "Chopin/Etudes_op_25/10/midi_score.mid",
+        "xml_score": "Chopin/Etudes_op_25/10/xml_score.musicxml"
+      },
+      "start_measure": 14,
+      "end_measure": 17,
+      "start_ql": 56.0,
+      "end_ql": 72.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 0.0,
+      "selection_score": 1378.5,
+      "alignment": {
+        "performance": "Chopin/Etudes_op_25/10/Goh01.mid",
+        "rows": 3228,
+        "rejected": 429,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 5,
+        "aligned": 3228,
+        "score-midi-no-match": 408,
+        "musicxml-ambiguous": 1,
+        "musicxml-no-match": 15
+      },
+      "candidate_stats": {
+        "rows": 9760,
+        "events": 3657,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 429,
+        "labeled": 1944,
+        "ambiguous-candidate": 531,
+        "reference-duration-not-candidate": 753
+      }
+    },
+    {
+      "segment_id": "Scriabin_Sonatas_5_343",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Scriabin\u001fSonatas_5",
+        "composer": "Scriabin",
+        "title": "Sonatas_5",
+        "performance_rank_in_piece": "4",
+        "performances_in_piece": "7",
+        "midi_performance": "Scriabin/Sonatas/5/Na07M.mid",
+        "midi_score": "Scriabin/Sonatas/5/midi_score.mid",
+        "xml_score": "Scriabin/Sonatas/5/xml_score.musicxml"
+      },
+      "start_measure": 342,
+      "end_measure": 345,
+      "start_ql": 1368.0,
+      "end_ql": 1384.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 0.0,
+      "selection_score": 1329.0,
+      "alignment": {
+        "performance": "Scriabin/Sonatas/5/Na07M.mid",
+        "rows": 6098,
+        "rejected": 1812,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "aligned": 6098,
+        "outside-or-invalid-beat-map": 8,
+        "score-midi-no-match": 1505,
+        "musicxml-no-match": 252,
+        "musicxml-ambiguous": 46,
+        "duplicate-alignment-key": 1
+      },
+      "candidate_stats": {
+        "rows": 23278,
+        "events": 7910,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 1811,
+        "ambiguous-candidate": 1203,
+        "labeled": 1827,
+        "reference-duration-not-candidate": 3069
+      }
+    },
+    {
+      "segment_id": "Prokofiev_Toccata_114",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Prokofiev\u001fToccata",
+        "composer": "Prokofiev",
+        "title": "Toccata",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "8",
+        "midi_performance": "Prokofiev/Toccata/Fab13.mid",
+        "midi_score": "Prokofiev/Toccata/midi_score.mid",
+        "xml_score": "Prokofiev/Toccata/xml_score.musicxml"
+      },
+      "start_measure": 113,
+      "end_measure": 116,
+      "start_ql": 452.0,
+      "end_ql": 468.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 0.0,
+      "selection_score": 1305.0,
+      "alignment": {
+        "performance": "Prokofiev/Toccata/Fab13.mid",
+        "rows": 3619,
+        "rejected": 1104,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 3,
+        "aligned": 3619,
+        "score-midi-no-match": 457,
+        "musicxml-no-match": 623,
+        "musicxml-ambiguous": 20,
+        "duplicate-alignment-key": 1
+      },
+      "candidate_stats": {
+        "rows": 9749,
+        "events": 4722,
+        "alignment_method": "external",
+        "merged_duplicate_events": 1,
+        "labeled": 1181,
+        "reference-duration-not-candidate": 211,
+        "ambiguous-candidate": 2228,
+        "unmatched": 1102
+      }
+    },
+    {
+      "segment_id": "Balakirev_Islamey_182",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Balakirev\u001fIslamey",
+        "composer": "Balakirev",
+        "title": "Islamey",
+        "performance_rank_in_piece": "3",
+        "performances_in_piece": "10",
+        "midi_performance": "Balakirev/Islamey/Cho05.mid",
+        "midi_score": "Balakirev/Islamey/midi_score.mid",
+        "xml_score": "Balakirev/Islamey/xml_score.musicxml"
+      },
+      "start_measure": 181,
+      "end_measure": 184,
+      "start_ql": 724.0,
+      "end_ql": 740.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 0.0,
+      "selection_score": 1292.5,
+      "alignment": {
+        "performance": "Balakirev/Islamey/Cho05.mid",
+        "rows": 6929,
+        "rejected": 1592,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "aligned": 6929,
+        "score-midi-no-match": 1301,
+        "musicxml-ambiguous": 147,
+        "musicxml-no-match": 131,
+        "ambiguous-quantized-performance-event": 1,
+        "outside-or-invalid-beat-map": 12
+      },
+      "candidate_stats": {
+        "rows": 21104,
+        "events": 8521,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "ambiguous-candidate": 3438,
+        "unmatched": 1592,
+        "labeled": 2454,
+        "reference-duration-not-candidate": 1037
+      }
+    },
+    {
+      "segment_id": "Rachmaninoff_Preludes_op_32_10_61",
+      "manifest": {
+        "split": "train",
+        "piece_key": "Rachmaninoff\u001fPreludes_op_32_10",
+        "composer": "Rachmaninoff",
+        "title": "Preludes_op_32_10",
+        "performance_rank_in_piece": "1",
+        "performances_in_piece": "1",
+        "midi_performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+        "midi_score": "Rachmaninoff/Preludes_op_32/10/midi_score.mid",
+        "xml_score": "Rachmaninoff/Preludes_op_32/10/xml_score.musicxml"
+      },
+      "start_measure": 60,
+      "end_measure": 63,
+      "start_ql": 240.0,
+      "end_ql": 256.0,
+      "bar_ql": 4.0,
+      "time_signature": [
+        4,
+        4
+      ],
+      "tempo_bpm": 0.0,
+      "selection_score": 1241.0,
+      "alignment": {
+        "performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+        "rows": 610,
+        "rejected": 2078,
+        "score_note_tolerance_sec": 0.08,
+        "xml_note_tolerance_ql": 0.125,
+        "outside-or-invalid-beat-map": 4,
+        "aligned": 610,
+        "score-midi-no-match": 983,
+        "musicxml-no-match": 1085,
+        "musicxml-ambiguous": 6
+      },
+      "candidate_stats": {
+        "rows": 8129,
+        "events": 2688,
+        "alignment_method": "external",
+        "merged_duplicate_events": 0,
+        "unmatched": 2078,
+        "reference-duration-not-candidate": 254,
+        "ambiguous-candidate": 87,
+        "labeled": 269
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "segment_id": "Beethoven_Piano_Sonatas_3-1_80",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Beethoven\u001fPiano_Sonatas_3-1",
+    "composer": "Beethoven",
+    "title": "Piano_Sonatas_3-1",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "8",
+    "midi_performance": "Beethoven/Piano_Sonatas/3-1/Jia02.mid",
+    "midi_score": "Beethoven/Piano_Sonatas/3-1/midi_score.mid",
+    "xml_score": "Beethoven/Piano_Sonatas/3-1/xml_score.musicxml"
+  },
+  "start_measure": 79,
+  "end_measure": 82,
+  "start_ql": 316.0,
+  "end_ql": 332.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 624.0,
+  "alignment": {
+    "performance": "Beethoven/Piano_Sonatas/3-1/Jia02.mid",
+    "rows": 3633,
+    "rejected": 711,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "outside-or-invalid-beat-map": 7,
+    "aligned": 3633,
+    "musicxml-ambiguous": 78,
+    "score-midi-no-match": 149,
+    "musicxml-no-match": 477
+  },
+  "candidate_stats": {
+    "rows": 12508,
+    "events": 4344,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 711,
+    "ambiguous-candidate": 1217,
+    "labeled": 1504,
+    "reference-duration-not-candidate": 912
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "segment_id": "Rachmaninoff_Preludes_op_32_10_61",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Rachmaninoff\u001fPreludes_op_32_10",
+    "composer": "Rachmaninoff",
+    "title": "Preludes_op_32_10",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+    "midi_score": "Rachmaninoff/Preludes_op_32/10/midi_score.mid",
+    "xml_score": "Rachmaninoff/Preludes_op_32/10/xml_score.musicxml"
+  },
+  "start_measure": 60,
+  "end_measure": 63,
+  "start_ql": 240.0,
+  "end_ql": 256.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011699,
+  "selection_score": 1241.0,
+  "alignment": {
+    "performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+    "rows": 610,
+    "rejected": 2078,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "outside-or-invalid-beat-map": 4,
+    "aligned": 610,
+    "score-midi-no-match": 983,
+    "musicxml-no-match": 1085,
+    "musicxml-ambiguous": 6
+  },
+  "candidate_stats": {
+    "rows": 8129,
+    "events": 2688,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 2078,
+    "reference-duration-not-candidate": 254,
+    "ambiguous-candidate": 87,
+    "labeled": 269
+  }
+}

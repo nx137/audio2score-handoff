@@ -1,0 +1,48 @@
+{
+  "segment_id": "Balakirev_Islamey_182",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Balakirev\u001fIslamey",
+    "composer": "Balakirev",
+    "title": "Islamey",
+    "performance_rank_in_piece": "3",
+    "performances_in_piece": "10",
+    "midi_performance": "Balakirev/Islamey/Cho05.mid",
+    "midi_score": "Balakirev/Islamey/midi_score.mid",
+    "xml_score": "Balakirev/Islamey/xml_score.musicxml"
+  },
+  "start_measure": 181,
+  "end_measure": 184,
+  "start_ql": 724.0,
+  "end_ql": 740.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 117.00011700011702,
+  "selection_score": 1292.5,
+  "alignment": {
+    "performance": "Balakirev/Islamey/Cho05.mid",
+    "rows": 6929,
+    "rejected": 1592,
+    "score_note_tolerance_sec": 0.08,
+    "xml_note_tolerance_ql": 0.125,
+    "aligned": 6929,
+    "score-midi-no-match": 1301,
+    "musicxml-ambiguous": 147,
+    "musicxml-no-match": 131,
+    "ambiguous-quantized-performance-event": 1,
+    "outside-or-invalid-beat-map": 12
+  },
+  "candidate_stats": {
+    "rows": 21104,
+    "events": 8521,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "ambiguous-candidate": 3438,
+    "unmatched": 1592,
+    "labeled": 2454,
+    "reference-duration-not-candidate": 1037
+  }
+}
