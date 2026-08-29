@@ -155,7 +155,8 @@ def _visible(pos: float, seg_start: float, seg_end: float) -> bool:
     return seg_start - 1e-9 <= pos <= seg_end + 1e-9
 
 
-def eval_segment(sid: str, pedal_ref: str) -> dict:
+def parse_segment(sid: str) -> dict:
+    """Parse a segment once: gold rows, candidates, intervals, and all p4 pipes. Cheap to score repeatedly."""
     sd = BASE / sid
     meta = json.loads((sd / "segment_metadata.json").read_text(encoding="utf-8"))
     start_ql = float(meta["start_ql"])
@@ -175,27 +176,44 @@ def eval_segment(sid: str, pedal_ref: str) -> dict:
             if r.get("start_ql", "").strip():
                 ivs.append((float(r["start_ql"]), float(r["end_ql"]),
                             float(r["clipped_start_ql"]), float(r["clipped_end_ql"])))
-    if pedal_ref == "unclipped":
-        perf_starts = sorted({s for s, e, cs, ce in ivs})
-        perf_stops = sorted({e for s, e, cs, ce in ivs})
-    elif pedal_ref == "inwindow":
-        perf_starts = sorted({s for s, e, cs, ce in ivs if _visible(s, start_ql, end_ql)})
-        perf_stops = sorted({e for s, e, cs, ce in ivs if _visible(e, start_ql, end_ql)})
-    else:  # clipped
-        perf_starts = sorted({cs for s, e, cs, ce in ivs})
-        perf_stops = sorted({ce for s, e, cs, ce in ivs})
-    res = {"segment": sid, "n_events": len(rows), "gold_notation": len(gold),
-           "candidate_feasible": feas}
     pipes = sorted({p.stem for p in sd.glob("p4_*.musicxml")})
-    for pipe in pipes:
-        notes = parse_notes(sd / f"{pipe}.musicxml")
+    notes_by_pipe = {pipe: parse_notes(sd / f"{pipe}.musicxml") for pipe in pipes}
+    pedals_by_pipe = {pipe: parse_pedals(sd / f"{pipe}.musicxml") for pipe in pipes}
+    return {"sid": sid, "start_ql": start_ql, "end_ql": end_ql,
+            "rows": rows, "gold": gold, "feas": feas, "ivs": ivs,
+            "pipes": pipes, "notes_by_pipe": notes_by_pipe, "pedals_by_pipe": pedals_by_pipe}
+
+
+def _ref_events(parsed: dict, pedal_ref: str) -> tuple[list[float], list[float]]:
+    start_ql, end_ql = parsed["start_ql"], parsed["end_ql"]
+    ivs = parsed["ivs"]
+    if pedal_ref == "unclipped":
+        starts = sorted({s for s, e, cs, ce in ivs})
+        stops = sorted({e for s, e, cs, ce in ivs})
+    elif pedal_ref == "inwindow":
+        starts = sorted({s for s, e, cs, ce in ivs if _visible(s, start_ql, end_ql)})
+        stops = sorted({e for s, e, cs, ce in ivs if _visible(e, start_ql, end_ql)})
+    else:  # clipped
+        starts = sorted({cs for s, e, cs, ce in ivs})
+        stops = sorted({ce for s, e, cs, ce in ivs})
+    return starts, stops
+
+
+def score_segment(parsed: dict, pedal_ref: str) -> dict:
+    sid, start_ql = parsed["sid"], parsed["start_ql"]
+    rows, gold = parsed["rows"], parsed["gold"]
+    perf_starts, perf_stops = _ref_events(parsed, pedal_ref)
+    res = {"segment": sid, "n_events": len(rows), "gold_notation": len(gold),
+           "candidate_feasible": parsed["feas"]}
+    for pipe in parsed["pipes"]:
+        notes = parsed["notes_by_pipe"][pipe]
         matched, diffs = match_gold_dur(gold, notes)
         n_gold = len(gold)
         d005 = sum(1 for d in diffs if d <= 0.05)
         d025 = sum(1 for d in diffs if d <= 0.25)
         d100 = sum(1 for d in diffs if d <= 1.0)
         med_err = statistics.median(diffs) if diffs else None
-        ped = parse_pedals(sd / f"{pipe}.musicxml")
+        ped = parsed["pedals_by_pipe"][pipe]
         starts = [o + start_ql for t, o in ped if t in ("start", "change")]
         stops = [o + start_ql for t, o in ped if t in ("stop", "change")]
         tp_s, fn_s, fp_s = match_events(perf_starts, starts)
@@ -269,7 +287,8 @@ def main() -> int:
         lo, hi = int(lo), int(hi or lo)
         bl = [b for b in bl if lo <= b["index"] <= hi]
 
-    results = [eval_segment(b["segment_id"], args.pedal_ref) for b in bl]
+    parsed = [parse_segment(b["segment_id"]) for b in bl]
+    results = [score_segment(p, args.pedal_ref) for p in parsed]
     pipes = _pipe_names(results)
 
     # per-pipe summary for the selected protocol
@@ -302,7 +321,7 @@ def main() -> int:
     # protocol sensitivity (macro + micro for every protocol, every pipe)
     sensitivity = {}
     for ref_mode in ("unclipped", "inwindow", "clipped"):
-        res2 = [eval_segment(b["segment_id"], ref_mode) for b in bl]
+        res2 = [score_segment(p, ref_mode) for p in parsed]
         sensitivity[ref_mode] = {}
         for pipe in pipes:
             sensitivity[ref_mode][pipe] = {
