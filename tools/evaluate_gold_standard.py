@@ -17,6 +17,9 @@ MusicXML):
                               unclipped - raw start_ql/end_ql (v1-v3)
                               inwindow  - only events visible inside the
                                           segment window (default, fair)
+                              visible   - window events + cross-window start
+                                          at window start; no phantom stops
+                                          (recommended for full-piece view)
                               clipped   - clipped_start_ql/clipped_end_ql
                             Reports macro & micro averages and a bootstrap
                             95% CI on the macro average. `change` events
@@ -193,6 +196,15 @@ def _ref_events(parsed: dict, pedal_ref: str) -> tuple[list[float], list[float]]
     elif pedal_ref == "inwindow":
         starts = sorted({s for s, e, cs, ce in ivs if _visible(s, start_ql, end_ql)})
         stops = sorted({e for s, e, cs, ce in ivs if _visible(e, start_ql, end_ql)})
+    elif pedal_ref == "visible":
+        # 只评系统在窗口内"可见且应标记"的事件：
+        #   start = 窗口内踩下的事件 + 跨窗区间（窗口前已踩下）在窗口起点的 start；
+        #   stop  = 仅窗口内释放的事件（窗口后释放不可见，不给伪参考）。
+        starts = {s for s, e, cs, ce in ivs if _visible(s, start_ql, end_ql)}
+        starts |= {start_ql for s, e, cs, ce in ivs
+                   if s < start_ql - 1e-9 and e > start_ql + 1e-9}
+        stops = {e for s, e, cs, ce in ivs if _visible(e, start_ql, end_ql)}
+        starts, stops = sorted(starts), sorted(stops)
     else:  # clipped
         starts = sorted({cs for s, e, cs, ce in ivs})
         stops = sorted({ce for s, e, cs, ce in ivs})
@@ -274,7 +286,7 @@ def main() -> int:
     ap.add_argument("--out",
                     default=str(BASE / "evaluation" / "gold_standard_eval_v4.json"))
     ap.add_argument("--segments", default=None)
-    ap.add_argument("--pedal-ref", choices=("unclipped", "inwindow", "clipped"),
+    ap.add_argument("--pedal-ref", choices=("unclipped", "inwindow", "visible", "clipped"),
                     default="inwindow",
                     help="pedal reference protocol (default: inwindow)")
     ap.add_argument("--bootstrap", type=int, default=1000)
@@ -320,7 +332,7 @@ def main() -> int:
 
     # protocol sensitivity (macro + micro for every protocol, every pipe)
     sensitivity = {}
-    for ref_mode in ("unclipped", "inwindow", "clipped"):
+    for ref_mode in ("unclipped", "inwindow", "visible", "clipped"):
         res2 = [score_segment(p, ref_mode) for p in parsed]
         sensitivity[ref_mode] = {}
         for pipe in pipes:
