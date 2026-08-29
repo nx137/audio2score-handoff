@@ -587,6 +587,8 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
     </measure>
     
     <measure implicit="no" number="2">
@@ -1359,6 +1361,9 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>1197</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2814</offset></direction>
     </measure>
     
     <measure implicit="no" number="4">
@@ -1885,6 +1890,8 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>0</offset></direction>
     </measure>
   </part>
   
@@ -1927,7 +1934,7 @@
         <duration>20160</duration>
         <voice>2</voice>
       </note>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction></measure>
+    </measure>
     
     <measure implicit="no" number="2">
       <note>
@@ -2047,6 +2054,6 @@
         <voice>2</voice>
         <type>16th</type>
       </note>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>1197</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2814</offset></direction></measure>
+    </measure>
   </part>
 </score-partwise>
