@@ -343,6 +343,10 @@
         <voice>4</voice>
         <type>16th</type>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>21210</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>22811</offset></direction>
     </measure>
     
     <measure implicit="no" number="2">
@@ -821,6 +825,9 @@
         <voice>4</voice>
         <type>16th</type>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>19110</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20737</offset></direction>
     </measure>
     
     <measure implicit="no" number="3">
@@ -1180,6 +1187,8 @@
         <type>16th</type>
         <dot />
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18847</offset></direction>
     </measure>
   </part>
   
@@ -1346,7 +1355,7 @@
           <tuplet number="1" type="stop" />
         </notations>
       </note>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>21210</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>22811</offset></direction></measure>
+    </measure>
     
     <measure implicit="no" number="2">
       <note>
@@ -1458,6 +1467,6 @@
           <tuplet number="1" type="stop" />
         </notations>
       </note>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>19110</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20737</offset></direction></measure>
+    </measure>
   </part>
 </score-partwise>
