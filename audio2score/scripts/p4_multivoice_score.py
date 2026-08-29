@@ -311,7 +311,8 @@ def assemble_multivoice_score(rh_events, lh_events, tempo_bpm, time_sig, key_sig
 
 
 def decode_midi_to_voice_events(midi_path, divisors=(8, 4, 3), max_voices=6,
-                                feature_scorer=None, use_pedal=True):
+                                feature_scorer=None, use_pedal=True,
+                                fuse_alpha: float | None = None):
     """读取 MIDI 并作多声部解码，可严格关闭踏板信息。
 
     ``feature_scorer`` 可为 LightGBM 候选评分器；缺省时结构化解码器使用规则评分。
@@ -328,7 +329,7 @@ def decode_midi_to_voice_events(midi_path, divisors=(8, 4, 3), max_voices=6,
     decoder_pedals = pedals if use_pedal else []
     decoded = decode_score_hands(rh, lh, decoder_pedals, max_voices=max_voices,
                                  bar_ql=bar_ql, divisors=divisors,
-                                 feature_scorer=feature_scorer)
+                                 feature_scorer=feature_scorer, fuse_alpha=fuse_alpha)
     return decoded, pedals, meta, time_sig, key
 
 
@@ -342,6 +343,10 @@ def main():
     parser.add_argument(
         "--candidate-model", default=None,
         help="可选 LightGBM 候选模型前缀（.txt/.json）；缺失或不可用时回退规则评分",
+    )
+    parser.add_argument(
+        "--fuse-alpha", type=float, default=None,
+        help="候选评分融合系数：模型概率与规则先验的加权混合（0=纯模型，1=纯规则）；需与 --candidate-model 一起使用",
     )
     parser.add_argument(
         "--no-pedal", action="store_true",
@@ -363,6 +368,7 @@ def main():
     decoded, pedals, meta, time_sig, key = decode_midi_to_voice_events(
         args.midi, divisors=divisors, max_voices=args.max_voices,
         feature_scorer=feature_scorer, use_pedal=not args.no_pedal,
+        fuse_alpha=args.fuse_alpha,
     )
     score = assemble_multivoice_score(
         decoded["RH"], decoded["LH"], meta["tempo_bpm"], time_sig,

@@ -128,7 +128,8 @@ def rank_candidates(start_ql, key_duration_ql, acoustic_duration_ql,
                     next_voice_onset_ql=None, bar_ql=4.0, divisors=(8, 4, 3),
                     probability_fn: Callable | None = None, *,
                     event: VoiceEvent | None = None,
-                    feature_scorer: Callable | None = None) -> list[DurationCandidate]:
+                    feature_scorer: Callable | None = None,
+                    fuse_alpha: float | None = None) -> list[DurationCandidate]:
     """返回候选及代价；模型仅替换概率，结构合法性始终在解码器中验证。
 
     两条评分路径：
@@ -158,6 +159,10 @@ def rank_candidates(start_ql, key_duration_ql, acoustic_duration_ql,
                 next_voice_onset_ql, bar_ql,
             )
             probability = max(EPS, min(0.999999, float(feature_scorer(features))))
+            if fuse_alpha is not None:
+                probability = ((1.0 - fuse_alpha) * probability
+                               + fuse_alpha * rule_probability)
+                probability = max(EPS, min(0.999999, probability))
         else:
             probability = rule_probability
         ranked.append(DurationCandidate(duration, source, crosses, -math.log(probability) + complexity))
@@ -189,7 +194,8 @@ def _stream_next_onsets(events: Iterable[VoiceEvent]) -> dict[tuple[int, float],
     return next_onset
 
 
-def _candidate_sets(base, pedals, bar_ql, divisors, probability_fn, feature_scorer=None):
+def _candidate_sets(base, pedals, bar_ql, divisors, probability_fn, feature_scorer=None,
+                    fuse_alpha: float | None = None):
     next_onsets = _stream_next_onsets(base)
     result = []
     for event in sorted(base, key=lambda item: (item.start_ql, item.voice, item.pitch)):
@@ -198,7 +204,8 @@ def _candidate_sets(base, pedals, bar_ql, divisors, probability_fn, feature_scor
         acoustic_duration = pedal_release_after(event.end_ql, pedals) - event.start_ql
         ranked = rank_candidates(event.start_ql, key_duration, acoustic_duration,
                                  next_onset, bar_ql, divisors, probability_fn,
-                                 event=event, feature_scorer=feature_scorer)
+                                 event=event, feature_scorer=feature_scorer,
+                                 fuse_alpha=fuse_alpha)
         legal = [candidate for candidate in ranked if next_onset is None
                  or event.start_ql + candidate.duration_ql <= next_onset + EPS]
         if not legal:
@@ -300,7 +307,8 @@ def _decode_measure_dp(items, bar_start, bar_ql):
 
 def decode_hand(raw_events, pedals, hand: str, max_voices=6, bar_ql=4.0,
                 divisors=(8, 4, 3), probability_fn: Callable | None = None,
-                feature_scorer: Callable | None = None) -> list[VoiceEvent]:
+                feature_scorer: Callable | None = None,
+                fuse_alpha: float | None = None) -> list[VoiceEvent]:
     """以固定 voice 分配为前提，按小节动态规划选择联合最优的离散时值。
 
     ``feature_scorer`` 提供时对完整 ``candidate_features`` 向量打分（LightGBM
@@ -308,7 +316,7 @@ def decode_hand(raw_events, pedals, hand: str, max_voices=6, bar_ql=4.0,
     """
     base = assign_voices(raw_events, hand=hand, max_voices=max_voices)
     candidate_sets = _candidate_sets(base, pedals, bar_ql, divisors, probability_fn,
-                                     feature_scorer)
+                                     feature_scorer, fuse_alpha)
     by_measure = {}
     for item in candidate_sets:
         measure = int(math.floor((item[0].start_ql + EPS) / bar_ql))
@@ -351,11 +359,12 @@ def write_candidate_table(raw_events, pedals, hand: str, output_path: str | Path
 
 def decode_score_hands(rh_events, lh_events, pedals, max_voices=6, bar_ql=4.0,
                        divisors=(8, 4, 3), probability_fn: Callable | None = None,
-                       feature_scorer: Callable | None = None) -> dict[str, list[VoiceEvent]]:
+                       feature_scorer: Callable | None = None,
+                       fuse_alpha: float | None = None) -> dict[str, list[VoiceEvent]]:
     """整首解码：左右手分别走 ``decode_hand``，可传入规则概率函数或特征打分器。"""
     return {
         "RH": decode_hand(rh_events, pedals, "RH", max_voices, bar_ql, divisors,
-                          probability_fn, feature_scorer),
+                          probability_fn, feature_scorer, fuse_alpha),
         "LH": decode_hand(lh_events, pedals, "LH", max_voices, bar_ql, divisors,
-                          probability_fn, feature_scorer),
+                          probability_fn, feature_scorer, fuse_alpha),
     }

@@ -128,7 +128,8 @@ def eval_segment(sid: str) -> dict:
     perf_stops = sorted({e for _, e in ivs})
     res = {"segment": sid, "n_events": len(rows), "gold_notation": len(gold),
            "candidate_feasible": feas}
-    for pipe in ("p4_rule", "p4_learned", "p4_no_pedal"):
+    pipes = sorted({p.stem for p in sd.glob("p4_*.musicxml")})
+    for pipe in pipes:
         notes = parse_notes(sd / f"{pipe}.musicxml")
         matched, dur_ok = match_gold(gold, notes)
         ped = parse_pedals(sd / f"{pipe}.musicxml")
@@ -174,7 +175,8 @@ def main() -> int:
     n = sum(r["n_events"] for r in results)
     feas = sum(r["candidate_feasible"] for r in results) / n
     print(f"segments={len(results)} events={n} candidate_feasible={feas:.1%}")
-    for pipe in ("p4_rule", "p4_learned", "p4_no_pedal"):
+    pipes = sorted({p for r in results for p in r if p in ("p4_rule", "p4_learned", "p4_no_pedal", "p4_fused")})
+    for pipe in pipes:
         dr = sum(r[pipe]["duration_rate"] for r in results) / len(results)
         fs = sum(r[pipe]["pedal_start_f1"] for r in results) / len(results)
         fp = sum(r[pipe]["pedal_stop_f1"] for r in results) / len(results)

@@ -515,7 +515,8 @@ def run_checked(cmd: list[str]) -> None:
 
 def build_segment(segment: Segment, out_root: Path,
                     skip_align_if_present: bool = False,
-                    skip_render: bool = False) -> dict:
+                    skip_render: bool = False,
+                    fuse_alpha: float | None = None) -> dict:
     row = segment.row
     performance = ROOT / "data" / "ASAP" / row["midi_performance"]
     reference_xml = ROOT / "data" / "ASAP" / row["xml_score"]
@@ -595,6 +596,14 @@ def build_segment(segment: Segment, out_root: Path,
                          "--no-pedal",
                          "--max-voices", "12", "--divisors", "8,4,3"]),
     ]
+    if fuse_alpha is not None:
+        commands.append(
+            ("p4_fused", ["--midi", str(segment_dir / "performance_segment.mid"),
+                          "--out", str(segment_dir / "p4_fused.musicxml"),
+                          "--candidate-model", model,
+                          "--fuse-alpha", str(fuse_alpha),
+                          "--max-voices", "12", "--divisors", "8,4,3"])
+        )
     for stem, args in commands:
         run_checked([sys.executable, str(SCRIPTS / "p4_multivoice_score.py"), *args])
         if not skip_render:

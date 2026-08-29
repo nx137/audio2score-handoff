@@ -40,6 +40,8 @@ def main() -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT))
     parser.add_argument("--keep-svg", action="store_true", help="keep render SVGs (default: delete)")
     parser.add_argument("--keep-work", action="store_true", help="keep _work intermediates (default: delete)")
+    parser.add_argument("--fuse-alpha", type=float, default=None,
+                        help="若指定，额外生成 p4_fused.musicxml（模型概率与规则先验融合）")
     parser.add_argument("--skip-render", action="store_true",
                         help="skip MusicXML->SVG rendering (lean policy removes SVGs anyway)")
     args = parser.parse_args()
@@ -66,7 +68,8 @@ def main() -> int:
         copied = True
     metadata = build_segment(segment, out_root,
                              skip_align_if_present=copied,
-                             skip_render=args.skip_render)
+                             skip_render=args.skip_render,
+                             fuse_alpha=args.fuse_alpha)
     elapsed = time.time() - started
 
     segment_dir = out_root / metadata["segment_id"]
