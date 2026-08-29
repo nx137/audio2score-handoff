@@ -516,7 +516,8 @@ def run_checked(cmd: list[str]) -> None:
 def build_segment(segment: Segment, out_root: Path,
                     skip_align_if_present: bool = False,
                     skip_render: bool = False,
-                    fuse_alpha: float | None = None) -> dict:
+                    fuse_alpha: float | None = None,
+                    pedal_placement: str = "snap") -> dict:
     row = segment.row
     performance = ROOT / "data" / "ASAP" / row["midi_performance"]
     reference_xml = ROOT / "data" / "ASAP" / row["xml_score"]
@@ -602,6 +603,13 @@ def build_segment(segment: Segment, out_root: Path,
                           "--out", str(segment_dir / "p4_fused.musicxml"),
                           "--candidate-model", model,
                           "--fuse-alpha", str(fuse_alpha),
+                          "--max-voices", "12", "--divisors", "8,4,3"])
+        )
+    if pedal_placement == "exact":
+        commands.append(
+            ("p4_exact", ["--midi", str(segment_dir / "performance_segment.mid"),
+                          "--out", str(segment_dir / "p4_exact.musicxml"),
+                          "--pedal-placement", "exact",
                           "--max-voices", "12", "--divisors", "8,4,3"])
         )
     for stem, args in commands:

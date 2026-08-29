@@ -73,7 +73,9 @@ def parse_pedals(xml_path: Path) -> list[tuple[str, float]]:
     for part in root.findall("part"):
         divisions = None
         cursor = 0.0
+        measure_start = 0.0
         for measure in part.findall("measure"):
+            measure_start = cursor
             for child in measure:
                 if child.tag == "attributes":
                     d = child.findtext("divisions")
@@ -86,7 +88,12 @@ def parse_pedals(xml_path: Path) -> list[tuple[str, float]]:
                 elif child.tag == "direction":
                     pedal = child.find("direction-type/pedal")
                     if pedal is not None and pedal.get("type") in ("start", "change", "stop"):
-                        out.append((pedal.get("type"), round(cursor, 9)))
+                        offset = child.findtext("offset")
+                        if offset and divisions:
+                            pos = measure_start + int(offset) / divisions
+                        else:
+                            pos = cursor
+                        out.append((pedal.get("type"), round(pos, 9)))
                 elif child.tag == "note" and divisions:
                     cursor += int(child.findtext("duration") or 0) / divisions
     return out

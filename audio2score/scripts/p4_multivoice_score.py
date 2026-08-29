@@ -152,6 +152,63 @@ def sanitize_tie_accidentals(xml_path: Path) -> None:
     tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
 
 
+
+def insert_exact_pedals(xml_path: Path, pedals: list[tuple[float, float]],
+                        bar_ql: float) -> None:
+    """在踏板区间的精确位置写入 MusicXML <direction><pedal/></direction>。
+
+    ``pedals`` 为段内 QL 坐标的 (start, end) 区间（相对 MIDI 起点 0）。
+    与 ``attach_pedals``（吸附到最近音符）不同，本函数不吸附：位置由
+    CC64 事件本身决定，用 ``<offset>`` 写入小节内精确偏移，从而保留
+    演奏层踏板的真实时序。同位置的 stop+start 合并为 ``change``。
+    """
+    tree = ET.parse(str(xml_path))
+    root = tree.getroot()
+    parts = root.findall("part")
+    part = parts[1] if len(parts) > 1 else parts[0]
+    measures = {int(m.get("number")): m for m in part.findall("measure")}
+    divisions = None
+    for m in measures.values():
+        d = m.find("attributes/divisions")
+        if d is not None:
+            divisions = int(d.text)
+            break
+    if divisions is None:
+        raise RuntimeError("cannot find divisions in MusicXML")
+    events = []
+    for s, e in pedals:
+        events.append((s, "start"))
+        events.append((e, "stop"))
+    events.sort(key=lambda item: (item[0], 0 if item[1] == "start" else 1))
+    merged = []
+    i = 0
+    while i < len(events):
+        pos, typ = events[i]
+        if (typ == "stop" and i + 1 < len(events)
+                and events[i + 1][0] == pos and events[i + 1][1] == "start"):
+            merged.append((pos, "change"))
+            i += 2
+        else:
+            merged.append((pos, typ))
+            i += 1
+    for pos, typ in merged:
+        measure_num = int(math.floor(pos / bar_ql)) + 1
+        offset_ql = pos - (measure_num - 1) * bar_ql
+        offset_div = int(round(max(0.0, offset_ql) * divisions))
+        m = measures.get(measure_num)
+        if m is None:
+            continue
+        direction = ET.SubElement(m, "direction")
+        direction.set("placement", "below")
+        dtype = ET.SubElement(direction, "direction-type")
+        pedal = ET.SubElement(dtype, "pedal")
+        pedal.set("type", typ)
+        if offset_div > 0:
+            off = ET.SubElement(direction, "offset")
+            off.text = str(offset_div)
+    tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
+
+
 def sanitize_pedal_retakes(xml_path: Path) -> None:
     """把同一落点的踏板 stop/start 合并为 MusicXML ``change``。
 
@@ -349,6 +406,10 @@ def main():
         help="候选评分融合系数：模型概率与规则先验的加权混合（0=纯模型，1=纯规则）；需与 --candidate-model 一起使用",
     )
     parser.add_argument(
+        "--pedal-placement", choices=("snap", "exact"), default="snap",
+        help="踏板符号位置策略：snap=吸附到最近音符（默认，PedalMark spanner）；exact=精确位置（CC64 区间边界，<offset> 写入，更忠实演奏层时序）",
+    )
+    parser.add_argument(
         "--no-pedal", action="store_true",
         help="严格禁用 CC64：不参与时值候选/评分特征，也不输出 MusicXML 踏板符号",
     )
@@ -376,12 +437,18 @@ def main():
     )
     # 无踏板模式不读取 CC64 的解码结果，也不输出踏板符号；有踏板模式才附加
     # 标准 PedalMark，保持其作为声学延续证据与演奏标记的独立语义。
-    if not args.no_pedal:
-        attach_pedals(score.parts[1], pedals)
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    write_musicxml_filtered(score, out)
-    sanitize_pedal_retakes(out)
+    if not args.no_pedal and args.pedal_placement == "exact":
+        # exact：不吸附音符，写出后在 XML 层插入精确位置 <direction><pedal/>
+        write_musicxml_filtered(score, out)
+        insert_exact_pedals(out, pedals, bar_ql)
+    else:
+        if not args.no_pedal:
+            attach_pedals(score.parts[1], pedals)
+        write_musicxml_filtered(score, out)
+        if not args.no_pedal:
+            sanitize_pedal_retakes(out)
     sanitize_tie_accidentals(out)
     pedal_status = (
         "禁用（不参与时值候选/评分特征/符号输出）"

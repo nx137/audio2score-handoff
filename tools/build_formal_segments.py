@@ -42,6 +42,8 @@ def main() -> int:
     parser.add_argument("--keep-work", action="store_true", help="keep _work intermediates (default: delete)")
     parser.add_argument("--fuse-alpha", type=float, default=None,
                         help="若指定，额外生成 p4_fused.musicxml（模型概率与规则先验融合）")
+    parser.add_argument("--pedal-placement", choices=("snap", "exact"), default="snap",
+                        help="若为 exact，额外生成 p4_exact.musicxml（精确位置踏板符号）")
     parser.add_argument("--skip-render", action="store_true",
                         help="skip MusicXML->SVG rendering (lean policy removes SVGs anyway)")
     args = parser.parse_args()
@@ -69,7 +71,8 @@ def main() -> int:
     metadata = build_segment(segment, out_root,
                              skip_align_if_present=copied,
                              skip_render=args.skip_render,
-                             fuse_alpha=args.fuse_alpha)
+                             fuse_alpha=args.fuse_alpha,
+                             pedal_placement=args.pedal_placement)
     elapsed = time.time() - started
 
     segment_dir = out_root / metadata["segment_id"]
