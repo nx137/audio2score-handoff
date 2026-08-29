@@ -165,7 +165,10 @@ def insert_exact_pedals(xml_path: Path, pedals: list[tuple[float, float]],
     tree = ET.parse(str(xml_path))
     root = tree.getroot()
     parts = root.findall("part")
-    part = parts[1] if len(parts) > 1 else parts[0]
+    # 选择小节最全的 part 写入踏板记号：music21 可能把全休止的声部
+    # 压缩成少量小节（如左手全休止时 LH 只有 1 小节），固定取 parts[1]
+    # 会把事件静默丢弃（measures.get(num) is None -> continue）。
+    part = max(parts, key=lambda p: len(p.findall("measure")))
     measures = {int(m.get("number")): m for m in part.findall("measure")}
     divisions = None
     for m in measures.values():
