@@ -1,0 +1,1765 @@
+{
+ "n_segments": 40,
+ "segments": [
+  {
+   "segment": "Chopin_Scherzos_20_254",
+   "n_events": 236,
+   "gold_notation": 236,
+   "candidate_feasible": 65,
+   "p4_fused": {
+    "notes": 177,
+    "gold_matched": 173,
+    "duration_ok": 34,
+    "duration_rate": 0.1441,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 5
+   },
+   "p4_learned": {
+    "notes": 189,
+    "gold_matched": 174,
+    "duration_ok": 30,
+    "duration_rate": 0.1271,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 5
+   },
+   "p4_no_pedal": {
+    "notes": 180,
+    "gold_matched": 173,
+    "duration_ok": 35,
+    "duration_rate": 0.1483,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 180,
+    "gold_matched": 173,
+    "duration_ok": 35,
+    "duration_rate": 0.1483,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 5
+   },
+   "mismatch_acoustic_yes_score_none": 178,
+   "mismatch_perf_change_score_none": 4
+  },
+  {
+   "segment": "Rachmaninoff_Preludes_op_23_6_50",
+   "n_events": 50,
+   "gold_notation": 50,
+   "candidate_feasible": 32,
+   "p4_fused": {
+    "notes": 47,
+    "gold_matched": 46,
+    "duration_ok": 21,
+    "duration_rate": 0.42,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.3333,
+    "pedal_events": 6
+   },
+   "p4_learned": {
+    "notes": 51,
+    "gold_matched": 46,
+    "duration_ok": 18,
+    "duration_rate": 0.36,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.3333,
+    "pedal_events": 6
+   },
+   "p4_no_pedal": {
+    "notes": 48,
+    "gold_matched": 46,
+    "duration_ok": 20,
+    "duration_rate": 0.4,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 48,
+    "gold_matched": 46,
+    "duration_ok": 20,
+    "duration_rate": 0.4,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.3333,
+    "pedal_events": 6
+   },
+   "mismatch_acoustic_yes_score_none": 47,
+   "mismatch_perf_change_score_none": 12
+  },
+  {
+   "segment": "Schumann_Kreisleriana_7_32",
+   "n_events": 140,
+   "gold_notation": 140,
+   "candidate_feasible": 140,
+   "p4_fused": {
+    "notes": 129,
+    "gold_matched": 125,
+    "duration_ok": 106,
+    "duration_rate": 0.7571,
+    "pedal_start_f1": 0.4,
+    "pedal_stop_f1": 0.16,
+    "pedal_events": 25
+   },
+   "p4_learned": {
+    "notes": 138,
+    "gold_matched": 125,
+    "duration_ok": 62,
+    "duration_rate": 0.4429,
+    "pedal_start_f1": 0.2727,
+    "pedal_stop_f1": 0.4545,
+    "pedal_events": 22
+   },
+   "p4_no_pedal": {
+    "notes": 132,
+    "gold_matched": 125,
+    "duration_ok": 116,
+    "duration_rate": 0.8286,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 132,
+    "gold_matched": 125,
+    "duration_ok": 116,
+    "duration_rate": 0.8286,
+    "pedal_start_f1": 0.4,
+    "pedal_stop_f1": 0.16,
+    "pedal_events": 25
+   },
+   "mismatch_acoustic_yes_score_none": 97,
+   "mismatch_perf_change_score_none": 40
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_6-1_18",
+   "n_events": 144,
+   "gold_notation": 144,
+   "candidate_feasible": 127,
+   "p4_fused": {
+    "notes": 139,
+    "gold_matched": 140,
+    "duration_ok": 88,
+    "duration_rate": 0.6111,
+    "pedal_start_f1": 0.4211,
+    "pedal_stop_f1": 0.1053,
+    "pedal_events": 19
+   },
+   "p4_learned": {
+    "notes": 152,
+    "gold_matched": 140,
+    "duration_ok": 54,
+    "duration_rate": 0.375,
+    "pedal_start_f1": 0.4706,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 17
+   },
+   "p4_no_pedal": {
+    "notes": 145,
+    "gold_matched": 140,
+    "duration_ok": 114,
+    "duration_rate": 0.7917,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 145,
+    "gold_matched": 140,
+    "duration_ok": 114,
+    "duration_rate": 0.7917,
+    "pedal_start_f1": 0.4211,
+    "pedal_stop_f1": 0.1053,
+    "pedal_events": 19
+   },
+   "mismatch_acoustic_yes_score_none": 110,
+   "mismatch_perf_change_score_none": 21
+  },
+  {
+   "segment": "Mozart_Piano_Sonatas_8-1_44",
+   "n_events": 136,
+   "gold_notation": 136,
+   "candidate_feasible": 68,
+   "p4_fused": {
+    "notes": 118,
+    "gold_matched": 111,
+    "duration_ok": 19,
+    "duration_rate": 0.1397,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_learned": {
+    "notes": 122,
+    "gold_matched": 111,
+    "duration_ok": 50,
+    "duration_rate": 0.3676,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_no_pedal": {
+    "notes": 117,
+    "gold_matched": 111,
+    "duration_ok": 16,
+    "duration_rate": 0.1176,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 117,
+    "gold_matched": 111,
+    "duration_ok": 16,
+    "duration_rate": 0.1176,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "mismatch_acoustic_yes_score_none": 112,
+   "mismatch_perf_change_score_none": 4
+  },
+  {
+   "segment": "Ravel_Miroirs_3_Une_Barque_181",
+   "n_events": 139,
+   "gold_notation": 139,
+   "candidate_feasible": 113,
+   "p4_fused": {
+    "notes": 110,
+    "gold_matched": 108,
+    "duration_ok": 86,
+    "duration_rate": 0.6187,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_learned": {
+    "notes": 110,
+    "gold_matched": 108,
+    "duration_ok": 73,
+    "duration_rate": 0.5252,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_no_pedal": {
+    "notes": 114,
+    "gold_matched": 108,
+    "duration_ok": 98,
+    "duration_rate": 0.705,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 114,
+    "gold_matched": 108,
+    "duration_ok": 98,
+    "duration_rate": 0.705,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "mismatch_acoustic_yes_score_none": 100,
+   "mismatch_perf_change_score_none": 12
+  },
+  {
+   "segment": "Prokofiev_Toccata_197",
+   "n_events": 131,
+   "gold_notation": 131,
+   "candidate_feasible": 121,
+   "p4_fused": {
+    "notes": 110,
+    "gold_matched": 106,
+    "duration_ok": 64,
+    "duration_rate": 0.4885,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.2857,
+    "pedal_events": 7
+   },
+   "p4_learned": {
+    "notes": 113,
+    "gold_matched": 106,
+    "duration_ok": 45,
+    "duration_rate": 0.3435,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.2857,
+    "pedal_events": 7
+   },
+   "p4_no_pedal": {
+    "notes": 112,
+    "gold_matched": 106,
+    "duration_ok": 89,
+    "duration_rate": 0.6794,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 112,
+    "gold_matched": 106,
+    "duration_ok": 89,
+    "duration_rate": 0.6794,
+    "pedal_start_f1": 0.25,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 8
+   },
+   "mismatch_acoustic_yes_score_none": 101,
+   "mismatch_perf_change_score_none": 23
+  },
+  {
+   "segment": "Liszt_Transcendental_Etudes_10_71",
+   "n_events": 130,
+   "gold_notation": 130,
+   "candidate_feasible": 29,
+   "p4_fused": {
+    "notes": 102,
+    "gold_matched": 103,
+    "duration_ok": 53,
+    "duration_rate": 0.4077,
+    "pedal_start_f1": 0.6,
+    "pedal_stop_f1": 0.2,
+    "pedal_events": 10
+   },
+   "p4_learned": {
+    "notes": 111,
+    "gold_matched": 103,
+    "duration_ok": 45,
+    "duration_rate": 0.3462,
+    "pedal_start_f1": 0.6,
+    "pedal_stop_f1": 0.2,
+    "pedal_events": 10
+   },
+   "p4_no_pedal": {
+    "notes": 108,
+    "gold_matched": 103,
+    "duration_ok": 55,
+    "duration_rate": 0.4231,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 108,
+    "gold_matched": 103,
+    "duration_ok": 55,
+    "duration_rate": 0.4231,
+    "pedal_start_f1": 0.6,
+    "pedal_stop_f1": 0.2,
+    "pedal_events": 10
+   },
+   "mismatch_acoustic_yes_score_none": 118,
+   "mismatch_perf_change_score_none": 20
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_16-1_73",
+   "n_events": 163,
+   "gold_notation": 163,
+   "candidate_feasible": 157,
+   "p4_fused": {
+    "notes": 152,
+    "gold_matched": 151,
+    "duration_ok": 112,
+    "duration_rate": 0.6871,
+    "pedal_start_f1": 0.25,
+    "pedal_stop_f1": 0.3333,
+    "pedal_events": 24
+   },
+   "p4_learned": {
+    "notes": 164,
+    "gold_matched": 151,
+    "duration_ok": 84,
+    "duration_rate": 0.5153,
+    "pedal_start_f1": 0.1667,
+    "pedal_stop_f1": 0.25,
+    "pedal_events": 24
+   },
+   "p4_no_pedal": {
+    "notes": 166,
+    "gold_matched": 151,
+    "duration_ok": 132,
+    "duration_rate": 0.8098,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 166,
+    "gold_matched": 151,
+    "duration_ok": 132,
+    "duration_rate": 0.8098,
+    "pedal_start_f1": 0.24,
+    "pedal_stop_f1": 0.32,
+    "pedal_events": 25
+   },
+   "mismatch_acoustic_yes_score_none": 117,
+   "mismatch_perf_change_score_none": 50
+  },
+  {
+   "segment": "Scriabin_Sonatas_5_315",
+   "n_events": 228,
+   "gold_notation": 228,
+   "candidate_feasible": 79,
+   "p4_fused": {
+    "notes": 150,
+    "gold_matched": 141,
+    "duration_ok": 58,
+    "duration_rate": 0.2544,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 2
+   },
+   "p4_learned": {
+    "notes": 151,
+    "gold_matched": 142,
+    "duration_ok": 51,
+    "duration_rate": 0.2237,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 2
+   },
+   "p4_no_pedal": {
+    "notes": 151,
+    "gold_matched": 141,
+    "duration_ok": 35,
+    "duration_rate": 0.1535,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 151,
+    "gold_matched": 141,
+    "duration_ok": 35,
+    "duration_rate": 0.1535,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 2
+   },
+   "mismatch_acoustic_yes_score_none": 226,
+   "mismatch_perf_change_score_none": 0
+  },
+  {
+   "segment": "Schubert_Wanderer_fantasie_1189",
+   "n_events": 154,
+   "gold_notation": 154,
+   "candidate_feasible": 103,
+   "p4_fused": {
+    "notes": 128,
+    "gold_matched": 122,
+    "duration_ok": 59,
+    "duration_rate": 0.3831,
+    "pedal_start_f1": 0.7273,
+    "pedal_stop_f1": 0.7273,
+    "pedal_events": 22
+   },
+   "p4_learned": {
+    "notes": 135,
+    "gold_matched": 122,
+    "duration_ok": 42,
+    "duration_rate": 0.2727,
+    "pedal_start_f1": 0.5455,
+    "pedal_stop_f1": 0.5455,
+    "pedal_events": 22
+   },
+   "p4_no_pedal": {
+    "notes": 132,
+    "gold_matched": 122,
+    "duration_ok": 57,
+    "duration_rate": 0.3701,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 132,
+    "gold_matched": 122,
+    "duration_ok": 57,
+    "duration_rate": 0.3701,
+    "pedal_start_f1": 0.7273,
+    "pedal_stop_f1": 0.7273,
+    "pedal_events": 22
+   },
+   "mismatch_acoustic_yes_score_none": 97,
+   "mismatch_perf_change_score_none": 60
+  },
+  {
+   "segment": "Bach_Prelude_bwv_846_2",
+   "n_events": 36,
+   "gold_notation": 36,
+   "candidate_feasible": 5,
+   "p4_fused": {
+    "notes": 70,
+    "gold_matched": 36,
+    "duration_ok": 5,
+    "duration_rate": 0.1389,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.4,
+    "pedal_events": 10
+   },
+   "p4_learned": {
+    "notes": 55,
+    "gold_matched": 36,
+    "duration_ok": 4,
+    "duration_rate": 0.1111,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.4444,
+    "pedal_events": 9
+   },
+   "p4_no_pedal": {
+    "notes": 69,
+    "gold_matched": 36,
+    "duration_ok": 5,
+    "duration_rate": 0.1389,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 69,
+    "gold_matched": 36,
+    "duration_ok": 5,
+    "duration_rate": 0.1389,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.4,
+    "pedal_events": 10
+   },
+   "mismatch_acoustic_yes_score_none": 30,
+   "mismatch_perf_change_score_none": 3
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_5_79",
+   "n_events": 137,
+   "gold_notation": 137,
+   "candidate_feasible": 14,
+   "p4_fused": {
+    "notes": 112,
+    "gold_matched": 107,
+    "duration_ok": 64,
+    "duration_rate": 0.4672,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_learned": {
+    "notes": 115,
+    "gold_matched": 107,
+    "duration_ok": 46,
+    "duration_rate": 0.3358,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_no_pedal": {
+    "notes": 115,
+    "gold_matched": 107,
+    "duration_ok": 86,
+    "duration_rate": 0.6277,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 115,
+    "gold_matched": 107,
+    "duration_ok": 86,
+    "duration_rate": 0.6277,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "mismatch_acoustic_yes_score_none": 111,
+   "mismatch_perf_change_score_none": 6
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_1_51",
+   "n_events": 107,
+   "gold_notation": 107,
+   "candidate_feasible": 56,
+   "p4_fused": {
+    "notes": 123,
+    "gold_matched": 103,
+    "duration_ok": 40,
+    "duration_rate": 0.3738,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.1538,
+    "pedal_events": 13
+   },
+   "p4_learned": {
+    "notes": 119,
+    "gold_matched": 103,
+    "duration_ok": 32,
+    "duration_rate": 0.2991,
+    "pedal_start_f1": 0.3077,
+    "pedal_stop_f1": 0.4615,
+    "pedal_events": 13
+   },
+   "p4_no_pedal": {
+    "notes": 123,
+    "gold_matched": 103,
+    "duration_ok": 35,
+    "duration_rate": 0.3271,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 123,
+    "gold_matched": 103,
+    "duration_ok": 35,
+    "duration_rate": 0.3271,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.1538,
+    "pedal_events": 13
+   },
+   "mismatch_acoustic_yes_score_none": 92,
+   "mismatch_perf_change_score_none": 10
+  },
+  {
+   "segment": "Chopin_Etudes_op_25_12_2",
+   "n_events": 164,
+   "gold_notation": 164,
+   "candidate_feasible": 57,
+   "p4_fused": {
+    "notes": 147,
+    "gold_matched": 147,
+    "duration_ok": 44,
+    "duration_rate": 0.2683,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 11
+   },
+   "p4_learned": {
+    "notes": 157,
+    "gold_matched": 148,
+    "duration_ok": 50,
+    "duration_rate": 0.3049,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 11
+   },
+   "p4_no_pedal": {
+    "notes": 149,
+    "gold_matched": 147,
+    "duration_ok": 13,
+    "duration_rate": 0.0793,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 149,
+    "gold_matched": 147,
+    "duration_ok": 13,
+    "duration_rate": 0.0793,
+    "pedal_start_f1": 0.1667,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 12
+   },
+   "mismatch_acoustic_yes_score_none": 150,
+   "mismatch_perf_change_score_none": 7
+  },
+  {
+   "segment": "Schumann_Kreisleriana_5_56",
+   "n_events": 116,
+   "gold_notation": 116,
+   "candidate_feasible": 109,
+   "p4_fused": {
+    "notes": 124,
+    "gold_matched": 111,
+    "duration_ok": 84,
+    "duration_rate": 0.7241,
+    "pedal_start_f1": 0.8235,
+    "pedal_stop_f1": 0.0588,
+    "pedal_events": 34
+   },
+   "p4_learned": {
+    "notes": 128,
+    "gold_matched": 111,
+    "duration_ok": 65,
+    "duration_rate": 0.5603,
+    "pedal_start_f1": 0.8485,
+    "pedal_stop_f1": 0.0606,
+    "pedal_events": 33
+   },
+   "p4_no_pedal": {
+    "notes": 121,
+    "gold_matched": 111,
+    "duration_ok": 95,
+    "duration_rate": 0.819,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 121,
+    "gold_matched": 111,
+    "duration_ok": 95,
+    "duration_rate": 0.819,
+    "pedal_start_f1": 0.8235,
+    "pedal_stop_f1": 0.0588,
+    "pedal_events": 34
+   },
+   "mismatch_acoustic_yes_score_none": 76,
+   "mismatch_perf_change_score_none": 63
+  },
+  {
+   "segment": "Liszt_Transcendental_Etudes_9_67",
+   "n_events": 85,
+   "gold_notation": 85,
+   "candidate_feasible": 85,
+   "p4_fused": {
+    "notes": 88,
+    "gold_matched": 83,
+    "duration_ok": 76,
+    "duration_rate": 0.8941,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_learned": {
+    "notes": 89,
+    "gold_matched": 83,
+    "duration_ok": 70,
+    "duration_rate": 0.8235,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_no_pedal": {
+    "notes": 88,
+    "gold_matched": 83,
+    "duration_ok": 79,
+    "duration_rate": 0.9294,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 88,
+    "gold_matched": 83,
+    "duration_ok": 79,
+    "duration_rate": 0.9294,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "mismatch_acoustic_yes_score_none": 68,
+   "mismatch_perf_change_score_none": 4
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_1_155",
+   "n_events": 186,
+   "gold_notation": 186,
+   "candidate_feasible": 134,
+   "p4_fused": {
+    "notes": 121,
+    "gold_matched": 119,
+    "duration_ok": 70,
+    "duration_rate": 0.3763,
+    "pedal_start_f1": 0.3077,
+    "pedal_stop_f1": 0.0769,
+    "pedal_events": 26
+   },
+   "p4_learned": {
+    "notes": 126,
+    "gold_matched": 119,
+    "duration_ok": 14,
+    "duration_rate": 0.0753,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 21
+   },
+   "p4_no_pedal": {
+    "notes": 121,
+    "gold_matched": 119,
+    "duration_ok": 81,
+    "duration_rate": 0.4355,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 121,
+    "gold_matched": 119,
+    "duration_ok": 81,
+    "duration_rate": 0.4355,
+    "pedal_start_f1": 0.2308,
+    "pedal_stop_f1": 0.2308,
+    "pedal_events": 26
+   },
+   "mismatch_acoustic_yes_score_none": 129,
+   "mismatch_perf_change_score_none": 53
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_2_133",
+   "n_events": 132,
+   "gold_notation": 132,
+   "candidate_feasible": 123,
+   "p4_fused": {
+    "notes": 117,
+    "gold_matched": 113,
+    "duration_ok": 86,
+    "duration_rate": 0.6515,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.5,
+    "pedal_events": 24
+   },
+   "p4_learned": {
+    "notes": 123,
+    "gold_matched": 113,
+    "duration_ok": 52,
+    "duration_rate": 0.3939,
+    "pedal_start_f1": 0.3158,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 19
+   },
+   "p4_no_pedal": {
+    "notes": 117,
+    "gold_matched": 113,
+    "duration_ok": 97,
+    "duration_rate": 0.7348,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 117,
+    "gold_matched": 113,
+    "duration_ok": 97,
+    "duration_rate": 0.7348,
+    "pedal_start_f1": 0.4167,
+    "pedal_stop_f1": 0.5833,
+    "pedal_events": 24
+   },
+   "mismatch_acoustic_yes_score_none": 101,
+   "mismatch_perf_change_score_none": 38
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_26-3_96",
+   "n_events": 139,
+   "gold_notation": 139,
+   "candidate_feasible": 135,
+   "p4_fused": {
+    "notes": 144,
+    "gold_matched": 134,
+    "duration_ok": 94,
+    "duration_rate": 0.6763,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.3333,
+    "pedal_events": 18
+   },
+   "p4_learned": {
+    "notes": 150,
+    "gold_matched": 134,
+    "duration_ok": 59,
+    "duration_rate": 0.4245,
+    "pedal_start_f1": 0.3529,
+    "pedal_stop_f1": 0.3529,
+    "pedal_events": 17
+   },
+   "p4_no_pedal": {
+    "notes": 148,
+    "gold_matched": 134,
+    "duration_ok": 118,
+    "duration_rate": 0.8489,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 148,
+    "gold_matched": 134,
+    "duration_ok": 118,
+    "duration_rate": 0.8489,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.3,
+    "pedal_events": 20
+   },
+   "mismatch_acoustic_yes_score_none": 111,
+   "mismatch_perf_change_score_none": 36
+  },
+  {
+   "segment": "Chopin_Sonata_3_4th_109",
+   "n_events": 198,
+   "gold_notation": 198,
+   "candidate_feasible": 187,
+   "p4_fused": {
+    "notes": 184,
+    "gold_matched": 183,
+    "duration_ok": 139,
+    "duration_rate": 0.702,
+    "pedal_start_f1": 0.5455,
+    "pedal_stop_f1": 0.1212,
+    "pedal_events": 33
+   },
+   "p4_learned": {
+    "notes": 207,
+    "gold_matched": 183,
+    "duration_ok": 82,
+    "duration_rate": 0.4141,
+    "pedal_start_f1": 0.4848,
+    "pedal_stop_f1": 0.4848,
+    "pedal_events": 33
+   },
+   "p4_no_pedal": {
+    "notes": 191,
+    "gold_matched": 183,
+    "duration_ok": 160,
+    "duration_rate": 0.8081,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 191,
+    "gold_matched": 183,
+    "duration_ok": 160,
+    "duration_rate": 0.8081,
+    "pedal_start_f1": 0.5882,
+    "pedal_stop_f1": 0.1765,
+    "pedal_events": 34
+   },
+   "mismatch_acoustic_yes_score_none": 127,
+   "mismatch_perf_change_score_none": 62
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_4_64",
+   "n_events": 84,
+   "gold_notation": 84,
+   "candidate_feasible": 81,
+   "p4_fused": {
+    "notes": 79,
+    "gold_matched": 74,
+    "duration_ok": 56,
+    "duration_rate": 0.6667,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.1667,
+    "pedal_events": 12
+   },
+   "p4_learned": {
+    "notes": 79,
+    "gold_matched": 74,
+    "duration_ok": 41,
+    "duration_rate": 0.4881,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 11
+   },
+   "p4_no_pedal": {
+    "notes": 83,
+    "gold_matched": 74,
+    "duration_ok": 65,
+    "duration_rate": 0.7738,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 83,
+    "gold_matched": 74,
+    "duration_ok": 65,
+    "duration_rate": 0.7738,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.1667,
+    "pedal_events": 12
+   },
+   "mismatch_acoustic_yes_score_none": 66,
+   "mismatch_perf_change_score_none": 17
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_27-1_80",
+   "n_events": 116,
+   "gold_notation": 116,
+   "candidate_feasible": 63,
+   "p4_fused": {
+    "notes": 60,
+    "gold_matched": 60,
+    "duration_ok": 12,
+    "duration_rate": 0.1034,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_learned": {
+    "notes": 66,
+    "gold_matched": 60,
+    "duration_ok": 17,
+    "duration_rate": 0.1466,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_no_pedal": {
+    "notes": 60,
+    "gold_matched": 60,
+    "duration_ok": 13,
+    "duration_rate": 0.1121,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 60,
+    "gold_matched": 60,
+    "duration_ok": 13,
+    "duration_rate": 0.1121,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "mismatch_acoustic_yes_score_none": 112,
+   "mismatch_perf_change_score_none": 8
+  },
+  {
+   "segment": "Scriabin_Etudes_op_8_11_29",
+   "n_events": 68,
+   "gold_notation": 68,
+   "candidate_feasible": 38,
+   "p4_fused": {
+    "notes": 83,
+    "gold_matched": 66,
+    "duration_ok": 27,
+    "duration_rate": 0.3971,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 12
+   },
+   "p4_learned": {
+    "notes": 90,
+    "gold_matched": 66,
+    "duration_ok": 19,
+    "duration_rate": 0.2794,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 11
+   },
+   "p4_no_pedal": {
+    "notes": 79,
+    "gold_matched": 66,
+    "duration_ok": 26,
+    "duration_rate": 0.3824,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 79,
+    "gold_matched": 66,
+    "duration_ok": 26,
+    "duration_rate": 0.3824,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 12
+   },
+   "mismatch_acoustic_yes_score_none": 61,
+   "mismatch_perf_change_score_none": 24
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_29-2_31",
+   "n_events": 112,
+   "gold_notation": 112,
+   "candidate_feasible": 79,
+   "p4_fused": {
+    "notes": 115,
+    "gold_matched": 109,
+    "duration_ok": 66,
+    "duration_rate": 0.5893,
+    "pedal_start_f1": 0.2353,
+    "pedal_stop_f1": 0.1176,
+    "pedal_events": 17
+   },
+   "p4_learned": {
+    "notes": 129,
+    "gold_matched": 109,
+    "duration_ok": 48,
+    "duration_rate": 0.4286,
+    "pedal_start_f1": 0.2353,
+    "pedal_stop_f1": 0.1176,
+    "pedal_events": 17
+   },
+   "p4_no_pedal": {
+    "notes": 122,
+    "gold_matched": 109,
+    "duration_ok": 67,
+    "duration_rate": 0.5982,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 122,
+    "gold_matched": 109,
+    "duration_ok": 67,
+    "duration_rate": 0.5982,
+    "pedal_start_f1": 0.4706,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 17
+   },
+   "mismatch_acoustic_yes_score_none": 101,
+   "mismatch_perf_change_score_none": 31
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_3_54",
+   "n_events": 74,
+   "gold_notation": 74,
+   "candidate_feasible": 24,
+   "p4_fused": {
+    "notes": 92,
+    "gold_matched": 74,
+    "duration_ok": 27,
+    "duration_rate": 0.3649,
+    "pedal_start_f1": 0.4545,
+    "pedal_stop_f1": 0.2727,
+    "pedal_events": 22
+   },
+   "p4_learned": {
+    "notes": 92,
+    "gold_matched": 74,
+    "duration_ok": 18,
+    "duration_rate": 0.2432,
+    "pedal_start_f1": 0.3636,
+    "pedal_stop_f1": 0.3636,
+    "pedal_events": 22
+   },
+   "p4_no_pedal": {
+    "notes": 92,
+    "gold_matched": 74,
+    "duration_ok": 29,
+    "duration_rate": 0.3919,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 92,
+    "gold_matched": 74,
+    "duration_ok": 29,
+    "duration_rate": 0.3919,
+    "pedal_start_f1": 0.4545,
+    "pedal_stop_f1": 0.2727,
+    "pedal_events": 22
+   },
+   "mismatch_acoustic_yes_score_none": 58,
+   "mismatch_perf_change_score_none": 10
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_4-1_51",
+   "n_events": 111,
+   "gold_notation": 111,
+   "candidate_feasible": 33,
+   "p4_fused": {
+    "notes": 121,
+    "gold_matched": 110,
+    "duration_ok": 30,
+    "duration_rate": 0.2703,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.2857,
+    "pedal_events": 14
+   },
+   "p4_learned": {
+    "notes": 118,
+    "gold_matched": 110,
+    "duration_ok": 35,
+    "duration_rate": 0.3153,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.5714,
+    "pedal_events": 14
+   },
+   "p4_no_pedal": {
+    "notes": 127,
+    "gold_matched": 110,
+    "duration_ok": 3,
+    "duration_rate": 0.027,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 127,
+    "gold_matched": 110,
+    "duration_ok": 3,
+    "duration_rate": 0.027,
+    "pedal_start_f1": 0.2857,
+    "pedal_stop_f1": 0.2857,
+    "pedal_events": 14
+   },
+   "mismatch_acoustic_yes_score_none": 53,
+   "mismatch_perf_change_score_none": 10
+  },
+  {
+   "segment": "Liszt_Gran_Etudes_de_Paganini_6_Theme_and_Variations_147",
+   "n_events": 155,
+   "gold_notation": 155,
+   "candidate_feasible": 110,
+   "p4_fused": {
+    "notes": 106,
+    "gold_matched": 105,
+    "duration_ok": 53,
+    "duration_rate": 0.3419,
+    "pedal_start_f1": 0.2,
+    "pedal_stop_f1": 0.2,
+    "pedal_events": 20
+   },
+   "p4_learned": {
+    "notes": 112,
+    "gold_matched": 105,
+    "duration_ok": 46,
+    "duration_rate": 0.2968,
+    "pedal_start_f1": 0.2105,
+    "pedal_stop_f1": 0.1053,
+    "pedal_events": 19
+   },
+   "p4_no_pedal": {
+    "notes": 109,
+    "gold_matched": 105,
+    "duration_ok": 32,
+    "duration_rate": 0.2065,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 109,
+    "gold_matched": 105,
+    "duration_ok": 32,
+    "duration_rate": 0.2065,
+    "pedal_start_f1": 0.4762,
+    "pedal_stop_f1": 0.4762,
+    "pedal_events": 21
+   },
+   "mismatch_acoustic_yes_score_none": 102,
+   "mismatch_perf_change_score_none": 76
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_23-1_291",
+   "n_events": 81,
+   "gold_notation": 81,
+   "candidate_feasible": 52,
+   "p4_fused": {
+    "notes": 78,
+    "gold_matched": 73,
+    "duration_ok": 40,
+    "duration_rate": 0.4938,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_learned": {
+    "notes": 84,
+    "gold_matched": 73,
+    "duration_ok": 25,
+    "duration_rate": 0.3086,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_no_pedal": {
+    "notes": 80,
+    "gold_matched": 73,
+    "duration_ok": 35,
+    "duration_rate": 0.4321,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 80,
+    "gold_matched": 73,
+    "duration_ok": 35,
+    "duration_rate": 0.4321,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "mismatch_acoustic_yes_score_none": 74,
+   "mismatch_perf_change_score_none": 0
+  },
+  {
+   "segment": "Schumann_Toccata_134",
+   "n_events": 143,
+   "gold_notation": 143,
+   "candidate_feasible": 111,
+   "p4_fused": {
+    "notes": 93,
+    "gold_matched": 94,
+    "duration_ok": 59,
+    "duration_rate": 0.4126,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 8
+   },
+   "p4_learned": {
+    "notes": 97,
+    "gold_matched": 94,
+    "duration_ok": 55,
+    "duration_rate": 0.3846,
+    "pedal_start_f1": 0.5714,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 7
+   },
+   "p4_no_pedal": {
+    "notes": 95,
+    "gold_matched": 95,
+    "duration_ok": 25,
+    "duration_rate": 0.1748,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 95,
+    "gold_matched": 95,
+    "duration_ok": 25,
+    "duration_rate": 0.1748,
+    "pedal_start_f1": 0.75,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 8
+   },
+   "mismatch_acoustic_yes_score_none": 107,
+   "mismatch_perf_change_score_none": 24
+  },
+  {
+   "segment": "Schubert_Impromptu_op142_1_125",
+   "n_events": 64,
+   "gold_notation": 64,
+   "candidate_feasible": 22,
+   "p4_fused": {
+    "notes": 63,
+    "gold_matched": 57,
+    "duration_ok": 7,
+    "duration_rate": 0.1094,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 10
+   },
+   "p4_learned": {
+    "notes": 70,
+    "gold_matched": 57,
+    "duration_ok": 17,
+    "duration_rate": 0.2656,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 10
+   },
+   "p4_no_pedal": {
+    "notes": 64,
+    "gold_matched": 57,
+    "duration_ok": 7,
+    "duration_rate": 0.1094,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 64,
+    "gold_matched": 57,
+    "duration_ok": 7,
+    "duration_rate": 0.1094,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 10
+   },
+   "mismatch_acoustic_yes_score_none": 57,
+   "mismatch_perf_change_score_none": 13
+  },
+  {
+   "segment": "Bach_Prelude_bwv_854_34",
+   "n_events": 47,
+   "gold_notation": 47,
+   "candidate_feasible": 33,
+   "p4_fused": {
+    "notes": 88,
+    "gold_matched": 47,
+    "duration_ok": 22,
+    "duration_rate": 0.4681,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_learned": {
+    "notes": 70,
+    "gold_matched": 47,
+    "duration_ok": 22,
+    "duration_rate": 0.4681,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_no_pedal": {
+    "notes": 85,
+    "gold_matched": 47,
+    "duration_ok": 18,
+    "duration_rate": 0.383,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 85,
+    "gold_matched": 47,
+    "duration_ok": 18,
+    "duration_rate": 0.383,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "mismatch_acoustic_yes_score_none": 7,
+   "mismatch_perf_change_score_none": 2
+  },
+  {
+   "segment": "Bach_Prelude_bwv_860_7",
+   "n_events": 104,
+   "gold_notation": 104,
+   "candidate_feasible": 62,
+   "p4_fused": {
+    "notes": 107,
+    "gold_matched": 100,
+    "duration_ok": 52,
+    "duration_rate": 0.5,
+    "pedal_start_f1": 0.6667,
+    "pedal_stop_f1": 0.5333,
+    "pedal_events": 15
+   },
+   "p4_learned": {
+    "notes": 117,
+    "gold_matched": 100,
+    "duration_ok": 44,
+    "duration_rate": 0.4231,
+    "pedal_start_f1": 0.5714,
+    "pedal_stop_f1": 0.4286,
+    "pedal_events": 14
+   },
+   "p4_no_pedal": {
+    "notes": 110,
+    "gold_matched": 100,
+    "duration_ok": 35,
+    "duration_rate": 0.3365,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 110,
+    "gold_matched": 100,
+    "duration_ok": 35,
+    "duration_rate": 0.3365,
+    "pedal_start_f1": 0.625,
+    "pedal_stop_f1": 0.375,
+    "pedal_events": 16
+   },
+   "mismatch_acoustic_yes_score_none": 18,
+   "mismatch_perf_change_score_none": 21
+  },
+  {
+   "segment": "Bach_Fugue_bwv_848_55",
+   "n_events": 93,
+   "gold_notation": 93,
+   "candidate_feasible": 80,
+   "p4_fused": {
+    "notes": 105,
+    "gold_matched": 93,
+    "duration_ok": 63,
+    "duration_rate": 0.6774,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_learned": {
+    "notes": 103,
+    "gold_matched": 93,
+    "duration_ok": 57,
+    "duration_rate": 0.6129,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "p4_no_pedal": {
+    "notes": 103,
+    "gold_matched": 93,
+    "duration_ok": 61,
+    "duration_rate": 0.6559,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 103,
+    "gold_matched": 93,
+    "duration_ok": 61,
+    "duration_rate": 0.6559,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "mismatch_acoustic_yes_score_none": 5,
+   "mismatch_perf_change_score_none": 4
+  },
+  {
+   "segment": "Bach_Fugue_bwv_884_23",
+   "n_events": 128,
+   "gold_notation": 128,
+   "candidate_feasible": 92,
+   "p4_fused": {
+    "notes": 128,
+    "gold_matched": 122,
+    "duration_ok": 58,
+    "duration_rate": 0.4531,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 0
+   },
+   "p4_learned": {
+    "notes": 148,
+    "gold_matched": 122,
+    "duration_ok": 49,
+    "duration_rate": 0.3828,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 0
+   },
+   "p4_no_pedal": {
+    "notes": 133,
+    "gold_matched": 122,
+    "duration_ok": 61,
+    "duration_rate": 0.4766,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 133,
+    "gold_matched": 122,
+    "duration_ok": 61,
+    "duration_rate": 0.4766,
+    "pedal_start_f1": 1.0,
+    "pedal_stop_f1": 1.0,
+    "pedal_events": 0
+   },
+   "mismatch_acoustic_yes_score_none": 0,
+   "mismatch_perf_change_score_none": 0
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_12_114",
+   "n_events": 70,
+   "gold_notation": 70,
+   "candidate_feasible": 38,
+   "p4_fused": {
+    "notes": 71,
+    "gold_matched": 67,
+    "duration_ok": 29,
+    "duration_rate": 0.4143,
+    "pedal_start_f1": 0.4,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 5
+   },
+   "p4_learned": {
+    "notes": 80,
+    "gold_matched": 67,
+    "duration_ok": 24,
+    "duration_rate": 0.3429,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 4
+   },
+   "p4_no_pedal": {
+    "notes": 73,
+    "gold_matched": 67,
+    "duration_ok": 28,
+    "duration_rate": 0.4,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 73,
+    "gold_matched": 67,
+    "duration_ok": 28,
+    "duration_rate": 0.4,
+    "pedal_start_f1": 0.3333,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 6
+   },
+   "mismatch_acoustic_yes_score_none": 58,
+   "mismatch_perf_change_score_none": 6
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_32-1_28",
+   "n_events": 54,
+   "gold_notation": 54,
+   "candidate_feasible": 23,
+   "p4_fused": {
+    "notes": 58,
+    "gold_matched": 53,
+    "duration_ok": 9,
+    "duration_rate": 0.1667,
+    "pedal_start_f1": 0.8235,
+    "pedal_stop_f1": 0.4118,
+    "pedal_events": 34
+   },
+   "p4_learned": {
+    "notes": 59,
+    "gold_matched": 53,
+    "duration_ok": 9,
+    "duration_rate": 0.1667,
+    "pedal_start_f1": 0.8235,
+    "pedal_stop_f1": 0.5882,
+    "pedal_events": 34
+   },
+   "p4_no_pedal": {
+    "notes": 59,
+    "gold_matched": 52,
+    "duration_ok": 8,
+    "duration_rate": 0.1481,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 59,
+    "gold_matched": 52,
+    "duration_ok": 8,
+    "duration_rate": 0.1481,
+    "pedal_start_f1": 0.8235,
+    "pedal_stop_f1": 0.4118,
+    "pedal_events": 34
+   },
+   "mismatch_acoustic_yes_score_none": 36,
+   "mismatch_perf_change_score_none": 32
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_17-1_107",
+   "n_events": 57,
+   "gold_notation": 57,
+   "candidate_feasible": 6,
+   "p4_fused": {
+    "notes": 61,
+    "gold_matched": 56,
+    "duration_ok": 0,
+    "duration_rate": 0.0,
+    "pedal_start_f1": 0.6316,
+    "pedal_stop_f1": 0.6316,
+    "pedal_events": 19
+   },
+   "p4_learned": {
+    "notes": 60,
+    "gold_matched": 56,
+    "duration_ok": 2,
+    "duration_rate": 0.0351,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.625,
+    "pedal_events": 16
+   },
+   "p4_no_pedal": {
+    "notes": 60,
+    "gold_matched": 56,
+    "duration_ok": 0,
+    "duration_rate": 0.0,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 60,
+    "gold_matched": 56,
+    "duration_ok": 0,
+    "duration_rate": 0.0,
+    "pedal_start_f1": 0.6,
+    "pedal_stop_f1": 0.6,
+    "pedal_events": 20
+   },
+   "mismatch_acoustic_yes_score_none": 36,
+   "mismatch_perf_change_score_none": 31
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_31-1_40",
+   "n_events": 85,
+   "gold_notation": 85,
+   "candidate_feasible": 14,
+   "p4_fused": {
+    "notes": 94,
+    "gold_matched": 85,
+    "duration_ok": 28,
+    "duration_rate": 0.3294,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0833,
+    "pedal_events": 24
+   },
+   "p4_learned": {
+    "notes": 97,
+    "gold_matched": 85,
+    "duration_ok": 20,
+    "duration_rate": 0.2353,
+    "pedal_start_f1": 0.5,
+    "pedal_stop_f1": 0.0833,
+    "pedal_events": 24
+   },
+   "p4_no_pedal": {
+    "notes": 97,
+    "gold_matched": 85,
+    "duration_ok": 37,
+    "duration_rate": 0.4353,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 97,
+    "gold_matched": 85,
+    "duration_ok": 37,
+    "duration_rate": 0.4353,
+    "pedal_start_f1": 0.56,
+    "pedal_stop_f1": 0.24,
+    "pedal_events": 25
+   },
+   "mismatch_acoustic_yes_score_none": 36,
+   "mismatch_perf_change_score_none": 24
+  },
+  {
+   "segment": "Mozart_Piano_Sonatas_12-3_113",
+   "n_events": 75,
+   "gold_notation": 75,
+   "candidate_feasible": 25,
+   "p4_fused": {
+    "notes": 93,
+    "gold_matched": 71,
+    "duration_ok": 17,
+    "duration_rate": 0.2267,
+    "pedal_start_f1": 0.4,
+    "pedal_stop_f1": 0.24,
+    "pedal_events": 25
+   },
+   "p4_learned": {
+    "notes": 92,
+    "gold_matched": 71,
+    "duration_ok": 19,
+    "duration_rate": 0.2533,
+    "pedal_start_f1": 0.16,
+    "pedal_stop_f1": 0.48,
+    "pedal_events": 25
+   },
+   "p4_no_pedal": {
+    "notes": 94,
+    "gold_matched": 71,
+    "duration_ok": 13,
+    "duration_rate": 0.1733,
+    "pedal_start_f1": 0.0,
+    "pedal_stop_f1": 0.0,
+    "pedal_events": 0
+   },
+   "p4_rule": {
+    "notes": 94,
+    "gold_matched": 71,
+    "duration_ok": 13,
+    "duration_rate": 0.1733,
+    "pedal_start_f1": 0.4,
+    "pedal_stop_f1": 0.24,
+    "pedal_events": 25
+   },
+   "mismatch_acoustic_yes_score_none": 49,
+   "mismatch_perf_change_score_none": 3
+  }
+ ]
+}

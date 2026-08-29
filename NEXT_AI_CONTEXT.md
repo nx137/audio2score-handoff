@@ -62,7 +62,8 @@ C 阶段只读 `data/asap_piece_manifest.csv` 中 `split == test` 的 120 条演
 - 正式金标准：`outputs/pedal_gold_standard/formal_20260828_v1/`，40 片段 / 4672 事件 / 12 作曲家（train 34 / validation 6）；`selection.json` 冻结（per_composer=10、ref≥10、排除 pilot 作品）。
 - 管线：`select_gold_standard.py` → `validate_selection.py` → `precompute_alignments.py`（外部对齐冻结 `_alignments/`）→ `build_formal_segments.py --index N [--skip-render]`（候选生成窗口裁剪 ±16 QL，已验证窗口内输出与全曲一致）→ `prefill_events.py`（语义三列）→ `annotate_events.py`（决策三列）→ `evaluate_gold_standard.py`。
 - 标注：六列全填；uncertain 131/4672（2.8%）；review_class：notation-shortening 1775 / pedal-only 1479 / independent-voice 136 / blank 1282；报告 `annotation_report_v1.md`。
-- 评测（`evaluation/gold_standard_eval_v1.{json,md}`）：rule 时值一致率 43.5% > learned 34.3%（LightGBM 候选模型无正向增益，与 CC64 消融一致）；踏板 start F1 0.36–0.41 / stop F1 0.22–0.23；语义错配 acoustic-yes&score-none 3334、perf-change&score-none 864。
+- 评测 v1（`evaluation/gold_standard_eval_v1.{json,md}`）：rule 43.5% > learned 34.3%；踏板 start F1 0.36–0.41 / stop F1 0.22–0.23；语义错配 acoustic-yes&score-none 3334、perf-change&score-none 864。
+- 评测 v2 + 融合实验（2026-08-29，`evaluation/gold_standard_eval_v2.{json,md}`、`fusion_experiment_v1.md`）：learned 负结果根因=42% 事件无参考时值、其标注规则与 rule 同构；learned 在有参考场景 26.8% > rule 19.0%。新增 `--fuse-alpha`（模型概率+规则先验线性融合，α=0.75）：p4_fused 一致率 42.9% 接近 rule，有参考 26.2% 保留模型优势、无参考 68.4% 大幅修复。40 片段 `p4_fused.musicxml` 已入库。
 - 已知注意：
   1. `p4_learned` 必须在装有 `lightgbm` 的环境生成（缺包会静默回退规则评分，曾导致 rule/learned 结果相同）。
   2. 评测/报告输出必须写在 `outputs/` 内（sparse-checkout cone）；`results/` 不在 cone，git 不会跟踪。
