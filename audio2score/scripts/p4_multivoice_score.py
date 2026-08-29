@@ -435,6 +435,7 @@ def main():
         decoded["RH"], decoded["LH"], meta["tempo_bpm"], time_sig,
         key.sharps if key else None, args.title,
     )
+    bar_ql = 4.0 * time_sig[0] / time_sig[1]
     # 无踏板模式不读取 CC64 的解码结果，也不输出踏板符号；有踏板模式才附加
     # 标准 PedalMark，保持其作为声学延续证据与演奏标记的独立语义。
     out = Path(args.out)
