@@ -73,9 +73,16 @@ def parse_pedals(xml_path: Path) -> list[tuple[str, float]]:
     for part in root.findall("part"):
         divisions = None
         cursor = 0.0
-        measure_start = 0.0
+        bar_ql = 4.0
         for measure in part.findall("measure"):
-            measure_start = cursor
+            ts = measure.find("attributes/time")
+            if ts is not None:
+                beats = ts.findtext("beats")
+                beat_type = ts.findtext("beat-type")
+                if beats and beat_type:
+                    bar_ql = 4.0 * int(beats) / int(beat_type)
+            measure_num = int(measure.get("number") or 1)
+            measure_start = (measure_num - 1) * bar_ql
             for child in measure:
                 if child.tag == "attributes":
                     d = child.findtext("divisions")

@@ -203,9 +203,8 @@ def insert_exact_pedals(xml_path: Path, pedals: list[tuple[float, float]],
         dtype = ET.SubElement(direction, "direction-type")
         pedal = ET.SubElement(dtype, "pedal")
         pedal.set("type", typ)
-        if offset_div > 0:
-            off = ET.SubElement(direction, "offset")
-            off.text = str(offset_div)
+        off = ET.SubElement(direction, "offset")
+        off.text = str(offset_div)
     tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
 
 
