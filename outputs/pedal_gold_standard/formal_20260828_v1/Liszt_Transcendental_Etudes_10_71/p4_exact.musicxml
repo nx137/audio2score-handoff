@@ -517,6 +517,10 @@
         <voice>4</voice>
         <type>16th</type>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18081</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20076</offset></direction>
     </measure>
     
     <measure implicit="no" number="2">
@@ -1667,6 +1671,9 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>966</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2961</offset></direction>
     </measure>
     
     <measure implicit="no" number="4">
@@ -2192,6 +2199,9 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>4578</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7056</offset></direction>
     </measure>
     
     <measure implicit="no" number="5">
@@ -2495,6 +2505,9 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>8715</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>10731</offset></direction>
     </measure>
     
     <measure implicit="no" number="6">
@@ -2955,7 +2968,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18081</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20076</offset></direction></measure>
+    </measure>
     
     <measure implicit="no" number="2">
       <note>
@@ -3208,7 +3221,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>966</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2961</offset></direction></measure>
+    </measure>
     
     <measure implicit="no" number="4">
       <note>
@@ -3292,7 +3305,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>4578</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7056</offset></direction></measure>
+    </measure>
     
     <measure implicit="no" number="5">
       <note>
@@ -3348,6 +3361,6 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>8715</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>10731</offset></direction></measure>
+    </measure>
   </part>
 </score-partwise>
