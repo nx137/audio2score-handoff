@@ -76,3 +76,7 @@ C 阶段只读 `data/asap_piece_manifest.csv` 中 `split == test` 的 120 条演
 - 推荐口径 inwindow：**p4_exact start 宏 0.858（CI [0.791,0.917]）/ 微 0.932；stop 宏 0.936（CI [0.875,0.983]）/ 微 0.970**（参考=演奏层，容差 0.25 QL）。unclipped 口径回归：微平均 0.896/0.926 与手工复算一致，宏 stop 0.854 同 v3、start 0.814（v3 0.822，差异来自贪心匹配）。
 - 分级时值（宏平均）：@0.05 0.435 / @0.25 0.742 / @1.0 0.848 / 中位|err| 0.094（rule=exact=no_pedal）；p4_fused 中位 0.062、@0.25 0.749；p4_learned @1.0 0.853。**时值误差集中在 0.05–0.25 QL 微差，非整倍数错误**。
 - 含义：协议修正后 stop 已 >0.9；start 宏平均 0.858（微 0.932）的残余缺口来自窗口内 CC64 量化偏移（~0.25–0.5 QL）与少量漏检（见 project_review_v1.md 的 P1-5）。论文应报 inwindow + 双聚合口径。
+
+- **P1 修复与评测 v4 更新（2026-08-30）**：`insert_exact_pedals` 原固定写左手（parts[1]），music21 把全休止声部压缩成少量小节时事件被静默丢弃（LH 折叠，9 个片段受影响：Bach_848/Beethoven_16-1/Beethoven_4-1/Chopin_10-1/Liszt_10_71/Liszt_9_67/Mozart_8-1/Rachmaninoff_23-6/Schubert_op142）。已改为「LH 优先、小节不足回退到更全声部」并重生成 9 个 `p4_exact.musicxml`（c14n 校验音符结构未变）。评测脚本新增 `--pedal-ref visible`（窗口内事件 + 跨窗踩下在窗口起点的 start，不给窗口外伪 stop）。
+- 修复后（40 片段，容差 0.25 QL）：`inwindow` p4_exact start 宏 0.889（微 0.945）/ stop 宏 0.967（微 0.978）；`visible` start 宏 1.000（微 1.000）/ stop 宏 0.967（微 0.978）；`unclipped` start 0.844/0.909、stop 0.890/0.938。时值指标不变（@0.05 0.435 / @0.25 0.742 / @1.0 0.848，中位|err| 0.094）。
+- 已知边界：系统声部分配在 Mozart_8-1 / Schubert_op142 / Rachmaninoff_23-6 等片段把参考 LH 音符（46/7/27 个）全部并入 RH（LH 空）——是 P4 声部分配的已知限制，影响时值一致率但与踏板评测无关，论文需如实声明。
