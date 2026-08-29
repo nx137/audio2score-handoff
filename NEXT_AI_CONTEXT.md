@@ -69,3 +69,5 @@ C 阶段只读 `data/asap_piece_manifest.csv` 中 `split == test` 的 120 条演
   2. 评测/报告输出必须写在 `outputs/` 内（sparse-checkout cone）；`results/` 不在 cone，git 不会跟踪。
   3. 并行构建有 `build_log.json` 写竞争风险（按 index 去重），慢片段可串行重跑补录。
 - 待办：inter-annotator agreement 未做（论文声明"规则预填+专家复核"）；SVG 渲染可后补；token（github_pat_... 过期 2026-09-27）用完后请 revoke。
+
+- 评测 v3 + 踏板位置实验（2026-08-29，`evaluation/gold_standard_eval_v3.{json,md}`、`pedal_placement_experiment_v1.md`）：新增 `--pedal-placement exact`（CC64 区间边界直接写 `<offset>`，替代吸附到最近音符）。踏板 start F1 0.408→0.818、stop F1 0.220→0.850（参考=演奏层）；时值一致率不变。根因：`find_nearest_note` 取下一音符导致系统性偏晚；exact 模式保留演奏层真实时序。40 片段 `p4_exact.musicxml` 已入库。
