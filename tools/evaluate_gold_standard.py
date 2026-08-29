@@ -189,7 +189,9 @@ def main() -> int:
     n = sum(r["n_events"] for r in results)
     feas = sum(r["candidate_feasible"] for r in results) / n
     print(f"segments={len(results)} events={n} candidate_feasible={feas:.1%}")
-    pipes = sorted({p for r in results for p in r if p in ("p4_rule", "p4_learned", "p4_no_pedal", "p4_fused")})
+    pipes = sorted({p for r in results for p in r
+                    if p not in ("segment", "n_events", "gold_notation", "candidate_feasible")
+                    and not p.startswith("mismatch_")})
     for pipe in pipes:
         dr = sum(r[pipe]["duration_rate"] for r in results) / len(results)
         fs = sum(r[pipe]["pedal_start_f1"] for r in results) / len(results)
