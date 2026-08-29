@@ -657,6 +657,8 @@
         <duration>40320</duration>
         <voice>5</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>8400</offset></direction>
     </measure>
     
     <measure implicit="no" number="2">
@@ -1482,6 +1484,9 @@
         <duration>40320</duration>
         <voice>5</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>7402</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>10894</offset></direction>
     </measure>
     
     <measure implicit="no" number="3">
@@ -2304,6 +2309,10 @@
         <duration>40320</duration>
         <voice>5</voice>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>2861</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>6011</offset></direction>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>40241</offset></direction>
     </measure>
     
     <measure implicit="no" number="4">
@@ -3180,6 +3189,10 @@
         <type>16th</type>
         <accidental>flat</accidental>
       </note>
+    
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2651</offset></direction>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>37695</offset></direction>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>40031</offset></direction>
     </measure>
   </part>
   
@@ -3213,6 +3226,6 @@
         <rest measure="yes" />
         <duration>40320</duration>
       </note>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>8400</offset></direction></measure>
+    </measure>
   </part>
 </score-partwise>
