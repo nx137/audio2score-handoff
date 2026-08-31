@@ -94,15 +94,32 @@ def generate_duration_candidates(start_ql, key_duration_ql, acoustic_duration_ql
 
 
 def candidate_probability(duration, key_duration, acoustic_duration, source):
-    """P4d 的可学习接口；目前为可解释的规则概率（0~1）。"""
+    """P4d 的可学习接口；目前为可解释的规则概率（0~1）。
+
+    ``A2S_RULE_V3=1`` 时启用声学感知规则（P1.5 排序层改进 v3）：仅在存在踏板
+    延音证据（acoustic_duration > key_duration）时，对位于 [key, acoustic]
+    区间内的候选按声学接近度加成，使延音记谱候选有机会胜出；无延音证据时
+    与 v1 完全一致（不伤害 pedal-only / 常规记谱事件）。
+    """
     key_gap = abs(duration - key_duration)
     acoustic_gap = abs(duration - acoustic_duration)
     score = math.exp(-2.0 * key_gap) * 0.70 + math.exp(-1.2 * acoustic_gap) * 0.25
+    if _rule_v3_enabled():
+        extension = acoustic_duration - key_duration
+        if extension > 0.15 and key_duration - EPS <= duration <= acoustic_duration + EPS:
+            score += 0.25 * math.exp(-1.5 * acoustic_gap)
     if "barline" in source:
         score += 0.04
     if "next-voice-onset" in source:
         score += 0.02
     return min(score, 0.999)
+
+
+_RULE_V3_ENV = "A2S_RULE_V3"
+
+
+def _rule_v3_enabled() -> bool:
+    return os.environ.get(_RULE_V3_ENV, "0").strip().lower() in {"1", "true", "yes"}
 
 
 def candidate_feature_probability(features: dict) -> float:
