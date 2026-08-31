@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P9211c75248dbce126a5989577e8787c9">
+    <score-part id="Pdd1c2ad53ec993f68dfaeda06d399dd7">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="Peecedf1959b7338686c27e603c229d94">
+    <score-part id="Pd28607b9e737e1525d0cc0de64c65992">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P9211c75248dbce126a5989577e8787c9">
+  <part id="Pdd1c2ad53ec993f68dfaeda06d399dd7">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -247,11 +247,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>7098</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>10311</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>7098</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>10311</offset></direction></measure>
     
     <measure implicit="no" number="2">
       <note dynamics="94.44">
@@ -481,10 +477,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>14322</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>16716</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>14322</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>16716</offset></direction></measure>
     
     <measure implicit="no" number="3">
       <note dynamics="92.22">
@@ -850,10 +843,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>3024</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7455</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>3024</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7455</offset></direction></measure>
     
     <measure implicit="no" number="5">
       <note>
@@ -1160,10 +1150,7 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>11487</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>13104</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>11487</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>13104</offset></direction></measure>
     
     <measure implicit="no" number="6">
       <note>
@@ -1530,9 +1517,7 @@
         <voice>3</voice>
         <type>16th</type>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>17934</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>17934</offset></direction></measure>
     
     <measure implicit="no" number="7">
       <note>
@@ -1815,9 +1800,7 @@
         <voice>3</voice>
         <type>16th</type>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>609</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>609</offset></direction></measure>
     
     <measure implicit="no" number="8">
       <note dynamics="86.67">
@@ -2086,10 +2069,7 @@
           <tuplet number="1" type="stop" />
         </notations>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>5481</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7098</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>5481</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>7098</offset></direction></measure>
     
     <measure implicit="no" number="9">
       <note dynamics="92.22">
@@ -2128,12 +2108,10 @@
         <duration>20160</duration>
         <voice>3</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>0</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>0</offset></direction></measure>
   </part>
   
-  <part id="Peecedf1959b7338686c27e603c229d94">
+  <part id="Pd28607b9e737e1525d0cc0de64c65992">
     
     <measure implicit="no" number="1">
       <attributes>
