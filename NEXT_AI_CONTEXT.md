@@ -80,3 +80,12 @@ C 阶段只读 `data/asap_piece_manifest.csv` 中 `split == test` 的 120 条演
 - **P1 修复与评测 v4 更新（2026-08-30）**：`insert_exact_pedals` 原固定写左手（parts[1]），music21 把全休止声部压缩成少量小节时事件被静默丢弃（LH 折叠，9 个片段受影响：Bach_848/Beethoven_16-1/Beethoven_4-1/Chopin_10-1/Liszt_10_71/Liszt_9_67/Mozart_8-1/Rachmaninoff_23-6/Schubert_op142）。已改为「LH 优先、小节不足回退到更全声部」并重生成 9 个 `p4_exact.musicxml`（c14n 校验音符结构未变）。评测脚本新增 `--pedal-ref visible`（窗口内事件 + 跨窗踩下在窗口起点的 start，不给窗口外伪 stop）。
 - 修复后（40 片段，容差 0.25 QL）：`inwindow` p4_exact start 宏 0.889（微 0.945）/ stop 宏 0.967（微 0.978）；`visible` start 宏 1.000（微 1.000）/ stop 宏 0.967（微 0.978）；`unclipped` start 0.844/0.909、stop 0.890/0.938。时值指标不变（@0.05 0.435 / @0.25 0.742 / @1.0 0.848，中位|err| 0.094）。
 - 已知边界：系统声部分配在 Mozart_8-1 / Schubert_op142 / Rachmaninoff_23-6 等片段把参考 LH 音符（46/7/27 个）全部并入 RH（LH 空）——是 P4 声部分配的已知限制，影响时值一致率但与踏板评测无关，论文需如实声明。
+
+## P1.5 候选生成增强实验（2026-08-31）
+
+- **实现**：`structured_duration_decoder.py` 候选扩展（`A2S_EXTEND_CANDIDATES=1`：候选 ∪ {key×{2,3,4,1.5,0.5}} ∪ {0.25,0.5,0.375,1/6,1/3,1.0}，默认关闭）；`tools/p1_5_extend.py` 重建 40 片段 × 5 管线（events.csv 候选列增强，人工六列保留）。
+- **结果**：精确可达率 62.6%→**73.0%**；无合法过滤上限 **87.4%**（**纠正 P1 报告 95.8%——不可复现**，P1 模拟漏了同 voice 不重叠约束）。
+- **排序层零利用**：rule/fused/exact 时值一致率与基线逐位相同（@0.25=0.742）；贪心对照扩展 vs 原始候选完全一致；learned 在扩展候选上退化（@0.05 0.343→0.299）。
+- **oracle @0.25=94.4%**：时值一致率缺口 ~21pp 在排序/DP 与声部分配（464 无匹配 + 615 无 tie 延音被 nextgap 过滤 = 多声部记谱 vs 单 voice 流的结构边界），不在候选生成。
+- **论文红线**：禁用 95.8%；正确表述"62.6→73.0（合法）/87.4（上限）/oracle 94.4"。后续工作=声部感知合法性 + 非泄露数据重训排序。
+- 评测 v5：`evaluation/gold_standard_eval_v5.{json,md}`；报告 `p1_5_experiments_v1.md`。
