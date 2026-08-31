@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import csv
 import math
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Iterable
@@ -22,6 +23,20 @@ from analyze_pedal_durations import pedal_release_after
 from voice_assignment import VoiceEvent, assign_voices, validate_voice_events
 
 EPS = 1e-7
+
+# --- P1.5 候选生成增强（默认关闭，保持基线可复现） ---
+# 启用方式：A2S_EXTEND_CANDIDATES=1 环境变量。
+# 扩展内容（P1-6 天花板模拟口径）：
+#   1) 按键时值延音扩展：key_duration x {2,3,4,1.5,0.5}
+#   2) 常见短时值网格：{0.25, 0.5, 0.375, 1/6, 1/3, 1.0}
+_EXTEND_CANDIDATES_ENV = "A2S_EXTEND_CANDIDATES"
+KEY_EXTENSION_MULTIPLIERS = (2.0, 3.0, 4.0, 1.5, 0.5)
+EXTRA_GRID_DURATIONS = (0.25, 0.5, 0.375, 1.0 / 6.0, 1.0 / 3.0, 1.0)
+
+
+def extend_candidates_enabled() -> bool:
+    """环境变量开关：仅 P1.5 实验启用，默认 False 保持历史行为。"""
+    return os.environ.get(_EXTEND_CANDIDATES_ENV, "0").strip().lower() in {"1", "true", "yes"}
 
 
 @dataclass(frozen=True)
@@ -66,6 +81,14 @@ def generate_duration_candidates(start_ql, key_duration_ql, acoustic_duration_ql
 
     if next_voice_onset_ql is not None and next_voice_onset_ql > start_ql + EPS:
         add(next_voice_onset_ql - start_ql, "next-voice-onset")
+
+    # P1.5 候选增强：延音扩展时值（记谱时值 > 按键时值，踏板补足）与常见短时值网格。
+    # 模拟显示可使"参考时值可达"率从 62.6% 提升至 95.8%（P1-6）；此处为实际生成实现。
+    if extend_candidates_enabled():
+        for multiplier in KEY_EXTENSION_MULTIPLIERS:
+            add(key_duration_ql * multiplier, f"key-extension:{multiplier:g}")
+        for duration in EXTRA_GRID_DURATIONS:
+            add(duration, "extra-grid")
 
     return [(duration, "+".join(sorted(sources))) for duration, sources in sorted(tagged.items())]
 
