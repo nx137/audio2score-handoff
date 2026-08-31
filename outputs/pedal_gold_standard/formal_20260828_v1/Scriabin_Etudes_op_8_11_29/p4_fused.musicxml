@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P09c5fda549d27e04ab0f82a62b32904e">
+    <score-part id="P3ba0cefeee536c57d17ee1ad5f10c5f7">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="Pc71cde503694726784a48ae68c2db7ed">
+    <score-part id="P0f35e95f5edbdfab512592749a8ef12f">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P09c5fda549d27e04ab0f82a62b32904e">
+  <part id="P3ba0cefeee536c57d17ee1ad5f10c5f7">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -789,14 +789,14 @@
           <alter>0</alter>
           <octave>4</octave>
         </pitch>
-        <duration>3360</duration>
+        <duration>1680</duration>
         <voice>2</voice>
-        <type>eighth</type>
+        <type>16th</type>
         <accidental>natural</accidental>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
+          <normal-type>16th</normal-type>
         </time-modification>
         <notations>
           <tuplet number="1" type="stop" />
@@ -804,9 +804,27 @@
       </note>
       <note>
         <rest />
-        <duration>20160</duration>
+        <duration>21840</duration>
         <voice>2</voice>
-        <type>half</type>
+        <type>whole</type>
+        <time-modification>
+          <actual-notes>24</actual-notes>
+          <normal-notes>13</normal-notes>
+          <normal-type>32nd</normal-type>
+        </time-modification>
+        <notations>
+          <tuplet bracket="no" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>24</tuplet-number>
+              <tuplet-type>32nd</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>13</tuplet-number>
+              <tuplet-type>32nd</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
+          <tuplet number="1" type="stop" />
+        </notations>
       </note>
       <backup>
         <duration>40320</duration>
@@ -1318,7 +1336,7 @@
     </measure>
   </part>
   
-  <part id="Pc71cde503694726784a48ae68c2db7ed">
+  <part id="P0f35e95f5edbdfab512592749a8ef12f">
     
     <measure implicit="no" number="1">
       <attributes>
