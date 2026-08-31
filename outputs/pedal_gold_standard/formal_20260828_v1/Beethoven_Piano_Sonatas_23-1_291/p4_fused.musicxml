@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P0aa5c4979f1ce890d0c9d07a1340dcc1">
+    <score-part id="P43b8825591db18f0fc6ba7536e28ab97">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="P0b3354a433d0d39556a49b4ed0baa834">
+    <score-part id="Pe6c972c5fea2260221374bfc2a2f688e">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P0aa5c4979f1ce890d0c9d07a1340dcc1">
+  <part id="P43b8825591db18f0fc6ba7536e28ab97">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -218,7 +218,7 @@
     </measure>
   </part>
   
-  <part id="P0b3354a433d0d39556a49b4ed0baa834">
+  <part id="Pe6c972c5fea2260221374bfc2a2f688e">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -760,13 +760,24 @@
           <alter>1</alter>
           <octave>2</octave>
         </pitch>
-        <duration>3360</duration>
+        <duration>1680</duration>
         <voice>2</voice>
-        <type>eighth</type>
+        <type>16th</type>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
+          <normal-type>16th</normal-type>
+        </time-modification>
+      </note>
+      <note>
+        <rest />
+        <duration>1680</duration>
+        <voice>2</voice>
+        <type>16th</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>16th</normal-type>
         </time-modification>
         <notations>
           <tuplet number="1" type="stop" />
