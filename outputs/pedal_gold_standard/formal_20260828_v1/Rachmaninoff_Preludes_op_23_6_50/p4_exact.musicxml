@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P120f2dfc1f672b01749ea5297fef0757">
+    <score-part id="P982ac0dd98d1410e0e4866cc827245b3">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="P79d17e56b630705aa9c4e2d1faa70d4e">
+    <score-part id="P96f9c4fc4f1432a0fc21711eaf0c486e">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P120f2dfc1f672b01749ea5297fef0757">
+  <part id="P982ac0dd98d1410e0e4866cc827245b3">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -343,11 +343,7 @@
         <voice>4</voice>
         <type>16th</type>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>21210</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>22811</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>21210</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>22811</offset></direction></measure>
     
     <measure implicit="no" number="2">
       <note>
@@ -825,10 +821,7 @@
         <voice>4</voice>
         <type>16th</type>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>19110</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20737</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>19110</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>20737</offset></direction></measure>
     
     <measure implicit="no" number="3">
       <note>
@@ -1187,12 +1180,10 @@
         <type>16th</type>
         <dot />
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18847</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18847</offset></direction></measure>
   </part>
   
-  <part id="P79d17e56b630705aa9c4e2d1faa70d4e">
+  <part id="P96f9c4fc4f1432a0fc21711eaf0c486e">
     
     <measure implicit="no" number="1">
       <attributes>
