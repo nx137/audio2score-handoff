@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P2b7db6b2d29c791e7d590243247b9699">
+    <score-part id="P790c7f8df47600dac4811eab6970cc82">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="Pd3c7c54227025adb6ade05e32be23e4d">
+    <score-part id="P00cdb3c1be86097edf1d654b7e60fe29">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P2b7db6b2d29c791e7d590243247b9699">
+  <part id="P790c7f8df47600dac4811eab6970cc82">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -587,9 +587,7 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>0</offset></direction></measure>
     
     <measure implicit="no" number="2">
       <note dynamics="90.00">
@@ -1361,10 +1359,7 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>1197</offset></direction>
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2814</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>1197</offset></direction><direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>2814</offset></direction></measure>
     
     <measure implicit="no" number="4">
       <note dynamics="65.56">
@@ -1890,12 +1885,10 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>0</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>0</offset></direction></measure>
   </part>
   
-  <part id="Pd3c7c54227025adb6ade05e32be23e4d">
+  <part id="P00cdb3c1be86097edf1d654b7e60fe29">
     
     <measure implicit="no" number="1">
       <attributes>
