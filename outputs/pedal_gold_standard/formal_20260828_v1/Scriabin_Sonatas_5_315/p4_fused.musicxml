@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Pdce1228c453a4e7ace955b2772f151c3">
+    <score-part id="P9a2b9fa7568e4725719cda5a28241268">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="Pf7669febfe23f4ccdfae6a5a7ad073bc">
+    <score-part id="Pc705b3a7df071241db449ae8d95a5f04">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="Pdce1228c453a4e7ace955b2772f151c3">
+  <part id="P9a2b9fa7568e4725719cda5a28241268">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -3210,37 +3210,37 @@
           <alter>0</alter>
           <octave>4</octave>
         </pitch>
-        <duration>3360</duration>
+        <duration>1680</duration>
         <voice>1</voice>
-        <type>eighth</type>
+        <type>16th</type>
         <accidental>natural</accidental>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
+          <normal-type>16th</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="yes" number="1" placement="above" type="start">
             <tuplet-actual>
               <tuplet-number>3</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-type>16th</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
               <tuplet-number>2</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-type>16th</tuplet-type>
             </tuplet-normal>
           </tuplet>
         </notations>
       </note>
       <note>
         <rest />
-        <duration>6720</duration>
+        <duration>3360</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>quarter</normal-type>
+          <normal-type>eighth</normal-type>
         </time-modification>
         <notations>
           <tuplet number="1" type="stop" />
@@ -3248,15 +3248,9 @@
       </note>
       <note>
         <rest />
-        <duration>10080</duration>
+        <duration>20160</duration>
         <voice>1</voice>
-        <type>quarter</type>
-      </note>
-      <note>
-        <rest />
-        <duration>5040</duration>
-        <voice>1</voice>
-        <type>eighth</type>
+        <type>half</type>
       </note>
       <note>
         <rest />
@@ -3771,7 +3765,7 @@
     </measure>
   </part>
   
-  <part id="Pf7669febfe23f4ccdfae6a5a7ad073bc">
+  <part id="Pc705b3a7df071241db449ae8d95a5f04">
     
     <measure implicit="no" number="1">
       <attributes>
