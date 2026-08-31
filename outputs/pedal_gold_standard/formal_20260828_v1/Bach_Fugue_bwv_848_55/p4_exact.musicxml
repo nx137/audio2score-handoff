@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-29</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P77534a90644399ac8ad59fb2495572a1">
+    <score-part id="P94ca487b754370f450ade2fcb75b0c63">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="P5026e51d54d845428e36a86adf46f49a">
+    <score-part id="P5ebeef29271077d11b33f30db45404eb">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P77534a90644399ac8ad59fb2495572a1">
+  <part id="P94ca487b754370f450ade2fcb75b0c63">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -642,10 +642,7 @@
         <duration>20160</duration>
         <voice>4</voice>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>12180</offset></direction>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18606</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>12180</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>18606</offset></direction></measure>
     
     <measure implicit="no" number="3">
       <note>
@@ -1170,9 +1167,7 @@
           <tuplet number="1" type="stop" />
         </notations>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>16989</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>16989</offset></direction></measure>
     
     <measure implicit="no" number="4">
       <note dynamics="93.33">
@@ -1600,9 +1595,7 @@
         <voice>4</voice>
         <type>32nd</type>
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>63</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>63</offset></direction></measure>
     
     <measure implicit="no" number="5">
       <note dynamics="74.44">
@@ -1867,10 +1860,7 @@
         <type>quarter</type>
         <dot />
       </note>
-    
-    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>1239</offset></direction>
-    <direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>6867</offset></direction>
-    </measure>
+    <direction placement="below"><direction-type><pedal type="start" /></direction-type><offset>1239</offset></direction><direction placement="below"><direction-type><pedal type="stop" /></direction-type><offset>6867</offset></direction></measure>
     
     <measure implicit="no" number="6">
       <note>
@@ -2397,7 +2387,7 @@
     </measure>
   </part>
   
-  <part id="P5026e51d54d845428e36a86adf46f49a">
+  <part id="P5ebeef29271077d11b33f30db45404eb">
     
     <measure implicit="no" number="1">
       <attributes>

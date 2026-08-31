@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-28</encoding-date>
+      <encoding-date>2026-08-31</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Pb36471ef587d0437b957bb74c8ad446a">
+    <score-part id="P40e50f16d1765831e2b189acbb2fb2c8">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="Pc4c044b334e49f02cd2c4809c85297fb">
+    <score-part id="P22f33e06ba4b90d9c1f3aea3f845e615">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="Pb36471ef587d0437b957bb74c8ad446a">
+  <part id="P40e50f16d1765831e2b189acbb2fb2c8">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -1886,7 +1886,7 @@
     </measure>
   </part>
   
-  <part id="Pc4c044b334e49f02cd2c4809c85297fb">
+  <part id="P22f33e06ba4b90d9c1f3aea3f845e615">
     
     <measure implicit="no" number="1">
       <attributes>
