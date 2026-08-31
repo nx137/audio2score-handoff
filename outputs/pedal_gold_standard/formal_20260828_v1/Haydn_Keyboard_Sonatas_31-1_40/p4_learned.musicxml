@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Pc0009dba86e2b8bd6c06f4da0023f1e4">
+    <score-part id="Pdb65c083188aeb4cdff3b41a06251c45">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="P77752d483e86b134db9a31b4453f0ddf">
+    <score-part id="P00615b03fa5156a4a6fdcf61c661b420">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="Pc0009dba86e2b8bd6c06f4da0023f1e4">
+  <part id="Pdb65c083188aeb4cdff3b41a06251c45">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -1470,7 +1470,7 @@
     </measure>
   </part>
   
-  <part id="P77752d483e86b134db9a31b4453f0ddf">
+  <part id="P00615b03fa5156a4a6fdcf61c661b420">
     
     <measure implicit="no" number="1">
       <attributes>
