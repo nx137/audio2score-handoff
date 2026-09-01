@@ -215,6 +215,9 @@ def _rule_v3_enabled() -> bool:
     return voice_reassign_enabled()
 
 
+_RULE_V4_ENV = "A2S_RULE_V4"
+
+
 def _rule_v4_enabled() -> bool:
     """v4 延音区间排序：A2S_RULE_V4 显式设置优先；否则与 v3/声部迁移联动。
 
@@ -223,6 +226,9 @@ def _rule_v4_enabled() -> bool:
     v4 在延音区间内降低 key 主导、加区间基础分与 0.5 拍网格奖励，并在
     rank_candidates 中对接近 next-voice-onset 的候选额外加分。
     """
+    if _RULE_V4_ENV in os.environ:
+        return os.environ.get(_RULE_V4_ENV).strip().lower() in {"1", "true", "yes"}
+    return _rule_v3_enabled()
 
 
 def candidate_feature_probability(features: dict) -> float:
