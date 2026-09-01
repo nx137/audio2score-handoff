@@ -24,6 +24,80 @@ from voice_assignment import VoiceEvent, assign_voices, validate_voice_events
 
 EPS = 1e-7
 
+# --- P0-1 声部感知合法性（默认启用；A2S_VOICE_REASSIGN=0 关闭，完全复现 P1.5） ---
+_VOICE_REASSIGN_ENV = "A2S_VOICE_REASSIGN"
+
+
+def voice_reassign_enabled() -> bool:
+    """环境变量开关：默认启用声部重分配；=0 关闭（恢复 P1.5 行为）。"""
+    return os.environ.get(_VOICE_REASSIGN_ENV, "1").strip().lower() not in {"0", "false", "no"}
+
+
+def _pedal_extension_ql(event, pedals) -> float:
+    """事件按键释放后、踏板释放前的声学延长（QL）。>0 即存在踏板延音证据。"""
+    release = pedal_release_after(event.end_ql, pedals)
+    if release is None:
+        return 0.0
+    return max(0.0, release - event.end_ql)
+
+
+def reassign_pedal_extension_voices(base, pedals, max_voices, min_extension=0.15,
+                                    mult_cap=2.0):
+    """声部感知合法性：让有踏板延音证据、且候选延音会越过同 voice 下一 onset
+    的事件迁移到独立声部，使延音候选通过“同 voice 不重叠”硬约束。
+
+    参考谱通过多声部记谱实现延音覆盖（后续 onset 落在不同声部）；系统把演奏
+    流压缩进单 voice 后，``next_voice_onset`` 会把延音候选判为非法。本函数把
+    这类事件迁到 [start, start+duration+min(key*mult_cap, 声学延长)] 内无事件
+    的声部（优先复用已有 voice 编号），在不破坏硬约束的前提下恢复多声部延音
+    记谱能力。与旧行为的差异严格限于有延音证据的事件。
+    """
+    events = sorted(base, key=lambda e: (e.start_ql, e.voice, e.pitch))
+    by_voice: dict[int, list] = {}
+    for e in events:
+        by_voice.setdefault(e.voice, []).append(e)
+
+    def _next_onset(e, voice_events):
+        onsets = sorted({x.start_ql for x in voice_events})
+        for o in onsets:
+            if o > e.start_ql + EPS:
+                return o
+        return None
+
+    for _round in range(max_voices + 2):
+        moved = False
+        for e in list(events):
+            ext = _pedal_extension_ql(e, pedals)
+            if ext <= min_extension:
+                continue
+            ceiling = min(e.duration_ql * mult_cap, ext)
+            need_end = e.start_ql + e.duration_ql + ceiling
+            nxt = _next_onset(e, by_voice.get(e.voice, []))
+            if nxt is not None and need_end > nxt + EPS:
+                target = None
+                for v in sorted(by_voice):
+                    if v == e.voice:
+                        continue
+                    if all(o.end_ql <= e.start_ql + EPS or o.start_ql >= need_end - EPS
+                           for o in by_voice[v]):
+                        target = v
+                        break
+                if target is None and len(by_voice) < max_voices:
+                    target = max(by_voice) + 1
+                if target is not None:
+                    by_voice[e.voice].remove(e)
+                    by_voice.setdefault(target, []).append(e)
+                    new_event = VoiceEvent(e.pitch, e.start_ql, e.duration_ql,
+                                           e.velocity, target, e.hand)
+                    idx = events.index(e)
+                    events[idx] = new_event
+                    moved = True
+                    break
+        if not moved:
+            break
+    validate_voice_events(events)
+    return sorted(events, key=lambda e: (e.hand, e.voice, e.start_ql, e.pitch))
+
 # --- P1.5 候选生成增强（默认关闭，保持基线可复现） ---
 # 启用方式：A2S_EXTEND_CANDIDATES=1 环境变量。
 # 扩展内容（P1-6 天花板模拟口径）：
@@ -348,13 +422,18 @@ def _decode_measure_dp(items, bar_start, bar_ql):
 def decode_hand(raw_events, pedals, hand: str, max_voices=6, bar_ql=4.0,
                 divisors=(8, 4, 3), probability_fn: Callable | None = None,
                 feature_scorer: Callable | None = None,
-                fuse_alpha: float | None = None) -> list[VoiceEvent]:
+                fuse_alpha: float | None = None,
+                voice_reassign: bool = True) -> list[VoiceEvent]:
     """以固定 voice 分配为前提，按小节动态规划选择联合最优的离散时值。
 
     ``feature_scorer`` 提供时对完整 ``candidate_features`` 向量打分（LightGBM
     适配器接入点）；否则按 ``probability_fn``（规则）打分。结构合法性始终验证。
+    ``voice_reassign`` 启用 P0-1 声部感知合法性：有踏板延音证据的事件迁移到
+    独立声部，使延音候选不被“同 voice 不重叠”误杀（默认 True）。
     """
     base = assign_voices(raw_events, hand=hand, max_voices=max_voices)
+    if voice_reassign and voice_reassign_enabled():
+        base = reassign_pedal_extension_voices(base, pedals, max_voices)
     candidate_sets = _candidate_sets(base, pedals, bar_ql, divisors, probability_fn,
                                      feature_scorer, fuse_alpha)
     by_measure = {}
@@ -400,11 +479,12 @@ def write_candidate_table(raw_events, pedals, hand: str, output_path: str | Path
 def decode_score_hands(rh_events, lh_events, pedals, max_voices=6, bar_ql=4.0,
                        divisors=(8, 4, 3), probability_fn: Callable | None = None,
                        feature_scorer: Callable | None = None,
-                       fuse_alpha: float | None = None) -> dict[str, list[VoiceEvent]]:
+                       fuse_alpha: float | None = None,
+                       voice_reassign: bool = True) -> dict[str, list[VoiceEvent]]:
     """整首解码：左右手分别走 ``decode_hand``，可传入规则概率函数或特征打分器。"""
     return {
         "RH": decode_hand(rh_events, pedals, "RH", max_voices, bar_ql, divisors,
-                          probability_fn, feature_scorer, fuse_alpha),
+                          probability_fn, feature_scorer, fuse_alpha, voice_reassign),
         "LH": decode_hand(lh_events, pedals, "LH", max_voices, bar_ql, divisors,
-                          probability_fn, feature_scorer, fuse_alpha),
+                          probability_fn, feature_scorer, fuse_alpha, voice_reassign),
     }
