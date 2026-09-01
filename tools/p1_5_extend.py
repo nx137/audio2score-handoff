@@ -79,10 +79,20 @@ def rebuild_musicxml(segment_dir: Path, seg_id: str, midi_path: Path) -> None:
         cmd = [sys.executable, "audio2score/scripts/p4_multivoice_score.py",
                "--midi", str(midi_path), "--out", str(out)] + extra
         t0 = time.time()
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=300,
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=600,
                            env={**os.environ, "A2S_EXTEND_CANDIDATES": "1"})
         if r.returncode != 0:
-            raise RuntimeError(f"{seg_id} {name} failed: {r.stderr[-800:]}")
+            log_path = segment_dir / f"{name}.rebuild.err.log"
+            try:
+                log_path.write_text(r.stderr or "", encoding="utf-8")
+            except OSError:
+                pass
+            snippet = (r.stderr[-2000:] if r.stderr else "(no stderr)")
+            raise RuntimeError(
+                f"{seg_id} {name} failed (rc={r.returncode}); full stderr -> {log_path}"
+                + chr(10)
+                + snippet
+            )
         print(f"  {name} ok ({time.time()-t0:.1f}s)")
 
 
