@@ -20,6 +20,7 @@ import math
 import os
 import re
 import sys
+import tempfile
 import time
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -81,30 +82,46 @@ def _retry_replace(tmp_path, final_path, retries=_WRITE_RETRIES):
 
 
 def _write_atomic(path, write_fn, retries=_WRITE_RETRIES):
-    """先把内容写入同目录 .tmp 文件（带退避重试），再原子替换到目标路径。
+    """先写入同目录唯一临时文件（mkstemp），再原子替换到目标路径。
 
     Windows 上对刚创建的大文件做原地覆写时，实时扫描/索引/同步进程可能
-    短暂持有文件导致 OSError；临时文件 + 替换 + 重试可吸收这类瞬时故障，
-    且不会留下半截文件。所有重试均失败时抛出最后一个异常，完整调用栈由
-    p1_5_extend 的全量 stderr 日志保留。
+    短暂持有文件导致 OSError（如 Errno 22 Invalid argument）。每次尝试都用
+    mkstemp 生成全新的临时文件：若某个 tmp 被占用/锁定，重试时绝不会复用
+    被锁的旧路径，因此总能拿到一个干净可写的临时文件；随后 os.replace
+    原子替换，不会留下半截目标文件。所有重试均失败时抛出最后一个异常，
+    完整调用栈由 p1_5_extend 的全量 stderr 日志保留。
     """
-    tmp_path = str(path) + ".tmp"
     last_exc = None
     for attempt in range(retries):
+        tmp_fd = None
+        tmp_path = None
         try:
+            tmp_fd, tmp_path = tempfile.mkstemp(
+                dir=str(Path(path).parent),
+                prefix=Path(path).name + ".tmp-",
+                suffix=".tmp",
+            )
+            os.close(tmp_fd)
+            tmp_fd = None
             write_fn(tmp_path)
-            _retry_replace(tmp_path, str(path), retries=retries)
+            os.replace(tmp_path, str(path))
             return
         except OSError as exc:
             last_exc = exc
-            try:
-                os.remove(tmp_path)
-            except OSError:
-                pass
             if attempt < retries - 1:
                 time.sleep(_WRITE_RETRY_BASE_S * (attempt + 1))
+        finally:
+            if tmp_fd is not None:
+                try:
+                    os.close(tmp_fd)
+                except OSError:
+                    pass
+            if tmp_path is not None:
+                try:
+                    os.remove(tmp_path)
+                except OSError:
+                    pass
     raise last_exc
-
 
 def write_musicxml_filtered(score, out_path: Path) -> None:
     """写出 MusicXML，并在导出日志中过滤 music21 的 beam 假阳性告警。
