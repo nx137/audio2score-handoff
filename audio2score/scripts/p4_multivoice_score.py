@@ -17,8 +17,10 @@ import argparse
 import contextlib
 import io
 import math
+import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
@@ -59,6 +61,51 @@ _ALTER_TO_ACCIDENTAL = {
 }
 
 
+_WRITE_RETRIES = 6
+_WRITE_RETRY_BASE_S = 0.5
+
+
+def _retry_replace(tmp_path, final_path, retries=_WRITE_RETRIES):
+    """原子替换目标文件；Windows 上刚写入的文件可能被实时扫描/索引短暂占用，
+    用退避重试吸收这类瞬时 OSError（如 Errno 22 Invalid argument）。"""
+    last_exc = None
+    for attempt in range(retries):
+        try:
+            os.replace(tmp_path, final_path)
+            return
+        except OSError as exc:
+            last_exc = exc
+            if attempt < retries - 1:
+                time.sleep(_WRITE_RETRY_BASE_S * (attempt + 1))
+    raise last_exc
+
+
+def _write_atomic(path, write_fn, retries=_WRITE_RETRIES):
+    """先把内容写入同目录 .tmp 文件（带退避重试），再原子替换到目标路径。
+
+    Windows 上对刚创建的大文件做原地覆写时，实时扫描/索引/同步进程可能
+    短暂持有文件导致 OSError；临时文件 + 替换 + 重试可吸收这类瞬时故障，
+    且不会留下半截文件。所有重试均失败时抛出最后一个异常，完整调用栈由
+    p1_5_extend 的全量 stderr 日志保留。
+    """
+    tmp_path = str(path) + ".tmp"
+    last_exc = None
+    for attempt in range(retries):
+        try:
+            write_fn(tmp_path)
+            _retry_replace(tmp_path, str(path), retries=retries)
+            return
+        except OSError as exc:
+            last_exc = exc
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+            if attempt < retries - 1:
+                time.sleep(_WRITE_RETRY_BASE_S * (attempt + 1))
+    raise last_exc
+
+
 def write_musicxml_filtered(score, out_path: Path) -> None:
     """写出 MusicXML，并在导出日志中过滤 music21 的 beam 假阳性告警。
 
@@ -69,7 +116,7 @@ def write_musicxml_filtered(score, out_path: Path) -> None:
     """
     buf = io.StringIO()
     with contextlib.redirect_stderr(buf):
-        score.write("musicxml", fp=str(out_path))
+        _write_atomic(out_path, lambda tmp_path: score.write("musicxml", fp=tmp_path))
     # 该假阳性是一条跨两行的告警：首行为 "Found a messed up beam pair ..."，
     # 次行是引发告警的 beam 列表 repr。逐行过滤时需把紧随其后的续行一并丢弃，
     # 否则会留下一条孤立的列表打印。
@@ -149,7 +196,7 @@ def sanitize_tie_accidentals(xml_path: Path) -> None:
                 notations = note_el.find("notations")
                 insert_at = list(note_el).index(notations) if notations is not None else len(list(note_el))
                 note_el.insert(insert_at, accidental)
-    tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
+    _write_atomic(xml_path, lambda tmp_path: tree.write(tmp_path, encoding="UTF-8", xml_declaration=False))
 
 
 
@@ -211,7 +258,7 @@ def insert_exact_pedals(xml_path: Path, pedals: list[tuple[float, float]],
         pedal.set("type", typ)
         off = ET.SubElement(direction, "offset")
         off.text = str(offset_div)
-    tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
+    _write_atomic(xml_path, lambda tmp_path: tree.write(tmp_path, encoding="UTF-8", xml_declaration=False))
 
 
 def sanitize_pedal_retakes(xml_path: Path) -> None:
@@ -241,7 +288,7 @@ def sanitize_pedal_retakes(xml_path: Path) -> None:
                     children.pop(index + 1)
                     continue
                 index += 1
-    tree.write(str(xml_path), encoding="UTF-8", xml_declaration=False)
+    _write_atomic(xml_path, lambda tmp_path: tree.write(tmp_path, encoding="UTF-8", xml_declaration=False))
 
 
 def split_voice_events_at_barlines(events, bar_ql: float):
