@@ -173,10 +173,11 @@ def generate_duration_candidates(start_ql, key_duration_ql, acoustic_duration_ql
 def candidate_probability(duration, key_duration, acoustic_duration, source):
     """P4d 的可学习接口；目前为可解释的规则概率（0~1）。
 
-    ``A2S_RULE_V3=1`` 时启用声学感知规则（P1.5 排序层改进 v3）：仅在存在踏板
-    延音证据（acoustic_duration > key_duration）时，对位于 [key, acoustic]
-    区间内的候选按声学接近度加成，使延音记谱候选有机会胜出；无延音证据时
-    与 v1 完全一致（不伤害 pedal-only / 常规记谱事件）。
+    ``A2S_RULE_V3=1`` 时启用延音感知规则（P1.5 排序层改进 v3）；
+    ``A2S_RULE_V4=1``（默认随 v3）启用 P1 排序层改进 v4：
+    延音区间内降低 key 主导权重、给予区间基础分与 0.5 拍网格奖励，
+    使记谱时值（常大于 key、落在标准网格）有机会胜出；无延音证据时与
+    v1 完全一致（不伤害 pedal-only / 常规记谱事件）。
     """
     key_gap = abs(duration - key_duration)
     acoustic_gap = abs(duration - acoustic_duration)
@@ -184,7 +185,14 @@ def candidate_probability(duration, key_duration, acoustic_duration, source):
     if _rule_v3_enabled():
         extension = acoustic_duration - key_duration
         if extension > 0.15 and key_duration - EPS <= duration <= acoustic_duration + EPS:
-            score += 0.25 * math.exp(-1.5 * acoustic_gap)
+            if _rule_v4_enabled():
+                dur_from_key = max(0.0, duration - key_duration)
+                score = (0.35 * math.exp(-1.2 * dur_from_key)
+                         + 0.25 * math.exp(-1.2 * acoustic_gap) + 0.25)
+                if abs(duration * 2.0 - round(duration * 2.0)) < 1e-6:
+                    score += 0.15
+            else:
+                score += 0.25 * math.exp(-1.5 * acoustic_gap)
     if "barline" in source:
         score += 0.04
     if "next-voice-onset" in source:
@@ -205,6 +213,16 @@ def _rule_v3_enabled() -> bool:
     if _RULE_V3_ENV in os.environ:
         return os.environ.get(_RULE_V3_ENV).strip().lower() in {"1", "true", "yes"}
     return voice_reassign_enabled()
+
+
+def _rule_v4_enabled() -> bool:
+    """v4 延音区间排序：A2S_RULE_V4 显式设置优先；否则与 v3/声部迁移联动。
+
+    P1 诊断：354 例排序错误中 81% 有延音证据、91% 参考时值落在 [key, acoustic]
+    区间的标准网格上，而 v1/v3 的 key 权重（0.70）让输出贴向最短 key 时值。
+    v4 在延音区间内降低 key 主导、加区间基础分与 0.5 拍网格奖励，并在
+    rank_candidates 中对接近 next-voice-onset 的候选额外加分。
+    """
 
 
 def candidate_feature_probability(features: dict) -> float:
@@ -290,6 +308,13 @@ def rank_candidates(start_ql, key_duration_ql, acoustic_duration_ql,
                 probability = max(EPS, min(0.999999, probability))
         else:
             probability = rule_probability
+
+        if _rule_v4_enabled() and next_voice_onset_ql is not None:
+            _ext = acoustic_duration_ql - key_duration_ql
+            if _ext > 0.15:
+                _ngap = next_voice_onset_ql - start_ql
+                if duration <= _ngap + EPS:
+                    probability = min(0.999999, probability + 0.35 * math.exp(-1.5 * (_ngap - duration)))
         ranked.append(DurationCandidate(duration, source, crosses, -math.log(probability) + complexity))
     # 同一离散时值可同时被多个证据源提出。对解码而言它们是同一个选择；
     # 合并来源并保留最低代价，避免自动监督为同一个符号时值写多个正例。
