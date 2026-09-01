@@ -35,12 +35,14 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import sys
 from pathlib import Path
 
-BOUNDARY_QL = 0.25      # rule 2.4
-RETAKE_QL = 0.25        # rule 2.2: quick re-press threshold
-SCORE_QL = 0.25         # rule 2.3: pedal-mark matching window
+# 阈值默认 0.25；可用环境变量覆盖（供 retake/边界/谱面对齐的敏感性扫描）。
+BOUNDARY_QL = float(os.environ.get("A2S_PREFILL_BOUNDARY_QL", "0.25"))  # rule 2.4
+RETAKE_QL = float(os.environ.get("A2S_PREFILL_RETAKE_QL", "0.25"))      # rule 2.2: quick re-press threshold
+SCORE_QL = float(os.environ.get("A2S_PREFILL_SCORE_QL", "0.25"))       # rule 2.3: pedal-mark matching window
 
 ANNOT_COLS = [
     "acoustic_sustain", "performance_pedal_action", "published_score_pedal",
@@ -92,35 +94,41 @@ def load_segment_bounds(path: Path) -> tuple[float, float]:
     return float(meta["start_ql"]), float(meta["end_ql"])
 
 
-def is_boundary(onset: float, s0: float, s1: float) -> bool:
-    return onset < s0 + BOUNDARY_QL or onset > s1 - BOUNDARY_QL
+def is_boundary(onset: float, s0: float, s1: float, boundary_ql: float | None = None) -> bool:
+    bq = BOUNDARY_QL if boundary_ql is None else boundary_ql
+    return onset < s0 + bq or onset > s1 - bq
 
 
-def classify_acoustic(pe: float, onset: float, s0: float, s1: float) -> str:
-    if is_boundary(onset, s0, s1):
+def classify_acoustic(pe: float, onset: float, s0: float, s1: float,
+                      acoustic_ql: float | None = None, boundary_ql: float | None = None) -> str:
+    if is_boundary(onset, s0, s1, boundary_ql):
         return "uncertain"
-    return "yes" if pe > RETAKE_QL else "no"
+    # 向后兼容：声学延音判定阈值默认沿用 RETAKE_QL（历史耦合，见敏感性扫描报告）
+    aq = RETAKE_QL if acoustic_ql is None else acoustic_ql
+    return "yes" if pe > aq else "no"
 
 
-def classify_perf(onset: float, ivs: list[tuple[float, float]], s0: float, s1: float) -> str:
+def classify_perf(onset: float, ivs: list[tuple[float, float]], s0: float, s1: float,
+                   retake_ql: float | None = None, boundary_ql: float | None = None) -> str:
     """Rule 2.2.  For a note near the end of interval k the quick-retake test
     uses the gap to the NEXT interval (ivs[k+1].start - ivs[k].end)."""
-    if is_boundary(onset, s0, s1):
+    rq = RETAKE_QL if retake_ql is None else retake_ql
+    if is_boundary(onset, s0, s1, boundary_ql):
         return "uncertain"
     for k, (s, e) in enumerate(ivs):
         if s <= onset <= e:
-            if e - onset > RETAKE_QL:
+            if e - onset > rq:
                 return "hold"
             nxt = ivs[k + 1] if k + 1 < len(ivs) else None
-            if nxt is not None and (nxt[0] - e) < RETAKE_QL:
+            if nxt is not None and (nxt[0] - e) < rq:
                 return "change"
             return "release"
     for k in range(len(ivs) - 1):
         e, s2 = ivs[k][1], ivs[k + 1][0]
         if e < onset < s2:
-            near_release = (onset - e) <= RETAKE_QL
-            near_press = (s2 - onset) <= RETAKE_QL
-            if near_release and (s2 - e) < RETAKE_QL:
+            near_release = (onset - e) <= rq
+            near_press = (s2 - onset) <= rq
+            if near_release and (s2 - e) < rq:
                 return "change"
             if near_release:
                 return "release"
@@ -130,8 +138,8 @@ def classify_perf(onset: float, ivs: list[tuple[float, float]], s0: float, s1: f
     return "none"
 
 
-def classify_score(onset: float, ref_pedals: list[dict]) -> str:
-    """Rule 2.3: nearest pedal mark within 0.25 ql decides the event type."""
+def classify_score(onset: float, ref_pedals: list[dict], score_ql: float | None = None) -> str:
+    """Rule 2.3: nearest pedal mark within score_ql (default SCORE_QL) decides the event type."""
     if not ref_pedals:
         return "none"
     best, best_d = None, float("inf")
@@ -139,7 +147,8 @@ def classify_score(onset: float, ref_pedals: list[dict]) -> str:
         d = abs(float(p["position_ql"]) - onset)
         if d < best_d:
             best_d, best = d, p
-    if best is not None and best_d <= SCORE_QL:
+    sq = SCORE_QL if score_ql is None else score_ql
+    if best is not None and best_d <= sq:
         return best.get("event_type", "")
     return "none"
 
