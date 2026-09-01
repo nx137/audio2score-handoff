@@ -6,6 +6,8 @@
 
 ## 0. 角色与铁律（最重要，违反即失败）
 
+0. **每次验证会话开始时，必须先从 GitHub 强制拉取并覆盖本地**（命令见第 1.5 节），
+   确保与远端 `main` 完全一致；**严禁使用上一次会话遗留的陈旧本地文件**。
 1. 你**只执行**本手册给出的命令，**不修改**任何代码、数据、文档。
 2. 任何命令失败（退出码非 0 / 报错 / 结果异常）：**原样记录完整错误**（命令、退出码、stderr 最后 50 行、现象），按第 9 节模板回报主控。**严禁自行"修复"或绕过**。
 3. 每一步成功后输出一行 `[步骤 N 完成]`。
@@ -16,11 +18,29 @@
 
 ```bash
 cd <仓库根目录>          # 含 audio2score/ tools/ outputs/ 的目录
-git pull                 # 确保最新（至少包含 515a3a3）
+# 先执行 1.5 节强制同步，再安装依赖
 pip install pretty_midi music21 lightgbm
 ```
 
 依赖缺一不可；`lightgbm` 用于 p4_learned/fused 管线。
+
+## 1.5 强制同步（每次验证会话开始时必做，第 1 步）
+
+```bash
+cd <仓库根目录>
+git fetch origin main
+git status --porcelain     # 先查看本地状态
+git reset --hard origin/main   # 强制用远端覆盖本地所有已跟踪文件
+```
+
+**规则**：
+- `git status --porcelain` 若显示**任何**未提交/未推送的改动，**不要 reset**，原样记录并报告主控（可能上一次产物未 push 完成），等主控指示。
+- 若 status 干净（无输出），执行 `git reset --hard origin/main`，然后确认：
+  ```bash
+  git log --oneline -1      # 应显示 44a0616 或更新的远端 commit
+  git status --porcelain    # 应为空（干净工作区）
+  ```
+- 之后的所有命令都基于这份与远端一致的代码；每次会话（即使只隔几分钟）都要重新执行本同步。
 
 ## 2. 步骤 0：复现 P1.5 基线（只读）
 
