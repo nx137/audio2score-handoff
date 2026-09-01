@@ -66,7 +66,7 @@ def reassign_pedal_extension_voices(base, pedals, max_voices, min_extension=0.15
 
     for _round in range(max_voices + 2):
         moved = False
-        for e in list(events):
+        for idx, e in enumerate(events):
             ext = _pedal_extension_ql(e, pedals)
             if ext <= min_extension:
                 continue
@@ -85,11 +85,14 @@ def reassign_pedal_extension_voices(base, pedals, max_voices, min_extension=0.15
                 if target is None and len(by_voice) < max_voices:
                     target = max(by_voice) + 1
                 if target is not None:
-                    by_voice[e.voice].remove(e)
-                    by_voice.setdefault(target, []).append(e)
+                    src_list = by_voice[e.voice]
+                    by_voice[e.voice] = [x for x in src_list
+                                         if not (x.pitch == e.pitch
+                                                 and abs(x.start_ql - e.start_ql) <= EPS
+                                                 and abs(x.duration_ql - e.duration_ql) <= EPS)]
                     new_event = VoiceEvent(e.pitch, e.start_ql, e.duration_ql,
                                            e.velocity, target, e.hand)
-                    idx = events.index(e)
+                    by_voice.setdefault(target, []).append(new_event)
                     events[idx] = new_event
                     moved = True
                     break
@@ -193,7 +196,15 @@ _RULE_V3_ENV = "A2S_RULE_V3"
 
 
 def _rule_v3_enabled() -> bool:
-    return os.environ.get(_RULE_V3_ENV, "0").strip().lower() in {"1", "true", "yes"}
+    """v3 声学感知规则：A2S_RULE_V3 显式设置优先；否则与声部感知合法性联动。
+
+    P0-1 证明：v3 单独无效（延音候选被“同 voice 不重叠”过滤，无从提权）；
+    声部迁移让延音候选进入合法集后，v3 才能在证据存在时给 [key, acoustic]
+    区间候选加成。A2S_VOICE_REASSIGN=0 时默认关闭（完全复现 P1.5 行为）。
+    """
+    if _RULE_V3_ENV in os.environ:
+        return os.environ.get(_RULE_V3_ENV).strip().lower() in {"1", "true", "yes"}
+    return voice_reassign_enabled()
 
 
 def candidate_feature_probability(features: dict) -> float:
