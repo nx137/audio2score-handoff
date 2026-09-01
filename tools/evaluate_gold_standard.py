@@ -48,6 +48,13 @@ BASE = ROOT / "outputs" / "pedal_gold_standard" / "formal_20260828_v1"
 ONSET_TOL = 0.125
 DUR_TOL = 0.05
 PEDAL_TOL = 0.25
+import os
+import sys
+sys.path.insert(0, str(ROOT / "audio2score" / "scripts"))
+os.environ.setdefault("A2S_EXTEND_CANDIDATES", "1")  # 候选口径与重建管线一致
+from structured_duration_decoder import generate_duration_candidates
+
+
 
 
 def parse_notes(xml_path: Path) -> list[dict]:
@@ -172,9 +179,22 @@ def parse_segment(sid: str) -> dict:
              "onset": float(r["onset_ql"]) - start_ql,  # absolute -> segment-local
              "notation": float(r["notation_decision"])}
             for r in rows if r["notation_decision"]]
-    feas = sum(1 for r in rows
-               if float(r["notation_decision"]) in
-               {float(x) for x in r["candidate_durations"].split(";") if x.strip()})
+    feas = 0
+    for r in rows:
+        if not r["notation_decision"]:
+            continue
+        fref = float(r["notation_decision"])
+        fonset = float(r["onset_ql"])
+        fkey = float(r["key_duration_ql"])
+        faco = float(r["acoustic_duration_ql"])
+        fng_raw = (r.get("next_voice_gap_ql") or "").strip()
+        fng = float(fng_raw) if fng_raw else -1.0
+        fcands = generate_duration_candidates(
+            fonset, fkey, faco,
+            next_voice_onset_ql=(fonset + fng) if fng >= 0 else None,
+            bar_ql=4.0)
+        if any(abs(c - fref) <= 1e-9 for c, _ in fcands):
+            feas += 1
     ivs = []
     with (sd / "pedal_intervals.csv").open(encoding="utf-8-sig", newline="") as f:
         for r in csv.DictReader(f):
