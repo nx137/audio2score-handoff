@@ -67,7 +67,8 @@ def parse_notes(xml_path: Path) -> list[dict]:
                     cursor -= int(child.findtext("duration") or 0) / divisions
                 elif child.tag == "forward" and divisions:
                     cursor += int(child.findtext("duration") or 0) / divisions
-                elif child.tag == "note" and divisions and child.find("chord") is None:
+                elif child.tag == "note" and divisions:
+                    is_chord = child.find("chord") is not None
                     pitch_el = child.find("pitch")
                     if pitch_el is not None:
                         step = pitch_el.findtext("step")
@@ -78,7 +79,8 @@ def parse_notes(xml_path: Path) -> list[dict]:
                         dur = int(child.findtext("duration") or 0) / divisions
                         out.append({"hand": hand, "pitch": pitch,
                                     "onset": cursor, "dur": dur})
-                    cursor += int(child.findtext("duration") or 0) / divisions
+                    if not is_chord:
+                        cursor += int(child.findtext("duration") or 0) / divisions
     return out
 
 
