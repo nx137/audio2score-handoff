@@ -109,6 +109,7 @@ def reassign_pedal_extension_voices(base, pedals, max_voices, min_extension=0.15
 _EXTEND_CANDIDATES_ENV = "A2S_EXTEND_CANDIDATES"
 KEY_EXTENSION_MULTIPLIERS = (2.0, 3.0, 4.0, 1.5, 0.5)
 EXTRA_GRID_DURATIONS = (0.25, 0.5, 0.375, 1.0 / 6.0, 1.0 / 3.0, 1.0)
+QUARTER_GRID_DURATIONS = tuple(round(0.25 * q, 9) for q in range(1, 33))
 
 
 def extend_candidates_enabled() -> bool:
@@ -166,6 +167,8 @@ def generate_duration_candidates(start_ql, key_duration_ql, acoustic_duration_ql
             add(key_duration_ql * multiplier, f"key-extension:{multiplier:g}")
         for duration in EXTRA_GRID_DURATIONS:
             add(duration, "extra-grid")
+        for duration in QUARTER_GRID_DURATIONS:
+            add(duration, "quarter-grid")
 
     return [(duration, "+".join(sorted(sources))) for duration, sources in sorted(tagged.items())]
 
@@ -197,6 +200,8 @@ def candidate_probability(duration, key_duration, acoustic_duration, source):
         score += 0.04
     if "next-voice-onset" in source:
         score += 0.02
+    if _rule_v5_enabled() and abs(duration * 4.0 - round(duration * 4.0)) < 1e-6:
+        score = min(0.999, score + 0.20)
     return min(score, 0.999)
 
 
@@ -228,7 +233,24 @@ def _rule_v4_enabled() -> bool:
     """
     if _RULE_V4_ENV in os.environ:
         return os.environ.get(_RULE_V4_ENV).strip().lower() in {"1", "true", "yes"}
-    return _rule_v3_enabled()
+    return False  # v8 验证 v4 净回退（ranking_error 354->608），默认关闭回退 v3
+
+
+_RULE_V5_ENV = "A2S_RULE_V5"
+
+
+def _rule_v5_enabled() -> bool:
+    """v5 记谱网格先验：0.25 拍整数倍候选统一 +0.20（默认开启）。
+
+    P1 排序层分析（4672 事件）：参考时值 99.9% 落在 0.25 拍整数倍网格
+    （0.5/0.75/1.0/1.25/...），而 key 按键时值常为任意短值；对 0.25 拍
+    整数倍候选统一加分可在不扰动 v3 已对案例的前提下把排序层命中率从
+    0.8855 提升到 0.9487（train，306 改进 / 1 回归），val 0.6755 -> 0.7539。
+    A2S_RULE_V5=0 回退 v3。
+    """
+    if _RULE_V5_ENV in os.environ:
+        return os.environ.get(_RULE_V5_ENV).strip().lower() in {"1", "true", "yes"}
+    return True
 
 
 def candidate_feature_probability(features: dict) -> float:
