@@ -6,7 +6,7 @@
   <identification>
     <creator type="composer">ClawsGO Science / audio2score P4</creator>
     <encoding>
-      <encoding-date>2026-08-31</encoding-date>
+      <encoding-date>2026-09-01</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -20,15 +20,15 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P4ff7d001b075541dc3041f2d249162b4">
+    <score-part id="Pdc10172c8f2d2eab6a7b7c8c1626fc71">
       <part-name>Piano R.H.</part-name>
     </score-part>
-    <score-part id="P2bb8fec10768bcb735bf185fe3e76d5a">
+    <score-part id="P78320e47bc094e4a4d0ac3ceffa6becf">
       <part-name>Piano L.H.</part-name>
     </score-part>
   </part-list>
   
-  <part id="P4ff7d001b075541dc3041f2d249162b4">
+  <part id="Pdc10172c8f2d2eab6a7b7c8c1626fc71">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -56,31 +56,15 @@
       </direction>
       <note>
         <rest />
-        <duration>1260</duration>
-        <voice>1</voice>
-        <type>32nd</type>
-      </note>
-      <note dynamics="91.11">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>5</octave>
-        </pitch>
         <duration>2520</duration>
         <voice>1</voice>
         <type>16th</type>
       </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>1</voice>
-        <type>32nd</type>
-      </note>
-      <note dynamics="65.56">
+      <note dynamics="51.11">
         <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>5</octave>
+          <step>E</step>
+          <alter>0</alter>
+          <octave>6</octave>
         </pitch>
         <duration>1260</duration>
         <voice>1</voice>
@@ -88,137 +72,59 @@
       </note>
       <note>
         <rest />
-        <duration>420</duration>
-        <voice>1</voice>
-        <type>64th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>64th</normal-type>
-        </time-modification>
-        <notations>
-          <tuplet bracket="yes" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
-        </notations>
-      </note>
-      <note dynamics="94.44">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>840</duration>
-        <tie type="start" />
-        <voice>1</voice>
-        <type>32nd</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>32nd</normal-type>
-        </time-modification>
-        <stem>down</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-        <beam number="3">begin</beam>
-        <notations>
-          <tied type="start" />
-          <tuplet number="1" type="stop" />
-        </notations>
-      </note>
-      <note dynamics="94.44">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>420</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>64th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>64th</normal-type>
-        </time-modification>
-        <stem>down</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
-        <beam number="3">end</beam>
-        <beam number="4">backward hook</beam>
-        <notations>
-          <tied type="stop" />
-          <tuplet bracket="yes" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
-        </notations>
-      </note>
-      <note>
-        <rest />
-        <duration>2100</duration>
-        <voice>1</voice>
-        <type>16th</type>
-        <time-modification>
-          <actual-notes>6</actual-notes>
-          <normal-notes>5</normal-notes>
-          <normal-type>128th</normal-type>
-        </time-modification>
-        <notations>
-          <tuplet number="1" type="stop" />
-        </notations>
-      </note>
-      <note dynamics="83.33">
-        <pitch>
-          <step>C</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>3360</duration>
+        <duration>2940</duration>
         <voice>1</voice>
         <type>eighth</type>
         <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
+          <actual-notes>12</actual-notes>
+          <normal-notes>7</normal-notes>
+          <normal-type>128th</normal-type>
         </time-modification>
         <notations>
-          <tuplet bracket="yes" number="1" placement="above" type="start">
+          <tuplet bracket="no" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-number>12</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-number>7</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-normal>
           </tuplet>
+          <tuplet number="1" type="stop" />
         </notations>
+      </note>
+      <note dynamics="94.44">
+        <pitch>
+          <step>D</step>
+          <alter>0</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1260</duration>
+        <voice>1</voice>
+        <type>32nd</type>
       </note>
       <note>
         <rest />
-        <duration>1680</duration>
+        <duration>7140</duration>
         <voice>1</voice>
-        <type>16th</type>
+        <type>quarter</type>
         <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>16th</normal-type>
+          <actual-notes>24</actual-notes>
+          <normal-notes>17</normal-notes>
+          <normal-type>128th</normal-type>
         </time-modification>
         <notations>
+          <tuplet bracket="no" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>24</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>17</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
           <tuplet number="1" type="stop" />
         </notations>
       </note>
@@ -234,20 +140,15 @@
       </note>
       <note>
         <rest />
-        <duration>2520</duration>
+        <duration>5040</duration>
         <voice>1</voice>
-        <type>16th</type>
+        <type>eighth</type>
       </note>
-      <note dynamics="83.33">
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>3780</duration>
+      <note>
+        <rest />
+        <duration>1260</duration>
         <voice>1</voice>
-        <type>16th</type>
-        <dot />
+        <type>32nd</type>
       </note>
       <note dynamics="80.00">
         <pitch>
@@ -278,44 +179,17 @@
       </note>
       <note>
         <rest />
-        <duration>1680</duration>
+        <duration>6720</duration>
         <voice>1</voice>
-        <type>16th</type>
+        <type>quarter</type>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>16th</normal-type>
+          <normal-type>quarter</normal-type>
         </time-modification>
         <notations>
           <tuplet number="1" type="stop" />
         </notations>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
-          <alter>0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-      </note>
-      <note>
-        <rest />
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
       </note>
       <note dynamics="85.56">
         <pitch>
@@ -380,23 +254,9 @@
       </backup>
       <note>
         <rest />
-        <duration>1260</duration>
+        <duration>5040</duration>
         <voice>2</voice>
-        <type>32nd</type>
-      </note>
-      <note dynamics="85.56">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>6</octave>
-        </pitch>
-        <duration>3780</duration>
-        <voice>2</voice>
-        <type>16th</type>
-        <dot />
-        <stem>down</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
@@ -407,9 +267,6 @@
         <duration>2520</duration>
         <voice>2</voice>
         <type>16th</type>
-        <stem>down</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
       </note>
       <note>
         <chord />
@@ -441,24 +298,15 @@
       </note>
       <note>
         <rest />
-        <duration>8820</duration>
+        <duration>10080</duration>
         <voice>2</voice>
-        <type>eighth</type>
-        <dot />
-        <dot />
+        <type>quarter</type>
       </note>
-      <note dynamics="77.78">
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>5</octave>
-        </pitch>
-        <duration>2520</duration>
+      <note>
+        <rest />
+        <duration>1260</duration>
         <voice>2</voice>
-        <type>16th</type>
-        <stem>down</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
+        <type>32nd</type>
       </note>
       <note dynamics="86.67">
         <pitch>
@@ -469,25 +317,40 @@
         <duration>2520</duration>
         <voice>2</voice>
         <type>16th</type>
-        <stem>down</stem>
+        <stem>up</stem>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+      </note>
+      <note dynamics="72.22">
+        <pitch>
+          <step>B</step>
+          <alter>0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>2</voice>
+        <type>16th</type>
+        <accidental>natural</accidental>
+        <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
       </note>
       <note>
         <rest />
-        <duration>2520</duration>
+        <duration>5040</duration>
         <voice>2</voice>
-        <type>16th</type>
+        <type>eighth</type>
       </note>
-      <note dynamics="96.67">
+      <note dynamics="92.22">
         <pitch>
           <step>F</step>
-          <alter>1</alter>
+          <alter>0</alter>
           <octave>4</octave>
         </pitch>
         <duration>3360</duration>
         <voice>2</voice>
         <type>eighth</type>
+        <accidental>natural</accidental>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
@@ -516,32 +379,113 @@
           <normal-notes>2</normal-notes>
           <normal-type>16th</normal-type>
         </time-modification>
+        <notations>
+          <tuplet number="1" type="stop" />
+        </notations>
       </note>
-      <note dynamics="92.22">
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <note dynamics="65.56">
         <pitch>
           <step>F</step>
-          <alter>0</alter>
+          <alter>1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>1260</duration>
+        <voice>3</voice>
+        <type>32nd</type>
+        <accidental>sharp</accidental>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>3</voice>
+        <type>32nd</type>
+      </note>
+      <note dynamics="83.33">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>3</voice>
+        <type>16th</type>
+        <accidental>flat</accidental>
+      </note>
+      <note>
+        <rest />
+        <duration>7560</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+        <dot />
+      </note>
+      <note dynamics="77.78">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>3</voice>
+        <type>16th</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <note dynamics="96.67">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>3360</duration>
-        <voice>2</voice>
+        <voice>3</voice>
         <type>eighth</type>
-        <accidental>natural</accidental>
+        <accidental>sharp</accidental>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
           <normal-type>eighth</normal-type>
         </time-modification>
+        <notations>
+          <tuplet bracket="yes" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>3</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>2</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
+        </notations>
       </note>
       <note>
         <rest />
-        <duration>1680</duration>
-        <voice>2</voice>
-        <type>16th</type>
+        <duration>6720</duration>
+        <voice>3</voice>
+        <type>quarter</type>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
-          <normal-type>16th</normal-type>
+          <normal-type>quarter</normal-type>
         </time-modification>
         <notations>
           <tuplet number="1" type="stop" />
@@ -552,94 +496,43 @@
       </backup>
       <note>
         <rest />
-        <duration>2520</duration>
-        <voice>3</voice>
-        <type>16th</type>
+        <duration>1260</duration>
+        <voice>4</voice>
+        <type>32nd</type>
       </note>
-      <note dynamics="51.11">
+      <note dynamics="91.11">
         <pitch>
-          <step>E</step>
+          <step>D</step>
           <alter>0</alter>
-          <octave>6</octave>
-        </pitch>
-        <duration>1260</duration>
-        <voice>3</voice>
-        <type>32nd</type>
-      </note>
-      <note>
-        <rest />
-        <duration>5040</duration>
-        <voice>3</voice>
-        <type>eighth</type>
-      </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>3</voice>
-        <type>32nd</type>
-      </note>
-      <note dynamics="92.22">
-        <pitch>
-          <step>C</step>
-          <alter>1</alter>
-          <octave>6</octave>
-        </pitch>
-        <duration>3780</duration>
-        <voice>3</voice>
-        <type>16th</type>
-        <dot />
-      </note>
-      <note>
-        <rest />
-        <duration>20160</duration>
-        <voice>3</voice>
-        <type>half</type>
-      </note>
-      <note>
-        <rest />
-        <duration>5040</duration>
-        <voice>3</voice>
-        <type>eighth</type>
-      </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>3</voice>
-        <type>32nd</type>
-      </note>
-      <backup>
-        <duration>40320</duration>
-      </backup>
-      <note>
-        <rest />
-        <duration>10080</duration>
-        <voice>4</voice>
-        <type>quarter</type>
-      </note>
-      <note>
-        <rest />
-        <duration>2520</duration>
-        <voice>4</voice>
-        <type>16th</type>
-      </note>
-      <note dynamics="83.33">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
           <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <voice>4</voice>
         <type>16th</type>
-        <accidental>flat</accidental>
       </note>
       <note>
         <rest />
-        <duration>17640</duration>
+        <duration>15120</duration>
         <voice>4</voice>
         <type>quarter</type>
         <dot />
+      </note>
+      <note dynamics="83.33">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>3780</duration>
+        <voice>4</voice>
+        <type>16th</type>
         <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>10080</duration>
+        <voice>4</voice>
+        <type>quarter</type>
       </note>
       <note dynamics="98.89">
         <pitch>
@@ -650,7 +543,6 @@
         <duration>1260</duration>
         <voice>4</voice>
         <type>32nd</type>
-        <accidental>sharp</accidental>
       </note>
       <note>
         <rest />
@@ -674,6 +566,135 @@
         <rest />
         <duration>1260</duration>
         <voice>4</voice>
+        <type>32nd</type>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>5</voice>
+        <type>32nd</type>
+      </note>
+      <note dynamics="85.56">
+        <pitch>
+          <step>D</step>
+          <alter>0</alter>
+          <octave>6</octave>
+        </pitch>
+        <duration>3780</duration>
+        <voice>5</voice>
+        <type>16th</type>
+        <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>5</voice>
+        <type>eighth</type>
+      </note>
+      <note dynamics="83.33">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>3360</duration>
+        <voice>5</voice>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>eighth</normal-type>
+        </time-modification>
+        <notations>
+          <tuplet bracket="yes" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>3</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>2</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
+        </notations>
+      </note>
+      <note>
+        <rest />
+        <duration>6720</duration>
+        <voice>5</voice>
+        <type>quarter</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>quarter</normal-type>
+        </time-modification>
+        <notations>
+          <tuplet number="1" type="stop" />
+        </notations>
+      </note>
+      <note>
+        <rest />
+        <duration>7560</duration>
+        <voice>5</voice>
+        <type>eighth</type>
+        <dot />
+      </note>
+      <note dynamics="83.33">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>5</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>5</voice>
+        <type>16th</type>
+        <accidental>sharp</accidental>
+      </note>
+      <note>
+        <rest />
+        <duration>10080</duration>
+        <voice>5</voice>
+        <type>quarter</type>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest />
+        <duration>10080</duration>
+        <voice>6</voice>
+        <type>quarter</type>
+      </note>
+      <note dynamics="92.22">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>6</octave>
+        </pitch>
+        <duration>3780</duration>
+        <voice>6</voice>
+        <type>16th</type>
+        <dot />
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <voice>6</voice>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>6</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>6</voice>
         <type>32nd</type>
       </note>
     </measure>
@@ -727,10 +748,21 @@
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>3360</duration>
+        <duration>5040</duration>
         <voice>1</voice>
         <type>eighth</type>
         <accidental>sharp</accidental>
+      </note>
+      <note dynamics="87.78">
+        <pitch>
+          <step>G</step>
+          <alter>0</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>3360</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <accidental>natural</accidental>
         <time-modification>
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
@@ -748,33 +780,6 @@
             </tuplet-normal>
           </tuplet>
         </notations>
-      </note>
-      <note>
-        <rest />
-        <duration>1680</duration>
-        <voice>1</voice>
-        <type>16th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>16th</normal-type>
-        </time-modification>
-      </note>
-      <note dynamics="87.78">
-        <pitch>
-          <step>G</step>
-          <alter>0</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>3360</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <accidental>natural</accidental>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
-        </time-modification>
       </note>
       <note>
         <rest />
@@ -1221,6 +1226,22 @@
         <duration>1260</duration>
         <voice>4</voice>
         <type>32nd</type>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>6</voice>
       </note>
     </measure>
     
@@ -1748,6 +1769,22 @@
         <duration>2520</duration>
         <voice>4</voice>
         <type>16th</type>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>6</voice>
       </note>
     </measure>
     
@@ -2712,10 +2749,26 @@
         <voice>4</voice>
         <type>32nd</type>
       </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>6</voice>
+      </note>
     </measure>
   </part>
   
-  <part id="P2bb8fec10768bcb735bf185fe3e76d5a">
+  <part id="P78320e47bc094e4a4d0ac3ceffa6becf">
     
     <measure implicit="no" number="1">
       <attributes>
@@ -2743,52 +2796,16 @@
       </direction>
       <note>
         <rest />
+        <duration>5040</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
         <duration>1260</duration>
         <voice>1</voice>
         <type>32nd</type>
       </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="1" sign="yes" type="start" />
-        </direction-type>
-      </direction>
-      <note dynamics="83.33">
-        <pitch>
-          <step>E</step>
-          <alter>0</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-        <stem>up</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="2" sign="yes" type="start" />
-        </direction-type>
-      </direction>
-      <note dynamics="78.89">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-        <accidental>flat</accidental>
-        <stem>up</stem>
-        <beam number="1">continue</beam>
-        <beam number="2">continue</beam>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="1" sign="yes" type="stop" />
-        </direction-type>
-      </direction>
       <note dynamics="84.44">
         <pitch>
           <step>G</step>
@@ -2798,133 +2815,29 @@
         <duration>1260</duration>
         <voice>1</voice>
         <type>32nd</type>
-        <stem>up</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
-        <beam number="3">backward hook</beam>
       </note>
       <note>
         <rest />
-        <duration>5880</duration>
+        <duration>7560</duration>
         <voice>1</voice>
-        <type>quarter</type>
-        <time-modification>
-          <actual-notes>12</actual-notes>
-          <normal-notes>7</normal-notes>
-          <normal-type>64th</normal-type>
-        </time-modification>
-        <notations>
-          <tuplet bracket="no" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>12</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>7</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
-          <tuplet number="1" type="stop" />
-        </notations>
+        <type>eighth</type>
+        <dot />
       </note>
-      <note dynamics="66.67">
+      <note dynamics="61.11">
         <pitch>
-          <step>C</step>
+          <step>F</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-      </note>
-      <note>
-        <rest />
-        <duration>420</duration>
-        <voice>1</voice>
-        <type>64th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>64th</normal-type>
-        </time-modification>
-        <notations>
-          <tuplet bracket="yes" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
-        </notations>
-      </note>
-      <note dynamics="63.33">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>840</duration>
-        <tie type="start" />
-        <voice>1</voice>
-        <type>32nd</type>
-        <accidental>flat</accidental>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>32nd</normal-type>
-        </time-modification>
-        <stem>up</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-        <beam number="3">begin</beam>
-        <notations>
-          <tied type="start" />
-          <tuplet number="1" type="stop" />
-        </notations>
-      </note>
-      <note dynamics="63.33">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>420</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>64th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>64th</normal-type>
-        </time-modification>
-        <stem>up</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
-        <beam number="3">end</beam>
-        <beam number="4">backward hook</beam>
-        <accidental>flat</accidental><notations>
-          <tied type="stop" />
-          <tuplet bracket="no" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>64th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
-          <tuplet number="1" type="stop" />
-        </notations>
-      </note>
-      <note>
-        <rest />
         <duration>1260</duration>
         <voice>1</voice>
         <type>32nd</type>
+      </note>
+      <note>
+        <rest />
+        <duration>2520</duration>
+        <voice>1</voice>
+        <type>16th</type>
       </note>
       <note dynamics="67.78">
         <pitch>
@@ -2938,49 +2851,23 @@
       </note>
       <note>
         <rest />
-        <duration>1260</duration>
+        <duration>6720</duration>
         <voice>1</voice>
-        <type>32nd</type>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="4" sign="yes" type="start" />
-        </direction-type>
-      </direction>
-      <note dynamics="74.44">
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>1</voice>
-        <type>16th</type>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="3" sign="yes" type="stop" />
-        </direction-type>
-      </direction>
-      <note>
-        <rest />
-        <duration>2940</duration>
-        <voice>1</voice>
-        <type>eighth</type>
+        <type>quarter</type>
         <time-modification>
-          <actual-notes>12</actual-notes>
-          <normal-notes>7</normal-notes>
-          <normal-type>128th</normal-type>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>quarter</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="no" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>12</tuplet-number>
-              <tuplet-type>128th</tuplet-type>
+              <tuplet-number>3</tuplet-number>
+              <tuplet-type>quarter</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>7</tuplet-number>
-              <tuplet-type>128th</tuplet-type>
+              <tuplet-number>2</tuplet-number>
+              <tuplet-type>quarter</tuplet-type>
             </tuplet-normal>
           </tuplet>
           <tuplet number="1" type="stop" />
@@ -2998,48 +2885,28 @@
       </note>
       <note>
         <rest />
-        <duration>840</duration>
+        <duration>2100</duration>
         <voice>1</voice>
-        <type>32nd</type>
+        <type>16th</type>
         <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>32nd</normal-type>
+          <actual-notes>6</actual-notes>
+          <normal-notes>5</normal-notes>
+          <normal-type>128th</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="no" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>32nd</tuplet-type>
+              <tuplet-number>6</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>32nd</tuplet-type>
+              <tuplet-number>5</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-normal>
           </tuplet>
           <tuplet number="1" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="5" sign="yes" type="start" />
-        </direction-type>
-      </direction>
-      <note dynamics="72.22">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>1260</duration>
-        <voice>1</voice>
-        <type>32nd</type>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="4" sign="yes" type="stop" />
-        </direction-type>
-      </direction>
       <note dynamics="61.11">
         <pitch>
           <step>F</step>
@@ -3098,12 +2965,16 @@
           <octave>2</octave>
         </pitch>
         <duration>2520</duration>
+        <tie type="start" />
         <voice>1</voice>
         <type>16th</type>
         <accidental>sharp</accidental>
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <direction placement="below">
         <direction-type>
@@ -3115,96 +2986,44 @@
       </backup>
       <note>
         <rest />
-        <duration>5040</duration>
-        <voice>2</voice>
-        <type>eighth</type>
-      </note>
-      <note dynamics="66.67">
-        <pitch>
-          <step>D</step>
-          <alter>0</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>2</voice>
-        <type>16th</type>
-        <stem>up</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-      </note>
-      <note dynamics="61.11">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>1260</duration>
-        <voice>2</voice>
-        <type>32nd</type>
-        <accidental>flat</accidental>
-        <stem>up</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
-        <beam number="3">backward hook</beam>
-      </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>2</voice>
-        <type>32nd</type>
-      </note>
-      <note dynamics="78.89">
-        <pitch>
-          <step>E</step>
-          <alter>0</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>2</voice>
-        <type>16th</type>
-        <stem>up</stem>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-      </note>
-      <direction placement="below">
-        <direction-type>
-          <pedal number="2" sign="yes" type="change" />
-        </direction-type>
-      </direction>
-      <note dynamics="73.33">
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>2</octave>
-        </pitch>
-        <duration>2520</duration>
-        <voice>2</voice>
-        <type>16th</type>
-        <accidental>flat</accidental>
-        <stem>up</stem>
-        <beam number="1">continue</beam>
-        <beam number="2">continue</beam>
-      </note>
-      <note dynamics="61.11">
-        <pitch>
-          <step>F</step>
-          <alter>1</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>1260</duration>
-        <voice>2</voice>
-        <type>32nd</type>
-        <stem>up</stem>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
-        <beam number="3">backward hook</beam>
-      </note>
-      <note>
-        <rest />
-        <duration>8820</duration>
+        <duration>7560</duration>
         <voice>2</voice>
         <type>eighth</type>
         <dot />
+      </note>
+      <note dynamics="61.11">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <voice>2</voice>
+        <type>32nd</type>
+        <accidental>flat</accidental>
+      </note>
+      <note>
+        <rest />
+        <duration>7560</duration>
+        <voice>2</voice>
+        <type>eighth</type>
+        <dot />
+      </note>
+      <note dynamics="63.33">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <voice>2</voice>
+        <type>32nd</type>
+      </note>
+      <note>
+        <rest />
+        <duration>7560</duration>
+        <voice>2</voice>
+        <type>eighth</type>
         <dot />
       </note>
       <note dynamics="70.00">
@@ -3354,26 +3173,300 @@
           <octave>3</octave>
         </pitch>
         <duration>1260</duration>
+        <tie type="start" />
         <voice>2</voice>
         <type>32nd</type>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <backup>
         <duration>40320</duration>
       </backup>
       <note>
-        <rest measure="yes" />
-        <duration>40320</duration>
+        <rest />
+        <duration>3780</duration>
         <voice>3</voice>
+        <type>16th</type>
+        <dot />
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="2" sign="yes" type="start" />
+        </direction-type>
+      </direction>
+      <note dynamics="78.89">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>3</voice>
+        <type>16th</type>
+        <accidental>flat</accidental>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="1" sign="yes" type="stop" />
+        </direction-type>
+      </direction>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>3</voice>
+        <type>32nd</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="3" sign="yes" type="start" />
+        </direction-type>
+      </direction>
+      <note dynamics="73.33">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>3</voice>
+        <type>16th</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>3</voice>
+        <type>32nd</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="4" sign="yes" type="start" />
+        </direction-type>
+      </direction>
+      <note dynamics="74.44">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>3</voice>
+        <type>16th</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="3" sign="yes" type="stop" />
+        </direction-type>
+      </direction>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>3</voice>
+        <type>eighth</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="5" sign="yes" type="start" />
+        </direction-type>
+      </direction>
+      <note dynamics="72.22">
+        <pitch>
+          <step>D</step>
+          <alter>0</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <voice>3</voice>
+        <type>32nd</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="4" sign="yes" type="stop" />
+        </direction-type>
+      </direction>
+      <note>
+        <rest />
+        <duration>10080</duration>
+        <voice>3</voice>
+        <type>quarter</type>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>4</voice>
+        <type>eighth</type>
+      </note>
+      <note dynamics="66.67">
+        <pitch>
+          <step>D</step>
+          <alter>0</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>4</voice>
+        <type>16th</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5880</duration>
+        <voice>4</voice>
+        <type>quarter</type>
+        <time-modification>
+          <actual-notes>12</actual-notes>
+          <normal-notes>7</normal-notes>
+          <normal-type>64th</normal-type>
+        </time-modification>
+        <notations>
+          <tuplet bracket="no" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>12</tuplet-number>
+              <tuplet-type>64th</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>7</tuplet-number>
+              <tuplet-type>64th</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
+          <tuplet number="1" type="stop" />
+        </notations>
+      </note>
+      <note dynamics="66.67">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>4</voice>
+        <type>16th</type>
+      </note>
+      <note>
+        <rest />
+        <duration>24360</duration>
+        <voice>4</voice>
+        <type>whole</type>
+        <time-modification>
+          <actual-notes>48</actual-notes>
+          <normal-notes>29</normal-notes>
+          <normal-type>64th</normal-type>
+        </time-modification>
+        <notations>
+          <tuplet bracket="no" number="1" placement="above" type="start">
+            <tuplet-actual>
+              <tuplet-number>48</tuplet-number>
+              <tuplet-type>64th</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+              <tuplet-number>29</tuplet-number>
+              <tuplet-type>64th</tuplet-type>
+            </tuplet-normal>
+          </tuplet>
+          <tuplet number="1" type="stop" />
+        </notations>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>5</voice>
+        <type>32nd</type>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="1" sign="yes" type="start" />
+        </direction-type>
+      </direction>
+      <note dynamics="83.33">
+        <pitch>
+          <step>E</step>
+          <alter>0</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>5</voice>
+        <type>16th</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <voice>5</voice>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>1260</duration>
+        <voice>5</voice>
+        <type>32nd</type>
+      </note>
+      <note dynamics="78.89">
+        <pitch>
+          <step>E</step>
+          <alter>0</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>2520</duration>
+        <voice>5</voice>
+        <type>16th</type>
+        <accidental>natural</accidental>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <pedal number="2" sign="yes" type="stop" />
+        </direction-type>
+      </direction>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <voice>5</voice>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>7560</duration>
+        <voice>5</voice>
+        <type>eighth</type>
+        <dot />
       </note>
     </measure>
     
     <measure implicit="no" number="2">
+      <note dynamics="75.56">
+        <pitch>
+          <step>G</step>
+          <alter>1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <tie type="stop" />
+        <voice>1</voice>
+        <type>32nd</type>
+        <accidental>sharp</accidental>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
       <note>
         <rest />
-        <duration>3780</duration>
+        <duration>2520</duration>
         <voice>1</voice>
         <type>16th</type>
-        <dot />
       </note>
       <note dynamics="102.22">
         <pitch>
@@ -3482,20 +3575,13 @@
           <alter>0</alter>
           <octave>2</octave>
         </pitch>
-        <duration>1260</duration>
+        <duration>2520</duration>
         <voice>1</voice>
-        <type>32nd</type>
+        <type>16th</type>
         <accidental>natural</accidental>
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <beam number="3">backward hook</beam>
-      </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>1</voice>
-        <type>32nd</type>
       </note>
       <note dynamics="93.33">
         <pitch>
@@ -3687,11 +3773,27 @@
       <backup>
         <duration>40320</duration>
       </backup>
+      <note dynamics="78.89">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>1260</duration>
+        <tie type="stop" />
+        <voice>2</voice>
+        <type>32nd</type>
+        <accidental>sharp</accidental>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
       <note>
         <rest />
-        <duration>5040</duration>
+        <duration>3780</duration>
         <voice>2</voice>
-        <type>eighth</type>
+        <type>16th</type>
+        <dot />
       </note>
       <note dynamics="51.11">
         <pitch>
@@ -3744,9 +3846,9 @@
           <alter>0</alter>
           <octave>3</octave>
         </pitch>
-        <duration>1260</duration>
+        <duration>2520</duration>
         <voice>2</voice>
-        <type>32nd</type>
+        <type>16th</type>
         <accidental>natural</accidental>
       </note>
       <note>
@@ -3754,12 +3856,6 @@
         <duration>5040</duration>
         <voice>2</voice>
         <type>eighth</type>
-      </note>
-      <note>
-        <rest />
-        <duration>1260</duration>
-        <voice>2</voice>
-        <type>32nd</type>
       </note>
       <note dynamics="73.33">
         <pitch>
@@ -3952,15 +4048,35 @@
           <octave>2</octave>
         </pitch>
         <duration>1260</duration>
+        <tie type="start" />
         <voice>3</voice>
         <type>32nd</type>
         <accidental>sharp</accidental>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <direction placement="below">
         <direction-type>
           <pedal number="4" sign="yes" type="stop" />
         </direction-type>
       </direction>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>4</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
+      </note>
     </measure>
     
     <measure implicit="no" number="3">
@@ -4136,9 +4252,13 @@
           <octave>3</octave>
         </pitch>
         <duration>1260</duration>
+        <tie type="start" />
         <voice>1</voice>
         <type>32nd</type>
         <accidental>natural</accidental>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <backup>
         <duration>40320</duration>
@@ -4348,11 +4468,26 @@
       <backup>
         <duration>40320</duration>
       </backup>
+      <note dynamics="74.44">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <tie type="stop" />
+        <voice>3</voice>
+        <type>32nd</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
       <note>
         <rest />
-        <duration>5040</duration>
+        <duration>3780</duration>
         <voice>3</voice>
-        <type>eighth</type>
+        <type>16th</type>
+        <dot />
       </note>
       <note dynamics="67.78">
         <pitch>
@@ -4587,32 +4722,67 @@
           <octave>2</octave>
         </pitch>
         <duration>2520</duration>
+        <tie type="start" />
         <voice>3</voice>
         <type>16th</type>
         <accidental>natural</accidental>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>4</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
       </note>
     </measure>
     
     <measure implicit="no" number="4">
+      <note dynamics="68.89">
+        <pitch>
+          <step>E</step>
+          <alter>0</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>1260</duration>
+        <tie type="stop" />
+        <voice>1</voice>
+        <type>32nd</type>
+        <accidental>natural</accidental>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
       <note>
         <rest />
-        <duration>6720</duration>
+        <duration>5460</duration>
         <voice>1</voice>
         <type>quarter</type>
         <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>quarter</normal-type>
+          <actual-notes>24</actual-notes>
+          <normal-notes>13</normal-notes>
+          <normal-type>128th</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="no" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>quarter</tuplet-type>
+              <tuplet-number>24</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>quarter</tuplet-type>
+              <tuplet-number>13</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-normal>
           </tuplet>
           <tuplet number="1" type="stop" />
@@ -4913,11 +5083,10 @@
         </time-modification>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
+        <beam number="2">forward hook</beam>
         <beam number="3">forward hook</beam>
         <notations>
           <tied type="start" />
-          <tuplet number="1" type="stop" />
         </notations>
       </note>
       <note dynamics="87.78">
@@ -4926,38 +5095,19 @@
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>2520</duration>
+        <duration>4200</duration>
         <tie type="stop" />
         <voice>1</voice>
-        <type>16th</type>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>6</actual-notes>
+          <normal-notes>5</normal-notes>
+          <normal-type>64th</normal-type>
+        </time-modification>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <beam number="2">end</beam>
         <accidental>flat</accidental><notations>
           <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <rest />
-        <duration>1680</duration>
-        <voice>1</voice>
-        <type>16th</type>
-        <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>16th</normal-type>
-        </time-modification>
-        <notations>
-          <tuplet bracket="no" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
           <tuplet number="1" type="stop" />
         </notations>
       </note>
@@ -5121,25 +5271,39 @@
       <backup>
         <duration>40320</duration>
       </backup>
+      <note dynamics="53.33">
+        <pitch>
+          <step>B</step>
+          <alter>0</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>1260</duration>
+        <tie type="stop" />
+        <voice>3</voice>
+        <type>32nd</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
       <note>
         <rest />
-        <duration>3360</duration>
+        <duration>2100</duration>
         <voice>3</voice>
-        <type>eighth</type>
+        <type>16th</type>
         <time-modification>
-          <actual-notes>3</actual-notes>
-          <normal-notes>2</normal-notes>
-          <normal-type>eighth</normal-type>
+          <actual-notes>6</actual-notes>
+          <normal-notes>5</normal-notes>
+          <normal-type>128th</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="no" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-number>6</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
+              <tuplet-number>5</tuplet-number>
+              <tuplet-type>128th</tuplet-type>
             </tuplet-normal>
           </tuplet>
           <tuplet number="1" type="stop" />
@@ -5245,7 +5409,6 @@
         <duration>2520</duration>
         <voice>3</voice>
         <type>16th</type>
-        <accidental>natural</accidental>
       </note>
       <note>
         <rest />
@@ -5286,6 +5449,22 @@
           <pedal number="6" sign="yes" type="stop" />
         </direction-type>
       </direction>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>4</voice>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>5</voice>
+      </note>
     </measure>
   </part>
 </score-partwise>

@@ -1,0 +1,1555 @@
+{
+ "segments": [
+  {
+   "segment": "Chopin_Scherzos_20_254",
+   "n_gold": 236,
+   "p4_exact": {
+    "matched": 177,
+    "unmatched": 59,
+    "reasons": {
+     "pitch_missing": 59
+    }
+   },
+   "p4_fused": {
+    "matched": 177,
+    "unmatched": 59,
+    "reasons": {
+     "pitch_missing": 59
+    }
+   },
+   "p4_learned": {
+    "matched": 178,
+    "unmatched": 58,
+    "reasons": {
+     "pitch_missing": 58
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 173,
+    "unmatched": 63,
+    "reasons": {
+     "pitch_missing": 63
+    }
+   },
+   "p4_rule": {
+    "matched": 177,
+    "unmatched": 59,
+    "reasons": {
+     "pitch_missing": 59
+    }
+   }
+  },
+  {
+   "segment": "Rachmaninoff_Preludes_op_23_6_50",
+   "n_gold": 50,
+   "p4_exact": {
+    "matched": 48,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_fused": {
+    "matched": 48,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_learned": {
+    "matched": 48,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 46,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_rule": {
+    "matched": 48,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   }
+  },
+  {
+   "segment": "Schumann_Kreisleriana_7_32",
+   "n_gold": 140,
+   "p4_exact": {
+    "matched": 129,
+    "unmatched": 11,
+    "reasons": {
+     "pitch_missing": 11
+    }
+   },
+   "p4_fused": {
+    "matched": 129,
+    "unmatched": 11,
+    "reasons": {
+     "pitch_missing": 11
+    }
+   },
+   "p4_learned": {
+    "matched": 129,
+    "unmatched": 11,
+    "reasons": {
+     "pitch_missing": 11
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 125,
+    "unmatched": 15,
+    "reasons": {
+     "pitch_missing": 15
+    }
+   },
+   "p4_rule": {
+    "matched": 129,
+    "unmatched": 11,
+    "reasons": {
+     "pitch_missing": 11
+    }
+   }
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_6-1_18",
+   "n_gold": 144,
+   "p4_exact": {
+    "matched": 142,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_fused": {
+    "matched": 142,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_learned": {
+    "matched": 142,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 140,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_rule": {
+    "matched": 142,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   }
+  },
+  {
+   "segment": "Mozart_Piano_Sonatas_8-1_44",
+   "n_gold": 136,
+   "p4_exact": {
+    "matched": 113,
+    "unmatched": 23,
+    "reasons": {
+     "pitch_missing": 23
+    }
+   },
+   "p4_fused": {
+    "matched": 113,
+    "unmatched": 23,
+    "reasons": {
+     "pitch_missing": 23
+    }
+   },
+   "p4_learned": {
+    "matched": 113,
+    "unmatched": 23,
+    "reasons": {
+     "pitch_missing": 23
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 111,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   },
+   "p4_rule": {
+    "matched": 113,
+    "unmatched": 23,
+    "reasons": {
+     "pitch_missing": 23
+    }
+   }
+  },
+  {
+   "segment": "Ravel_Miroirs_3_Une_Barque_181",
+   "n_gold": 139,
+   "p4_exact": {
+    "matched": 109,
+    "unmatched": 30,
+    "reasons": {
+     "pitch_missing": 30
+    }
+   },
+   "p4_fused": {
+    "matched": 109,
+    "unmatched": 30,
+    "reasons": {
+     "pitch_missing": 30
+    }
+   },
+   "p4_learned": {
+    "matched": 109,
+    "unmatched": 30,
+    "reasons": {
+     "pitch_missing": 30
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 108,
+    "unmatched": 31,
+    "reasons": {
+     "pitch_missing": 31
+    }
+   },
+   "p4_rule": {
+    "matched": 109,
+    "unmatched": 30,
+    "reasons": {
+     "pitch_missing": 30
+    }
+   }
+  },
+  {
+   "segment": "Prokofiev_Toccata_197",
+   "n_gold": 131,
+   "p4_exact": {
+    "matched": 111,
+    "unmatched": 20,
+    "reasons": {
+     "pitch_missing": 20
+    }
+   },
+   "p4_fused": {
+    "matched": 111,
+    "unmatched": 20,
+    "reasons": {
+     "pitch_missing": 20
+    }
+   },
+   "p4_learned": {
+    "matched": 111,
+    "unmatched": 20,
+    "reasons": {
+     "pitch_missing": 20
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 106,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   },
+   "p4_rule": {
+    "matched": 111,
+    "unmatched": 20,
+    "reasons": {
+     "pitch_missing": 20
+    }
+   }
+  },
+  {
+   "segment": "Liszt_Transcendental_Etudes_10_71",
+   "n_gold": 130,
+   "p4_exact": {
+    "matched": 106,
+    "unmatched": 24,
+    "reasons": {
+     "pitch_missing": 24
+    }
+   },
+   "p4_fused": {
+    "matched": 106,
+    "unmatched": 24,
+    "reasons": {
+     "pitch_missing": 24
+    }
+   },
+   "p4_learned": {
+    "matched": 106,
+    "unmatched": 24,
+    "reasons": {
+     "pitch_missing": 24
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 103,
+    "unmatched": 27,
+    "reasons": {
+     "pitch_missing": 27
+    }
+   },
+   "p4_rule": {
+    "matched": 106,
+    "unmatched": 24,
+    "reasons": {
+     "pitch_missing": 24
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_16-1_73",
+   "n_gold": 163,
+   "p4_exact": {
+    "matched": 153,
+    "unmatched": 10,
+    "reasons": {
+     "pitch_missing": 10
+    }
+   },
+   "p4_fused": {
+    "matched": 153,
+    "unmatched": 10,
+    "reasons": {
+     "pitch_missing": 10
+    }
+   },
+   "p4_learned": {
+    "matched": 153,
+    "unmatched": 10,
+    "reasons": {
+     "pitch_missing": 10
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 151,
+    "unmatched": 12,
+    "reasons": {
+     "pitch_missing": 12
+    }
+   },
+   "p4_rule": {
+    "matched": 153,
+    "unmatched": 10,
+    "reasons": {
+     "pitch_missing": 10
+    }
+   }
+  },
+  {
+   "segment": "Scriabin_Sonatas_5_315",
+   "n_gold": 228,
+   "p4_exact": {
+    "matched": 143,
+    "unmatched": 85,
+    "reasons": {
+     "pitch_missing": 85
+    }
+   },
+   "p4_fused": {
+    "matched": 143,
+    "unmatched": 85,
+    "reasons": {
+     "pitch_missing": 85
+    }
+   },
+   "p4_learned": {
+    "matched": 144,
+    "unmatched": 84,
+    "reasons": {
+     "pitch_missing": 84
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 141,
+    "unmatched": 87,
+    "reasons": {
+     "pitch_missing": 87
+    }
+   },
+   "p4_rule": {
+    "matched": 143,
+    "unmatched": 85,
+    "reasons": {
+     "pitch_missing": 85
+    }
+   }
+  },
+  {
+   "segment": "Schubert_Wanderer_fantasie_1189",
+   "n_gold": 154,
+   "p4_exact": {
+    "matched": 125,
+    "unmatched": 29,
+    "reasons": {
+     "pitch_missing": 29
+    }
+   },
+   "p4_fused": {
+    "matched": 125,
+    "unmatched": 29,
+    "reasons": {
+     "pitch_missing": 29
+    }
+   },
+   "p4_learned": {
+    "matched": 125,
+    "unmatched": 29,
+    "reasons": {
+     "pitch_missing": 29
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 122,
+    "unmatched": 32,
+    "reasons": {
+     "pitch_missing": 32
+    }
+   },
+   "p4_rule": {
+    "matched": 125,
+    "unmatched": 29,
+    "reasons": {
+     "pitch_missing": 29
+    }
+   }
+  },
+  {
+   "segment": "Bach_Prelude_bwv_846_2",
+   "n_gold": 36,
+   "p4_exact": {
+    "matched": 36,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 36,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 36,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 36,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_rule": {
+    "matched": 36,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_5_79",
+   "n_gold": 137,
+   "p4_exact": {
+    "matched": 112,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   },
+   "p4_fused": {
+    "matched": 112,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   },
+   "p4_learned": {
+    "matched": 112,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 107,
+    "unmatched": 30,
+    "reasons": {
+     "pitch_missing": 30
+    }
+   },
+   "p4_rule": {
+    "matched": 112,
+    "unmatched": 25,
+    "reasons": {
+     "pitch_missing": 25
+    }
+   }
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_1_51",
+   "n_gold": 107,
+   "p4_exact": {
+    "matched": 103,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_fused": {
+    "matched": 103,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_learned": {
+    "matched": 103,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 103,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_rule": {
+    "matched": 103,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   }
+  },
+  {
+   "segment": "Chopin_Etudes_op_25_12_2",
+   "n_gold": 164,
+   "p4_exact": {
+    "matched": 151,
+    "unmatched": 13,
+    "reasons": {
+     "pitch_missing": 13
+    }
+   },
+   "p4_fused": {
+    "matched": 151,
+    "unmatched": 13,
+    "reasons": {
+     "pitch_missing": 13
+    }
+   },
+   "p4_learned": {
+    "matched": 152,
+    "unmatched": 12,
+    "reasons": {
+     "pitch_missing": 12
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 147,
+    "unmatched": 17,
+    "reasons": {
+     "pitch_missing": 17
+    }
+   },
+   "p4_rule": {
+    "matched": 151,
+    "unmatched": 13,
+    "reasons": {
+     "pitch_missing": 13
+    }
+   }
+  },
+  {
+   "segment": "Schumann_Kreisleriana_5_56",
+   "n_gold": 116,
+   "p4_exact": {
+    "matched": 111,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   },
+   "p4_fused": {
+    "matched": 111,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   },
+   "p4_learned": {
+    "matched": 111,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 111,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   },
+   "p4_rule": {
+    "matched": 111,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   }
+  },
+  {
+   "segment": "Liszt_Transcendental_Etudes_9_67",
+   "n_gold": 85,
+   "p4_exact": {
+    "matched": 83,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_fused": {
+    "matched": 83,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_learned": {
+    "matched": 83,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 83,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_rule": {
+    "matched": 83,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   }
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_1_155",
+   "n_gold": 186,
+   "p4_exact": {
+    "matched": 129,
+    "unmatched": 57,
+    "reasons": {
+     "pitch_missing": 57
+    }
+   },
+   "p4_fused": {
+    "matched": 129,
+    "unmatched": 57,
+    "reasons": {
+     "pitch_missing": 57
+    }
+   },
+   "p4_learned": {
+    "matched": 129,
+    "unmatched": 57,
+    "reasons": {
+     "pitch_missing": 57
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 119,
+    "unmatched": 67,
+    "reasons": {
+     "pitch_missing": 67
+    }
+   },
+   "p4_rule": {
+    "matched": 129,
+    "unmatched": 57,
+    "reasons": {
+     "pitch_missing": 57
+    }
+   }
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_2_133",
+   "n_gold": 132,
+   "p4_exact": {
+    "matched": 115,
+    "unmatched": 17,
+    "reasons": {
+     "pitch_missing": 17
+    }
+   },
+   "p4_fused": {
+    "matched": 115,
+    "unmatched": 17,
+    "reasons": {
+     "pitch_missing": 17
+    }
+   },
+   "p4_learned": {
+    "matched": 115,
+    "unmatched": 17,
+    "reasons": {
+     "pitch_missing": 17
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 113,
+    "unmatched": 19,
+    "reasons": {
+     "pitch_missing": 19
+    }
+   },
+   "p4_rule": {
+    "matched": 115,
+    "unmatched": 17,
+    "reasons": {
+     "pitch_missing": 17
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_26-3_96",
+   "n_gold": 139,
+   "p4_exact": {
+    "matched": 135,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_fused": {
+    "matched": 135,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_learned": {
+    "matched": 135,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 134,
+    "unmatched": 5,
+    "reasons": {
+     "pitch_missing": 5
+    }
+   },
+   "p4_rule": {
+    "matched": 135,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   }
+  },
+  {
+   "segment": "Chopin_Sonata_3_4th_109",
+   "n_gold": 198,
+   "p4_exact": {
+    "matched": 184,
+    "unmatched": 14,
+    "reasons": {
+     "pitch_missing": 14
+    }
+   },
+   "p4_fused": {
+    "matched": 184,
+    "unmatched": 14,
+    "reasons": {
+     "pitch_missing": 14
+    }
+   },
+   "p4_learned": {
+    "matched": 184,
+    "unmatched": 14,
+    "reasons": {
+     "pitch_missing": 14
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 183,
+    "unmatched": 15,
+    "reasons": {
+     "pitch_missing": 15
+    }
+   },
+   "p4_rule": {
+    "matched": 184,
+    "unmatched": 14,
+    "reasons": {
+     "pitch_missing": 14
+    }
+   }
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_4_64",
+   "n_gold": 84,
+   "p4_exact": {
+    "matched": 76,
+    "unmatched": 8,
+    "reasons": {
+     "pitch_missing": 8
+    }
+   },
+   "p4_fused": {
+    "matched": 76,
+    "unmatched": 8,
+    "reasons": {
+     "pitch_missing": 8
+    }
+   },
+   "p4_learned": {
+    "matched": 76,
+    "unmatched": 8,
+    "reasons": {
+     "pitch_missing": 8
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 74,
+    "unmatched": 10,
+    "reasons": {
+     "pitch_missing": 10
+    }
+   },
+   "p4_rule": {
+    "matched": 76,
+    "unmatched": 8,
+    "reasons": {
+     "pitch_missing": 8
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_27-1_80",
+   "n_gold": 116,
+   "p4_exact": {
+    "matched": 67,
+    "unmatched": 49,
+    "reasons": {
+     "pitch_missing": 49
+    }
+   },
+   "p4_fused": {
+    "matched": 67,
+    "unmatched": 49,
+    "reasons": {
+     "pitch_missing": 49
+    }
+   },
+   "p4_learned": {
+    "matched": 67,
+    "unmatched": 49,
+    "reasons": {
+     "pitch_missing": 49
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 60,
+    "unmatched": 56,
+    "reasons": {
+     "pitch_missing": 56
+    }
+   },
+   "p4_rule": {
+    "matched": 67,
+    "unmatched": 49,
+    "reasons": {
+     "pitch_missing": 49
+    }
+   }
+  },
+  {
+   "segment": "Scriabin_Etudes_op_8_11_29",
+   "n_gold": 68,
+   "p4_exact": {
+    "matched": 66,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_fused": {
+    "matched": 66,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_learned": {
+    "matched": 66,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 66,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   },
+   "p4_rule": {
+    "matched": 66,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 2
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_29-2_31",
+   "n_gold": 112,
+   "p4_exact": {
+    "matched": 109,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_fused": {
+    "matched": 109,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_learned": {
+    "matched": 109,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 109,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_rule": {
+    "matched": 109,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   }
+  },
+  {
+   "segment": "Schubert_Impromptu_op.90_D.899_3_54",
+   "n_gold": 74,
+   "p4_exact": {
+    "matched": 74,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 74,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 74,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 74,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_rule": {
+    "matched": 74,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_4-1_51",
+   "n_gold": 111,
+   "p4_exact": {
+    "matched": 111,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 111,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 111,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 110,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   },
+   "p4_rule": {
+    "matched": 111,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Liszt_Gran_Etudes_de_Paganini_6_Theme_and_Variations_147",
+   "n_gold": 155,
+   "p4_exact": {
+    "matched": 112,
+    "unmatched": 43,
+    "reasons": {
+     "pitch_missing": 43
+    }
+   },
+   "p4_fused": {
+    "matched": 112,
+    "unmatched": 43,
+    "reasons": {
+     "pitch_missing": 43
+    }
+   },
+   "p4_learned": {
+    "matched": 112,
+    "unmatched": 43,
+    "reasons": {
+     "pitch_missing": 43
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 105,
+    "unmatched": 50,
+    "reasons": {
+     "pitch_missing": 50
+    }
+   },
+   "p4_rule": {
+    "matched": 112,
+    "unmatched": 43,
+    "reasons": {
+     "pitch_missing": 43
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_23-1_291",
+   "n_gold": 81,
+   "p4_exact": {
+    "matched": 74,
+    "unmatched": 7,
+    "reasons": {
+     "pitch_missing": 7
+    }
+   },
+   "p4_fused": {
+    "matched": 74,
+    "unmatched": 7,
+    "reasons": {
+     "pitch_missing": 7
+    }
+   },
+   "p4_learned": {
+    "matched": 74,
+    "unmatched": 7,
+    "reasons": {
+     "pitch_missing": 7
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 73,
+    "unmatched": 8,
+    "reasons": {
+     "pitch_missing": 8
+    }
+   },
+   "p4_rule": {
+    "matched": 74,
+    "unmatched": 7,
+    "reasons": {
+     "pitch_missing": 7
+    }
+   }
+  },
+  {
+   "segment": "Schumann_Toccata_134",
+   "n_gold": 143,
+   "p4_exact": {
+    "matched": 99,
+    "unmatched": 44,
+    "reasons": {
+     "pitch_missing": 44
+    }
+   },
+   "p4_fused": {
+    "matched": 98,
+    "unmatched": 45,
+    "reasons": {
+     "pitch_missing": 45
+    }
+   },
+   "p4_learned": {
+    "matched": 98,
+    "unmatched": 45,
+    "reasons": {
+     "pitch_missing": 45
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 95,
+    "unmatched": 48,
+    "reasons": {
+     "pitch_missing": 48
+    }
+   },
+   "p4_rule": {
+    "matched": 99,
+    "unmatched": 44,
+    "reasons": {
+     "pitch_missing": 44
+    }
+   }
+  },
+  {
+   "segment": "Schubert_Impromptu_op142_1_125",
+   "n_gold": 64,
+   "p4_exact": {
+    "matched": 58,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_fused": {
+    "matched": 58,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_learned": {
+    "matched": 58,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 57,
+    "unmatched": 7,
+    "reasons": {
+     "pitch_missing": 7
+    }
+   },
+   "p4_rule": {
+    "matched": 58,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   }
+  },
+  {
+   "segment": "Bach_Prelude_bwv_854_34",
+   "n_gold": 47,
+   "p4_exact": {
+    "matched": 47,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 47,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 47,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 47,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_rule": {
+    "matched": 47,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Bach_Prelude_bwv_860_7",
+   "n_gold": 104,
+   "p4_exact": {
+    "matched": 100,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_fused": {
+    "matched": 100,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_learned": {
+    "matched": 100,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 100,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_rule": {
+    "matched": 100,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   }
+  },
+  {
+   "segment": "Bach_Fugue_bwv_848_55",
+   "n_gold": 93,
+   "p4_exact": {
+    "matched": 93,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 93,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 93,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 93,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_rule": {
+    "matched": 93,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Bach_Fugue_bwv_884_23",
+   "n_gold": 128,
+   "p4_exact": {
+    "matched": 122,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_fused": {
+    "matched": 122,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_learned": {
+    "matched": 122,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 122,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   },
+   "p4_rule": {
+    "matched": 122,
+    "unmatched": 6,
+    "reasons": {
+     "pitch_missing": 6
+    }
+   }
+  },
+  {
+   "segment": "Chopin_Etudes_op_10_12_114",
+   "n_gold": 70,
+   "p4_exact": {
+    "matched": 67,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_fused": {
+    "matched": 67,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_learned": {
+    "matched": 67,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 67,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_rule": {
+    "matched": 67,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   }
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_32-1_28",
+   "n_gold": 54,
+   "p4_exact": {
+    "matched": 53,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   },
+   "p4_fused": {
+    "matched": 53,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   },
+   "p4_learned": {
+    "matched": 53,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 52,
+    "unmatched": 2,
+    "reasons": {
+     "pitch_missing": 1,
+     "onset_shift": 1
+    }
+   },
+   "p4_rule": {
+    "matched": 53,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   }
+  },
+  {
+   "segment": "Beethoven_Piano_Sonatas_17-1_107",
+   "n_gold": 57,
+   "p4_exact": {
+    "matched": 57,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 57,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 57,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 56,
+    "unmatched": 1,
+    "reasons": {
+     "pitch_missing": 1
+    }
+   },
+   "p4_rule": {
+    "matched": 57,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Haydn_Keyboard_Sonatas_31-1_40",
+   "n_gold": 85,
+   "p4_exact": {
+    "matched": 85,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_fused": {
+    "matched": 85,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_learned": {
+    "matched": 85,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_no_pedal": {
+    "matched": 85,
+    "unmatched": 0,
+    "reasons": {}
+   },
+   "p4_rule": {
+    "matched": 85,
+    "unmatched": 0,
+    "reasons": {}
+   }
+  },
+  {
+   "segment": "Mozart_Piano_Sonatas_12-3_113",
+   "n_gold": 75,
+   "p4_exact": {
+    "matched": 72,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_fused": {
+    "matched": 72,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_learned": {
+    "matched": 72,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   },
+   "p4_no_pedal": {
+    "matched": 71,
+    "unmatched": 4,
+    "reasons": {
+     "pitch_missing": 4
+    }
+   },
+   "p4_rule": {
+    "matched": 72,
+    "unmatched": 3,
+    "reasons": {
+     "pitch_missing": 3
+    }
+   }
+  }
+ ],
+ "summary": {
+  "n_segments": 40,
+  "n_gold": 4672,
+  "unmatched_by_reason": {
+   "pitch_missing": {
+    "p4_exact": 615,
+    "p4_fused": 616,
+    "p4_learned": 613,
+    "p4_no_pedal": 693,
+    "p4_rule": 615
+   },
+   "onset_shift": {
+    "p4_no_pedal": 1
+   }
+  },
+  "oracle": {
+   "reachable": 0.7414,
+   "oracle_025": 0.9441
+  },
+  "oracle_n": 4672,
+  "unreachable_by_class": {
+   "notation-shortening": 252,
+   "independent-voice": 8,
+   "none": 1
+  },
+  "class_duration_rate_025": {
+   "independent-voice": {
+    "p4_exact": 0.7941,
+    "p4_fused": 0.7794,
+    "p4_learned": 0.5074,
+    "p4_no_pedal": 0.7868,
+    "p4_rule": 0.7941
+   },
+   "none": {
+    "p4_exact": 0.9796,
+    "p4_fused": 0.9804,
+    "p4_learned": 0.908,
+    "p4_no_pedal": 0.9801,
+    "p4_rule": 0.9796
+   },
+   "notation-shortening": {
+    "p4_exact": 0.6714,
+    "p4_fused": 0.6767,
+    "p4_learned": 0.7359,
+    "p4_no_pedal": 0.6708,
+    "p4_rule": 0.6714
+   },
+   "pedal-only": {
+    "p4_exact": 0.9891,
+    "p4_fused": 0.9891,
+    "p4_learned": 0.857,
+    "p4_no_pedal": 0.9871,
+    "p4_rule": 0.9891
+   }
+  }
+ }
+}
