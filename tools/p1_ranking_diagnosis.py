@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P1 ranking/DP layer error-pattern diagnosis (v2).
+"""P1 ranking/DP layer error-pattern diagnosis (v3).
 
 Same classification as v1 (ok / ranking_error / gen_gap / no_output_match)
 plus, for ranking_error cases, the reference decision factors:
@@ -17,6 +17,12 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from evaluate_gold_standard import BASE, ONSET_TOL, parse_notes
+import os
+import sys
+_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_ROOT / "audio2score" / "scripts"))
+os.environ.setdefault("A2S_EXTEND_CANDIDATES", "1")  # 候选口径与重建管线一致
+from structured_duration_decoder import generate_duration_candidates
 
 NL = chr(10)
 YES = {"1", "yes", "true", "y"}
@@ -86,7 +92,14 @@ def main() -> int:
             ref = float(r["notation_decision"])
             key = float(r["key_duration_ql"])
             acoustic = float(r["acoustic_duration_ql"])
-            cands = {float(x) for x in r["candidate_durations"].split(";") if x.strip()}
+            onset0 = float(r["onset_ql"])
+            ng_raw0 = (r.get("next_voice_gap_ql") or "").strip()
+            ng0 = float(ng_raw0) if ng_raw0 else -1.0
+            cands_pairs = generate_duration_candidates(
+                onset0, key, acoustic,
+                next_voice_onset_ql=(onset0 + ng0) if ng0 >= 0 else None,
+                bar_ql=4.0)
+            cands = {c for c, _ in cands_pairs}
             g = {"hand": r["hand"], "pitch": int(r["pitch"]),
                  "onset": float(r["onset_ql"]) - start_ql}
             rule_dur = find_output_dur(g, notes)
@@ -132,17 +145,7 @@ def main() -> int:
             err_factor[factor_key] += 1
 
             # ref duration candidate source
-            parts = [p for p in (r.get("candidate_sources") or "").split(";") if p.strip()]
-            cand_values = [x for x in r["candidate_durations"].split(";") if x.strip()]
-            ref_source = ""
-            if parts and len(parts) == len(cand_values):
-                for pv, cv in zip(parts, cand_values):
-                    try:
-                        if abs(float(cv) - ref) <= 1e-9:
-                            ref_source = pv[:60]
-                            break
-                    except ValueError:
-                        pass
+            ref_source = next((s for c, s in cands_pairs if abs(c - ref) <= 1e-9), "")
             err_ref_source[ref_source.split(":")[0] if ref_source else "no_src"] += 1
 
             if len(cases) < 40:
