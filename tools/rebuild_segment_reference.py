@@ -108,13 +108,17 @@ def interp_ref(rows: list[tuple[float, float]], perf_ql: float) -> float | None:
 
 
 def map_score_window(rows, start_ql: float, end_ql: float) -> tuple[float, float] | None:
+    # Prefer the actual aligned reference QL range inside the window (with a
+    # small margin); fall back to boundary interpolation only when the window
+    # contains no aligned rows.  Interpolating the end boundary with rows
+    # beyond the window would over-extend the score window (e.g. 1825 instead
+    # of 1824 for Chopin_Scherzos_20_254) and slice one measure too many.
     in_win = [r for (_p, r) in rows
               if start_ql - SCORE_MARGIN_QL - EPS <= _p <= end_ql + SCORE_MARGIN_QL + EPS]
-    s0 = interp_ref(rows, start_ql)
-    s1 = interp_ref(rows, end_ql)
     if in_win:
-        s0 = min(in_win) if s0 is None else min(s0, min(in_win))
-        s1 = max(in_win) if s1 is None else max(s1, max(in_win))
+        s0, s1 = min(in_win), max(in_win)
+    else:
+        s0, s1 = interp_ref(rows, start_ql), interp_ref(rows, end_ql)
     if s0 is None or s1 is None or s1 <= s0 + EPS:
         return None
     return s0, s1
