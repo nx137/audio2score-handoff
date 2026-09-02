@@ -34,5 +34,19 @@
     "ambiguous-candidate": 155,
     "unmatched": 8,
     "reference-duration-not-candidate": 41
+  },
+  "score_start_ql": 330.25,
+  "score_end_ql": 356.75,
+  "score_start_measure": 111,
+  "score_end_measure": 119,
+  "score_bar_ql": 3.0,
+  "score_time_signature": [
+    6,
+    8
+  ],
+  "coordinate_fix": {
+    "applied_at": "2026-09-02T04:10:30",
+    "method": "alignment-mapped-score-window",
+    "note": "time_signature/bar_ql are PERFORMANCE-MIDI metadata (may be wrong, e.g. Yamaha 4/4 vs published 3/4); score_time_signature / score_bar_ql are the published-score values used for all score-side artifacts."
   }
 }

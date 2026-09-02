@@ -1,0 +1,722 @@
+[
+ {
+  "segment_id": "Chopin_Scherzos_20_254",
+  "perf_start_ql": 1012.0,
+  "perf_end_ql": 1028.0,
+  "mapping_method": "strict",
+  "score_start_ql": 1783.0,
+  "score_end_ql": 1824.0,
+  "score_start_measure": 595,
+  "score_end_measure": 608,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 193,
+  "n_score_pedals": 3,
+  "published_score_pedal_changed": 50
+ },
+ {
+  "segment_id": "Rachmaninoff_Preludes_op_23_6_50",
+  "perf_start_ql": 98.0,
+  "perf_end_ql": 106.0,
+  "mapping_method": "strict",
+  "score_start_ql": 56.75,
+  "score_end_ql": 62.0,
+  "score_start_measure": 15,
+  "score_end_measure": 16,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 46,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schumann_Kreisleriana_7_32",
+  "perf_start_ql": 124.0,
+  "perf_end_ql": 140.0,
+  "mapping_method": "strict",
+  "score_start_ql": 161.75,
+  "score_end_ql": 165.75,
+  "score_start_measure": 81,
+  "score_end_measure": 83,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 23,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Haydn_Keyboard_Sonatas_6-1_18",
+  "perf_start_ql": 68.0,
+  "perf_end_ql": 84.0,
+  "mapping_method": "strict",
+  "score_start_ql": 40.25,
+  "score_end_ql": 48.0,
+  "score_start_measure": 11,
+  "score_end_measure": 12,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 59,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Mozart_Piano_Sonatas_8-1_44",
+  "perf_start_ql": 172.0,
+  "perf_end_ql": 188.0,
+  "mapping_method": "strict",
+  "score_start_ql": 197.0,
+  "score_end_ql": 212.0,
+  "score_start_measure": 50,
+  "score_end_measure": 53,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 122,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Ravel_Miroirs_3_Une_Barque_181",
+  "perf_start_ql": 360.0,
+  "perf_end_ql": 368.0,
+  "mapping_method": "strict",
+  "score_start_ql": 176.875,
+  "score_end_ql": 179.160417,
+  "score_start_measure": 72,
+  "score_end_measure": 72,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 29,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 34
+ },
+ {
+  "segment_id": "Prokofiev_Toccata_197",
+  "perf_start_ql": 392.0,
+  "perf_end_ql": 400.0,
+  "mapping_method": "strict",
+  "score_start_ql": 361.5,
+  "score_end_ql": 367.75,
+  "score_start_measure": 181,
+  "score_end_measure": 184,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 108,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Liszt_Transcendental_Etudes_10_71",
+  "perf_start_ql": 210.0,
+  "perf_end_ql": 222.0,
+  "mapping_method": "strict",
+  "score_start_ql": 140.333333,
+  "score_end_ql": 151.0,
+  "score_start_measure": 71,
+  "score_end_measure": 76,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 123,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_16-1_73",
+  "perf_start_ql": 288.0,
+  "perf_end_ql": 304.0,
+  "mapping_method": "strict",
+  "score_start_ql": 322.75,
+  "score_end_ql": 334.75,
+  "score_start_measure": 162,
+  "score_end_measure": 168,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 96,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Scriabin_Sonatas_5_315",
+  "perf_start_ql": 1256.0,
+  "perf_end_ql": 1272.0,
+  "mapping_method": "strict",
+  "score_start_ql": 1212.0,
+  "score_end_ql": 1221.0,
+  "score_start_measure": 437,
+  "score_end_measure": 439,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 234,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schubert_Wanderer_fantasie_1189",
+  "perf_start_ql": 2376.0,
+  "perf_end_ql": 2384.0,
+  "mapping_method": "strict",
+  "score_start_ql": 2381.75,
+  "score_end_ql": 2391.5,
+  "score_start_measure": 684,
+  "score_end_measure": 686,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 136,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Bach_Prelude_bwv_846_2",
+  "perf_start_ql": 4.0,
+  "perf_end_ql": 20.0,
+  "mapping_method": "strict",
+  "score_start_ql": 1.25,
+  "score_end_ql": 10.0,
+  "score_start_measure": 1,
+  "score_end_measure": 3,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 35,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Etudes_op_10_5_79",
+  "perf_start_ql": 156.0,
+  "perf_end_ql": 164.0,
+  "mapping_method": "strict",
+  "score_start_ql": 158.5,
+  "score_end_ql": 166.0,
+  "score_start_measure": 80,
+  "score_end_measure": 83,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 120,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Etudes_op_10_1_51",
+  "perf_start_ql": 200.0,
+  "perf_end_ql": 216.0,
+  "mapping_method": "strict",
+  "score_start_ql": 279.25,
+  "score_end_ql": 302.25,
+  "score_start_measure": 70,
+  "score_end_measure": 76,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 96,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Etudes_op_25_12_2",
+  "perf_start_ql": 4.0,
+  "perf_end_ql": 20.0,
+  "mapping_method": "strict",
+  "score_start_ql": 2.75,
+  "score_end_ql": 23.5,
+  "score_start_measure": 1,
+  "score_end_measure": 6,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 166,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schumann_Kreisleriana_5_56",
+  "perf_start_ql": 220.0,
+  "perf_end_ql": 236.0,
+  "mapping_method": "strict",
+  "score_start_ql": 332.0,
+  "score_end_ql": 362.0,
+  "score_start_measure": 111,
+  "score_end_measure": 121,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 95,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Liszt_Transcendental_Etudes_9_67",
+  "perf_start_ql": 132.0,
+  "perf_end_ql": 140.0,
+  "mapping_method": "interp",
+  "score_start_ql": 106.966667,
+  "score_end_ql": 113.67697,
+  "score_start_measure": 18,
+  "score_end_measure": 19,
+  "score_time_signature": [
+   6,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 7,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 12
+ },
+ {
+  "segment_id": "Schubert_Impromptu_op.90_D.899_1_155",
+  "perf_start_ql": 616.0,
+  "perf_end_ql": 632.0,
+  "mapping_method": "strict",
+  "score_start_ql": 479.0,
+  "score_end_ql": 492.333333,
+  "score_start_measure": 120,
+  "score_end_measure": 124,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 51,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schubert_Impromptu_op.90_D.899_2_133",
+  "perf_start_ql": 528.0,
+  "perf_end_ql": 544.0,
+  "mapping_method": "strict",
+  "score_start_ql": 809.0,
+  "score_end_ql": 837.0,
+  "score_start_measure": 270,
+  "score_end_measure": 279,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 123,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_26-3_96",
+  "perf_start_ql": 380.0,
+  "perf_end_ql": 396.0,
+  "mapping_method": "strict",
+  "score_start_ql": 504.5,
+  "score_end_ql": 518.5,
+  "score_start_measure": 169,
+  "score_end_measure": 173,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 106,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Sonata_3_4th_109",
+  "perf_start_ql": 432.0,
+  "perf_end_ql": 448.0,
+  "mapping_method": "strict",
+  "score_start_ql": 734.0,
+  "score_end_ql": 758.0,
+  "score_start_measure": 245,
+  "score_end_measure": 253,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 177,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Etudes_op_10_4_64",
+  "perf_start_ql": 126.0,
+  "perf_end_ql": 134.0,
+  "mapping_method": "strict",
+  "score_start_ql": 173.25,
+  "score_end_ql": 177.0,
+  "score_start_measure": 44,
+  "score_end_measure": 45,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 30,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_27-1_80",
+  "perf_start_ql": 158.0,
+  "perf_end_ql": 166.0,
+  "mapping_method": "strict",
+  "score_start_ql": 152.5,
+  "score_end_ql": 161.5,
+  "score_start_measure": 51,
+  "score_end_measure": 54,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 96,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Scriabin_Etudes_op_8_11_29",
+  "perf_start_ql": 112.0,
+  "perf_end_ql": 128.0,
+  "mapping_method": "strict",
+  "score_start_ql": 30.75,
+  "score_end_ql": 35.5,
+  "score_start_measure": 11,
+  "score_end_measure": 12,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 61,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_29-2_31",
+  "perf_start_ql": 120.0,
+  "perf_end_ql": 136.0,
+  "mapping_method": "strict",
+  "score_start_ql": 201.666667,
+  "score_end_ql": 227.0,
+  "score_start_measure": 68,
+  "score_end_measure": 76,
+  "score_time_signature": [
+   3,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 109,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schubert_Impromptu_op.90_D.899_3_54",
+  "perf_start_ql": 212.0,
+  "perf_end_ql": 228.0,
+  "mapping_method": "strict",
+  "score_start_ql": 216.0,
+  "score_end_ql": 232.666667,
+  "score_start_measure": 28,
+  "score_end_measure": 30,
+  "score_time_signature": [
+   4,
+   2
+  ],
+  "status": "rebuilt",
+  "n_score_events": 79,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_4-1_51",
+  "perf_start_ql": 200.0,
+  "perf_end_ql": 216.0,
+  "mapping_method": "strict",
+  "score_start_ql": 330.25,
+  "score_end_ql": 356.75,
+  "score_start_measure": 111,
+  "score_end_measure": 119,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 111,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Liszt_Gran_Etudes_de_Paganini_6_Theme_and_Variations_147",
+  "perf_start_ql": 292.0,
+  "perf_end_ql": 300.0,
+  "mapping_method": "strict",
+  "score_start_ql": 253.0,
+  "score_end_ql": 258.75,
+  "score_start_measure": 127,
+  "score_end_measure": 130,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 113,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_23-1_291",
+  "perf_start_ql": 580.0,
+  "perf_end_ql": 588.0,
+  "mapping_method": "strict",
+  "score_start_ql": 779.0,
+  "score_end_ql": 789.0,
+  "score_start_measure": 130,
+  "score_end_measure": 132,
+  "score_time_signature": [
+   12,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 69,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schumann_Toccata_134",
+  "perf_start_ql": 266.0,
+  "perf_end_ql": 274.0,
+  "mapping_method": "strict",
+  "score_start_ql": 244.25,
+  "score_end_ql": 252.0,
+  "score_start_measure": 123,
+  "score_end_measure": 126,
+  "score_time_signature": [
+   2,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 121,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Schubert_Impromptu_op142_1_125",
+  "perf_start_ql": 248.0,
+  "perf_end_ql": 256.0,
+  "mapping_method": "strict",
+  "score_start_ql": 227.0,
+  "score_end_ql": 233.5,
+  "score_start_measure": 57,
+  "score_end_measure": 59,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 64,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Bach_Prelude_bwv_854_34",
+  "perf_start_ql": 132.0,
+  "perf_end_ql": 148.0,
+  "mapping_method": "strict",
+  "score_start_ql": 119.5,
+  "score_end_ql": 132.5,
+  "score_start_measure": 20,
+  "score_end_measure": 23,
+  "score_time_signature": [
+   12,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 44,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Bach_Prelude_bwv_860_7",
+  "perf_start_ql": 24.0,
+  "perf_end_ql": 40.0,
+  "mapping_method": "strict",
+  "score_start_ql": 26.5,
+  "score_end_ql": 45.0,
+  "score_start_measure": 5,
+  "score_end_measure": 8,
+  "score_time_signature": [
+   24,
+   16
+  ],
+  "status": "rebuilt",
+  "n_score_events": 95,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Bach_Fugue_bwv_848_55",
+  "perf_start_ql": 162.0,
+  "perf_end_ql": 174.0,
+  "mapping_method": "strict",
+  "score_start_ql": 146.75,
+  "score_end_ql": 157.5,
+  "score_start_measure": 37,
+  "score_end_measure": 40,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 90,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Bach_Fugue_bwv_884_23",
+  "perf_start_ql": 88.0,
+  "perf_end_ql": 104.0,
+  "mapping_method": "strict",
+  "score_start_ql": 77.5,
+  "score_end_ql": 91.25,
+  "score_start_measure": 52,
+  "score_end_measure": 61,
+  "score_time_signature": [
+   3,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 97,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Chopin_Etudes_op_10_12_114",
+  "perf_start_ql": 226.0,
+  "perf_end_ql": 234.0,
+  "mapping_method": "strict",
+  "score_start_ql": 244.25,
+  "score_end_ql": 252.0,
+  "score_start_measure": 62,
+  "score_end_measure": 63,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 59,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Haydn_Keyboard_Sonatas_32-1_28",
+  "perf_start_ql": 81.0,
+  "perf_end_ql": 93.0,
+  "mapping_method": "strict",
+  "score_start_ql": 48.5,
+  "score_end_ql": 56.25,
+  "score_start_measure": 13,
+  "score_end_measure": 15,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 55,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Beethoven_Piano_Sonatas_17-1_107",
+  "perf_start_ql": 212.0,
+  "perf_end_ql": 220.0,
+  "mapping_method": "strict",
+  "score_start_ql": 311.5,
+  "score_end_ql": 327.5,
+  "score_start_measure": 78,
+  "score_end_measure": 82,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 56,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Haydn_Keyboard_Sonatas_31-1_40",
+  "perf_start_ql": 156.0,
+  "perf_end_ql": 172.0,
+  "mapping_method": "strict",
+  "score_start_ql": 117.0,
+  "score_end_ql": 128.0,
+  "score_start_measure": 30,
+  "score_end_measure": 32,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 76,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ },
+ {
+  "segment_id": "Mozart_Piano_Sonatas_12-3_113",
+  "perf_start_ql": 448.0,
+  "perf_end_ql": 464.0,
+  "mapping_method": "strict",
+  "score_start_ql": 574.0,
+  "score_end_ql": 592.5,
+  "score_start_measure": 192,
+  "score_end_measure": 198,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 68,
+  "n_score_pedals": 0,
+  "published_score_pedal_changed": 0
+ }
+]

@@ -1,6 +1,4 @@
 hand,position_ql,position_location,event_type
-LH,1014.000000,m.254 beat 3.000,change
-LH,1017.000000,m.255 beat 2.000,change
-LH,1020.000000,m.256 beat 1.000,change
-LH,1023.000000,m.256 beat 4.000,change
-LH,1026.000000,m.257 beat 3.000,change
+LH,1797.000000,m.600 beat 1.000,change
+LH,1800.000000,m.601 beat 1.000,change
+LH,1806.000000,m.603 beat 1.000,stop
