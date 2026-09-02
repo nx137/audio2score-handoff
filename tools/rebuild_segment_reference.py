@@ -45,6 +45,18 @@ Usage
     python tools/rebuild_segment_reference.py                 # all 40 segments
     python tools/rebuild_segment_reference.py --segment ID    # one segment
     python tools/rebuild_segment_reference.py --dry-run
+
+Notes
+-----
+* Requires the frozen build: ``build_log.json``, ``_alignments/{sid}.csv`` and
+  the score MusicXML under ``data/ASAP`` (path taken from the manifest).
+* After the rebuild any old ``reference_score.svg`` (rendered from the wrong
+  measures) is renamed to ``reference_score.svg.stale`` so stale visuals are
+  not mistaken for the fixed score; re-render it with verovio if needed.
+* Only ``published_score_pedal`` is recomputed among the six annotation
+  columns; the other five are untouched because their data sources never
+  touched score QL.  The window-boundary ``uncertain`` behaviour follows the
+  original prefill code (classify_score has no boundary branch; rule 2.4).
 """
 
 from __future__ import annotations
@@ -314,6 +326,15 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
             })
 
     slice_musicxml(xml_path, seg_dir / "reference_score.musicxml", first, last)
+
+    svg_path = seg_dir / "reference_score.svg"
+    if svg_path.exists():
+        stale_path = seg_dir / "reference_score.svg.stale"
+        if stale_path.exists():
+            stale_path.unlink()
+        svg_path.rename(stale_path)
+        record["svg_stale"] = ("old reference_score.svg renamed to .stale "
+                               "(re-render with verovio)")
 
     meta_path = seg_dir / "segment_metadata.json"
     m = json.loads(meta_path.read_text(encoding="utf-8"))
