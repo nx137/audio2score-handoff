@@ -107,21 +107,25 @@ def interp_ref(rows: list[tuple[float, float]], perf_ql: float) -> float | None:
     return r1 + (perf_ql - p1) * (r2 - r1) / (p2 - p1)
 
 
-def map_score_window(rows, start_ql: float, end_ql: float) -> tuple[float, float] | None:
-    # Prefer the actual aligned reference QL range inside the window (with a
-    # small margin); fall back to boundary interpolation only when the window
-    # contains no aligned rows.  Interpolating the end boundary with rows
-    # beyond the window would over-extend the score window (e.g. 1825 instead
-    # of 1824 for Chopin_Scherzos_20_254) and slice one measure too many.
-    in_win = [r for (_p, r) in rows
+def map_score_window(rows, start_ql: float, end_ql: float) -> tuple[float, float, str] | None:
+    # Three-level fallback:
+    #   1. strict  - aligned rows inside the exact performance window (best;
+    #                for Chopin_Scherzos_20_254 this yields [1783, 1824))
+    #   2. margin  - aligned rows inside a small margin around the window
+    #   3. interp  - boundary interpolation over the whole alignment
+    # Method 1 avoids over-extending the score window with rows beyond the
+    # performance window (e.g. perf 1028.38 -> ref 1825 would add a measure).
+    strict = [r for (_p, r) in rows if start_ql - EPS <= _p <= end_ql + EPS]
+    if strict:
+        return min(strict), max(strict), "strict"
+    margin = [r for (_p, r) in rows
               if start_ql - SCORE_MARGIN_QL - EPS <= _p <= end_ql + SCORE_MARGIN_QL + EPS]
-    if in_win:
-        s0, s1 = min(in_win), max(in_win)
-    else:
-        s0, s1 = interp_ref(rows, start_ql), interp_ref(rows, end_ql)
+    if margin:
+        return min(margin), max(margin), "margin"
+    s0, s1 = interp_ref(rows, start_ql), interp_ref(rows, end_ql)
     if s0 is None or s1 is None or s1 <= s0 + EPS:
         return None
-    return s0, s1
+    return s0, s1, "interp"
 
 
 def score_measure_starts(xml_path: Path) -> list[float]:
@@ -251,13 +255,13 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
         return record
 
     rows = read_alignment(align_path)
-    win = map_score_window(rows, perf_start_ql, perf_end_ql)
-    if win is None:
+    mapped = map_score_window(rows, perf_start_ql, perf_end_ql)
+    if mapped is None:
         record["status"] = "no-alignment-coverage"
         record["perf_start_ql"] = perf_start_ql
         record["perf_end_ql"] = perf_end_ql
         return record
-    score_start_ql, score_end_ql = win
+    score_start_ql, score_end_ql, mapping_method = mapped
     starts = score_measure_starts(xml_path)
     first, last = measure_index_range(starts, score_start_ql, score_end_ql)
     s_num, s_den = score_time_sig(xml_path)
@@ -265,6 +269,7 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
 
     record["perf_start_ql"] = perf_start_ql
     record["perf_end_ql"] = perf_end_ql
+    record["mapping_method"] = mapping_method
     record["score_start_ql"] = round(score_start_ql, 6)
     record["score_end_ql"] = round(score_end_ql, 6)
     record["score_start_measure"] = first + 1
