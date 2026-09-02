@@ -9,6 +9,9 @@
 本脚本用 _alignments/<sid>.csv（基于 ASAP beat 标注的对齐）确定每个片段演奏窗口
 对应的真实乐谱 QL 范围，并用乐谱（xml_score.musicxml）真实拍号换算成小节，
 与 metadata 记录的切片小节对比，输出受影响清单。
+修复后（tools/rebuild_segment_reference.py 已应用）的片段会带 score_* 字段，
+本脚本对它们输出 coordinate_fixed=true 且 affected=false（乐谱 QL 窗口与
+alignment 映射一致）。
 
 用法：
   python tools/scan_segment_coordinate_mismatch.py       --asap data/ASAP       --formal outputs/pedal_gold_standard/formal_20260828_v1       --align-dir outputs/pedal_gold_standard/formal_20260828_v1/_alignments       --out evaluation/segment_coordinate_mismatch.json
@@ -99,8 +102,16 @@ def main():
             entry["score_window_measures"] = None
             entry["true_sliced_measures"] = None
 
-        # 受影响判定：演奏 QL 窗口按乐谱拍号换算的小节，与 metadata 切片小节不一致
-        entry["affected"] = (
+        # 已修复判定：metadata 存在 score_* 字段时，与 alignment 映射的乐谱 QL 窗口对比
+        fixed = ("score_start_ql" in meta) and ("score_end_ql" in meta)
+        entry["coordinate_fixed"] = False
+        if fixed:
+            entry["coordinate_fixed"] = (
+                abs(float(meta["score_start_ql"]) - min(refs)) <= 0.5
+                and abs(float(meta["score_end_ql"]) - max(refs)) <= 0.5
+            )
+        # 受影响判定：未修复片段用旧口径（乐谱小节 vs metadata 记录小节）
+        entry["affected"] = (not entry["coordinate_fixed"]) and (
             entry["score_window_measures"] is not None
             and entry["score_window_measures"] != tuple(entry["meta_sliced_measures"])
         )
@@ -110,7 +121,7 @@ def main():
         if "error" in r:
             print("ERR ", r["segment_id"], r["error"])
         else:
-            flag = "AFFECTED" if r["affected"] else "ok"
+            flag = "AFFECTED" if r["affected"] else ("FIXED" if r.get("coordinate_fixed") else "ok")
             print(flag, r["segment_id"],
                   "| meta_slice:", r["meta_sliced_measures"],
                   "| true_slice:", r["true_sliced_measures"],
