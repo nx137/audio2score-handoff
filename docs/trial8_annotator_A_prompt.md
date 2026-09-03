@@ -63,7 +63,7 @@
 ### 4.3 抽样与材料清单
 - 抽样片段：`outputs/pedal_gold_standard/formal_20260828_v1/iaa/trial_A/iaa_sample_manifest.csv` 列出的 8 段（每段一个片段 ID，形如 `Chopin_Scherzos_20_254`）。
 - 每段材料包：`outputs/pedal_gold_standard/formal_20260828_v1/segments/<片段ID>/`（必须为修复版，见阶段 0 核对）：
-  - 演奏音频（WAV）与对应 MIDI（含 CC64 控制器事件）；
+  - 听辨音频材料：`performance_segment.mid`（演奏 MIDI，含 CC64 控制器事件；用播放器渲染听音，口径同 `docs/IAA_ANNOTATOR_AI_PROMPT.md`——听辨不使用 WAV，WAV 是否存在不影响标注判定）；
   - `segment_metadata.json`（须含 `coordinate_fix` 与 `score_time_signature` / `score_bar_ql` / `score_start_ql` / `score_end_ql`）；
   - `reference_pedals.csv`（score-side，按乐谱 QL 重建）；
   - 金标准表模板 / 标签表（列名以文件表头为准；其中 **③ = `published_score_pedal`** 为本轮重做列）；
@@ -78,7 +78,7 @@
 5. 核对无误后在标注日志中记录「材料通过」。
 
 ### 4.5 阶段 1：盲标
-1. **先听音频、再看 CC64 事件**，以实际演奏为第一证据；随后对照乐谱坐标与 `reference_pedals.csv` 交叉确认。
+1. **先听 `performance_segment.mid` 的播放器渲染、再看 CC64 事件**，以实际演奏为第一证据；随后对照乐谱坐标与 `reference_pedals.csv` 交叉确认。
 2. 逐列重新判定：
    - **③ 列 `published_score_pedal`：必须人工重判**。不得直接拷贝算法预填值（修复档或首标档都只是对照基准，不是你的答案）。判定目标：该演奏片段在乐谱上的踏板标记应如何记谱（含踏板起止、延续/换踩、跨小节 tie）。
    - 其余人工判定列：正常核对，仅在确有错误时改动；如无异议保持原值。
@@ -110,7 +110,7 @@
 - 短促踏板/噪声：≤ 0.25 QL 的毛刺不构成独立事件（规则 A）。
 - 换踩歧义：以和声变化 + CC64 归零再踩为准；两可时选择与乐谱和声最一致的解释并在备注注明。
 - 对齐容差：偏差 ≤ 0.25 QL 不算差异（规则 B）；> 0.25 QL 必须复核并记录。
-- 材料缺字段 / 音频与 MIDI 不一致 / 疑似仍为非修复版：停下上报，禁止猜测。
+- 材料缺字段 / 听辨材料 `performance_segment.mid` 缺失或无法渲染 / 疑似仍为非修复版：停下上报，禁止猜测。WAV 不属标注材料，其存在与否不构成停报条件。
 
 ### 4.10 隔离红线（再次强调）
 - 不与标注者 B 共享任何材料、过程或结果；不讨论音乐情境判断口径。
@@ -148,6 +148,7 @@
 | 日期 | 版本 | 说明 |
 | --- | --- | --- |
 | 2026-09-03 | v1.0 | 建档：coordinate-fix 后的 8 段试标提示词（标注者 A）；重算哈希并登记 CHECKSUMS。 |
+| 2026-09-03 | v1.1 | 听音口径澄清：听辨材料为 `performance_segment.mid`（MIDI 播放器渲染），WAV 不进入标注材料集；修订 4.3 材料清单 / 4.5 阶段 1 / 4.9 停报条件；重算哈希并更新 CHECKSUMS。 |
 
 ---
 
