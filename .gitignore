@@ -6,3 +6,10 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# --- added 2026-09-03 hygiene: backup/temp artifacts (stray .bak removed from repo) ---
+*.bak
+*.tmp
+*.orig
+*.rej
+*.swp
