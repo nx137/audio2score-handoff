@@ -30,7 +30,7 @@
 
 ## 2. 使用流程（执行方：本地 AI / 研究者）
 
-1. 若 `iaa/` 材料尚未生成：`python tools/prepare_iaa_materials.py --out-dir outputs/pedal_gold_standard/formal_20260828_v1/iaa/trial_A`（生成 `iaa_sample_manifest.csv`、`IAA_ANNOTATION_GUIDE.md` 等；已生成且齐全则跳过）。
+1. 若 `iaa/` 共享材料尚未生成：`python tools/prepare_iaa_materials.py`（默认输出到 `outputs/pedal_gold_standard/formal_20260828_v1/iaa/`：生成 `iaa_sample_manifest.csv`、`IAA_ANNOTATION_GUIDE.md`、8 张空白复标表 `iaa_<sid>.csv`；已生成且齐全则跳过）。该批材料只读共享：标注者 A 与 B 使用同一份，各自产出严格分目录隔离。
 2. 确认仓库状态：`git fetch origin && git reset --hard origin/main`；`git log --oneline -3`，HEAD 应为 `2e1ba411f1` 或其后无 schema 变更的提交。
 3. 按第 3 节核对 ③ 列是否已被修复工具自动重填，建立双档基准。
 4. 将第 4 节「提示词全文」与修复版材料包一并交给标注者 A，依次执行阶段 0 → 1 → 2 → 3 → 4。
@@ -61,8 +61,8 @@
 - 你与标注者 B 隔离：不得查看、推断或讨论 B 的任何标注；你的全部过程记录留痕备查。
 
 ### 4.3 抽样与材料清单
-- 抽样片段：`outputs/pedal_gold_standard/formal_20260828_v1/iaa/trial_A/iaa_sample_manifest.csv` 列出的 8 段（每段一个片段 ID，形如 `Chopin_Scherzos_20_254`）。
-- 每段材料包：`outputs/pedal_gold_standard/formal_20260828_v1/segments/<片段ID>/`（必须为修复版，见阶段 0 核对）：
+- 抽样片段：`outputs/pedal_gold_standard/formal_20260828_v1/iaa/iaa_sample_manifest.csv` 列出的 8 段（每段一个片段 ID，形如 `Chopin_Scherzos_20_254`）。
+- 每段材料包：`outputs/pedal_gold_standard/formal_20260828_v1/<片段ID>/`（片段目录平铺于金标准根下，无 `segments/` 层；必须为修复版，见阶段 0 核对）：
   - 听辨音频材料：`performance_segment.mid`（演奏 MIDI，含 CC64 控制器事件；用播放器渲染听音，口径同 `docs/IAA_ANNOTATOR_AI_PROMPT.md`——听辨不使用 WAV，WAV 是否存在不影响标注判定）；
   - `segment_metadata.json`（须含 `coordinate_fix` 与 `score_time_signature` / `score_bar_ql` / `score_start_ql` / `score_end_ql`）；
   - `reference_pedals.csv`（score-side，按乐谱 QL 重建）；
@@ -149,6 +149,7 @@
 | --- | --- | --- |
 | 2026-09-03 | v1.0 | 建档：coordinate-fix 后的 8 段试标提示词（标注者 A）；重算哈希并登记 CHECKSUMS。 |
 | 2026-09-03 | v1.1 | 听音口径澄清：听辨材料为 `performance_segment.mid`（MIDI 播放器渲染），WAV 不进入标注材料集；修订 4.3 材料清单 / 4.5 阶段 1 / 4.9 停报条件；重算哈希并更新 CHECKSUMS。 |
+| 2026-09-03 | v1.2 | 路径约定修正：材料包为 `formal_20260828_v1/<片段ID>/` 平铺（无 `segments/` 层）；iaa 共享材料统一于 `formal_20260828_v1/iaa/`（生成一次、只读共享，A/B 产出分目录隔离）；重算哈希并更新 CHECKSUMS。 |
 
 ---
 
