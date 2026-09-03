@@ -1,0 +1,9 @@
+﻿segment_id,composer,split,n_events,rationale
+Bach_Prelude_bwv_846_2,Bach,train,36,low-ambiguity anchor (baroque)
+Haydn_Keyboard_Sonatas_6-1_18,Haydn,train,144,low-ambiguity anchor (classical)
+Beethoven_Piano_Sonatas_16-1_73,Beethoven,train,163,typical (classical-romantic)
+Ravel_Miroirs_3_Une_Barque_181,Ravel,train,139,typical (impressionist pedal)
+Prokofiev_Toccata_197,Prokofiev,train,131,typical (percussive pedal)
+Chopin_Scherzos_20_254,Chopin,validation,236,high ambiguity (no_output_match=15)
+Schubert_Wanderer_fantasie_1189,Schubert,train,154,high ambiguity (no_output_match=13)
+Liszt_Transcendental_Etudes_10_71,Liszt,validation,130,high ambiguity + dense pedal
