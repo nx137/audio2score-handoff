@@ -52,8 +52,9 @@ GS = `outputs/pedal_gold_standard/formal_20260828_v1`
 对每段逐一执行：
 
 1. `$GS/<sid>/events.csv` 存在，数据行数 = 期望事件数（不含表头）。
-2. 六列 `acoustic_sustain, performance_pedal_action, published_score_pedal,
-   notation_decision, review_class, review_note` 无空单元格；有空值 → 记录 (row, col) 报告，
+2. **空值检查仅针对前四列** `acoustic_sustain, performance_pedal_action,
+   published_score_pedal, notation_decision`（须无空单元格）；`review_class` / `review_note`
+   按协议允许合法留空（见文末「裁决记录」）。前四列若出现空值 → 记录 (row, col) 报告，
    不要自行填值。
 3. **baseline 差异门（自检）**：取坐标修复前首标档 `6696617b66` 的同路径 events.csv：
 
@@ -110,3 +111,17 @@ review_priority,reference_tie_start
 4. `git show` 等只读命令可用；需要写 git 对象时停止并询问。
 5. 任何与预期不符（verify 失败、差异门不符、列缺失或命名不同、行数不符）→
    停下报告原始输出，不要自行发挥或“修正”数据。
+
+
+## 裁决记录
+
+### 2026-09-06 主控裁决 #1：`review_class` 留空 = 合法（A 方案）
+- 背景：本地 AI 自检发现 8 段 events.csv 存在空值，且 100% 集中在 `review_class`（⑤）一列：
+  Bach 28 / Haydn 29 / Beethoven 47 / Ravel 32 / Prokofiev 34 / Chopin 3 / Schubert 81 / Liszt 42；
+  其余五列（①-④、⑥ review_note）全部完整有值。
+- 裁决：按 v1.3 协议，⑤ `review_class` 枚举含"留空"（复核分类标记，仅需特别复核的行赋值，
+  常规行为默认留空态），故**留空为合法状态，不视为数据丢失或损坏，不填值、不报错**。
+  ⑥ `review_note` 同理允许留空。
+- 空值硬约束仅适用于 ①-④（`acoustic_sustain`, `performance_pedal_action`,
+  `published_score_pedal`, `notation_decision`）四列，本指令 §3.2 已相应修正。
+- 后续执行：继续生成 F/U/H/E 复核清单并上报（本地 AI 报告中的方案 A）。
