@@ -167,3 +167,20 @@ A **不自行判定、不自行入库**。
 - 待查项（本地 AI）：① Ravel reference_pedals 提取缺陷根因（工具代码审查）；
   ② Liszt_9_67 窗口内谱面 pedal 确认 + alignment 覆盖 0% 根因；③ 40 段全曲谱面（xml_score）
   `<pedal>` 总数与片段窗口对照，区分「窗口内真无 pedal（正确）」与「窗口含 pedal 但未入库（bug）」。
+
+
+### 2026-09-06 主控裁决 #4：坐标 bug 根因定论——rebuild 均匀外推 vs 谱面真实拍号累计
+- 取证（云端解析全曲 xml_score）：
+  - Ravel_Miroirs_3_Une_Barque 全曲 139 小节、**混合拍号**（2/4 x65、3/4 x46、4/4 x25、1/4 x1、5/4 x2）；
+  - **m.72 真实起点 = 176.0 QL**（按拍号逐小节累计），区间 [176.0, 180.0)；
+  - metadata `score_start_ql = 176.875` 与真实 176.0 吻合 → **窗口/alignment 坐标正确**；
+  - rebuild 的 0 起算 `142 = (72-1) x 2` 是**均匀外推**（把全曲当均匀 2/4）→ **错误**；
+  - 谱面 m.70–90 几乎每小节都有 `<pedal>`（Ravel 踏板密集，修复后 reference_pedals 应远多于 2 条）。
+- 定论：`tools/rebuild_segment_reference.py` 中从 score measure 推导 QL 的函数
+  （pedal_events / score_measure_starts / measure_index_range / fmt_beat 等）使用均匀 bar_ql 外推，
+  与 map_score_window（真实拍号累计/对齐表坐标）不一致 → 混合拍号段过滤错位：
+  Chopin（全曲均匀 3/4）侥幸一致；Ravel、Liszt_9_67 等落空。
+- 修复方向：rebuild 全部 score 坐标统一为「全曲 xml_score 按真实拍号累计的 measure 起点表」
+  （m.1 起点 = 0，逐 measure 累加 beats x 4/beat-type），与窗口坐标一致。
+  修复后重跑 40 段 rebuild → 重生成 reference_pedals / reference_events → ③ 列重算 →
+  trial8 F 组清单与复核需相应重做（Ravel 段修复后重新纳入）。
