@@ -43,9 +43,16 @@ score 坐标换算（按谱面拍号；QL 单位 = 四分音符）：
 - Ravel_Miroirs_3_Une_Barque_181：**2**，均在 **measure 72**（start + stop）；该谱面片段仅含 m.72 一个小节
 - Chopin_Scherzos_20_254：**5**，在 measure **599**(stop)、**600**(start+stop)、**601**(start)、**602**(stop)
 
-**Chopin 实证（修复正确的判定锚）**：修复后 ③ 非 none 行（F 组 7 行 + 非 F 行）的
-`reference_onset_ql` = 1797 / 1800 / 1806 → /3 = m.599 / m.600 / m.602，**与谱面 `<pedal>` 精确命中**。
-凡 score 坐标落在这些 pedal 动作 QL 处的事件 ③ 非 none 即为正确；其余应为 none。
+**Chopin 实证（修复正确的判定锚）**：`reference_pedals.csv`（score 侧谱面踏板事件表）含 3 条：
+`1797.0 -> m.600 change`、`1800.0 -> m.601 change`、`1806.0 -> m.603 stop`。
+修复后 ③ 非 none 行（F 组 7 行 + 非 F 行）的 `reference_onset_ql` 恰为 1797 / 1800 / 1806，
+与 reference_pedals **逐条对应**。
+
+**③ 的判读锚 = `reference_pedals.csv`**（其 event_type 原样决定 ③；`reference_score.musicxml` 的
+`<pedal>` 仅作交叉参考，不作直接判据）。
+
+score measure 换算注意：measure N 的起点 QL = (N-1) x bar_ql，即 `reference_onset_ql / bar_ql + 1`
+才是 measure 编号（如 1800/3+1 = m.601，不是 m.600）。
 
 **第一层自检（执行前必做）**：
 1. 统计 84 个 F 行修复后 ③ 的分布（none / start / change / stop / uncertain）；
@@ -125,3 +132,20 @@ A **不自行判定、不自行入库**。
 2. 不 commit、不 push（先上报）。
 3. 不触碰 evals/、CHECKSUMS.sha256、*.musicxml / *.mid / reference_* / pedal_intervals.csv。
 4. 任何与预期不符（§2 分布异常、谱面解析失败、列缺失）→ 停下报告原始输出。
+
+## 裁决记录（续）
+
+### 2026-09-06 主控裁决 #2：Ravel reference_pedals 空 = 真 bug；F 组判定剔除 Ravel；③ 锚 = reference_pedals
+- 取证（云端 + 本地 AI 专项）：
+  - Ravel 谱面片段仅 m.72 一节，含 2 个 `<pedal>`（start + stop）；`reference_pedals.csv` **为空**
+    （仅表头 46B）。对照：Bach 谱面真无 pedal 时同样为空，Chopin 谱面 5 个 `<pedal>` 生成 3 条
+    reference_pedals —— Ravel 属「谱面有 pedal 但解析/入库丢失」。
+  - Ravel events 139 行 ③ 全 = none；仅 27/139 行有 reference_onset_ql（落在 score m.72 窗口），
+    112 行无 score 坐标；score 窗口仅 m.72 一节（score_start_measure = score_end_measure = 72）。
+- 裁决：
+  1. Ravel 的谱面 pedal 解析 / score 窗口构建存在缺陷（坐标修复 `2e1ba411` 的遗留问题）。
+  2. **Ravel F 组 34 行不可用于 trial8 F 组判定**——其「全 none」是 pedal 输入缺失所致，不是谱面确认。
+  3. ③ 判读锚 = `reference_pedals.csv`（event_type 原样），MusicXML `<pedal>` 仅交叉参考。
+  4. Chopin 50 行按 reference_pedals 对齐继续复核（非 none 行应逐条命中 1797/1800/1806）。
+  5. 新增全局取证：扫描 40 段 `reference_pedals.csv` 行数 vs 谱面 `<pedal>` 数，找出全部
+     「谱面有 pedal 但 reference_pedals 空」的段（区分真无 pedal），上报后再定修复方案。
