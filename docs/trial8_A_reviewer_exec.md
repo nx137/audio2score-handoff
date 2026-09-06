@@ -215,3 +215,29 @@ A **不自行判定、不自行入库**。
      以该文件现行内容为实施依据。
   6. 放行本地 AI 在 `codex/coord-fix-rebuild` 分支实施修改；先单段验证（规格 §3）再 40 段全量，
      diff 与验证报告交主控审阅后再入库。
+
+
+### 2026-09-06 主控裁决 #6：Liszt_9_67 与 Ravel 同因（窗口边界误滤）；单段三锚验证通过 → 放行 40 段全量
+- 背景：本地 AI 三锚单段验证：Ravel 3 条 ✓、Chopin 3 条回归 ✓、Liszt_9_67 与规格预期不符
+  （裁决 #5 预期「保持空」，实测 1 条 stop@106.0），停下上报。
+- 主控独立取证（GitHub 云端，全曲 xml_score + 片段 + 源码对照）：
+  - Liszt 全曲 117 小节含 X1/X2/X3 三个补充小节（元素 idx14–16），measure number 属性与
+    元素序数偏移 3；`score_start_measure=18` 是 1 起算**元素序**（rebuild 源码 `first+1`），
+    窗口 = 元素序 18–19 = number 15–16 = reference_score.musicxml 片段（2 小节，自洽）；
+  - 窗口 measure 粒度真实区间 = [starts[17], starts[19]) = [102.0, 114.0)；
+  - number 15 小节含 `<pedal type="stop"/>`（direction、无 offset；pedal_events 以音符
+    游标定位 = measure_start 102.0 + 游标 4.0 = **106.0**，位置计算正确，非均匀外推）；
+  - 旧过滤 [score_start_ql=106.966667, score_end_ql=113.67697) 将 106.0 排除 →
+    reference_pedals 空——**与 Ravel 同因**（音符对齐边界误滤 measure 内的 pedal）。
+- 裁决：
+  1. Liszt_9_67 归为**修复受益段**（同 Ravel 成因）；本地 AI 三锚验证全部通过 →
+     **放行 40 段全量重跑**。裁决 #3「窗口外/待查」与裁决 #5「应保持空」定性作废。
+  2. 106.0 = number 15 内第 4 QL（音符游标定位），正确；规格 §3 已同步修正为
+     reference_pedals = 1 条（stop@106.0）。
+  3. Chopin 修复后仍 3 条（未补全为 5 条）：回归通过；全量时补查 m.599/m.602 谱面 pedal 的
+     pedal_events 位置与解析情况，说明未入库原因（规范化合并/窗口外/未解析），确认非修复遗漏。
+  4. Liszt_9_67 alignment 0/85（reference_onset_ql 0/85 全空）为**独立问题**：本地 AI
+     代码定位成立（rebuild 只读不写该列；recompute_score_pedal_column 仅改
+     published_score_pedal），列为后续专项、不阻塞本修复。修复后 Liszt ③ 仍会全 none
+     （events 无 score 坐标，见规格 §4.2），上报须注明，避免误判修复无效。
+  5. 全量后按规格 §3.2：40 段汇总表、③ 与 8 段 F 组重算对照；不生成/不 commit 新复核清单。
