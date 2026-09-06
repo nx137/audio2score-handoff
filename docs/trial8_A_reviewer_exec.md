@@ -24,34 +24,56 @@
 
 四组零重叠 → 每行只有一个复核动作，无歧义。
 
-## 2. 关键锚点（先自检，再逐行）
+## 2. 坐标体系（必读）与关键锚点
 
-谱面 `<pedal>` 标记实测数量（reference_score.musicxml，直接解析 `<direction-type><pedal .../>`）：
+**两套坐标，不可混用**：
+
+- `onset_ql` / `onset_location` = **performance 坐标**（演奏 MIDI 的小节号，如 Chopin m.254–257）
+- `reference_onset_ql` = **score 坐标**（谱面小节编号体系，如 Chopin m.595–608）
+- **③ `published_score_pedal` 是 score 侧值，与谱面 `<pedal>` 比对必须用 `reference_onset_ql`**，
+  禁止用 `onset_location` 直接比谱面小节号（两者编号体系不同，Chopin 实测差 ~340 小节）。
+
+score 坐标换算（按谱面拍号；QL 单位 = 四分音符）：
+- Chopin（3/4 拍）：每小节 3 QL → `reference_onset_ql / 3` = score measure
+- 其他段：按该段谱面拍号结构换算；拿不准就用仓库内 score 解析工具定位 `<pedal>` 的 score QL 区间
+
+谱面 `<pedal>` 标记实测（reference_score.musicxml）：
 
 - Bach_Prelude_bwv_846_2：**0**（谱面无踏板 → F=0，自洽）
-- Ravel_Miroirs_3_Une_Barque_181：**2**（start + stop）
-- Chopin_Scherzos_20_254：**5**（2 次 start/stop）
+- Ravel_Miroirs_3_Une_Barque_181：**2**，均在 **measure 72**（start + stop）；该谱面片段仅含 m.72 一个小节
+- Chopin_Scherzos_20_254：**5**，在 measure **599**(stop)、**600**(start+stop)、**601**(start)、**602**(stop)
 
-**第一层自检（执行前必做）**：统计 84 个 F 行修复后 ③ 的值分布（none / start / change / stop / uncertain）。
-若"非 none"行数远超谱面标记对应的动作点数（Ravel ≤2、Chopin ≤5 量级），说明 ③ 语义或修复仍有问题
-→ **停下报告分布表**，不要继续逐行。
+**Chopin 实证（修复正确的判定锚）**：修复后 ③ 非 none 行（F 组 7 行 + 非 F 行）的
+`reference_onset_ql` = 1797 / 1800 / 1806 → /3 = m.599 / m.600 / m.602，**与谱面 `<pedal>` 精确命中**。
+凡 score 坐标落在这些 pedal 动作 QL 处的事件 ③ 非 none 即为正确；其余应为 none。
+
+**第一层自检（执行前必做）**：
+1. 统计 84 个 F 行修复后 ③ 的分布（none / start / change / stop / uncertain）；
+2. 对每个非 none 行，换算 `reference_onset_ql` → score measure，与谱面 `<pedal>` measure 比对：
+   命中 → 正确；不命中（悬空）→ **停下报告该行**；
+3. 同时检查谱面 `<pedal>` 标记是否有"无任何事件承接"的（谱面有 pedal 但 score 坐标窗口内无事件）→ 报告。
+4. **专项核查（Ravel）**：Ravel 谱面片段仅含 m.72（1 小节、2 个 pedal），但 events 139 行 ③ 全 = none。
+   复核前必须先查清：m.72 的两个 `<pedal>` 在 score 坐标（reference_onset_ql）的确切位置，
+   其时刻附近是否有事件承接、这些事件 ③ 应为何值。若 m.72 pedal 悬空（无事件承接）→ 属
+   segment score 窗口/坐标修复遗留问题，**停下专项报告，不进入逐行复核**。
 
 ## 3. F 组复核（84 行）——本轮核心
 
 判据：`published_score_pedal` = 该事件时刻**出版谱**上的踏板动作状态：
 `start`（此处开始踩）/ `change`（同一踩踏内谱面换踩，如 `*`）/ `stop`（此处松开）/ `none`（无动作）。
 
-对每个 F 行（行内含 event_id、onset_location、修复后 ③ 现值、baseline 旧 ③）：
+对每个 F 行（行内含 event_id、onset_location、reference_onset_ql、修复后 ③ 现值、baseline 旧 ③）：
 
-1. 解析 `reference_score.musicxml`，列出全部 `<pedal>` 标记及其所在小节/拍（measure/beat）；
-2. 将事件 `onset_location`（如 `m.38 beat 2.500`）与 pedal 标记位置比对：
-   - 无 pedal 标记对齐 → 修复后 ③ 应为 **none**；
-   - 对齐 `<pedal type="start|stop">` → ③ 应 = start / stop；
+1. 解析 `reference_score.musicxml`，列出全部 `<pedal>` 标记及其 score measure，换算为 score QL 位置；
+2. 用该行的 **`reference_onset_ql`（score 坐标）** 与 pedal 的 score QL 位置比对：
+   - 不命中任何 pedal 动作 QL → 修复后 ③ 应为 **none**；
+   - 命中 `<pedal type="start|stop">` 的 score QL → ③ 应 = start / stop；
    - `change` 依协议判据（同一区间内谱面换踩记号）；
 3. 判定：
-   - `confirmed`：修复后 ③ 与谱面判读一致；
-   - `revised`：不一致 → 给出建议新值 + **可复核证据**（如 "m.38 beat 2 处无 <pedal>，应为 none"）；
-4. `evidence` 列必须写谱面依据（measure/beat/`<pedal type=...>` 原文），不许写"与 events.csv 一致"这类循环论证。
+   - `confirmed`：修复后 ③ 与 score 坐标判读一致；
+   - `revised`：不一致 → 给出建议新值 + **可复核证据**（score measure/`<pedal type=...>` 原文）；
+4. `evidence` 列必须写 score 坐标依据（换算后 measure + `<pedal type=...>` 原文），
+   不许写"与 events.csv 一致"或引用 performance 小节号作判据。
 
 ## 4. U 组复核（34 行）
 
