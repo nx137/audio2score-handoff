@@ -184,3 +184,34 @@ A **不自行判定、不自行入库**。
   （m.1 起点 = 0，逐 measure 累加 beats x 4/beat-type），与窗口坐标一致。
   修复后重跑 40 段 rebuild → 重生成 reference_pedals / reference_events → ③ 列重算 →
   trial8 F 组清单与复核需相应重做（Ravel 段修复后重新纳入）。
+
+
+### 2026-09-06 主控裁决 #5（修正 #4 根因）：代码已真实累计；真 bug = pedal 过滤未按 measure 粒度
+- 背景：本地 AI 依 #4 规格实施前做 Ravel 单段验证，发现规格根因诊断与代码实际不符，停下上报（未改码、未 commit）。
+- 取证（本地 AI 实测 + 主控复核）：
+  - `score_measure_starts` m.72 起点 = **176.0**（已是真实拍号累计，非 142）；`pedal_events`
+    m.72 pedal = **176.0 (start) / 176.05 (stop)**；measure→QL 为逐 measure 读 `<time>` 累加
+    → **#4 的「rebuild 均匀 bar_ql 外推」定论不成立，撤销**。
+  - 142.01875 按真实累计表反查属 **m.59**（m.59 起点 = 142.0）；此前把 142.01875 记为 m.72
+    是**反查口径错误**（int(position_ql//2)+1 的均匀反查对混合拍号段无效），该引用作废。
+  - 真正根因：`reference_pedals` 的 pedal 过滤用了窗口 QL 边界 [score_start_ql, score_end_ql)
+    = **[176.875, 179.16)**，该边界对齐到窗口内**最早/最晚参考音符**（176.875 = m.72 内
+    第 0.875 QL 处的第一个音符），而非 measure 边界。m.72 的 3 个 pedal（start@176.0、
+    stop@176.05、stop@179.99375）全部落在该窗口外 → 过滤得 0 条。
+  - 窗口 measure 范围标注 [score_start_measure, score_end_measure] = [72, 72] 正确——
+    问题只在 pedal 过滤时未把窗口换算成 measure 边界。
+- 裁决：
+  1. 认可本地 AI 举证；#4 定论中「rebuild 需从均匀外推改为真实累计」撤销（代码已是累计），
+     rebuild 侧 pedal_events / score_measure_starts 不改。
+  2. 修复方向改为 **measure 粒度过滤**：reference_pedals 过滤区间 =
+     [MeasureStart(score_start_measure), MeasureStart(score_end_measure + 1))，MeasureStart
+     用全曲真实拍号累计；不再用音符对齐的 score_start_ql / score_end_ql 过滤 pedal。
+     Ravel 修复后应 = 3 条（176.0 / 176.05 / 179.99375）。
+  3. Liszt_9_67：窗口 m.18–19 measure 粒度区间内无 pedal → reference_pedals 应保持空
+     （③=none 正确性复验）；alignment 0/85 无 reference_onset_ql 另查（rebuild 写列问题）。
+  4. Chopin 回归锚 1797 / 1800 / 1806 不变（±1 QL）；修复后 reference_pedals = 窗口 measure
+     范围内全量 pedal（3 或 5 条，视 m.599 / m.602 是否在窗口内，实测上报，不得硬编码）。
+  5. `docs/rebuild_coord_fix_spec.md` 已按本裁决整体改写（§1 根因修正、§2 measure 粒度过滤要求），
+     以该文件现行内容为实施依据。
+  6. 放行本地 AI 在 `codex/coord-fix-rebuild` 分支实施修改；先单段验证（规格 §3）再 40 段全量，
+     diff 与验证报告交主控审阅后再入库。
