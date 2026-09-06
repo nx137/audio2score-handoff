@@ -149,3 +149,21 @@ A **不自行判定、不自行入库**。
   4. Chopin 50 行按 reference_pedals 对齐继续复核（非 none 行应逐条命中 1797/1800/1806）。
   5. 新增全局取证：扫描 40 段 `reference_pedals.csv` 行数 vs 谱面 `<pedal>` 数，找出全部
      「谱面有 pedal 但 reference_pedals 空」的段（区分真无 pedal），上报后再定修复方案。
+
+
+### 2026-09-06 主控裁决 #3：Chopin F 判定通过；Liszt_9_67 重新定性为「待查」；Ravel 维持 bug
+- 任务 A 结果：Chopin 50 个 F 行 **confirmed 50 / revised 0（100%）**，非 none 行（ref_ql 1797/1800/1806）
+  与 reference_pedals 锚点零误差命中，none 行全部远离锚点 → **Chopin 段 F 组判定通过（≥95% 门槛）**。
+- 任务 B 全局扫描（40 段）：
+  - 仅 3 段谱面（片段）含 `<pedal>`：Ravel(2)、Chopin(5)、Liszt_Transcendental_Etudes_9_67(1, m.15 stop)。
+  - Ravel：reference_pedals 空。**定性维持真 bug**——score 窗口 m.72 明明含 `<pedal>` 却未提取入库，
+    属 reference_pedals 提取环节缺陷。
+  - Liszt_9_67：谱面 pedal 在 m.15，score 窗口 m.18–19（pedal 在窗口外），reference_pedals 空，
+    events 0/85 行有 score 坐标。**重新定性为「待查」**：若窗口 m.18–19 内谱面确无 pedal 记号，
+    则 ③=none 与 reference_pedals 空均为**正确**；真正的异常是 alignment 覆盖 0%（85 行全部无
+    reference_onset_ql），需单独查根因。**暂不按 ③ bug 处理**。
+  - Chopin：谱面 5 pedal → reference_pedals 仅 3 条（部分缺失，m.599 stop / m.602 stop 等未入库），
+    保留锚可用且 F 判定不受影响；修复阶段应补全。
+- 待查项（本地 AI）：① Ravel reference_pedals 提取缺陷根因（工具代码审查）；
+  ② Liszt_9_67 窗口内谱面 pedal 确认 + alignment 覆盖 0% 根因；③ 40 段全曲谱面（xml_score）
+  `<pedal>` 总数与片段窗口对照，区分「窗口内真无 pedal（正确）」与「窗口含 pedal 但未入库（bug）」。
