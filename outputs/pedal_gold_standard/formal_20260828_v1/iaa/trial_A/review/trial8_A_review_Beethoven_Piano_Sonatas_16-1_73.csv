@@ -1,0 +1,6 @@
+segment_id,row_no,event_id,hand,pitch,onset_ql,onset_location,groups,acoustic_sustain,performance_pedal_action,published_score_pedal,notation_decision,review_class,review_note,baseline_published_score_pedal,review_priority,reference_tie_start
+Beethoven_Piano_Sonatas_16-1_73,1,BeethovenPiano_Sonatas_16-1:LH:37:288.125000:2,LH,37,288.125,m.73 beat 1.125,U,uncertain,uncertain,none,0.25,pedal-only,pedal carries sustain; keep short written note,,normal,
+Beethoven_Piano_Sonatas_16-1_73,14,BeethovenPiano_Sonatas_16-1:LH:39:288.000000:2,LH,39,288.0,m.73 beat 1.000,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,normal,
+Beethoven_Piano_Sonatas_16-1_73,45,BeethovenPiano_Sonatas_16-1:LH:48:303.875000:4,LH,48,303.875,m.76 beat 4.875,U,uncertain,uncertain,none,0.25,pedal-only,pedal carries sustain; keep short written note,,medium,
+Beethoven_Piano_Sonatas_16-1_73,46,BeethovenPiano_Sonatas_16-1:LH:49:288.125000:3,LH,49,288.125,m.73 beat 1.125,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,normal,
+Beethoven_Piano_Sonatas_16-1_73,148,BeethovenPiano_Sonatas_16-1:RH:74:301.625000:3,RH,74,301.625,m.76 beat 2.625,H,yes,hold,none,0.25,pedal-only,pedal carries sustain; keep short written note,,high,

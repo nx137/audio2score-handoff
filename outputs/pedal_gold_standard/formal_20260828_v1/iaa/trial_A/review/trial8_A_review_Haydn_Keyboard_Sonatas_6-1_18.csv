@@ -1,0 +1,6 @@
+segment_id,row_no,event_id,hand,pitch,onset_ql,onset_location,groups,acoustic_sustain,performance_pedal_action,published_score_pedal,notation_decision,review_class,review_note,baseline_published_score_pedal,review_priority,reference_tie_start
+Haydn_Keyboard_Sonatas_6-1_18,13,HaydnKeyboard_Sonatas_6-1:LH:57:68.000000:3,LH,57,68.0,m.18 beat 1.000,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Haydn_Keyboard_Sonatas_6-1_18,34,HaydnKeyboard_Sonatas_6-1:RH:61:68.000000:1,RH,61,68.0,m.18 beat 1.000,U,uncertain,uncertain,none,0.5,notation-shortening,reference duration 0.5; shorten acoustic extension to 0.5 (score convention; pedal carries the tail),,medium,0
+Haydn_Keyboard_Sonatas_6-1_18,108,HaydnKeyboard_Sonatas_6-1:RH:68:69.666667:2,RH,68,69.666667,m.18 beat 2.667,H,yes,hold,none,0.125,pedal-only,pedal carries sustain; keep short written note,,high,
+Haydn_Keyboard_Sonatas_6-1_18,111,HaydnKeyboard_Sonatas_6-1:RH:69:68.125000:2,RH,69,68.125,m.18 beat 1.125,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Haydn_Keyboard_Sonatas_6-1_18,128,HaydnKeyboard_Sonatas_6-1:RH:71:68.000000:2,RH,71,68.0,m.18 beat 1.000,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,

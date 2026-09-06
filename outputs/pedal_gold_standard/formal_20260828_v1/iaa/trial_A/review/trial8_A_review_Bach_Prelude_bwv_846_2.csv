@@ -1,0 +1,5 @@
+segment_id,row_no,event_id,hand,pitch,onset_ql,onset_location,groups,acoustic_sustain,performance_pedal_action,published_score_pedal,notation_decision,review_class,review_note,baseline_published_score_pedal,review_priority,reference_tie_start
+Bach_Prelude_bwv_846_2,6,BachPrelude_bwv_846:RH:62:13.125000:2,RH,62,13.125,m.4 beat 2.125,E,yes,release,none,1.75,independent-voice,independent voice: written 1.75 covers following RH onset (gap 2.625),,medium,1
+Bach_Prelude_bwv_846_2,7,BachPrelude_bwv_846:RH:62:16.750000:3,RH,62,16.75,m.5 beat 1.750,E,no,release,none,1.75,independent-voice,independent voice: written 1.75 covers following RH onset (gap 3.500),,normal,1
+Bach_Prelude_bwv_846_2,8,BachPrelude_bwv_846:RH:62:9.500000:3,RH,62,9.5,m.3 beat 2.500,E,yes,release,none,1.75,independent-voice,independent voice: written 1.75 covers following RH onset (gap 3.167),,medium,1
+Bach_Prelude_bwv_846_2,9,BachPrelude_bwv_846:RH:64:6.000000:4,RH,64,6.0,m.2 beat 3.000,E,no,hold,none,1.75,independent-voice,independent voice: written 1.75 covers following RH onset (gap 4.000),,normal,1

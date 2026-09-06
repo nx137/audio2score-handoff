@@ -1,0 +1,8 @@
+segment_id,row_no,event_id,hand,pitch,onset_ql,onset_location,groups,acoustic_sustain,performance_pedal_action,published_score_pedal,notation_decision,review_class,review_note,baseline_published_score_pedal,review_priority,reference_tie_start
+Prokofiev_Toccata_197,8,ProkofievToccata:LH:39:392.125000:3,LH,39,392.125,m.197 beat 1.125,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Prokofiev_Toccata_197,41,ProkofievToccata:LH:51:392.125000:2,LH,51,392.125,m.197 beat 1.125,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Prokofiev_Toccata_197,79,ProkofievToccata:RH:77:397.125000:4,RH,77,397.125,m.199 beat 2.125,H,yes,hold,none,0.25,pedal-only,pedal carries sustain; keep short written note,,high,
+Prokofiev_Toccata_197,97,ProkofievToccata:RH:81:392.125000:4,RH,81,392.125,m.197 beat 1.125,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Prokofiev_Toccata_197,124,ProkofievToccata:RH:88:399.875000:1,RH,88,399.875,m.200 beat 2.875,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Prokofiev_Toccata_197,129,ProkofievToccata:RH:95:399.875000:1,RH,95,399.875,m.200 beat 2.875,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
+Prokofiev_Toccata_197,130,ProkofievToccata:RH:97:399.875000:1,RH,97,399.875,m.200 beat 2.875,U,uncertain,uncertain,none,0.125,pedal-only,pedal carries sustain; keep short written note,,medium,
