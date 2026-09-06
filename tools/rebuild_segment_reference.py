@@ -311,7 +311,9 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
             })
 
     pedals = pedal_events(str(xml_path))
-    sel_pedals = [p for p in pedals if score_start_ql - EPS <= p.position_ql < score_end_ql]
+    pedal_lo = starts[first]
+    pedal_hi = starts[last + 1] if last + 1 < len(starts) else float("inf")
+    sel_pedals = [p for p in pedals if pedal_lo <= p.position_ql < pedal_hi]
     with (seg_dir / "reference_pedals.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=[
             "hand", "position_ql", "position_location", "event_type",
