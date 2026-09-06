@@ -241,3 +241,31 @@ A **不自行判定、不自行入库**。
      published_score_pedal），列为后续专项、不阻塞本修复。修复后 Liszt ③ 仍会全 none
      （events 无 score 坐标，见规格 §4.2），上报须注明，避免误判修复无效。
   5. 全量后按规格 §3.2：40 段汇总表、③ 与 8 段 F 组重算对照；不生成/不 commit 新复核清单。
+
+
+### 2026-09-06 主控裁决 #7：Ravel ③=0 是正确结果（动作命中语义），非 bug；40 段全量有效 → 代码批准入库
+- 背景：本地 AI 完成 40 段全量重跑：40/40 rebuilt、汇总表「窗口内 pedal 数 == reference_pedals
+  行数」全 YES、无 D 类；A 类 2 段（Ravel 0→3、Liszt_9_67 0→1）、B 类 Chopin 3 条锚 ±0、
+  C 类 37 段。唯 Ravel ③ 非 none 仍 = 0 与规格 §4 预期不符，停下上报。
+- 主控独立取证（云端 events.csv；psp_changed=0 → 云端即修复后状态）：
+  - Ravel events 139 行中 27 行有 reference_onset_ql（min 176.875、max 179.160416667）；
+  - 27 行到 3 条 pedal（176.0 / 176.05 / 179.99375）最短距离全部 ≥ 0.825 QL
+    （min 0.825、max 1.944），0 行在 PEDAL_MATCH_QL = 0.25 内；
+  - m.72 谱面 pedal 动作（start@176.0 + stop@176.05 在首个演奏音符 176.875 之前、
+    stop@179.99375 在最后演奏音符 179.16 之后）与演奏事件**无时刻交集**。
+- 裁决：
+  1. ③ 判读语义 = **动作命中**（判据 trial8_A_reviewer_exec.md §3：命中 pedal 动作 QL →
+     start/change/stop；不命中 → none）。Ravel 窗口内无事件命中 pedal 动作时刻 →
+     ③ 全 none 为**正确结果**，不是坐标错位 bug；「0.825 QL 间隙」不属同源坐标错位
+     （reference_onset_ql 与 pedal position_ql 本就不必重合；Chopin 命中 14 行是因
+     pedal 动作恰与事件小节起点重合）。
+  2. 规格 §4 对 Ravel 的预期「③ 非 none 由 0 变 >0」**作废**。reference_pedals 修复
+     （0→3）验证的是谱面 pedal 提取/过滤正确性，独立于 ③ 匹配，已通过。
+  3. Ravel 在 trial8 F 组维持「无 ③ 非 none 行可判」：理由更新 = 谱面/演奏客观无交集
+     （裁决 #2 剔除结论不变，论据修正为已修复输入、无命中）。
+  4. 40 段全量结果有效 → 修复代码（reference_pedals 过滤改 measure 粒度）**批准入库**，
+     主控已直接合入 main（commit 见仓库日志）。
+  5. Chopin 补查通过：窗口内 pedal_events 即 3 条、无漏选，非修复遗漏；谱面 5 `<pedal>`
+     中 2 个未成独立事件属 pedal_events 解析/规范化环节，记为观察项（不影响 F 判定）。
+  6. 产物（40 段 reference_pedals/reference_events/metadata/events③）与 CHECKSUMS 同步
+     为独立步骤：本地 AI 重算候选哈希清单上报，主控审后批准 push（见规格 §5）。
