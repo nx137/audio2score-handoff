@@ -61,11 +61,16 @@ start/change/stop；判据见 trial8_A_reviewer_exec.md §3）。云端实证：
 - Ravel 在 trial8 F 组维持「无 ③ 非 none 行可判」：理由更新 = 谱面/演奏客观无交集
   （裁决 #2 剔除结论不变，论据修正）。
 
-### 4.2 Liszt_9_67 alignment 0/85（独立问题，另案）
+### 4.2 Liszt_9_67 = 数据缺陷段（裁决 #10 定论，非代码 bug，仓库内无法补写）
 
-events.csv `reference_onset_ql` 0/85 全空：rebuild **只读不写**该列
-（`recompute_score_pedal_column` 仅改 published_score_pedal）；原始 build 对该段未写入。
-后续专项：补写 reference_onset_ql / 修复匹配。修复后 Liszt ③ 仍全 none 属此因，非修复无效。
+events.csv `reference_onset_ql` 0/85 根因（主控诊断）：external alignment 覆盖不足
+（151 行 / 887 QL，大空隙遍布；events 窗口 [132, 139.875] 落在 8.25→145.75 空隙内
+0 锚点）→ metadata score 窗口（number 15–16）是稀疏锚点线性插值的伪窗口（number 15
+谱面无音符、number 16 pitch 74–84，与 performance 的 pitch 100 反复 + LH 低音 39–58
+不符；全曲 pitch 100 实际密集于 number 14/X1、66–67/73）。
+- **不补写**：空隙上线性插值 = 伪造数据。
+- 修复路径 = 重新对齐该 performance 或重选段（外部工作，未来项）。
+- Liszt_9_67 **退出 trial8 ③/F 判定**。
 
 ### 4.3 Chopin 谱面 5 `<pedal>` vs pedal_events 3 条（观察项）
 
