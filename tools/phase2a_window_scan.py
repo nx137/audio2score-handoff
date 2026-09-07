@@ -20,7 +20,7 @@
      不得含任何谱面 pedal mark;
    - relaxed (#P2A-3, 用户拍板豁免): S145/2, Barcarolle —— 窗口边界不截断任何
      CC64 区间（无 cross_start / cross_end）。
-4) 事件量 ~100-300 为软目标（仅评分, 不硬过滤）。
+4) 事件量软目标 ~100-500（仅评分, 不硬过滤; 超 800 轻微惩罚）。
 
 用法:  python tools/phase2a_window_scan.py [--out outputs/pedal_expansion/window_scan_phase2A.json]
 """
@@ -79,7 +79,7 @@ def scan_score_pedal_marks(xml_path: Path) -> tuple[list, dict]:
                         if ptype in ("start", "stop", "change"):
                             marks.append((mno - (first_no or 1), ptype))
     marks.sort()
-    return marks, {"first_measure_no": first_no}
+    return marks, {"first_measure_no": first_no, "measures_count": mcount}
 
 
 def pair_score_marks(marks: list[tuple[int, str]]) -> list[tuple[int, int]]:
@@ -178,6 +178,12 @@ def scan_one(cfg: dict) -> dict:
     marks, minfo = scan_score_pedal_marks(xml_path)
     pairs = pair_score_marks(marks)
     gaps = load_alignment_gaps(align_path)
+    # 域一致性: 谱面(演奏展开)小节 vs perf uniform 小节
+    domain_warn = None
+    if minfo["measures_count"] and abs(minfo["measures_count"] - measure_count) / max(1, measure_count) > 0.05:
+        domain_warn = ("score_measures=%d vs perf_uniform_measures=%d differ >5%%; "
+                       "窗口 measure 索引按 perf uniform 域, 谱面 mark 索引按 number-first_no"
+                       % (minfo["measures_count"], measure_count))
 
     out.update({
         "time_sig": list(time_sig), "bar_ql": bar_ql, "tempo_bpm": tempo,
@@ -186,6 +192,8 @@ def scan_one(cfg: dict) -> dict:
         "score_pedal_marks": dict(Counter(k for _, k in marks)),
         "score_pedal_pairs_total": len(pairs),
         "first_measure_no": minfo["first_measure_no"],
+        "score_measures": minfo["measures_count"],
+        "domain_warning": domain_warn,
         "gap_intervals_score_ql": [[round(a, 2), round(b, 2)] for a, b in gaps],
         "constraints": {
             "min_score_pairs": cfg["min_score_pairs"],
@@ -245,14 +253,14 @@ def scan_one(cfg: dict) -> dict:
                 continue
             feasible.append(cand)
 
-    # 评分: pedal 对为主, 事件量贴近 100-300 的区间为佳, 边界截断越少越好
+    # 评分: pedal 对为主, 事件量贴近 100-500 为佳(超 800 轻微惩罚), 边界截断越少越好
     for cand in feasible:
         ev = cand["n_events"]
         ev_pen = 0.0
         if ev < 100:
             ev_pen = (100 - ev) / 100.0 * 10
-        elif ev > 300:
-            ev_pen = (ev - 300) / 100.0 * 10
+        elif ev > 800:
+            ev_pen = (ev - 800) / 100.0 * 10
         cand["score"] = round(
             cand["n_score_pairs"] * 100.0
             + min(cand["n_cc64_inside"], 60) * 2.0
@@ -318,12 +326,16 @@ def main() -> int:
         print("score pedal marks %s | pairs %d | cc64 pairs %d | gaps %s"
               % (res["score_pedal_marks"], res["score_pedal_pairs_total"],
                  res["cc64_pairs_total"], res["gap_intervals_score_ql"]))
+        if res.get("domain_warning"):
+            print("DOMAIN WARN:", res["domain_warning"])
         print("constraints %s" % res["constraints"])
         print("n_feasible = %d" % res["n_feasible"])
+        fn = res.get("first_measure_no", 1)
         for cand in res["top_candidates"][:8]:
-            print("  m%4d-%4d  ql %8.2f-%8.2f  score_pairs %3d  cc64_inside %3d"
+            print("  m%4d-%4d (score no %4d-%4d)  ql %8.2f-%8.2f  score_pairs %3d  cc64_inside %3d"
                   "  cross %d  events %4d  score %8.2f"
                   % (cand["start_measure"] + 1, cand["end_measure"] + 1,
+                     cand["start_measure"] + fn, cand["end_measure"] + fn,
                      cand["start_ql"], cand["end_ql"], cand["n_score_pairs"],
                      cand["n_cc64_inside"], cand["cc64_cross"],
                      cand["n_events"], cand["score"]))
