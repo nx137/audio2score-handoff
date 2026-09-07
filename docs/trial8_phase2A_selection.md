@@ -103,3 +103,35 @@
    若构建后 F 行 <10，则该段豁免「每段 ≥10 行」抽样门槛，按全部 F 行复核。
 
 约束更新：Miroirs/4 段「窗口内含 ≥3 对完整 pedal（start+stop）」；其余 4 段维持 ≥8 对。
+
+
+**裁定 #P2A-2：混合拍号段 uniform bar_ql 窗口偏差——接受（GS 既定近似），加边缘规避约束，不改代码。**
+
+触发（本地 AI S1 实测）：S145/2 窗口 uniform [24,120) vs score 真实 measure 累计 [24,135)
+（尾部差 15 QL ≈ 4 小节）；Miroirs/4 uniform [162,234) vs [174,246)（平移 12 QL）。
+
+主控取证结论：
+1. **坐标系双轨为 GS 既定设计**（rebuild_coord_fix_spec.md P0 权威记录）：Segment 的
+   start_ql/end_ql/bar_ql/time_sig 属 **performance-MIDI 坐标**（uniform）；score 侧窗口由
+   alignment 映射为真实 measure（如 GS Une Barque：perf measure 180–183 映射到 score
+   measure 72，metadata 有 score_start_ql/score_start_measure 与 coordinate_fix=
+   alignment-mapped-score-window 记录）。本地 AI 用 score 真实累计衡量 perf uniform 窗口
+   属坐标系混比，偏差方向性成立但基准错配。
+2. **GS 先例**：40 段含混合拍号段（Une Barque）以同机制构建并全量验收通过（裁决 #7），
+   P0 修复仅限 reference 侧（measure 粒度过滤），未改 build 侧——build 侧 uniform 是
+   有意的近似设计。
+3. **容差**：候选窗口裁剪自带 ±16 QL 缓冲（NEXT_AI_CONTEXT 记录"已验证窗口内输出与全曲
+   一致"）。S145/2 偏差 15 QL、Miroirs 12 QL 均 < 16 QL，在容差内但偏大（贴近上限）。
+4. **影响边界**：perf 窗口偏差影响 P3/P4 候选生成范围（评测用）；金标准六列标注
+   （events.csv ③ 判读）坐标权威在 rebuild 侧（alignment 映射 + measure 粒度过滤），
+   不受 perf 切窗偏差直接影响。
+
+裁定：
+- **不改 build 代码**（超出 Phase 2 授权；GS 同机制已验收）；接受偏差继续构建；
+- **新增 S1 选窗边缘规避约束**：窗口首尾各留 ≥2 小节（≈ 8 QL）内不得含 pedal 事件
+  （防窗口边缘偏差吃掉 pedal 样本）。若 S145/2/Miroirs/4 现选窗口不满足，向里收缩窗口
+  或微调 measure 范围后重新验证；
+- S6 质检回报须附 uniform-real 偏差实测值（perf 窗口 QL vs 该段 alignment 映射的
+  score 窗口 QL），供主控最终判断产物边界。
+
+约束更新：S1 在「≥8/≥3 对 pedal」与「空隙规避」之外，追加「窗口边缘 ≥2 小节无 pedal」。
