@@ -315,3 +315,33 @@ A **不自行判定、不自行入库**。
   4. 观察项（不阻塞）：main 上旧产物行尾/编码与 rebuild 输出不一致（158 文件行尾噪声），
      未来每次 rebuild 都会产生同类幽灵改动——留待 .gitattributes 统一行尾或 writer
      规范化，另案处理。
+
+
+### 2026-09-06 主控裁决 #10：Liszt_9_67 定性为「数据缺陷段」——reference_onset_ql 无法可靠补写，退出 trial8 ③/F 判定
+- 背景：按用户指示「文件修改由主控直接操作、本地 AI 只做验证」，主控亲自诊断
+  Liszt_9_67 alignment 0/85（本拟补写 reference_onset_ql 使该段参与 F 判定）。
+- 主控取证（云端：alignment CSV、events.csv、reference_events、全曲 xml_score）：
+  1. `_alignments/Liszt_9_67.csv`（151 行）覆盖全曲 perf 4.1–887.7 QL，但**大空隙遍布**：
+     8.25→145.75（空 137.5 QL）、214.4→283.6（空 69）、411→524.8（空 114）等；
+     events 窗口 [132, 139.875] 落在 8.25→145.75 空隙内，**0 锚点**（最近锚 145.75，
+     距窗口 5.9+ QL）→ reference_onset_ql 无法匹配 → 0/85。
+  2. metadata score 窗口（score_start_ql=106.967, measure number 15–16）是稀疏锚点
+     线性插值的**伪窗口**：插值建立在 8.25→145.75 空隙两端假设演奏速度恒定之上。
+  3. **内容不匹配铁证**：performance 事件 = RH pitch 100 反复 ×80 + LH 低音 39–58；
+     score 窗口 number 15 **无音符**（仅 pedal direction）、number 16 音符 pitch 74–84；
+     全曲 pitch 100 密集于 number 14/X1（7+7）与 66–67/73 等——performance 真实 score
+     位置应在别处，伪窗口映射错误。
+  4. 该段 external alignment（candidate_stats: unmatched 256/261）对大部分区域失败。
+- 定性：
+  1. Liszt_9_67 的 reference_onset_ql 0/85 = **数据缺陷**（alignment 覆盖不足 + 伪窗口），
+     **非代码 bug，无法在仓库内可靠补写**（空隙上线性插值 = 伪造数据，违反红线）。
+  2. 该段 score 侧资产（reference_pedals stop@106.0 / reference_events / score 窗口）建立
+     在可疑伪窗口上 → 即使 reference_pedals 提取技术上正确（真实全曲谱面 number 15 的
+     pedal），也**不能作为该 performance 的可靠 score 锚**。
+  3. Liszt_9_67 **退出 trial8 ③/F 判定**（与 Ravel 并列排除，但原因不同：Ravel = 谱面/
+     演奏客观无时刻交集；Liszt = alignment 数据缺陷无法建立 score 坐标）。
+  4. 修复路径 = 重新对齐该 performance（外部对齐工具/模型）或重选段——超出仓库内
+     代码修复范围，记为**未来工作**，需用户拍板是否投入。
+- trial8 影响：8 段中谱面含 `<pedal>` 的 3 段（Ravel / Liszt / Chopin）仅 Chopin 可参与
+  F 判定（50 行，100% confirmed）→ **③ 自动标注可靠性验证样本严重不足**（1 段 50 行），
+  D 阶段判定口径需重新设计（扩展样本或接受 Chopin 单段 + 记录限制）。
