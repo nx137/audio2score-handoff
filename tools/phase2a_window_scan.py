@@ -85,22 +85,22 @@ def scan_score_pedal_marks(xml_path: Path) -> tuple[list, dict]:
 
 
 def pair_score_marks(marks: list[tuple[int, str]]) -> list[tuple[int, int]]:
-    """谱面 pedal 标记配对: start/change 开启, stop/change 关闭。
-    返回 [(start_idx, end_idx)] 0-based measure 索引。change 拆为闭+开。"""
+    """谱面 pedal 标记配对: start/change 开启, stop/change 关闭(栈式: 最近未配 start 优先)。
+    返回 [(start_idx, end_idx)] 0-based measure 索引。change 拆为闭+开。
+    注: 同 measure 可出现多个记号(如 6/8 半小节踏板), 顺序配对会覆盖丢失——必须用栈。"""
     pairs: list[tuple[int, int]] = []
-    open_idx: int | None = None
+    opens: list[int] = []
     for idx, kind in marks:
-        if kind == "stop":
-            if open_idx is not None:
-                pairs.append((open_idx, idx))
-                open_idx = None
+        if kind == "start":
+            opens.append(idx)
         elif kind == "change":
-            if open_idx is not None:
-                pairs.append((open_idx, idx))
-            open_idx = idx
-        elif kind == "start":
-            open_idx = idx
-    # 谱面最后若以 start 悬空(谱面惯例停踏板记号缺失), 不入对
+            if opens:
+                pairs.append((opens.pop(), idx))
+            opens.append(idx)
+        elif kind == "stop":
+            if opens:
+                pairs.append((opens.pop(), idx))
+    # 谱面末尾悬空的 start(无对应 stop, 如 Barcarolle 37 处) 不入对
     return pairs
 
 
