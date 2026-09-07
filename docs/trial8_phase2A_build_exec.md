@@ -56,8 +56,15 @@ N = 0..4。逐段执行，记录每段 build_log 输出与耗时。
 python tools/rebuild_segment_reference.py --segment <sid_1> --segment <sid_2> ... --dry-run   # 先看 diff
 python tools/rebuild_segment_reference.py --segment <sid_1> --segment <sid_2> ...            # 落盘
 ```
-注意：该脚本的 BASE（build_log.json 所在目录）可能硬编码 formal_20260828_v1。
-**若硬编码且无法指向 segments_v1，先停下向主控回报**——由主控决定小改（加 --out/--base 参数）后再继续，
+脚本已支持 `--base`（commit 18b2489d41，默认仍为 formal_20260828_v1、向后兼容）：
+```
+python tools/rebuild_segment_reference.py --base outputs/pedal_expansion/segments_v1 \
+    --segment <sid_1> --segment <sid_2> ... --dry-run   # 先看 diff
+python tools/rebuild_segment_reference.py --base outputs/pedal_expansion/segments_v1 \
+    --segment <sid_1> --segment <sid_2> ...             # 落盘
+```
+注意：`--base` 必须指向含该段 `build_log.json` 的根（segments_v1 的 build_log 由
+build_formal_segments --out 自动生成）；40 段历史重跑仍用默认值（不传 --base）。
 不得把扩样段写进 40 段冻结根。
 
 ### S5 六列自动标注
