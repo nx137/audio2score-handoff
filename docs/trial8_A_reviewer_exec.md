@@ -296,3 +296,22 @@ A **不自行判定、不自行入库**。
   5. 观察项（不阻塞）：reference_pedals.csv 的 position_location 列用 fmt_beat 均匀
      bar_ql 反查，混合拍号段（Ravel）显示 measure 可能不准——position_ql 为判读锚
      不受影响，留待后续核对。
+
+
+### 2026-09-06 主控裁决 #9：入库执行授权——还原 159 个无语义改动，仅提交 2 个 reference_pedals
+- 背景：本地 AI 执行裁决 #8 入库前澄清 git status：tracked 改动 161 个，语义变更仅
+  Ravel / Liszt_9_67 的 reference_pedals 2 个；其余 159 个 = 38 个 reference_pedals
+  行尾 + 40 个 metadata（仅 applied_at 时间戳）+ 40 个 reference_events 行尾 +
+  40 个 reference_score.musicxml 行尾 + 1 个 segment_reference_rebuild.json
+  （rebuild 运行记录）。均无语义（裁决 #8 定不入库），但工作区 dirty 使
+  「git status 只含 2 文件」条件无法满足，请求指示。
+- 裁决：
+  1. 授权还原（git checkout / git restore）除 2 个目标 reference_pedals 外的全部
+     159 个改动（含 segment_reference_rebuild.json——rebuild 运行记录，每次运行必变，
+     与 metadata applied_at 同理不入库；审计走 commit 消息与规格/裁决文档）。
+  2. 还原后 `git status` 应只含 2 个文件（M）→ add 这 2 个 → commit → push origin
+     main（commit 消息注明裁决 #8/#9）。
+  3. 还原后若仍有其他改动，或 push 后远端与本地不一致 → 停下报告。
+  4. 观察项（不阻塞）：main 上旧产物行尾/编码与 rebuild 输出不一致（158 文件行尾噪声），
+     未来每次 rebuild 都会产生同类幽灵改动——留待 .gitattributes 统一行尾或 writer
+     规范化，另案处理。
