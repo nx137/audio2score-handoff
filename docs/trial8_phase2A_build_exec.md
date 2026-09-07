@@ -36,7 +36,8 @@
 `outputs/pedal_expansion/selection_phase2A.json`：
 - 每段含 `row`（composer/title/midi_performance/midi_score/xml_score 路径，对齐 ASAP 实际目录）、
   `start_measure`/`end_measure`、`bar_ql`、`time_sig`、`tempo_bpm`（从该曲 score/perf 实测）；
-- 窗口须满足 §2 表约束，且每段窗口内含 **≥8 对完整 pedal（start+stop）**；
+- 窗口须满足 §2 表约束，且每段窗口内含 **≥8 对完整 pedal（start+stop）**
+  （例外：裁定 #P2A-1——Miroirs/4 豁免降为 **≥3 对**，见 trial8_phase2A_selection.md §8）；
 - 窗口大小参考 GS 段（事件量 ~100–300 为佳，允许 ±）；
 - 选窗后**必须验证**：窗口 QL 区间与对齐空隙（§2 表）不重叠（Miroirs/4 与 Barcarolle 硬约束）。
 
