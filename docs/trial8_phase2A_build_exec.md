@@ -25,7 +25,7 @@
 | 2 | Liszt_Concert_Etude_S145_2_* | data/ASAP/Liszt/Concert_Etude_S145/2/ | Lu03M（`.../Liszt__Concert_Etude_S145__2__Lu03M.csv`，备选 Tario06M/Lo02/ZhangX03） | 无空隙约束；pedal 210 对/113 小节 |
 | 3 | Rachmaninoff_Preludes_op_32_10_* | data/ASAP/Rachmaninoff/Preludes_op_32/10/ | Floril03（唯一 perf，`.../Rachmaninoff__Preludes_op_32__10__Floril03.csv`） | 短曲 span 240 QL；建议覆盖 pedal 连续区（m18 起 21 小节） |
 | 4 | Chopin_Barcarolle_* | data/ASAP/Chopin/Barcarolle/ | Rozanski07M（`.../Chopin__Barcarolle__Rozanski07M.csv`，9 perf 均可用） | **窗口避开曲尾 QL>600**（空隙 @635.7–675.2，9 perf 一致） |
-| 5 | Ravel_Miroirs_4_Alborada_del_gracioso_* | data/ASAP/Ravel/Miroirs/4_Alborada_del_gracioso/ | Chan02（`.../Ravel__Miroirs__4_Alborada_del_gracioso__Chan02.csv`，10 perf 均可用） | **窗口定原谱 m55–78（QL 165–243）**；必须避开空隙 @245.0–285.5（m78–92）。m82/85/89/91 四个 pedal 无对齐锚，不参与 ③ 判读 |
+| 5 | Ravel_Miroirs_4_Alborada_del_gracioso_* | data/ASAP/Ravel/Miroirs/4_Alborada_del_gracioso/ | Chan02（`.../Ravel__Miroirs__4_Alborada_del_gracioso__Chan02.csv`，10 perf 均可用） | **窗口 = 扫描定窗（2026-09-07，见 docs/trial8_phase2A_window_selection.md；双域扫描结果替换预置建议）**；硬约束：避开 score 域空隙 @245.0–285.5 且内含 ≥3 完整 pedal 对（#P2A-1）。不参与 ③ 判读 |
 
 注：* = start_measure+1（段内首个 measure 编号，沿用 GS 命名惯例：sid 数字 = 起始 measure 序号）。
 
@@ -98,7 +98,7 @@ python tools/annotate_events.py outputs/pedal_expansion/segments_v1/<sid>/...   
 ## 4. 验证点（全部通过才回报“完成”）
 
 - [ ] 五段 events.csv 六列全填（语义三列 0 人工；决策三列规则复核），结构同 GS；
-- [ ] 窗口与空隙无重叠（Miroirs/4 硬约束：窗口 ⊆ QL 165–243；Barcarolle：QL 起点 <600）；
+- [ ] 窗口与空隙无重叠（硬约束按扫测定窗：Miroirs/4 避开 score 域空隙 @245.0–285.5 且 ≥3 对；Barcarolle 避开 @646.25–675.25 且 score 域 end <600；详见 docs/trial8_phase2A_window_selection.md）；
 - [ ] 每段 F 可判行（③ 非 none）与 pedal 对数量级匹配，不出现异常 0；
 - [ ] reference_score.musicxml 的 `<pedal>` 与 reference_pedals.csv 对账一致；
 - [ ] 未触碰 formal_20260828_v1 任何文件（git status 确认）；

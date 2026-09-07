@@ -1,0 +1,126 @@
+{
+ "phase2A": true,
+ "scope": "Phase 2A pedal-rich expansion, 5 segments (exec: docs/trial8_phase2A_build_exec.md)",
+ "basis": "tools/phase2a_window_scan.py real run @ c60025a4 (local machine, exit 0)",
+ "scan_json_local": "outputs/pedal_expansion/window_scan_phase2A.json (untracked, reproducible via tool)",
+ "rulings_applied": [
+  "#P2A-1 (Miroirs/4 min 3 pairs)",
+  "#P2A-2 (strict edges)",
+  "#P2A-3 (S145/2+Barcarolle relaxed: no CC64 cut at perf boundary)"
+ ],
+ "window_domain_note": "start_measure/end_measure = 0-based PERF uniform measure indices; start_ql=start_measure*bar_ql; seg_id number = start_measure+1 (NOT score measure)",
+ "selection_record": "docs/trial8_phase2A_window_selection.md",
+ "created": "2026-09-07T22:05+08:00",
+ "segments": [
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Chopin\u001fBallades_3",
+    "composer": "Chopin",
+    "title": "Ballades_3",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "3",
+    "midi_performance": "Chopin/Ballades/3/Ko11M.mid",
+    "midi_score": "Chopin/Ballades/3/midi_score.mid",
+    "xml_score": "Chopin/Ballades/3/xml_score.musicxml"
+   },
+   "start_measure": 54,
+   "end_measure": 93,
+   "score": 4415.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Liszt\u001fConcert_Etude_S145_2",
+    "composer": "Liszt",
+    "title": "Concert_Etude_S145_2",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "4",
+    "midi_performance": "Liszt/Concert_Etude_S145/2/Lu03M.mid",
+    "midi_score": "Liszt/Concert_Etude_S145/2/midi_score.mid",
+    "xml_score": "Liszt/Concert_Etude_S145/2/xml_score.musicxml"
+   },
+   "start_measure": 0,
+   "end_measure": 39,
+   "score": 13444.5,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Rachmaninoff\u001fPreludes_op_32_10",
+    "composer": "Rachmaninoff",
+    "title": "Preludes_op_32_10",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "1",
+    "midi_performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+    "midi_score": "Rachmaninoff/Preludes_op_32/10/midi_score.mid",
+    "xml_score": "Rachmaninoff/Preludes_op_32/10/xml_score.musicxml"
+   },
+   "start_measure": 23,
+   "end_measure": 62,
+   "score": 1847.7,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Chopin\u001fBarcarolle",
+    "composer": "Chopin",
+    "title": "Barcarolle",
+    "performance_rank_in_piece": "7",
+    "performances_in_piece": "9",
+    "midi_performance": "Chopin/Barcarolle/Rozanski07M.mid",
+    "midi_score": "Chopin/Barcarolle/midi_score.mid",
+    "xml_score": "Chopin/Barcarolle/xml_score.musicxml"
+   },
+   "start_measure": 0,
+   "end_measure": 35,
+   "score": 1812.0,
+   "bar_ql": 3.0,
+   "time_sig": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0
+  },
+  {
+   "row": {
+    "split": "train",
+    "piece_key": "Ravel\u001fMiroirs_4_Alborada_del_gracioso",
+    "composer": "Ravel",
+    "title": "Miroirs_4_Alborada_del_gracioso",
+    "performance_rank_in_piece": "1",
+    "performances_in_piece": "8",
+    "midi_performance": "Ravel/Miroirs/4_Alborada_del_gracioso/Chan02.mid",
+    "midi_score": "Ravel/Miroirs/4_Alborada_del_gracioso/midi_score.mid",
+    "xml_score": "Ravel/Miroirs/4_Alborada_del_gracioso/xml_score.musicxml"
+   },
+   "start_measure": 24,
+   "end_measure": 59,
+   "score": 476.0,
+   "bar_ql": 4.0,
+   "time_sig": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.0
+  }
+ ]
+}

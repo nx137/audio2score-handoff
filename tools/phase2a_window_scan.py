@@ -431,7 +431,7 @@ def main() -> int:
             print("  m%4d-%4d (score no %4d-%4d)  ql %8.2f-%8.2f  score_pairs %3d  cc64_inside %3d"
                   "  cross %d  events %4d  score %8.2f"
                   % (cand["start_measure"] + 1, cand["end_measure"] + 1,
-                     cand["start_measure"] + fn, cand["end_measure"] + fn,
+                     cand["score_m0"] + fn, cand["score_m1"] + fn,
                      cand["start_ql"], cand["end_ql"], cand["n_score_pairs"],
                      cand["n_cc64_inside"], cand["cc64_cross"],
                      cand["n_events"], cand["score"]))
