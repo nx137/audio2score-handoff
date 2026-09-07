@@ -158,8 +158,107 @@ def build_segment_config() -> list[dict]:
          "min_score_pairs": 3, "edge": "strict", "gap_avoid": True},
     ]
 
+SCORE_MARGIN_QL = 16.0  # 窗口映射 margin 档扩展量(与 rebuild_segment_reference 同口径)
+
+
+def read_alignment_rows(align_csv: Path) -> list[tuple[float, float]]:
+    """对齐行 [(perf_ql, score_ql)]，按 perf 排序（perf=onset_ql, score=reference_onset_ql）。"""
+    rows = []
+    with align_csv.open(encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            try:
+                rows.append((float(row["onset_ql"]), float(row["reference_onset_ql"])))
+            except (KeyError, ValueError):
+                continue
+    return sorted(rows, key=lambda item: item[0])
+
+
+def map_perf_to_score(rows, w0: float, w1: float) -> tuple[float, float, str] | None:
+    """perf 窗口 [w0,w1] -> score QL 区间 [s0,s1]（三档 strict/margin/interp）。
+
+    与 rebuild_segment_reference.map_score_window 同逻辑(GS coordinate_fix):
+    perf 轴(演奏)与 score 轴(谱面)是两条不可直接互算的时间轴, 必须经 alignment。"""
+    strict = [r for (_p, r) in rows if w0 - EPS <= _p <= w1 + EPS]
+    if strict:
+        return min(strict), max(strict), "strict"
+    margin = [r for (_p, r) in rows
+              if w0 - SCORE_MARGIN_QL - EPS <= _p <= w1 + SCORE_MARGIN_QL + EPS]
+    if margin:
+        return min(margin), max(margin), "margin"
+    if not rows:
+        return None
+
+    def _ps(q):
+        if q <= rows[0][0] + EPS:
+            return rows[0][1]
+        if q >= rows[-1][0] - EPS:
+            return rows[-1][1]
+        lo, hi = 0, len(rows) - 1
+        while hi - lo > 1:
+            mid = (lo + hi) // 2
+            if rows[mid][0] <= q:
+                lo = mid
+            else:
+                hi = mid
+        p1, r1 = rows[lo]
+        p2, r2 = rows[hi]
+        if p2 - p1 <= EPS:
+            return r1
+        return r1 + (q - p1) * (r2 - r1) / (p2 - p1)
+
+    s0, s1 = _ps(w0), _ps(w1)
+    if s1 <= s0 + EPS:
+        return None
+    return s0, s1, "interp"
+
+
+def score_measure_starts_local(xml_path: Path) -> list[float]:
+    """谱面每小节起点(score QL, 真实拍号累计)。localname 兼容命名空间; 取第一个 part。"""
+    root = ET.parse(str(xml_path)).getroot()
+    starts: list[float] = []
+    ms = 0.0
+    bar = 4.0
+    for part in root:
+        if localname(part.tag) != "part":
+            continue
+        for measure in part:
+            if localname(measure.tag) != "measure":
+                continue
+            starts.append(ms)
+            attrs = measure.find("attributes")
+            if attrs is not None:
+                beats = attrs.findtext("time/beats")
+                bt = attrs.findtext("time/beat-type")
+                if beats and bt:
+                    bar = 4.0 * float(beats) / float(bt)
+            ms += bar
+        break
+    return starts
+
+
+def measure_index_range_local(starts: list[float], s0: float, s1: float) -> tuple[int, int]:
+    """score QL [s0,s1] 覆盖的小节 0-based 索引 [first, last]（与 rebuild 同语义）。"""
+    if not starts:
+        return 0, 0
+    first = 0
+    for i, s in enumerate(starts):
+        if s <= s0 + EPS:
+            first = i
+    last = len(starts) - 1
+    for i, s in enumerate(starts):
+        if s >= s1 - EPS:
+            last = i - 1
+            break
+    return first, max(last, first)
+
 
 def scan_one(cfg: dict) -> dict:
+    """坐标系（GS 双轨, 与 rebuild_segment_reference 一致）:
+    - 窗口在 perf uniform 域枚举（GS Segment 语义, slice_midi 用）;
+    - 谱面 pedal/空隙/边缘约束全部在 score 域判断: perf 窗口 -> alignment 映射
+      -> score QL 区间 -> score measure 范围（map_perf_to_score 三档）。
+    谱面(记谱/未展开反复)与 perf(演奏序)小节数不同(如 S145/2 168 vs 78),
+    直接按 measure 号硬绑会系统失真, 必须经 alignment 映射。"""
     r = cfg["row"]
     out: dict = {"key": cfg["key"], "error": None}
 
@@ -179,13 +278,9 @@ def scan_one(cfg: dict) -> dict:
 
     marks, minfo = scan_score_pedal_marks(xml_path)
     pairs = pair_score_marks(marks)
-    gaps = load_alignment_gaps(align_path)
-    # 域一致性: 谱面(演奏展开)小节 vs perf uniform 小节
-    domain_warn = None
-    if minfo["measures_count"] and abs(minfo["measures_count"] - measure_count) / max(1, measure_count) > 0.05:
-        domain_warn = ("score_measures=%d vs perf_uniform_measures=%d differ >5%%; "
-                       "窗口 measure 索引按 perf uniform 域, 谱面 mark 索引按 number-first_no"
-                       % (minfo["measures_count"], measure_count))
+    score_starts = score_measure_starts_local(xml_path)
+    gaps = load_alignment_gaps(align_path)          # score 域空隙(reference_onset_ql)
+    align_rows = read_alignment_rows(align_path)    # [(perf_ql, score_ql)]
 
     out.update({
         "time_sig": list(time_sig), "bar_ql": bar_ql, "tempo_bpm": tempo,
@@ -195,7 +290,7 @@ def scan_one(cfg: dict) -> dict:
         "score_pedal_pairs_total": len(pairs),
         "first_measure_no": minfo["first_measure_no"],
         "score_measures": minfo["measures_count"],
-        "domain_warning": domain_warn,
+        "score_total_ql": round(score_starts[-1] + 4.0, 2) if score_starts else None,
         "gap_intervals_score_ql": [[round(a, 2), round(b, 2)] for a, b in gaps],
         "constraints": {
             "min_score_pairs": cfg["min_score_pairs"],
@@ -205,12 +300,8 @@ def scan_one(cfg: dict) -> dict:
         },
     })
 
-    def mark_ql(idx0: int) -> float:
-        return idx0 * bar_ql
-
     feasible = []
     rejected = Counter()
-
     for length in WINDOW_LENS:
         if length > measure_count:
             continue
@@ -219,25 +310,30 @@ def scan_one(cfg: dict) -> dict:
             w0, w1 = start * bar_ql, (end + 1) * bar_ql
             cand = {"start_measure": start, "end_measure": end,
                     "start_ql": round(w0, 3), "end_ql": round(w1, 3)}
-            # --- 谱面完整对 ---
-            inside = [p for p in pairs if p[0] >= start and p[1] <= end]
-            n_score_pairs = len(inside)
-            # --- CC64 ---
+            mapped = map_perf_to_score(align_rows, w0, w1)
+            if mapped is None:
+                rejected["unmapped"] += 1
+                continue
+            s0, s1, method = mapped
+            if s1 <= s0 + EPS or s1 - s0 > (w1 - w0) * 6.0 + 40.0:
+                rejected["unmapped"] += 1
+                continue
+            i0, i1 = measure_index_range_local(score_starts, s0, s1)
+            cand.update({"score_ql0": round(s0, 2), "score_ql1": round(s1, 2),
+                         "map_method": method, "score_m0": i0, "score_m1": i1})
+            n_score_pairs = sum(1 for a, b in pairs if a >= i0 and b <= i1)
+            gap_overlap = any(not (s1 <= ga + EPS or gb <= s0 + EPS) for ga, gb in gaps)
+            if cfg.get("end_ql_max") is not None and s1 >= cfg["end_ql_max"]:
+                gap_overlap = True
             cc_inside = sum(1 for s, e in pedals if s >= w0 - EPS and e <= w1 + EPS)
             cc_cross = sum(1 for s, e in pedals
                            if (s < w0 - EPS < e) or (s < w1 - EPS < e))
-            # --- 事件量 ---
             n_events = sum(1 for rec in records if w0 - EPS <= rec.onset_ql < w1)
-            # --- 空隙 ---
-            gap_overlap = any(not (w1 <= ga + EPS or gb <= w0 + EPS) for ga, gb in gaps)
-            if cfg.get("end_ql_max") is not None and w1 >= cfg["end_ql_max"]:
-                gap_overlap = True  # 曲尾空隙余量约束并入 gap_overlap
-            # --- 边缘 ---
             if cfg["edge"] == "strict":
                 edge_ok = not any(
-                    (start - 2 <= idx <= start - 1) or (end + 1 <= idx <= end + 2)
+                    (i0 - 2 <= idx <= i0 - 1) or (i1 + 1 <= idx <= i1 + 2)
                     for idx, _ in marks)
-            else:  # relaxed: 边界不截断 CC64
+            else:  # relaxed: perf 边界不截断 CC64 (#P2A-3)
                 edge_ok = cc_cross == 0
             cand.update({
                 "n_score_pairs": n_score_pairs, "n_cc64_inside": cc_inside,
@@ -255,7 +351,6 @@ def scan_one(cfg: dict) -> dict:
                 continue
             feasible.append(cand)
 
-    # 评分: pedal 对为主, 事件量贴近 100-500 为佳(超 800 轻微惩罚), 边界截断越少越好
     for cand in feasible:
         ev = cand["n_events"]
         ev_pen = 0.0
@@ -268,17 +363,13 @@ def scan_one(cfg: dict) -> dict:
             + min(cand["n_cc64_inside"], 60) * 2.0
             - ev_pen - cand["cc64_cross"] * 5.0, 2)
 
-    feasible.sort(key=lambda c: (-c["score"], c["start_measure"]))
+    feasible.sort(key=lambda cc: (-cc["score"], cc["start_measure"]))
     out["n_feasible"] = len(feasible)
     out["top_candidates"] = feasible[:TOP_N]
 
     if not feasible:
-        diag = {
-            "rejected_by": {k: v for k, v in rejected.items()},
-            "note": ("rejected_by 计每个被拒窗口首次命中该约束的次数"
-                     "（窗口可能命中多个, 先记先验顺序）"),
-        }
-        # 最近似窗口: 只差边缘 或 只差 1 对（宽松评估, 供主控裁决降级）
+        diag = {"rejected_by": {k: v for k, v in rejected.items()},
+                "note": "rejected_by = 每窗口首次命中该约束次数(可能多命中, 先记先验序)"}
         near = []
         for length in (12, 16, 20, 24, 28):
             if length > measure_count:
@@ -286,27 +377,30 @@ def scan_one(cfg: dict) -> dict:
             for start in range(0, measure_count - length + 1):
                 end = start + length - 1
                 w0, w1 = start * bar_ql, (end + 1) * bar_ql
-                inside = [p for p in pairs if p[0] >= start and p[1] <= end]
-                cc_cross = sum(1 for s, e in pedals
-                               if (s < w0 - EPS < e) or (s < w1 - EPS < e))
-                gap_ov = any(not (w1 <= ga + EPS or gb <= w0 + EPS) for ga, gb in gaps)
-                if cfg.get("end_ql_max") is not None and w1 >= cfg["end_ql_max"]:
-                    gap_ov = True
-                n_score_pairs = len(inside)
-                if gap_ov:
+                mapped = map_perf_to_score(align_rows, w0, w1)
+                if mapped is None:
                     continue
-                near.append({
-                    "start_measure": start, "end_measure": end,
-                    "n_score_pairs": n_score_pairs,
-                    "minus_pairs": cfg["min_score_pairs"] - n_score_pairs,
-                    "cc64_cross": cc_cross,
-                    "n_events": sum(1 for rec in records if w0 - EPS <= rec.onset_ql < w1),
-                })
-        near.sort(key=lambda c: (max(0, c["minus_pairs"]), c["cc64_cross"]))
+                s0, s1, _m = mapped
+                if s1 - s0 > (w1 - w0) * 6.0 + 40.0:
+                    continue
+                i0, i1 = measure_index_range_local(score_starts, s0, s1)
+                if any(not (s1 <= ga + EPS or gb <= s0 + EPS) for ga, gb in gaps):
+                    continue
+                if cfg.get("end_ql_max") is not None and s1 >= cfg["end_ql_max"]:
+                    continue
+                np_ = sum(1 for a, b in pairs if a >= i0 and b <= i1)
+                ccx = sum(1 for s, e in pedals
+                          if (s < w0 - EPS < e) or (s < w1 - EPS < e))
+                near.append({"start_measure": start, "end_measure": end,
+                             "score_m0": i0, "score_m1": i1,
+                             "n_score_pairs": np_,
+                             "minus_pairs": cfg["min_score_pairs"] - np_,
+                             "cc64_cross": ccx,
+                             "n_events": sum(1 for rec in records if w0 - EPS <= rec.onset_ql < w1)})
+        near.sort(key=lambda x: (max(0, x["minus_pairs"]), x["cc64_cross"]))
         diag["near_miss_top"] = near[:10]
         out["diagnosis"] = diag
     return out
-
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
