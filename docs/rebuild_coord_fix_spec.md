@@ -1,6 +1,6 @@
 # rebuild_segment_reference.py 坐标 bug 修复规格（P0 · 裁决 #7 定稿版）
 
-- 日期：2026-09-06 | 状态：代码修复已合入 main；40 段全量验证通过；产物与 CHECKSUMS 待同步
+- 日期：2026-09-06 | 状态：修复完成（代码合入 main、40 段全量验证通过）；入库集 = 2 个 reference_pedals.csv（裁决 #8）
 - 主控裁决依据：trial8_A_reviewer_exec.md 裁决 #4（原始诊断）、#5（根因修正）、
   #6（Liszt_9_67 定性 + 放行全量）、#7（Ravel ③=0 正确性 + 批准入库；以最新为准）
 
@@ -72,13 +72,20 @@ events.csv `reference_onset_ql` 0/85 全空：rebuild **只读不写**该列
 m.599/m.602 的 `<pedal>` 未形成独立窗口事件（相邻 start 合并 / position 归并 / 规范化）。
 不影响 F 组判定（锚 1797/1800/1806 精确对齐、50/50 confirmed），留待后续核查。
 
-## 5. 待办：产物入库 + CHECKSUMS 同步
+## 5. 入库（裁决 #8 修正：纯 git，无 CHECKSUMS 同步）
 
-1. rebuild 重写了 40 段 reference_pedals.csv / reference_events.csv / segment_metadata.json /
-   events.csv（仅 published_score_pedal 列）——为 CHECKSUMS 注册产物，入库须同步哈希。
-2. 流程：本地 AI 在本地以候选产物重算受影响文件 sha256 → 上报候选哈希清单（含新增/变更/
-   不变清单）→ 主控审阅完整性 → 批准后产物 push + CHECKSUMS.sha256 更新 + verify 全绿。
-3. 未批准前：产物留本地/分支，不 push；CHECKSUMS.sha256 不动。
+- 核查（裁决 #8 云端核实）：CHECKSUMS.sha256（4046 行）中 formal_20260828_v1 下**仅
+  iaa/ 10 个文件**（IAA_ANNOTATION_GUIDE + 8 张 iaa_*.csv + iaa_sample_manifest.csv）；
+  40 段 reference_pedals / reference_events / segment_metadata / events / reference_score
+  等派生产物**均非 CHECKSUMS 注册文件**（CHECKSUMS 只锁定不可重建资产：ASAP 原始数据
+  data 3884 条、evals 33、人工标注 iaa），由 git 版本管理。
+- 入库方式 = **纯 git 提交产物本身**；不更新 CHECKSUMS.sha256；不影响 verify。
+- 本次入库集 = **2 个文件**：Ravel_Miroirs_3_Une_Barque_181 / Liszt_Transcendental_Etudes_9_67
+  的 reference_pedals.csv（语义变更 0→3、0→1）。40 段 metadata 仅 applied_at 时间戳变
+  （无语义，不入库）；events（psp_changed 全段=0）/ reference_events / reference_score
+  无变更（不入库）。
+- 观察项：reference_pedals.csv 的 position_location 列用 fmt_beat 均匀 bar_ql 反查，
+  混合拍号段（Ravel）显示 measure 可能不准——position_ql 为判读锚不受影响，留待核对。
 
 ## 6. 红线
 
