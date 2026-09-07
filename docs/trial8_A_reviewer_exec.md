@@ -269,3 +269,30 @@ A **不自行判定、不自行入库**。
      中 2 个未成独立事件属 pedal_events 解析/规范化环节，记为观察项（不影响 F 判定）。
   6. 产物（40 段 reference_pedals/reference_events/metadata/events③）与 CHECKSUMS 同步
      为独立步骤：本地 AI 重算候选哈希清单上报，主控审后批准 push（见规格 §5）。
+
+
+### 2026-09-06 主控裁决 #8：40 段 rebuild 产物非 CHECKSUMS 注册文件 → 入库 = 纯 git，规格 §5 修正
+- 背景：本地 AI 执行入库准备时核查 CHECKSUMS.sha256，发现 formal_20260828_v1 下仅
+  iaa/ 10 个文件，无 reference_pedals / events / metadata 等条目，与规格 §5
+  「为 CHECKSUMS 注册产物，入库须同步哈希」假设不符，停下上报。
+- 主控云端核实（CHECKSUMS.sha256 4046 行）：
+  - formal_20260828_v1 条目 = **10**（IAA_ANNOTATION_GUIDE.md + 8 张 iaa_*.csv +
+    iaa_sample_manifest.csv），无 40 段产物任何条目；
+  - 顶层分布：data 3884（ASAP 原始数据）/ audio2score 31 / evals 33 / results 53 /
+    tools 18 / outputs 10（即 iaa）/ docs 4 等；
+  - 设计逻辑：CHECKSUMS 锁定**不可重建资产**（ASAP 原始数据、人工标注、冻结评估），
+    40 段 reference_* / events / metadata 等**派生产物**可由代码 + 输入重建，靠 git 管理。
+- 裁决：
+  1. 本地 AI 核查属实 → 规格 §5「入库须同步 CHECKSUMS 哈希」假设**作废**；
+     候选哈希清单与候选 verify 自测**不适用**（无 CHECKSUMS 行可比）。
+  2. 入库方式 = **纯 git 提交产物本身**；不更新 CHECKSUMS.sha256；不影响 verify
+     （校验范围不含这些文件）。
+  3. 本次语义变更仅 **2 个文件**：Ravel / Liszt_9_67 的 reference_pedals.csv（0→3、0→1）；
+     40 段 metadata 仅 applied_at 时间戳变化（无语义，不入库）；events
+     （psp_changed 全段 = 0）/ reference_events / reference_score 无变更（不入库）。
+  4. 授权本地 AI：git add 这 2 个 reference_pedals.csv → commit（消息注明裁决 #8）→ push
+     main。push 前 `git status` 必须只含这 2 个文件；若含其他改动 → 停下报告构成，
+     不得连带提交。
+  5. 观察项（不阻塞）：reference_pedals.csv 的 position_location 列用 fmt_beat 均匀
+     bar_ql 反查，混合拍号段（Ravel）显示 measure 可能不准——position_ql 为判读锚
+     不受影响，留待后续核对。
