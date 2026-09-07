@@ -38,6 +38,12 @@
   `start_measure`/`end_measure`、`bar_ql`、`time_sig`、`tempo_bpm`（从该曲 score/perf 实测）；
 - 窗口须满足 §2 表约束，且每段窗口内含 **≥8 对完整 pedal（start+stop）**
   （例外：裁定 #P2A-1——Miroirs/4 豁免降为 **≥3 对**，见 trial8_phase2A_selection.md §8）；
+- **窗口边缘约束（两档，裁定 #P2A-2 / #P2A-3，见 selection.md §8）**：
+  - Ballades/3、op32/10、Miroirs/4：窗口首尾各 ≥2 小节（≈8 QL）内不得含 pedal 事件（#P2A-2）；
+  - **S145/2、Barcarolle：豁免上述约束（#P2A-3——pedal 连续密集结构性不可满足，用户拍板）**，
+    改为窗口 start/end **不截断任何 pedal 对**（不落在任何 (down, up) 区间内）；
+    若豁免后仍 0 可行窗口：允许边界截断，截断行标记 uncertain 走 ① 复核、不计入 ③
+    自动判定，须先回报主控确认后再定窗；
 - 窗口大小参考 GS 段（事件量 ~100–300 为佳，允许 ±）；
 - 选窗后**必须验证**：窗口 QL 区间与对齐空隙（§2 表）不重叠（Miroirs/4 与 Barcarolle 硬约束）。
 
@@ -82,6 +88,8 @@ python tools/annotate_events.py outputs/pedal_expansion/segments_v1/<sid>/...   
 3. 窗口内 pedal 覆盖：reference_pedals.csv 行数、measure 范围、与谱面 `<pedal>` 对账（应一致，Miroirs/4 注明 m82–91 排除）；
 4. 对齐质量快照：该段 alignment 的匹配行数与窗口内空隙（应无大空隙）；
 5. 与 GS 段目录结构对比清单（同文件集、无多余产物）。
+6. S145/2 与 Barcarolle（#P2A-3 豁免段）附加：所选窗口是否存在边界截断 pedal 对
+   （应尽量为 0；若有则注明行数 + uncertain 标记确认）。
 
 ### S7 复核清单生成（用户后续抽样）
 对每段按 trial8 review CSV 格式生成 F/U/H/E 分组清单（复用 f4ce86f5a0 的清单生成方式），
