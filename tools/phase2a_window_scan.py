@@ -54,12 +54,14 @@ def scan_score_pedal_marks(xml_path: Path) -> tuple[list, dict]:
     root = ET.parse(xml_path).getroot()
     marks: list[tuple[int, str]] = []
     first_no = None
+    mcount = 0
     for part in root:
         if localname(part.tag) != "part":
             continue
         for measure in part:
             if localname(measure.tag) != "measure":
                 continue
+            mcount += 1
             try:
                 mno = int(measure.get("number", "0"))
             except ValueError:
