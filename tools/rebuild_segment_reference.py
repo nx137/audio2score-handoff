@@ -372,7 +372,15 @@ def main() -> int:
     parser.add_argument("--segment", action="append", default=[],
                         help="segment id(s); default: all segments in build_log")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--base", default=None,
+                        help="gold-standard root (default: outputs/pedal_gold_standard/formal_20260828_v1); "
+                             "Phase 2 expansion segments point it at outputs/pedal_expansion/segments_v1")
     args = parser.parse_args()
+    if args.base:
+        global BASE, ALIGN_DIR
+        p = Path(args.base)
+        BASE = p if p.is_absolute() else ROOT / p
+        ALIGN_DIR = BASE / "_alignments"
 
     build_log = json.loads((BASE / "build_log.json").read_text(encoding="utf-8"))
     seg_ids = args.segment or [b["segment_id"] for b in build_log]
