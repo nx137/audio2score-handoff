@@ -32,12 +32,17 @@ python -c "import csv,glob,os;[print(os.path.basename(f), sum(1 for _ in csv.Dic
 `Rachmaninoff_Preludes_op_32_10_24 45`、`Ravel_Miroirs_4_Alborada_del_gracioso_25 21`，合计 **783**（= 第二份审计报告的 `TOTAL rows=783`）。
 
 ```bat
-python -c "import csv,glob,os;[print(os.path.basename(f),[(r['row_no'],r['onset_location'],r['hand'],r['pitch'],r['published_score_pedal']) for r in csv.DictReader(open(f,encoding='utf-8-sig')) if not (r.get('reference_onset_ql') or '').strip()]) for f in sorted(glob.glob('outputs/pedal_expansion/review/phase2A_A_review_*.csv')) if '_sample' not in f]"
+python tools\phase2a_list_unlocated_rows.py
 ```
 
-预期：共 **6** 行 `reference_onset_ql` 为空（Ballades 1、Barcarolle 0、S145/2 1、op32/10 3、Miroirs/4 1）。
+预期：共 **6** 行 `reference_onset_ql` 为空（Ballades 1、Barcarolle 0、S145/2 1、op32/10 3、Miroirs/4 1），
+由工具逐段打印：`row_no`、`onset_location`、`onset_ql`、`hand`、`pitch`、第 3 列、`groups`、
+`in_review_sheet` / `in_sample`；并写出 `outputs/pedal_expansion/evaluation/phase2a_unlocated_rows.json`。
 这 6 行在 score 侧没有 onset，第 3 列按构造只能是 `none`、**无法自动复核**，需人工读渲染谱确认该处没有 pedal 记号；
-把行号与 `onset_location` 抄给复核者。
+把 `onset_location` 抄给复核者（6 行均不在 209 行样本内，`in_sample=no`）。
+
+> 注意：1.3 会新增 `phase2a_unlocated_rows.json`，因此此后重跑 1.1 会看到 `evaluation 2`、`TOTAL 155`——两者都算符合预期；
+> 它属于 `outputs/pedal_expansion/evaluation`，第 2 步的 `git add` 会一并收进去。
 
 ## 2 提交并推送（唯一一次写操作）
 
