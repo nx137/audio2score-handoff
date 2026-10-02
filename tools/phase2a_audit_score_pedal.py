@@ -43,7 +43,8 @@ Gates / checks per segment
   6 f_group_split       rows with groups containing "F" vs column 3 in
                         start/change/stop must be the same set
 
-Writes a JSON report (working artifact, do NOT commit) and prints a summary.
+Writes a JSON report (committed as part of the Phase 2A pre-annotator snapshot,
+see docs/trial8_phase2A_snapshot_exec.md) and prints a summary.
 Exit code 0 = report written; mismatch counts are data, not an error.
 
 Usage

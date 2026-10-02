@@ -46,7 +46,12 @@ Phase 2A 的全部复核材料（工作表、抽样表、报告）随之失效�
 
 `tools/phase2a_audit_score_pedal.py`：用与 prefill/rebuild 零共享的代码路径，从原始 ASAP 谱面重算第 3 列与小节归属，
 并与复核表逐行对账（row_no 连接、第 3 列一致性、切片-窗口小节一致性、窗口包含、记号对账、F 组一致性）。
-报告为工作产物，不入库。
+报告落在 `outputs/pedal_expansion/evaluation/`，随 Phase 2A 标注前快照入库（见 `docs/trial8_phase2A_snapshot_exec.md`）。
+实测（2026-10-02，五个 Phase 2A 段）：本轮它覆盖的是**全部 783 行复核表**（F 组 687 行），结果是
+`mismatch=0 / no_mark_at_all=0 / spurious_none=0 / outside_window=0 / f_group_split=0`，五个段的 slice 小节号与声明窗口逐一相等；
+687 行 F 中 542 行的记号**正好落在 onset 上**、145 行落在 0.25 QL 容差内（不在 onset 正上）；另有 6 行
+`reference_onset_ql` 为空（Ballades 1、S145/2 1、op32/10 3、Miroirs/4 1），第 3 列按构造只能是 `none`，无法自动复核，
+已列入人工读谱核查。
 
 `tools/phase2a_audit_extraction.py`：同样从原始 ASAP 全谱零共享复算，但以**抽样后的 209 行**为对账对象——按 `row_no`
 连接 `events.csv` 的 `reference_onset_ql`、定位小节、在窗口记号里取最近条目，与记录的 `published_score_pedal` 逐行比较；

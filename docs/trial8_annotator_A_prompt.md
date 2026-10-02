@@ -142,3 +142,18 @@ Yamaha Disklavier 高精度物理捕获，是**客观演奏记录**而非估计�
 ---
 
 *v1.3 方法学依据：演奏 MIDI 的 CC64 为 Disklavier 物理捕获（MAESTRO/ASAP 谱系）；踏板真值标注在学术界采用物理测量（QMUL Chopin 数据集、MAESTRO v3 pedal-transcription 基准），故低层踏板状态不作人工听判。*
+
+
+## 增补（2026-10-02，两处定点核查 + 一条判定口径）
+
+1. **Miroirs/4 原生 m.70–m.71 的 pedal 记号**（渲染谱：从切片首个印号 35 数到第 36–37 小节；若 PDF 被重编号，按"步骤 0"换算）。
+   这是五个段里**唯一一处带 `<offset>` 位移**的 pedal 记号：m.70 内的一处踩下带 `offset=−512` divisions（相对谱面 −0.5 QL，绝对 221.0），
+   m.70 末的松开带 `offset=+512`（+0.5 QL，绝对 222.5，落在 m.71 小节线之后 0.5 QL）。
+   只需确认**谱面上确实有这一对记号**（人工读谱即可），不必对照抽样表的列——该处不在 209 行样本内。
+
+2. **6 行 `reference_onset_ql` 为空的行**（Ballades 1、Barcarolle 0、S145/2 1、op32/10 3、Miroirs/4 1）：这些行在 score 侧没有 onset，
+   第 3 列按构造只能是 `none`、独立审计工具无法自动复核。请按 `docs/trial8_phase2A_snapshot_exec.md` 第 1 步打印出的行号与
+   `onset_location`，**人工读渲染谱该处确认没有 pedal 记号**。
+
+3. **容差行**：687 行 F 组中 542 行的记号**正好落在 onset 上**、145 行落在 0.25 QL 容差内（不在 onset 正上）。抽样表里会混有这类行，
+   按原定"记号在 onset 同一拍内或紧邻半拍内视为对齐"的口径判定，**不要按"错位"记为 `incorrect`**。
