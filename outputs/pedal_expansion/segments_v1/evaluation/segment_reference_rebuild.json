@@ -1,0 +1,92 @@
+[
+ {
+  "segment_id": "Chopin_Ballades_3_55",
+  "perf_start_ql": 216.0,
+  "perf_end_ql": 376.0,
+  "mapping_method": "strict",
+  "score_start_ql": 154.0,
+  "score_end_ql": 292.5,
+  "score_start_measure": 52,
+  "score_end_measure": 98,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 739,
+  "n_score_pedals": 78,
+  "published_score_pedal_changed": 770
+ },
+ {
+  "segment_id": "Chopin_Barcarolle_1",
+  "perf_start_ql": 0.0,
+  "perf_end_ql": 108.0,
+  "mapping_method": "strict",
+  "score_start_ql": 0.0,
+  "score_end_ql": 64.7,
+  "score_start_measure": 1,
+  "score_end_measure": 11,
+  "score_time_signature": [
+   12,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 265,
+  "n_score_pedals": 39,
+  "published_score_pedal_changed": 278
+ },
+ {
+  "segment_id": "Liszt_Concert_Etude_S145_2_1",
+  "perf_start_ql": 0.0,
+  "perf_end_ql": 160.0,
+  "mapping_method": "strict",
+  "score_start_ql": 4.5,
+  "score_end_ql": 265.5,
+  "score_start_measure": 2,
+  "score_end_measure": 81,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 1461,
+  "n_score_pedals": 156,
+  "published_score_pedal_changed": 1555
+ },
+ {
+  "segment_id": "Rachmaninoff_Preludes_op_32_10_24",
+  "perf_start_ql": 92.0,
+  "perf_end_ql": 252.0,
+  "mapping_method": "strict",
+  "score_start_ql": 35.0,
+  "score_end_ql": 124.333333,
+  "score_start_measure": 9,
+  "score_end_measure": 32,
+  "score_time_signature": [
+   4,
+   4
+  ],
+  "status": "rebuilt",
+  "n_score_events": 1152,
+  "n_score_pedals": 25,
+  "published_score_pedal_changed": 1168
+ },
+ {
+  "segment_id": "Ravel_Miroirs_4_Alborada_del_gracioso_25",
+  "perf_start_ql": 96.0,
+  "perf_end_ql": 240.0,
+  "mapping_method": "strict",
+  "score_start_ql": 108.5,
+  "score_end_ql": 245.0,
+  "score_start_measure": 35,
+  "score_end_measure": 78,
+  "score_time_signature": [
+   6,
+   8
+  ],
+  "status": "rebuilt",
+  "n_score_events": 842,
+  "n_score_pedals": 7,
+  "published_score_pedal_changed": 798
+ }
+]

@@ -1,0 +1,324 @@
+{
+ "n_F": 196,
+ "n_target": 59,
+ "full_take": false,
+ "seed": 20260907,
+ "frac": 0.3,
+ "min_per_seg": 10,
+ "strata_drawn": {
+  "start|hold|notation-shortening": 17,
+  "start|hold|independent-voice": 3,
+  "start|hold|(none)": 1,
+  "stop|hold|notation-shortening": 8,
+  "start|change|notation-shortening": 10,
+  "change|change|notation-shortening": 3,
+  "stop|change|notation-shortening": 3,
+  "start|release|notation-shortening": 2,
+  "change|release|notation-shortening": 1,
+  "start|change|independent-voice": 1,
+  "stop|release|notation-shortening": 3,
+  "stop|hold|independent-voice": 2,
+  "stop|change|independent-voice": 1,
+  "stop|release|independent-voice": 1,
+  "change|release|independent-voice": 1,
+  "change|change|independent-voice": 1,
+  "change|hold|notation-shortening": 1
+ },
+ "rows": [
+  {
+   "row_no": "3",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "5",
+   "stratum": "start|hold|independent-voice",
+   "method": "priority-high"
+  },
+  {
+   "row_no": "6",
+   "stratum": "start|hold|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "11",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "13",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "16",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "28",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "42",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "43",
+   "stratum": "stop|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "47",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "49",
+   "stratum": "start|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "55",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "56",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "72",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "77",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "78",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "80",
+   "stratum": "change|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "87",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "89",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "91",
+   "stratum": "start|change|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "136",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "164",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "194",
+   "stratum": "stop|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "203",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "207",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "219",
+   "stratum": "stop|hold|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "225",
+   "stratum": "stop|change|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "257",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "318",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "319",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "385",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "396",
+   "stratum": "stop|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "406",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "452",
+   "stratum": "stop|release|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "453",
+   "stratum": "stop|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "454",
+   "stratum": "start|hold|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "456",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "457",
+   "stratum": "start|hold|independent-voice",
+   "method": "priority-high"
+  },
+  {
+   "row_no": "458",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "465",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "468",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "470",
+   "stratum": "start|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "473",
+   "stratum": "change|release|independent-voice",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "496",
+   "stratum": "change|change|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "544",
+   "stratum": "stop|hold|independent-voice",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "548",
+   "stratum": "change|hold|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "552",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "560",
+   "stratum": "stop|release|notation-shortening",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "589",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "590",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "591",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "651",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "670",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "704",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "708",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "735",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "737",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "745",
+   "stratum": "stop|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "767",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "n_F": 38,
+ "n_target": 11,
+ "full_take": false,
+ "seed": 20260907,
+ "frac": 0.3,
+ "min_per_seg": 10,
+ "strata_drawn": {
+  "change|hold|notation-shortening": 3,
+  "start|hold|notation-shortening": 4,
+  "stop|hold|notation-shortening": 3,
+  "stop|hold|(none)": 1
+ },
+ "rows": [
+  {
+   "row_no": "327",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "377",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "397",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "581",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "708",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "745",
+   "stratum": "stop|hold|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "766",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "885",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "900",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "947",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1042",
+   "stratum": "stop|hold|notation-shortening",
+   "method": "stratum-random"
+  }
+ ]
+}

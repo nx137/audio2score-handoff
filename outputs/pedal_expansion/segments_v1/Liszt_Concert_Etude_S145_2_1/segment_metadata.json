@@ -1,0 +1,52 @@
+{
+  "segment_id": "Liszt_Concert_Etude_S145_2_1",
+  "manifest": {
+    "split": "train",
+    "piece_key": "Liszt\u001fConcert_Etude_S145_2",
+    "composer": "Liszt",
+    "title": "Concert_Etude_S145_2",
+    "performance_rank_in_piece": "2",
+    "performances_in_piece": "4",
+    "midi_performance": "Liszt/Concert_Etude_S145/2/Lu03M.mid",
+    "midi_score": "Liszt/Concert_Etude_S145/2/midi_score.mid",
+    "xml_score": "Liszt/Concert_Etude_S145/2/xml_score.musicxml"
+  },
+  "start_measure": 0,
+  "end_measure": 39,
+  "start_ql": 0.0,
+  "end_ql": 160.0,
+  "bar_ql": 4.0,
+  "time_signature": [
+    4,
+    4
+  ],
+  "tempo_bpm": 120.0,
+  "selection_score": 13444.5,
+  "alignment": {
+    "rows": 2363
+  },
+  "candidate_stats": {
+    "rows": 3170,
+    "events": 1672,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 590,
+    "reference-duration-not-candidate": 493,
+    "labeled": 375,
+    "ambiguous-candidate": 214
+  },
+  "score_start_ql": 4.5,
+  "score_end_ql": 265.5,
+  "score_start_measure": 2,
+  "score_end_measure": 81,
+  "score_bar_ql": 3.0,
+  "score_time_signature": [
+    6,
+    8
+  ],
+  "coordinate_fix": {
+    "applied_at": "2026-10-02T11:51:11",
+    "method": "alignment-mapped-score-window",
+    "note": "time_signature/bar_ql are PERFORMANCE-MIDI metadata (may be wrong, e.g. Yamaha 4/4 vs published 3/4); score_time_signature / score_bar_ql are the published-score values used for all score-side artifacts."
+  }
+}

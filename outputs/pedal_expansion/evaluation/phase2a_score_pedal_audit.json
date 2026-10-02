@@ -1,0 +1,273 @@
+{
+ "tool": "phase2a_audit_score_pedal",
+ "tol": 0.001,
+ "near": 0.5,
+ "segments": [
+  {
+   "segment_id": "Chopin_Ballades_3_55",
+   "gates": {
+    "rowno_join": null,
+    "col3_consistency": true,
+    "slice_window": true
+   },
+   "n_rows": 249,
+   "n_f": 196,
+   "agree": 188,
+   "mismatch": 0,
+   "near_miss": 8,
+   "no_mark_at_all": 0,
+   "spurious_none": 0,
+   "outside_window": 0,
+   "no_reference_onset_ql": 1,
+   "max_match_distance": 0.0,
+   "f_group_split": 0,
+   "examples": [
+    {
+     "row_no": 135,
+     "kind": "near_miss",
+     "onset_ql": 251.25,
+     "col3": "stop",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 236,
+     "kind": "near_miss",
+     "onset_ql": 249.75,
+     "col3": "stop",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 385,
+     "kind": "near_miss",
+     "onset_ql": 251.25,
+     "col3": "stop",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 669,
+     "kind": "no_reference_onset_ql"
+    }
+   ],
+   "errors": [],
+   "slice_numbers": [
+    "52",
+    "98"
+   ],
+   "window_numbers": [
+    "52",
+    "98"
+   ]
+  },
+  {
+   "segment_id": "Chopin_Barcarolle_1",
+   "gates": {
+    "rowno_join": null,
+    "col3_consistency": true,
+    "slice_window": true
+   },
+   "n_rows": 85,
+   "n_f": 74,
+   "agree": 72,
+   "mismatch": 0,
+   "near_miss": 2,
+   "no_mark_at_all": 0,
+   "spurious_none": 0,
+   "outside_window": 0,
+   "no_reference_onset_ql": 0,
+   "max_match_distance": 0.0,
+   "f_group_split": 0,
+   "examples": [
+    {
+     "row_no": 165,
+     "kind": "near_miss",
+     "onset_ql": 64.7,
+     "col3": "start",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 180,
+     "kind": "near_miss",
+     "onset_ql": 64.6,
+     "col3": "start",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    }
+   ],
+   "errors": [],
+   "slice_numbers": [
+    "1",
+    "11"
+   ],
+   "window_numbers": [
+    "1",
+    "11"
+   ]
+  },
+  {
+   "segment_id": "Liszt_Concert_Etude_S145_2_1",
+   "gates": {
+    "rowno_join": null,
+    "col3_consistency": true,
+    "slice_window": true
+   },
+   "n_rows": 383,
+   "n_f": 375,
+   "agree": 241,
+   "mismatch": 0,
+   "near_miss": 134,
+   "no_mark_at_all": 0,
+   "spurious_none": 0,
+   "outside_window": 0,
+   "no_reference_onset_ql": 1,
+   "max_match_distance": 3.333298081997782e-10,
+   "f_group_split": 0,
+   "examples": [
+    {
+     "row_no": 65,
+     "kind": "near_miss",
+     "onset_ql": 114.625,
+     "col3": "stop",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 165,
+     "kind": "near_miss",
+     "onset_ql": 43.625,
+     "col3": "change",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 171,
+     "kind": "near_miss",
+     "onset_ql": 166.625,
+     "col3": "change",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 1142,
+     "kind": "no_reference_onset_ql"
+    }
+   ],
+   "errors": [],
+   "slice_numbers": [
+    "2",
+    "81"
+   ],
+   "window_numbers": [
+    "2",
+    "81"
+   ]
+  },
+  {
+   "segment_id": "Rachmaninoff_Preludes_op_32_10_24",
+   "gates": {
+    "rowno_join": null,
+    "col3_consistency": true,
+    "slice_window": true
+   },
+   "n_rows": 45,
+   "n_f": 38,
+   "agree": 38,
+   "mismatch": 0,
+   "near_miss": 0,
+   "no_mark_at_all": 0,
+   "spurious_none": 0,
+   "outside_window": 0,
+   "no_reference_onset_ql": 3,
+   "max_match_distance": 3.333298081997782e-10,
+   "f_group_split": 0,
+   "examples": [
+    {
+     "row_no": 37,
+     "kind": "no_reference_onset_ql"
+    },
+    {
+     "row_no": 962,
+     "kind": "no_reference_onset_ql"
+    },
+    {
+     "row_no": 1054,
+     "kind": "no_reference_onset_ql"
+    }
+   ],
+   "errors": [],
+   "slice_numbers": [
+    "8",
+    "31"
+   ],
+   "window_numbers": [
+    "8",
+    "31"
+   ]
+  },
+  {
+   "segment_id": "Ravel_Miroirs_4_Alborada_del_gracioso_25",
+   "gates": {
+    "rowno_join": null,
+    "col3_consistency": true,
+    "slice_window": true
+   },
+   "n_rows": 21,
+   "n_f": 4,
+   "agree": 3,
+   "mismatch": 0,
+   "near_miss": 1,
+   "no_mark_at_all": 0,
+   "spurious_none": 0,
+   "outside_window": 0,
+   "no_reference_onset_ql": 1,
+   "max_match_distance": 0.0,
+   "f_group_split": 0,
+   "examples": [
+    {
+     "row_no": 636,
+     "kind": "near_miss",
+     "onset_ql": 183.166992188,
+     "col3": "start",
+     "score_expects": null,
+     "rule": "no-mark",
+     "marks_in_cluster": null
+    },
+    {
+     "row_no": 798,
+     "kind": "no_reference_onset_ql"
+    }
+   ],
+   "errors": [],
+   "slice_numbers": [
+    "35",
+    "78"
+   ],
+   "window_numbers": [
+    "35",
+    "78"
+   ]
+  }
+ ],
+ "totals": {
+  "rows": 783,
+  "f": 687,
+  "agree": 542,
+  "mismatch": 0,
+  "near_miss": 145,
+  "no_mark_at_all": 0,
+  "spurious_none": 0,
+  "outside_window": 0,
+  "f_group_split": 0
+ }
+}

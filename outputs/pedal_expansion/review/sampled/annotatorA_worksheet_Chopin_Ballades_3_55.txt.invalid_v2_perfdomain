@@ -1,0 +1,61 @@
+# segment=Chopin_Ballades_3_55 mode=direct rows=59 seed-sample=phase2A-S8
+# row_no | onset_location | hand pitch | published_score_pedal(3) | performance_pedal_action(2) | review_class | xml pedal directions in mapped measure (type@offset)
+3 | m.88 beat 1.750 | LH 31 | start | hold | notation-shortening | start; stop || auto: reference duration 2.5; shorten acoustic extension to 2.5 (s
+5 | m.89 beat 4.333 | LH 31 | start | hold | independent-voice | (none) || auto: independent voice: written 2.0 covers following LH onset (ga
+6 | m.90 beat 3.875 | LH 31 | start | hold |  | start; stop || auto: key duration 1.375 exceeds notation 1.0 (pedal/sustain hold)
+11 | m.89 beat 2.375 | LH 34 | stop | hold | notation-shortening | (none) || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+13 | m.56 beat 4.000 | LH 36 | start | hold | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+16 | m.73 beat 1.250 | LH 36 | start | change | notation-shortening | start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+28 | m.82 beat 2.667 | LH 39 | start | change | notation-shortening | start; stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+42 | m.80 beat 4.375 | LH 41 | change | change | notation-shortening | stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+43 | m.81 beat 1.750 | LH 41 | stop | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+47 | m.58 beat 2.750 | LH 43 | start | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+49 | m.61 beat 4.000 | LH 43 | start | release | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+55 | m.88 beat 1.667 | LH 43 | start | hold | notation-shortening | start; stop || auto: reference duration 2.5; shorten acoustic extension to 2.5 (s
+56 | m.88 beat 4.875 | LH 43 | start | change | notation-shortening | start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+72 | m.60 beat 1.667 | LH 48 | start | hold | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+77 | m.64 beat 2.375 | LH 48 | start | change | notation-shortening | start; stop; start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+78 | m.64 beat 4.125 | LH 48 | change | change | notation-shortening | start; stop; start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+80 | m.65 beat 3.875 | LH 48 | change | release | notation-shortening | start || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+87 | m.74 beat 4.125 | LH 48 | start | change | notation-shortening | stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+89 | m.75 beat 3.333 | LH 48 | start | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+91 | m.76 beat 2.375 | LH 48 | start | change | independent-voice | start; stop || auto: independent voice: written 0.5 covers following LH onset (ga
+136 | m.82 beat 3.625 | LH 51 | stop | hold | notation-shortening | start; stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+164 | m.80 beat 2.667 | LH 53 | change | change | notation-shortening | stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+194 | m.63 beat 2.250 | LH 55 | stop | release | notation-shortening | start; stop; start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+203 | m.77 beat 4.000 | LH 55 | start | hold | notation-shortening | start; stop; start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+207 | m.82 beat 3.667 | LH 55 | stop | hold | notation-shortening | start; stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+219 | m.59 beat 4.375 | LH 56 | stop | hold | independent-voice | start; stop || auto: independent voice: written 0.5 covers following LH onset (ga
+225 | m.69 beat 3.750 | LH 56 | stop | change | independent-voice | start || auto: independent voice: written 0.5 covers following LH onset (ga
+257 | m.74 beat 2.125 | LH 58 | start | hold | notation-shortening | stop; start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+318 | m.77 beat 2.500 | RH 60 | start | hold | notation-shortening | start; stop; start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+319 | m.77 beat 4.000 | RH 60 | start | hold | notation-shortening | start; stop; start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+385 | m.82 beat 3.375 | RH 63 | stop | hold | notation-shortening | start; stop; start; stop || auto: reference duration 0.25; shorten acoustic extension to 0.25 
+396 | m.63 beat 2.250 | RH 64 | stop | release | notation-shortening | start; stop; start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+406 | m.77 beat 4.000 | RH 64 | start | hold | notation-shortening | start; stop; start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+452 | m.86 beat 2.333 | RH 65 | stop | release | independent-voice | stop || auto: independent voice: written 0.5 covers following RH onset (ga
+453 | m.87 beat 4.625 | RH 65 | stop | change | notation-shortening | (none) || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+454 | m.88 beat 1.667 | RH 65 | start | hold | independent-voice | start; stop || auto: independent voice: written 1.0 covers following RH onset (ga
+456 | m.88 beat 4.875 | RH 65 | start | change | notation-shortening | start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+457 | m.89 beat 4.250 | RH 65 | start | hold | independent-voice | (none) || auto: independent voice: written 1.0 covers following RH onset (ga
+458 | m.90 beat 3.875 | RH 65 | start | hold | notation-shortening | start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+465 | m.58 beat 1.750 | RH 67 | stop | hold | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+468 | m.59 beat 2.250 | RH 67 | start | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+470 | m.61 beat 4.000 | RH 67 | start | release | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+473 | m.65 beat 3.750 | RH 67 | change | release | independent-voice | start || auto: independent voice: written 0.5 covers following RH onset (ga
+496 | m.65 beat 1.875 | RH 68 | change | change | independent-voice | start || auto: independent voice: written 0.5 covers following RH onset (ga
+544 | m.59 beat 4.375 | RH 71 | stop | hold | independent-voice | start; stop || auto: independent voice: written 0.5 covers following RH onset (ga
+548 | m.55 beat 3.667 | RH 72 | change | hold | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+552 | m.57 beat 3.750 | RH 72 | start | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+560 | m.63 beat 2.250 | RH 72 | stop | release | notation-shortening | start; stop; start; stop || auto: reference duration 1.0; shorten acoustic extension to 1.0 (s
+589 | m.78 beat 1.625 | RH 72 | start | hold | notation-shortening | stop; start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+590 | m.78 beat 3.125 | RH 72 | start | hold | notation-shortening | stop; start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+591 | m.78 beat 4.625 | RH 72 | start | hold | notation-shortening | stop; start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+651 | m.77 beat 4.000 | RH 76 | start | hold | notation-shortening | start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+670 | m.77 beat 2.500 | RH 77 | start | hold | notation-shortening | start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+704 | m.82 beat 3.375 | RH 80 | stop | hold | notation-shortening | start; stop; start; stop || auto: reference duration 0.25; shorten acoustic extension to 0.25 
+708 | m.83 beat 4.750 | RH 80 | stop | hold | notation-shortening | start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+735 | m.77 beat 4.000 | RH 84 | start | hold | notation-shortening | start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+737 | m.78 beat 3.125 | RH 84 | start | hold | notation-shortening | stop; start; stop; start || auto: reference duration 1.5; shorten acoustic extension to 1.5 (s
+745 | m.81 beat 1.750 | RH 84 | stop | change | notation-shortening | start; stop || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+767 | m.83 beat 4.750 | RH 89 | stop | hold | notation-shortening | start || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s

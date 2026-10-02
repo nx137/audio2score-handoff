@@ -1,0 +1,35 @@
+{
+ "n_F": 4,
+ "n_target": 4,
+ "full_take": true,
+ "seed": 20260907,
+ "frac": 0.3,
+ "min_per_seg": 10,
+ "strata_drawn": {
+  "start|none|notation-shortening": 1,
+  "start|change|notation-shortening": 1,
+  "start|hold|(none)": 2
+ },
+ "rows": [
+  {
+   "row_no": "160",
+   "stratum": "start|none|notation-shortening",
+   "method": "full-take"
+  },
+  {
+   "row_no": "326",
+   "stratum": "start|change|notation-shortening",
+   "method": "full-take"
+  },
+  {
+   "row_no": "426",
+   "stratum": "start|hold|(none)",
+   "method": "full-take"
+  },
+  {
+   "row_no": "636",
+   "stratum": "start|hold|(none)",
+   "method": "full-take"
+  }
+ ]
+}

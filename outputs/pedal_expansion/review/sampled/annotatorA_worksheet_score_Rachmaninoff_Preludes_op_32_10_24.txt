@@ -1,0 +1,15 @@
+# segment=Rachmaninoff_Preludes_op_32_10_24 domain=SCORE rows=11 tol=0.5
+# score window: measures 9..32 | score_bar_ql=4.0 | score QL 35.0..124.333333
+# NOTE: onset_location below is PERFORMANCE-domain (uniform tempo) -- use the 'score m.' column to locate the note in the sliced MusicXML.
+# row_no | perf onset_location | hand pitch | score m.<n> beat <b> | published_score_pedal(3) | performance_pedal_action(2) | class | <pedal> in that score measure | nearest reference_pedals (type dQL)
+327 | m.57 beat 1.875 | LH 52 | score m.26 beat 1.000 | change | hold | notation-shortening | start; stop; start | change d0.000(pos 104)
+377 | m.48 beat 3.500 | LH 54 | score m.20 beat 1.000 | start | hold | notation-shortening | start; stop | start d0.000(pos 80)
+397 | m.51 beat 4.375 | LH 54 | score m.22 beat 1.000 | stop | hold | notation-shortening | stop; start; stop | stop d0.000(pos 88)
+581 | m.48 beat 3.500 | LH 59 | score m.20 beat 1.000 | start | hold | notation-shortening | start; stop | start d0.000(pos 80)
+708 | m.62 beat 2.875 | RH 61 | score m.30 beat 1.000 | change | hold | notation-shortening | start; stop | change d0.000(pos 120)
+745 | m.46 beat 2.500 | RH 62 | score m.18 beat 1.750 | stop | hold |  | start; stop | stop d0.000(pos 75)
+766 | m.55 beat 4.500 | RH 62 | score m.25 beat 1.000 | stop | hold | notation-shortening | stop; start; stop | stop d0.000(pos 100)
+885 | m.48 beat 3.500 | RH 66 | score m.20 beat 1.000 | start | hold | notation-shortening | start; stop | start d0.000(pos 80)
+900 | m.51 beat 2.125 | RH 66 | score m.21 beat 1.500 | start | hold | notation-shortening | start; stop; start | start d0.000(pos 86)
+947 | m.62 beat 2.875 | RH 66 | score m.30 beat 1.000 | change | hold | notation-shortening | start; stop | change d0.000(pos 120)
+1042 | m.48 beat 2.250 | RH 71 | score m.19 beat 1.750 | stop | hold | notation-shortening | start; stop | stop d0.000(pos 79)

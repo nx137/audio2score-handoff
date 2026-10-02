@@ -1,0 +1,6 @@
+# segment=Ravel_Miroirs_4_Alborada_del_gracioso_25 mode=direct rows=4 seed-sample=phase2A-S8
+# row_no | onset_location | hand pitch | published_score_pedal(3) | performance_pedal_action(2) | review_class | xml pedal directions in mapped measure (type@offset)
+160 | m.40 beat 4.750 | LH 55 | start | none | notation-shortening | (none) || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+326 | m.41 beat 1.000 | RH 62 | start | change | notation-shortening | (none) || auto: reference duration 0.5; shorten acoustic extension to 0.5 (s
+426 | m.41 beat 1.125 | RH 66 | start | hold |  | (none) || auto: key duration 0.250 exceeds notation 0.166992188 (pedal/susta
+636 | m.41 beat 1.333 | RH 71 | start | hold |  | (none) || auto: routine; written duration follows score/readability

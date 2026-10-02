@@ -1,0 +1,26 @@
+hand,position_ql,position_location,event_type
+LH,72.000000,m.19 beat 1.000,start
+LH,75.000000,m.19 beat 4.000,stop
+LH,76.000000,m.20 beat 1.000,start
+LH,79.000000,m.20 beat 4.000,stop
+LH,80.000000,m.21 beat 1.000,start
+LH,84.000000,m.22 beat 1.000,change
+LH,86.000000,m.22 beat 3.000,start
+LH,88.000000,m.23 beat 1.000,stop
+LH,90.000000,m.23 beat 3.000,change
+LH,91.666667,m.23 beat 4.667,stop
+LH,92.000000,m.24 beat 1.000,start
+LH,96.000000,m.25 beat 1.000,change
+LH,98.000000,m.25 beat 3.000,start
+LH,100.000000,m.26 beat 1.000,stop
+LH,101.000000,m.26 beat 2.000,start
+LH,101.333333,m.26 beat 2.333,stop
+LH,104.000000,m.27 beat 1.000,change
+LH,106.000000,m.27 beat 3.000,start
+LH,108.000000,m.28 beat 1.000,stop
+LH,112.000000,m.29 beat 1.000,change
+LH,114.000000,m.29 beat 3.000,start
+LH,114.333333,m.29 beat 3.333,stop
+LH,116.000000,m.30 beat 1.000,change
+LH,120.000000,m.31 beat 1.000,change
+LH,124.000000,m.32 beat 1.000,change

@@ -1,0 +1,595 @@
+{
+ "n_F": 375,
+ "n_target": 113,
+ "full_take": false,
+ "seed": 20260907,
+ "frac": 0.3,
+ "min_per_seg": 10,
+ "strata_drawn": {
+  "change|none|notation-shortening": 2,
+  "change|hold|notation-shortening": 37,
+  "change|hold|(none)": 14,
+  "stop|none|notation-shortening": 2,
+  "start|none|notation-shortening": 1,
+  "change|change|notation-shortening": 20,
+  "start|hold|notation-shortening": 10,
+  "change|release|notation-shortening": 8,
+  "change|release|(none)": 2,
+  "stop|none|(none)": 3,
+  "change|none|(none)": 2,
+  "stop|release|notation-shortening": 4,
+  "start|hold|(none)": 3,
+  "change|change|(none)": 1,
+  "start|change|notation-shortening": 1,
+  "stop|change|notation-shortening": 1,
+  "stop|change|(none)": 1,
+  "stop|hold|(none)": 1
+ },
+ "rows": [
+  {
+   "row_no": "40",
+   "stratum": "change|none|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "71",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "74",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "78",
+   "stratum": "change|hold|(none)",
+   "method": "priority-high"
+  },
+  {
+   "row_no": "81",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "155",
+   "stratum": "stop|none|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "173",
+   "stratum": "start|none|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "176",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "181",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "186",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "196",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "205",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "212",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "215",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "220",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "223",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "248",
+   "stratum": "change|release|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "281",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "308",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "338",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "357",
+   "stratum": "change|release|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "365",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "395",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "410",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "413",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "442",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "452",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "470",
+   "stratum": "stop|none|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "483",
+   "stratum": "start|hold|notation-shortening",
+   "method": "priority-high"
+  },
+  {
+   "row_no": "509",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "512",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "519",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "534",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "535",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "565",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "603",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "610",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "617",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "621",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "636",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "643",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "649",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "653",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "663",
+   "stratum": "stop|none|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "685",
+   "stratum": "stop|none|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "688",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "689",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "708",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "725",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "738",
+   "stratum": "change|none|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "739",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "746",
+   "stratum": "stop|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "747",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "756",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "763",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "767",
+   "stratum": "change|none|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "775",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "780",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "784",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "801",
+   "stratum": "stop|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "814",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "815",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "824",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "866",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "925",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "927",
+   "stratum": "start|hold|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "938",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "963",
+   "stratum": "change|change|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "965",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "970",
+   "stratum": "stop|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "979",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "980",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1000",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1018",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1019",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1033",
+   "stratum": "stop|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1035",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1052",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1096",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1099",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1108",
+   "stratum": "stop|none|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1114",
+   "stratum": "start|hold|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "1120",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1144",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1146",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1159",
+   "stratum": "start|hold|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "1177",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1213",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1217",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1279",
+   "stratum": "start|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1299",
+   "stratum": "start|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1320",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1324",
+   "stratum": "change|none|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1325",
+   "stratum": "change|release|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1340",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1360",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1400",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1402",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1403",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1414",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1416",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1417",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1421",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1426",
+   "stratum": "stop|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1438",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1452",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1456",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1468",
+   "stratum": "change|hold|notation-shortening",
+   "method": "priority-high"
+  },
+  {
+   "row_no": "1470",
+   "stratum": "stop|change|(none)",
+   "method": "small-stratum"
+  },
+  {
+   "row_no": "1478",
+   "stratum": "change|change|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1484",
+   "stratum": "change|hold|notation-shortening",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1507",
+   "stratum": "stop|hold|(none)",
+   "method": "stratum-random"
+  },
+  {
+   "row_no": "1544",
+   "stratum": "change|hold|(none)",
+   "method": "stratum-random"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+# segment=Ravel_Miroirs_4_Alborada_del_gracioso_25 domain=SCORE rows=4 tol=0.5
+# score window: measures 35..78 | score_bar_ql=3.0 | score QL 108.5..245.0
+# NOTE: onset_location below is PERFORMANCE-domain (uniform tempo) -- use the 'score m.' column to locate the note in the sliced MusicXML.
+# row_no | perf onset_location | hand pitch | score m.<n> beat <b> | published_score_pedal(3) | performance_pedal_action(2) | class | <pedal> in that score measure | nearest reference_pedals (type dQL)
+160 | m.40 beat 4.750 | LH 55 | score m.58 beat 1.000 | start | none | notation-shortening | start | start d0.000(pos 183)
+326 | m.41 beat 1.000 | RH 62 | score m.58 beat 1.000 | start | change | notation-shortening | start | start d0.000(pos 183)
+426 | m.41 beat 1.125 | RH 66 | score m.58 beat 1.000 | start | hold |  | start | start d0.000(pos 183)
+636 | m.41 beat 1.333 | RH 71 | score m.58 beat 1.056 | start | hold |  | start | start d0.167(pos 183)

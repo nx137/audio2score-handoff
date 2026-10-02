@@ -1,0 +1,123 @@
+{
+ "scope": "review",
+ "segments": [
+  {
+   "segment_id": "Chopin_Ballades_3_55",
+   "events": 770,
+   "review_sheet_rows": 249,
+   "sample_rows": 59,
+   "unlocated_in_review_sheet": 1,
+   "unlocated_in_all_events": 111,
+   "rows": [
+    {
+     "row_no": 669,
+     "onset_location": "m.75 beat 4.667",
+     "onset_ql": "299.666667",
+     "hand": "RH",
+     "pitch": "77",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    }
+   ]
+  },
+  {
+   "segment_id": "Chopin_Barcarolle_1",
+   "events": 278,
+   "review_sheet_rows": 85,
+   "sample_rows": 22,
+   "unlocated_in_review_sheet": 0,
+   "unlocated_in_all_events": 45,
+   "rows": []
+  },
+  {
+   "segment_id": "Liszt_Concert_Etude_S145_2_1",
+   "events": 1555,
+   "review_sheet_rows": 383,
+   "sample_rows": 113,
+   "unlocated_in_review_sheet": 1,
+   "unlocated_in_all_events": 588,
+   "rows": [
+    {
+     "row_no": 1142,
+     "onset_location": "m.16 beat 1.500",
+     "onset_ql": "60.500000",
+     "hand": "RH",
+     "pitch": "83",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    }
+   ]
+  },
+  {
+   "segment_id": "Rachmaninoff_Preludes_op_32_10_24",
+   "events": 1168,
+   "review_sheet_rows": 45,
+   "sample_rows": 11,
+   "unlocated_in_review_sheet": 3,
+   "unlocated_in_all_events": 862,
+   "rows": [
+    {
+     "row_no": 37,
+     "onset_location": "m.39 beat 1.000",
+     "onset_ql": "152.000000",
+     "hand": "LH",
+     "pitch": "40",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    },
+    {
+     "row_no": 962,
+     "onset_location": "m.59 beat 4.333",
+     "onset_ql": "235.333333",
+     "hand": "RH",
+     "pitch": "67",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    },
+    {
+     "row_no": 1054,
+     "onset_location": "m.50 beat 2.000",
+     "onset_ql": "197.000000",
+     "hand": "RH",
+     "pitch": "71",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    }
+   ]
+  },
+  {
+   "segment_id": "Ravel_Miroirs_4_Alborada_del_gracioso_25",
+   "events": 798,
+   "review_sheet_rows": 21,
+   "sample_rows": 4,
+   "unlocated_in_review_sheet": 1,
+   "unlocated_in_all_events": 278,
+   "rows": [
+    {
+     "row_no": 798,
+     "onset_location": "m.58 beat 2.375",
+     "onset_ql": "229.375000",
+     "hand": "RH",
+     "pitch": "93",
+     "published_score_pedal": "none",
+     "groups": "",
+     "in_review_sheet": true,
+     "in_sample": false
+    }
+   ]
+  }
+ ],
+ "total_events": 4569,
+ "total_unlocated_in_review_sheet": 6,
+ "total_unlocated_in_all_events": 1884
+}

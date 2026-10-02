@@ -1,0 +1,222 @@
+[
+ {
+  "index": 0,
+  "segment_id": "Chopin_Ballades_3_55",
+  "built_at": "2026-10-02T11:49:50",
+  "elapsed_sec": 14.3,
+  "selection_score": 4415.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fBallades_3",
+   "composer": "Chopin",
+   "title": "Ballades_3",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "3",
+   "midi_performance": "Chopin/Ballades/3/Ko11M.mid",
+   "midi_score": "Chopin/Ballades/3/midi_score.mid",
+   "xml_score": "Chopin/Ballades/3/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 54,
+   "end_measure": 93,
+   "start_ql": 216.0,
+   "end_ql": 376.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 4415.0,
+   "alignment": {
+    "rows": 3831
+   },
+   "candidate_stats": {
+    "rows": 2868,
+    "events": 836,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 264,
+    "labeled": 286,
+    "ambiguous-candidate": 167,
+    "unmatched": 119
+   }
+  }
+ },
+ {
+  "index": 1,
+  "segment_id": "Liszt_Concert_Etude_S145_2_1",
+  "built_at": "2026-10-02T11:50:06",
+  "elapsed_sec": 11.8,
+  "selection_score": 13444.5,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Liszt\u001fConcert_Etude_S145_2",
+   "composer": "Liszt",
+   "title": "Concert_Etude_S145_2",
+   "performance_rank_in_piece": "2",
+   "performances_in_piece": "4",
+   "midi_performance": "Liszt/Concert_Etude_S145/2/Lu03M.mid",
+   "midi_score": "Liszt/Concert_Etude_S145/2/midi_score.mid",
+   "xml_score": "Liszt/Concert_Etude_S145/2/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 0,
+   "end_measure": 39,
+   "start_ql": 0.0,
+   "end_ql": 160.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 13444.5,
+   "alignment": {
+    "rows": 2363
+   },
+   "candidate_stats": {
+    "rows": 3170,
+    "events": 1672,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "unmatched": 590,
+    "reference-duration-not-candidate": 493,
+    "labeled": 375,
+    "ambiguous-candidate": 214
+   }
+  }
+ },
+ {
+  "index": 2,
+  "segment_id": "Rachmaninoff_Preludes_op_32_10_24",
+  "built_at": "2026-10-02T11:50:24",
+  "elapsed_sec": 14.1,
+  "selection_score": 1847.7,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Rachmaninoff\u001fPreludes_op_32_10",
+   "composer": "Rachmaninoff",
+   "title": "Preludes_op_32_10",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "1",
+   "midi_performance": "Rachmaninoff/Preludes_op_32/10/Floril03.mid",
+   "midi_score": "Rachmaninoff/Preludes_op_32/10/midi_score.mid",
+   "xml_score": "Rachmaninoff/Preludes_op_32/10/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 23,
+   "end_measure": 62,
+   "start_ql": 92.0,
+   "end_ql": 252.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.0,
+   "selection_score": 1847.7,
+   "alignment": {
+    "rows": 610
+   },
+   "candidate_stats": {
+    "rows": 3861,
+    "events": 1437,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 138,
+    "unmatched": 1066,
+    "labeled": 187,
+    "ambiguous-candidate": 46
+   }
+  }
+ },
+ {
+  "index": 3,
+  "segment_id": "Chopin_Barcarolle_1",
+  "built_at": "2026-10-02T11:50:36",
+  "elapsed_sec": 7.6,
+  "selection_score": 1812.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Chopin\u001fBarcarolle",
+   "composer": "Chopin",
+   "title": "Barcarolle",
+   "performance_rank_in_piece": "7",
+   "performances_in_piece": "9",
+   "midi_performance": "Chopin/Barcarolle/Rozanski07M.mid",
+   "midi_score": "Chopin/Barcarolle/midi_score.mid",
+   "xml_score": "Chopin/Barcarolle/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 0,
+   "end_measure": 35,
+   "start_ql": 0.0,
+   "end_ql": 108.0,
+   "bar_ql": 3.0,
+   "time_signature": [
+    3,
+    4
+   ],
+   "tempo_bpm": 120.0,
+   "selection_score": 1812.0,
+   "alignment": {
+    "rows": 2560
+   },
+   "candidate_stats": {
+    "rows": 1124,
+    "events": 328,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 117,
+    "unmatched": 49,
+    "labeled": 79,
+    "ambiguous-candidate": 83
+   }
+  }
+ },
+ {
+  "index": 4,
+  "segment_id": "Ravel_Miroirs_4_Alborada_del_gracioso_25",
+  "built_at": "2026-10-02T11:50:50",
+  "elapsed_sec": 9.9,
+  "selection_score": 476.0,
+  "manifest": {
+   "split": "train",
+   "piece_key": "Ravel\u001fMiroirs_4_Alborada_del_gracioso",
+   "composer": "Ravel",
+   "title": "Miroirs_4_Alborada_del_gracioso",
+   "performance_rank_in_piece": "1",
+   "performances_in_piece": "8",
+   "midi_performance": "Ravel/Miroirs/4_Alborada_del_gracioso/Chan02.mid",
+   "midi_score": "Ravel/Miroirs/4_Alborada_del_gracioso/midi_score.mid",
+   "xml_score": "Ravel/Miroirs/4_Alborada_del_gracioso/xml_score.musicxml"
+  },
+  "metadata": {
+   "start_measure": 24,
+   "end_measure": 59,
+   "start_ql": 96.0,
+   "end_ql": 240.0,
+   "bar_ql": 4.0,
+   "time_signature": [
+    4,
+    4
+   ],
+   "tempo_bpm": 117.0,
+   "selection_score": 476.0,
+   "alignment": {
+    "rows": 1579
+   },
+   "candidate_stats": {
+    "rows": 2411,
+    "events": 974,
+    "alignment_method": "external",
+    "merged_duplicate_events": 0,
+    "reference-duration-not-candidate": 171,
+    "labeled": 335,
+    "ambiguous-candidate": 129,
+    "unmatched": 339
+   }
+  }
+ }
+]

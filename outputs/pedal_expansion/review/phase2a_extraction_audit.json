@@ -1,0 +1,197 @@
+{
+ "tol": 0.25,
+ "segments": [
+  {
+   "segment_id": "Chopin_Ballades_3_55",
+   "rows": 59,
+   "match": 59,
+   "mismatch": 0,
+   "rows_without_reference_onset_ql": 0,
+   "metadata_window": [
+    52,
+    98
+   ],
+   "my_window_index": [
+    51,
+    97
+   ],
+   "file_numbers_window": [
+    "52",
+    "98"
+   ],
+   "full_score_raw_marks": 480,
+   "full_score_normalised_marks": 366,
+   "marks_in_window": 78,
+   "reference_pedals_rows": 78,
+   "ref_vs_mine_max_abs_diff": 0.0,
+   "ref_vs_mine_not_exact": [],
+   "mismatches": [],
+   "window_rule": "measure membership: the mark's own measure inside [first..last] (not a closed QL interval on the edges)",
+   "edge_marks_outside_window": [
+    {
+     "hand": "LH",
+     "position": 294.0,
+     "type": "stop",
+     "measure_index": 98,
+     "file_number": "99"
+    }
+   ],
+   "reference_rows_on_right_edge": 0,
+   "rows_whose_full_score_nearest_is_outside_window": 0,
+   "edge_nearest_examples": []
+  },
+  {
+   "segment_id": "Chopin_Barcarolle_1",
+   "rows": 22,
+   "match": 22,
+   "mismatch": 0,
+   "rows_without_reference_onset_ql": 0,
+   "metadata_window": [
+    1,
+    11
+   ],
+   "my_window_index": [
+    0,
+    10
+   ],
+   "file_numbers_window": [
+    "1",
+    "11"
+   ],
+   "full_score_raw_marks": 455,
+   "full_score_normalised_marks": 455,
+   "marks_in_window": 39,
+   "reference_pedals_rows": 39,
+   "ref_vs_mine_max_abs_diff": 0.0,
+   "ref_vs_mine_not_exact": [],
+   "mismatches": [],
+   "window_rule": "measure membership: the mark's own measure inside [first..last] (not a closed QL interval on the edges)",
+   "edge_marks_outside_window": [
+    {
+     "hand": "LH",
+     "position": 66.0,
+     "type": "start",
+     "measure_index": 11,
+     "file_number": "12"
+    }
+   ],
+   "reference_rows_on_right_edge": 0,
+   "rows_whose_full_score_nearest_is_outside_window": 0,
+   "edge_nearest_examples": []
+  },
+  {
+   "segment_id": "Liszt_Concert_Etude_S145_2_1",
+   "rows": 113,
+   "match": 113,
+   "mismatch": 0,
+   "rows_without_reference_onset_ql": 0,
+   "metadata_window": [
+    2,
+    81
+   ],
+   "my_window_index": [
+    1,
+    80
+   ],
+   "file_numbers_window": [
+    "2",
+    "81"
+   ],
+   "full_score_raw_marks": 420,
+   "full_score_normalised_marks": 244,
+   "marks_in_window": 156,
+   "reference_pedals_rows": 156,
+   "ref_vs_mine_max_abs_diff": 3.330000026835478e-07,
+   "ref_vs_mine_not_exact": [],
+   "mismatches": [],
+   "window_rule": "measure membership: the mark's own measure inside [first..last] (not a closed QL interval on the edges)",
+   "edge_marks_outside_window": [],
+   "reference_rows_on_right_edge": 0,
+   "rows_whose_full_score_nearest_is_outside_window": 0,
+   "edge_nearest_examples": []
+  },
+  {
+   "segment_id": "Rachmaninoff_Preludes_op_32_10_24",
+   "rows": 11,
+   "match": 11,
+   "mismatch": 0,
+   "rows_without_reference_onset_ql": 0,
+   "metadata_window": [
+    9,
+    32
+   ],
+   "my_window_index": [
+    8,
+    31
+   ],
+   "file_numbers_window": [
+    "8",
+    "31"
+   ],
+   "full_score_raw_marks": 48,
+   "full_score_normalised_marks": 36,
+   "marks_in_window": 25,
+   "reference_pedals_rows": 25,
+   "ref_vs_mine_max_abs_diff": 3.330000026835478e-07,
+   "ref_vs_mine_not_exact": [],
+   "mismatches": [],
+   "window_rule": "measure membership: the mark's own measure inside [first..last] (not a closed QL interval on the edges)",
+   "edge_marks_outside_window": [
+    {
+     "hand": "LH",
+     "position": 128.0,
+     "type": "change",
+     "measure_index": 32,
+     "file_number": "32"
+    }
+   ],
+   "reference_rows_on_right_edge": 0,
+   "rows_whose_full_score_nearest_is_outside_window": 0,
+   "edge_nearest_examples": []
+  },
+  {
+   "segment_id": "Ravel_Miroirs_4_Alborada_del_gracioso_25",
+   "rows": 4,
+   "match": 4,
+   "mismatch": 0,
+   "rows_without_reference_onset_ql": 0,
+   "metadata_window": [
+    35,
+    78
+   ],
+   "my_window_index": [
+    34,
+    77
+   ],
+   "file_numbers_window": [
+    "35",
+    "78"
+   ],
+   "full_score_raw_marks": 20,
+   "full_score_normalised_marks": 20,
+   "marks_in_window": 7,
+   "reference_pedals_rows": 7,
+   "ref_vs_mine_max_abs_diff": 0.0,
+   "ref_vs_mine_not_exact": [],
+   "mismatches": [],
+   "window_rule": "measure membership: the mark's own measure inside [first..last] (not a closed QL interval on the edges)",
+   "edge_marks_outside_window": [
+    {
+     "hand": "LH",
+     "position": 246.0,
+     "type": "stop",
+     "measure_index": 78,
+     "file_number": "79"
+    }
+   ],
+   "reference_rows_on_right_edge": 0,
+   "rows_whose_full_score_nearest_is_outside_window": 0,
+   "edge_nearest_examples": []
+  }
+ ],
+ "edge_marks_total": 4,
+ "segments_with_window_count_mismatch": 0,
+ "total_rows": 209,
+ "total_match": 209,
+ "total_mismatch": 0
+}
