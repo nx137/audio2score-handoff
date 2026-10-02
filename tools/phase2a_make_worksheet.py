@@ -10,11 +10,23 @@ Column access is BY NAME (never by hard-coded position): the review CSVs are
 17 cols + reviewer_confirm + reviewer_note = 19 cols, and hand-written integer
 indices drift easily (onset_ql sits at index 5).
 
-SAFETY RULE: a worksheet is written ONLY when the direct measure-number match
-is complete (every onset_location measure exists in the MusicXML measure
-number set). Otherwise the tool prints diagnostics and writes nothing -- a
-mis-aligned comparison sheet must never reach the annotator. Use --offset N
-only after main control has confirmed the correct shift.
+SAFETY RULE (unchanged): a worksheet is written ONLY when the measure-number
+match is complete -- either the direct match, or the explicitly supplied
+--offset N. Otherwise the tool prints diagnostics (including read-only probe
+offsets) and writes nothing, so a mis-aligned comparison sheet can never reach
+the annotator.
+
+Measure-numbering probe (v2, read-only)
+--------------------------------------
+If the sliced MusicXML renumbered its measures from 1 while the CSV's
+onset_location keeps the published score numbering, the direct match fails and
+the tool probes:
+  * s4_renumbered: xml = csv - (score_start_measure - 1)
+    score_start_measure is taken from the authoritative S4 log
+    <segments>/evaluation/segment_reference_rebuild.json.
+  * csv_min_minus_xml_min: the naive shift (kept only for diagnosis; it is
+    WRONG whenever the first F row is not the window's first measure).
+These probes never write anything; pass --offset N to actually use one.
 
 Usage:
     python tools/phase2a_make_worksheet.py \
@@ -83,16 +95,40 @@ def parse_measure(loc):
     return int(mm.group(1)) if mm else None
 
 
+def load_s4_starts(rebuild_json):
+    """segment_id -> score_start_measure from the authoritative S4 log."""
+    if not rebuild_json or not os.path.exists(rebuild_json):
+        return {}
+    try:
+        data = json.load(open(rebuild_json, encoding="utf-8"))
+    except Exception:
+        return {}
+    rows = data.get("segments", data) if isinstance(data, dict) else data
+    out = {}
+    if isinstance(rows, list):
+        for r in rows:
+            if isinstance(r, dict) and r.get("segment_id") is not None:
+                out[r["segment_id"]] = r.get("score_start_measure")
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sampled", required=True)
     ap.add_argument("--segments", required=True)
     ap.add_argument("--offset", type=int, default=None,
-                    help="measured shift: xml_measure = csv_measure - offset (only after main-control confirmation)")
+                    help="confirmed shift: xml_measure = csv_measure - offset")
+    ap.add_argument("--rebuild-json", default=None,
+                    help="S4 log; default <segments>/evaluation/segment_reference_rebuild.json")
     ap.add_argument("--out-suffix", default="_worksheet")
     a = ap.parse_args()
 
     sdir = a.sampled
+    rebuild_json = a.rebuild_json or os.path.join(a.segments, "evaluation",
+                                                  "segment_reference_rebuild.json")
+    s4_starts = load_s4_starts(rebuild_json)
+    print(f"[info] S4 log: {rebuild_json} | segments read: {len(s4_starts)}")
+
     files = sorted(f for f in os.listdir(sdir)
                    if f.startswith("phase2A_A_review_") and f.endswith("_sample.csv"))
     if not files:
@@ -115,27 +151,21 @@ def main() -> int:
         print(f"{sid} | rows={len(recs)} | cols={len(header)}")
         print(f"  xml measures: {min(all_no) if all_no else '-'}..{max(all_no) if all_no else '-'}"
               f" | n={len(all_no)} | non-int skipped={skipped}"
-              f" | measures with pedal: {len(ped_by_meas)}")
+              f" | measures with pedal: {len(ped_by_meas)}"
+              f" | numbering={'renumbered-from-1' if all_no and min(all_no) == 1 else 'published'}")
         print(f"  csv onset measures from onset_location: n={len(csv_meas)} first20={csv_meas[:20]}")
         print(f"  direct intersection: {len(hit)}/{len(csv_meas)} -> direct_full={direct_full}")
         if not direct_full and all_no and csv_meas:
-            guesses = {
-                "csv_first_minus_xml_min": csv_meas[0] - min(all_no),
-                "csv_last_minus_xml_max": csv_meas[-1] - max(all_no),
-            }
-            for name, off in guesses.items():
+            probes = {}
+            probes["csv_min_minus_xml_min"] = csv_meas[0] - min(all_no)
+            start_m = s4_starts.get(sid)
+            if start_m:
+                probes["s4_renumbered"] = int(start_m) - 1
+            for name, off in probes.items():
                 mapped = {x - off for x in csv_meas}
                 print(f"  probe {name}={off} -> hits {len(mapped & set(all_no))}/{len(csv_meas)}")
-        meta = os.path.join(a.segments, sid, "segment_metadata.json")
-        if os.path.exists(meta):
-            try:
-                md = json.load(open(meta, encoding="utf-8"))
-                sel = {k: v for k, v in md.items()
-                       if any(s in k.lower() for s in ("score", "measure", "window", "bar"))}
-                if sel:
-                    print(f"  segment_metadata window keys: {sel}")
-            except Exception as e:
-                print(f"  segment_metadata unreadable: {e}")
+            if s4_starts.get(sid) is not None:
+                print(f"  S4 score_start_measure for this segment: {s4_starts[sid]}")
 
         if a.offset is not None:
             mode = f"offset:{a.offset}"
@@ -144,13 +174,13 @@ def main() -> int:
             mode = "direct"
             mapping = {x: x for x in csv_meas}
         else:
-            print("  >>> NOT WRITTEN: measure numbering not resolvable by direct match;"
-                  " waiting for main-control confirmed --offset. No sheet produced.")
+            print("  >>> NOT WRITTEN: measure numbering not resolvable without a confirmed offset."
+                  " No sheet produced (safety rule).")
             continue
 
         out = os.path.join(sdir, f"annotatorA{a.out_suffix}_{sid}.txt")
         lines = [
-            f"# segment={sid} mode={mode} rows={len(recs)} seed-sample=phase2A-S8",
+            f"# segment={sid} mode={mode} rows={len(recs)} sample=phase2A-S8 seed=20260907",
             "# row_no | onset_location | hand pitch | published_score_pedal(3) |"
             " performance_pedal_action(2) | review_class | xml pedal directions in mapped measure (type@offset)",
         ]
