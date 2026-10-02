@@ -35,9 +35,11 @@ python -c "import csv,glob,os;[print(os.path.basename(f), sum(1 for _ in csv.Dic
 python tools\phase2a_list_unlocated_rows.py
 ```
 
-预期：共 **6** 行 `reference_onset_ql` 为空（Ballades 1、Barcarolle 0、S145/2 1、op32/10 3、Miroirs/4 1），
-由工具逐段打印：`row_no`、`onset_location`、`onset_ql`、`hand`、`pitch`、第 3 列、`groups`、
-`in_review_sheet` / `in_sample`；并写出 `outputs/pedal_expansion/evaluation/phase2a_unlocated_rows.json`。
+预期（headline = **复核表口径**）：`Chopin_Ballades_3_55 1`、`Chopin_Barcarolle_1 0`、
+`Liszt_Concert_Etude_S145_2_1 1`、`Rachmaninoff_Preludes_op_32_10_24 3`、
+`Ravel_Miroirs_4_Alborada_del_gracioso_25 1`，合计 **6**。工具同时打印 `events.csv` **全量口径**的数字
+（本轮实测 1 / 0 / 1 / 3 / 1 对 111 / 45 / 588 / 862 / 278，合计 6 对 1884——复核表只是 events.csv 的子集，
+见 `docs/trial8_phase2A_coordinate_conventions.md` §8），默认只打印复核表口径的明细。
 这 6 行在 score 侧没有 onset，第 3 列按构造只能是 `none`、**无法自动复核**，需人工读渲染谱确认该处没有 pedal 记号；
 把 `onset_location` 抄给复核者（6 行均不在 209 行样本内，`in_sample=no`）。
 

@@ -79,3 +79,25 @@ Phase 2A 的全部复核材料（工作表、抽样表、报告）随之失效�
 第 3 列按 `PEDAL_MATCH_QL = 0.25` 取最近条目，边界记号属于相邻段，本就不在窗口内。
 
 E 阶段推论：**任何窗口/切片统计都必须按小节归属判定，不得用 QL 闭区间**；否则每个窗口都可能多算至多 1 条来自相邻窗口的记号。
+
+## 8. score 侧 onset 的覆盖（第 3 列能问到谱面的行占多少）
+
+`events.csv` 的 `reference_onset_ql` 是**对齐产生的 score 侧 onset**。没有它，第 3 列按构造只能是 `none`，
+两份独立审计工具都会跳过该行。实测（2026-10-02，五个 Phase 2A 段，`tools/phase2a_list_unlocated_rows.py`）：
+
+| 段 | `events.csv` 行数 | 无 score 侧 onset（全量） | 其中落在复核表内 |
+| --- | --- | --- | --- |
+| `Chopin_Ballades_3_55` | 770 | 111 | 1（row_no 669） |
+| `Chopin_Barcarolle_1` | 278 | 45 | 0 |
+| `Liszt_Concert_Etude_S145_2_1` | 1555 | 588 | 1（row_no 1142） |
+| `Rachmaninoff_Preludes_op_32_10_24` | 1168 | 862 | 3（row_no 37 / 962 / 1054） |
+| `Ravel_Miroirs_4_Alborada_del_gracioso_25` | 798 | 278 | 1（row_no 798） |
+| 合计 | 4569 | 1884 | 6 |
+
+- **复核表只是 `events.csv` 的子集**（783 / 4569）。任何"多少行如何如何"的数字都必须先说清是哪个口径；
+  与两份审计工具可比的是**复核表口径**（本表最后一列）。
+- 复核表内只有这 6 行没有 score 侧 onset，与 `tools/phase2a_audit_score_pedal.py` 的
+  `no_reference_onset_ql` 示例逐段一致（1 / 0 / 1 / 3 / 1）——两条独立路径互相印证。
+- **E 阶段的含义**：全量重标时，没有 score 侧 onset 的行第 3 列只能是 `none`，此类行在 `events.csv` 里占
+  1884 / 4569 ≈ 41%；"读谱复核第 3 列"这条验证路径对它们**不适用**。成因（窗口外 / 对齐未覆盖 / 其他）
+  尚未定论，**D 阶段设计判定口径前必须先查清**，否则会把"无可问"误当成"判错"。
