@@ -47,3 +47,30 @@ Phase 2A 的全部复核材料（工作表、抽样表、报告）随之失效�
 `tools/phase2a_audit_score_pedal.py`：用与 prefill/rebuild 零共享的代码路径，从原始 ASAP 谱面重算第 3 列与小节归属，
 并与复核表逐行对账（row_no 连接、第 3 列一致性、切片-窗口小节一致性、窗口包含、记号对账、F 组一致性）。
 报告为工作产物，不入库。
+
+`tools/phase2a_audit_extraction.py`：同样从原始 ASAP 全谱零共享复算，但以**抽样后的 209 行**为对账对象——按 `row_no`
+连接 `events.csv` 的 `reference_onset_ql`、定位小节、在窗口记号里取最近条目，与记录的 `published_score_pedal` 逐行比较；
+同时核对 `reference_pedals.csv` 与全谱记号的位置一致性。窗口成员规则见 §7。
+
+## 7. 窗口成员规则（`reference_pedals.csv` 的边界口径）
+
+`reference_pedals.csv` 只含**自身小节落在窗口内**（序数 `score_start_measure-1 .. score_end_measure-1`）的 pedal 记号，
+不是"QL 闭区间"。差别只在窗口右边界：窗口之后那一小节的**首拍**记号，其 QL 位置与窗口右边界完全相同（小节内偏移 0），
+按闭区间会被算进来，但它属于**相邻段**。
+
+实测（五个 Phase 2A 段，2026-10-02 对 ASAP 全谱复算）：
+
+| 段 | 窗口内记号 | `reference_pedals.csv` 行数 | 被排除的右边界记号 |
+| --- | --- | --- | --- |
+| `Chopin_Ballades_3_55` | 78 | 78 | LH `stop` @294.0（下一小节原生 m.99 首拍） |
+| `Chopin_Barcarolle_1` | 39 | 39 | LH `start` @66.0（原生 m.12 首拍） |
+| `Liszt_Concert_Etude_S145_2_1` | 156 | 156 | 无 |
+| `Rachmaninoff_Preludes_op_32_10_24` | 25 | 25 | LH `change` @128.0（原生 m.32 首拍） |
+| `Ravel_Miroirs_4_Alborada_del_gracioso_25` | 7 | 7 | LH `stop` @246.0（原生 m.79 首拍） |
+
+`tools/phase2a_audit_extraction.py` 早期版本按闭区间统计，于是打印 79/78、40/39、26/25、8/7（S145/2 为 156/156），
+看起来像"提取丢了一条记号"。修正后（提交 `cbd7a19`）：窗口成员按小节归属判定，边界记号单独列为 `edge mark`，
+并额外核对 `reference_pedals.csv` 中是否存在落在右边界上的行（五个段均为 0）。第 3 列判定不受影响：
+第 3 列按 `PEDAL_MATCH_QL = 0.25` 取最近条目，边界记号属于相邻段，本就不在窗口内。
+
+E 阶段推论：**任何窗口/切片统计都必须按小节归属判定，不得用 QL 闭区间**；否则每个窗口都可能多算至多 1 条来自相邻窗口的记号。
