@@ -25,6 +25,19 @@ disagreement instead of hiding inside a single code path:
   * cross-checks the segment's reference_pedals.csv against the marks of the full score
     (catches window selection / offset handling / slicing drift).
 
+Window membership
+-----------------
+"in window" means the mark's OWN measure lies inside [score_start_measure - 1 ..
+score_end_measure - 1]; that is exactly what reference_pedals.csv contains.  A pedal mark
+on the downbeat of the measure AFTER the window shares its position with the window's
+right edge and is therefore reported separately as an edge mark: it belongs to the
+neighbouring segment.  (An earlier revision used a closed QL interval on the edges and so
+reported one mark too many on four of the five Phase 2A segments -- 79/78, 40/39, 26/25,
+8/7 while S145/2 showed 156/156 -- which read like a mark lost by the extraction.
+Verified against the five ASAP full scores on 2026-10-02: measure membership reproduces the
+reference row counts 78 / 39 / 156 / 25 / 7 exactly, and in each of the four affected
+segments the extra mark is an LH downbeat mark of the following measure.)
+
 It is an audit, not a replacement: nothing is written except this tool's own JSON report,
 and every mismatch is printed together with the raw <pedal> evidence for human adjudication.
 
@@ -164,8 +177,29 @@ def segment_score_paths(selection_path: Path, asap_root: Path) -> dict:
     return out
 
 
-def marks_in_window(events, ql_lo: float, ql_hi: float):
-    return [e for e in events if ql_lo - EPS <= e[1] <= ql_hi + EPS]
+def measure_index(starts, position: float) -> int:
+    return bisect.bisect_right(starts, position + EPS) - 1
+
+def marks_in_window(events, starts, first: int, last: int):
+    '''Marks whose own measure lies inside the window measures [first..last].
+
+    Deliberately measure membership, not a closed QL interval on the window edges: a
+    pedal mark on the downbeat of the measure AFTER the window has exactly the position
+    of the window's right edge (local offset 0) and is not in reference_pedals.csv --
+    it belongs to the neighbouring segment.  Verified 2026-10-02: this rule reproduces
+    the reference row counts 78 / 39 / 156 / 25 / 7 exactly.
+    '''
+    return [e for e in events if first <= measure_index(starts, e[1]) <= last]
+
+def marks_on_window_edges(events, starts, first: int, last: int,
+                          ql_lo: float, ql_hi: float):
+    '''Marks inside the closed QL interval that belong to a neighbouring measure.'''
+    out = []
+    for e in events:
+        i = measure_index(starts, e[1])
+        if not (first <= i <= last) and ql_lo - EPS <= e[1] <= ql_hi + EPS:
+            out.append((e, i))
+    return out
 
 
 def raw_in_measure(raw, starts, index: int, bar_ql: float):
@@ -202,6 +236,8 @@ def main() -> int:
 
     report = {"tol": a.tol, "segments": []}
     total_rows = total_match = total_mismatch = 0
+    n_window_mismatch = 0
+    n_edge_marks = 0
     for fn in files:
         sid = fn[len("phase2A_A_review_"):-len("_sample.csv")]
         seg_dir = segments / sid
@@ -231,12 +267,20 @@ def main() -> int:
             last = int(meta.get("score_end_measure", 1)) - 1
             ql_lo = starts[first]
             ql_hi = starts[last + 1] if last + 1 < len(starts) else starts[last] + bar_ql
-            in_win = marks_in_window(marks, ql_lo, ql_hi)
+            in_win = marks_in_window(marks, starts, first, last)
+            edges = marks_on_window_edges(marks, starts, first, last, ql_lo, ql_hi)
+            n_edge_marks += len(edges)
             print("  window: metadata measures %d..%d -> my idx %d..%d"
                   " (file numbers %s..%s) | my QL %g..%g"
                   % (first + 1, last + 1, first, last, numbers[first], numbers[last], ql_lo, ql_hi))
             print("  full-score pedal marks: raw=%d -> normalised=%d | in window=%d"
-                  % (len(raw), len(marks), len(in_win)))
+                  " (rule: mark's own measure inside [%d..%d])"
+                  % (len(raw), len(marks), len(in_win), first, last))
+            for e, i in edges:
+                print("  edge mark, not in window (belongs to the neighbouring segment and"
+                      " not to reference_pedals.csv): hand=%s type=%s pos=%g measure idx=%d"
+                      " file number=%s"
+                      % (e[0], e[2], e[1], i, numbers[i] if 0 <= i < len(numbers) else "?"))
 
             ref_rows = []
             refp = seg_dir / "reference_pedals.csv"
@@ -261,6 +305,14 @@ def main() -> int:
                   % (len(ref_rows), worst, len(unmatched)))
             for item in unmatched[:6]:
                 print("     not-exact: %s" % (item,))
+            at_edge = [r for r in ref_rows if abs(r[0] - ql_hi) <= 1e-6]
+            print("  reference rows sitting exactly on the right window edge"
+                  " (must be 0: they belong to the neighbouring segment): %d" % len(at_edge))
+            if len(in_win) != len(ref_rows):
+                n_window_mismatch += 1
+                print("  WARNING: in-window marks %d != reference_pedals.csv rows %d"
+                      " -- window rule or extraction drift; compare with the edge marks"
+                      " printed above" % (len(in_win), len(ref_rows)))
 
             ev_path = seg_dir / "events.csv"
             if not ev_path.exists():
@@ -273,6 +325,8 @@ def main() -> int:
 
             _, sample = read_csv_named(sampled / fn)
             n_match = n_mismatch = n_noref = 0
+            n_edge_nearest = 0
+            edge_nearest_examples = []
             mismatches = []
             for row in sample:
                 try:
@@ -291,7 +345,22 @@ def main() -> int:
                     native = numbers[i] if i < len(numbers) else "?"
                     beat = (ql - starts[i]) / bar_ql + 1.0
                     inside = first <= i <= last
-                    best, dist = nearest(marks, ql, a.tol)
+                    # the pipeline searches reference_pedals.csv, i.e. the marks of the
+                    # window measures only -> mirror exactly that here ...
+                    best, dist = nearest(in_win, ql, a.tol)
+                    # ... and keep the full-score answer only to report the difference
+                    gbest, gdist = nearest(marks, ql, a.tol)
+                    if gbest is not None and (best is None or abs(gbest[1] - best[1]) > 1e-9):
+                        n_edge_nearest += 1
+                        if len(edge_nearest_examples) < 6:
+                            edge_nearest_examples.append({
+                                "row_no": row.get("row_no", ""),
+                                "reference_onset_ql": ql,
+                                "recorded": recorded,
+                                "window_nearest": None if best is None else best[2],
+                                "full_score_nearest": gbest[2],
+                                "full_score_nearest_position": gbest[1],
+                            })
                     mine = best[2] if best else "none"
                     where = "m.%s beat %.3f%s" % (native, beat, "" if inside else " (OUTSIDE window)")
                     raws = raw_in_measure(raw, starts, i, bar_ql)
@@ -326,12 +395,23 @@ def main() -> int:
                 "ref_vs_mine_max_abs_diff": worst,
                 "ref_vs_mine_not_exact": unmatched[:20],
                 "mismatches": mismatches,
+                "window_rule": "measure membership: the mark's own measure inside"
+                               " [first..last] (not a closed QL interval on the edges)",
+                "edge_marks_outside_window": [
+                    {"hand": e[0], "position": e[1], "type": e[2], "measure_index": i,
+                     "file_number": numbers[i] if 0 <= i < len(numbers) else None}
+                    for e, i in edges],
+                "reference_rows_on_right_edge": len(at_edge),
+                "rows_whose_full_score_nearest_is_outside_window": n_edge_nearest,
+                "edge_nearest_examples": edge_nearest_examples,
             })
         except Exception as exc:
             print("  [error] %s: %s" % (type(exc).__name__, exc))
             entry["status"] = "error: %s: %s" % (type(exc).__name__, exc)
         report["segments"].append(entry)
 
+    report["edge_marks_total"] = n_edge_marks
+    report["segments_with_window_count_mismatch"] = n_window_mismatch
     report["total_rows"] = total_rows
     report["total_match"] = total_match
     report["total_mismatch"] = total_mismatch
@@ -340,6 +420,9 @@ def main() -> int:
     out_path.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     print("=" * 96)
     print("TOTAL rows=%d match=%d mismatch=%d" % (total_rows, total_match, total_mismatch))
+    print("window counts: edge marks held out of the window = %d | segments where in-window"
+          " marks != reference_pedals.csv rows = %d"
+          % (n_edge_marks, n_window_mismatch))
     print("VERDICT: %s" % ("all sampled rows agree with the independent re-derivation"
                            if total_mismatch == 0 else
                            "%d disagreement(s) -- see the MISMATCH lines" % total_mismatch))
