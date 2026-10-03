@@ -175,3 +175,51 @@ m.70，故本增补第 1 条"从切片首小节数到第 36–37 小节"成立�
 
 3. **容差行**：687 行 F 组中 542 行的记号**正好落在 onset 上**、145 行落在 0.25 QL 容差内（不在 onset 正上）。抽样表里会混有这类行，
    按原定"记号在 onset 同一拍内或紧邻半拍内视为对齐"的口径判定，**不要按"错位"记为 `incorrect`**。
+
+---
+
+## 增补（2026-10-03）：Phase 2A 五段扩样复核 —— 材料、流程、判定
+
+> 本节适用 **Phase 2A（5 段扩样）**。上文第 3/4 节的 `formal_20260828_v1/` 属 Trial-8（8 段）材料；
+> **Phase 2A 的全部材料在 `outputs/pedal_expansion/` 下，路径以本节为准**。
+
+### P2A-1 材料清单（已入库，commit `950db2f6`）
+
+| 用途 | 路径（相对仓库根） | 数量 / 规模 |
+| --- | --- | --- |
+| 复核工作表（主用，含 `score m.<n>` 定位列） | `outputs/pedal_expansion/review/sampled/annotatorA_worksheet_score_<sid>.txt` | 5 份，共 209 行（59 / 22 / 113 / 11 / 4） |
+| 填写版复核表（只填末两列） | `outputs/pedal_expansion/review/sampled/phase2A_A_review_<sid>_sample.csv` | 5 份，19 列，共 209 行，`reviewer_confirm` / `reviewer_note` 均为空 |
+| 渲染谱（看谱主用，单文件多页 PDF） | `outputs/pedal_expansion/review/rendered/<sid>.pdf` | 5 份（2 / 2 / 12 / 3 / 4 页） |
+| 按页图（放大看谱） | `outputs/pedal_expansion/review/rendered/<sid>-<n>.png`、`-<n>.svg`（S145/2 为 `-01..-12`） | 2 / 2 / 12 / 3 / 4 |
+| 听辨材料（MIDI 渲染口径） | `outputs/pedal_expansion/segments_v1/<sid>/performance_segment.mid` | 5 份 |
+| 逐行旁证 | `outputs/pedal_expansion/segments_v1/<sid>/` 下 `events.csv` / `reference_pedals.csv` / `pedal_intervals.csv` / `segment_metadata.json` / `reference_score.musicxml` | — |
+
+`<sid>` ∈ {`Chopin_Ballades_3_55`, `Chopin_Barcarolle_1`, `Liszt_Concert_Etude_S145_2_1`, `Rachmaninoff_Preludes_op_32_10_24`, `Ravel_Miroirs_4_Alborada_del_gracioso_25`}
+
+### P2A-2 步骤 0（开工前一次，必做）
+
+打开任一渲染谱 PDF 的**第 1 页**，读出第一个小节线上印出的小节号，与工作表表头 `# score window: measures a..b` 比对：
+
+- 印号 = 切片首个小节号（例：Ballades 首印号 `52`）→ 直接按工作表 `score m.<n>` 定位；
+- 印号从 `1` 重新编号（MuseScore 渲染切片时的常见情形）→ 用 `切片内序号 = n − a + 1` 换算后再定位。
+
+把结论记进该段复核表首行的 `reviewer_note`（例：`step0: PDF 从 1 起编号，score m.52 = PDF 第 1 小节`）。
+
+### P2A-3 复核动作（逐行，只判 ③ 列）
+
+1. 用工作表的 `score m.<n> beat <b>` 在渲染谱上找到该处（**不得**用 `onset_location` 的 `m.X` 去数小节，见 2026-10-02 增补）；
+2. 看谱面该位置有无踏板记号、类型是否与 ③ 列（`start` / `change` / `stop` / `none`）一致；
+3. `reviewer_confirm` 填 `ok` 或 `incorrect`；判 `incorrect` 时必须在 `reviewer_note` 写明"该处实际记号类型 + 所在小节"；
+4. 下列情形**不要**记 `incorrect`：
+   - 记号落在 onset 同一拍内或紧邻半拍（0.25 QL）内的容差行——687 行 F 组中有 145 行属此类（小节线跨越，非错位）；
+   - Miroirs/4 那一对带 `<offset>` 的记号（谱面原生 m.70–m.71，见 2026-10-02 增补第 1 条）；
+   - 无 score 侧 onset 的行（`reference_onset_ql` 为空，③ 列按构造即 `none`）。
+
+### P2A-4 判定口径
+
+- 本次抽样的 **209 行全部为 F 组行**（③ 列 ∈ {start, change, stop}），其中 `review_priority=high` 6 行；确认率分母 = 209。
+- **确认率 = `reviewer_confirm=ok` 的行数 / 209 ≥ 95%** → Phase 2A 结论成立，放行全数据集重标注。
+- 若同一类行反复被判 `incorrect`（呈系统性模式）→ 停止扩张，回报主控后进入排查。
+- 两处**不在 209 行内**、但需单独看谱确认的项：（a）Miroirs/4 原生 m.70–m.71 的 `<offset>` 记号对（人工读谱确认其存在即可）；（b）6 行无 score 侧 onset 的行——Ballades `row_no=669`、S145/2 `row_no=1142`、op32/10 `row_no=37 / 962 / 1054`、Miroirs/4 `row_no=798`（确认该处确无踏板记号）。
+
+（主控补，2026-10-03；材料 commit `950db2f6`；坐标口径与缺陷记录见 `docs/trial8_phase2A_coordinate_conventions.md` §9–§11。）
