@@ -378,6 +378,20 @@ I3 踏板归一 / I4 两套容差不得混用 / I5 听辨口径 / I6 隔离）�
 18. **Contents API 对 > 1 MB 的文件返回 `encoding: "none"` / `content: ""`**。用它做逐字节自检会产生
     **假阴性**（实测：`data/ASAP/Liszt/Transcendental_Etudes/10/xml_score.musicxml` 2,293,388 B）。
     → 大文件自检一律走 raw 或 git blobs API。
+19. **`.gitattributes` 覆盖缺口 → Windows 检出把裸字节口径的文件写成 CRLF，本地 `verify_handoff.py` 必失败。**
+    实测（2026-10-03）：`eol=lf` 只覆盖 14 个扩展名、`binary` 只覆盖 12 个；
+    **`*.ipynb` / `*.aux` / `*.out` / `*.mpos` / `*.invalid_v2_perfdomain` 以及 `.gitattributes` / `.gitignore`
+    两边都不在**（当初的 `<无扩展名>` 统计其实就是这两个 dotfile）。这些文件在 `verify_handoff.digest()` 下走
+    **裸字节**口径——注意 `Path(".gitignore").suffix == ""`，所以 TEXT_EXTS 里的 `.gitignore` /
+    `.gitattributes` 两项**永远不会命中，是死成员**。一旦被 autocrlf 换成 CRLF，摘要立刻失配。
+    **已修复**：`.gitattributes` 补齐上述扩展名与两个 dotfile 的 `text eol=lf`（14 个高风险文件的 blob
+    实测全为 LF，故此改动**不改变任何已有 blob**）。本地侧根治：`git config core.autocrlf false` + 强制重新检出。
+20. **`tools/verify_handoff.py::check_checksums()` 把失败清单截断在 20 条**（`"\n  ".join(bad[:20])`）。
+    看不到全量清单时**必须改用 `tools/diagnose_checksums.py`**（不截断 + ASCII 转义 + 成因分类 + `--basename-hints`）。
+    实测教训：本地一条命令报 20 条，真实是 **23 条**，差额被截断吃掉。
+21. **中文 Windows 控制台会把中文路径渲染成乱码**（`C\u9636\u6bb5_...` 显示为 `C\ufffd\u05b6...`）。
+    **不要据乱码反推路径名**——实测曾把 `results/reports/C阶段_冻结ASAP测试_实验报告_20260818.aux`
+    误猜成 `导出ASAP消融`。一律让工具输出 **ASCII 转义**。
 
 ## 11. 论文措辞红线
 
@@ -409,6 +423,16 @@ A 类 14 / B 类 26、富集池 235 中含 pedal 64（逐作曲家分布全等�
 CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样复核 0 不匹配。
 **金标准 40 段与两份 C 冻结证据现已纳入哈希范围。** 剩余未锚 **1902 件**
 （`evals` 1901 + 根 `CHECKSUMS.sha256` 自身 1），按 D5 = B 单独排期。
+
+**本地首次全量校验（2026-10-03）**：`verify_handoff.py` 的 4 项前置检查**全通过**
+（必需资产 19 项、冻结模型双哈希、test manifest 120/31、CC64 配对证据 480 completed 四管线各 120），
+仅 `CHECKSUMS` 项失败。根因**不在 CHECKSUMS 记录本身**——远端逐条核实，被报出的路径全部
+「在清单内且与远端内容一致」。真实成因是**本地工作树偏离 HEAD**：
+① **12 条已暂存、从未推送的 `git mv`**（`rendered/miroirs4-*` 9 件 → `_render_reproducibility/`；
+`sampled/*.invalid_v2_perfdomain` 3 件 → `_quarantine_invalid_v2/`）→ 原路径本地缺失（用户裁决 **B：本地丢弃**）；
+② **14 个文件被 Windows 检出写成 CRLF**（详见坑 19）。预期失配 **23 条**（12 缺失 + 11 摘要）。
+另有未跟踪残留：`tools/append_checksums.py`（用户裁决 **B：不入库**）与一个 `$null` 文件
+（PowerShell 把 `> $null` 当成了文件名，属垃圾，可删）。
 
 ## 13. 对 v1 交接文档的勘误（4 条）
 
@@ -443,3 +467,4 @@ CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样�
 | --- | --- | --- |
 | 2026-10-03 | v2.0 | 建档（第二轮主控）：v1 聊天版交接文档入库替代；本轮远端核实 17 项一致 + 4 条勘误 + 锚定覆盖率实测；D2/D3/D5/D7 决策锁定（均 = A、A、B、A）。 |
 | 2026-10-03 | v2.1 | D5 = B 执行完成（CHECKSUMS 4230 → 5079，补锚 849 件，git-blob-SHA1 全通过）；修复 `rebuild_segment_reference.py --dry-run` 的非只读副作用（保住 96 处 ③ 变更的在库记录）；补 §10 坑 16/17/18。 |
+| 2026-10-03 | v2.2 | 补 `.gitattributes` 覆盖缺口（根因：Windows 检出把裸字节口径文件写成 CRLF）；新增 `tools/diagnose_checksums.py`；补 §10 坑 19/20/21 与本地首次校验记录。 |
