@@ -102,7 +102,7 @@ E 阶段推论：**任何窗口/切片统计都必须按小节归属判定，不
   1884 / 4569 ≈ 41%；"读谱复核第 3 列"这条验证路径对它们**不适用**。成因（窗口外 / 对齐未覆盖 / 其他）
   尚未定论，**D 阶段设计判定口径前必须先查清**，否则会把"无可问"误当成"判错"。
 
-## 9. 开放项（E 阶段前必须关闭）
+## 9. 开放项（E 阶段前必须关闭；**O1 与 O2 已于 2026-10-02 关闭，依据见 §11**）
 
 以下两项**不在** 209 行抽样的覆盖内，也**不被**任何自动审计作为判定对象，故显式登记，不得默认已关闭。
 
@@ -166,3 +166,51 @@ op.32/10 的标签同时由「序数」变为「文件号」（与工作表一�
 正好压在（3 行，标签 `beat = 1.000`）或刚越过（1 行，Miroirs 的 `+512` 位移，`beat = 1.500`）小节线 ——
 这是"记号的 QL 位置"与"记号元素所在小节"两种口径的分歧点，只有 4 行，且不影响第 3 列的判定
 （判定只用 QL 距离 ≤ 0.25 QL）。工作表的 `score m.` 列在 209 行抽样上与"含 `<pedal>` 的小节"100% 吻合（0 处不一致）。
+
+## 11. §9 开放项的关闭记录（2026-10-02）与窗口成员规则的代码依据
+
+**O1（Miroirs/4 的 `<offset>` 记号对）—— 已关闭。** 提取层源码定案：
+`audio2score/scripts/score_metrics.py::pedal_events()` 在该文件 **84–91 行**显式读取 `<offset>`：
+
+```python
+offset = child.findtext("offset")
+local = cursor + (int(offset) / divisions if offset and divisions else 0.0)
+result.append(PedalEvent(hand, round(measure_start + local, 9), event_type))
+```
+
+即位置 = `measure_start + cursor + <offset>/divisions`，**确实按 `<offset>` 位移定位**，不是只用
+`measure_start + cursor`；同位 stop/start 的归一化也在同一函数（分组键 = `(hand, position_ql)`）。
+数值旁证：Miroirs m.70 的第 3、4 枚记号 cursor 为 2.5 / 3.0，叠加 `<offset>` ∓0.5 QL 后正是
+`reference_pedals.csv` 里的 221.0 / 222.5。渲染侧：op.32/10 的回灌探针已证明 `-o` 导出的 `<pedal>`
+与源切片逐项一致（Miroirs 同类探针按需补跑，非阻塞）。
+
+**O2（1884/4569 行 `reference_onset_ql` 为空）—— 已关闭（成因定案）。** 对齐文件
+`_alignments/<sid>.csv` 是**逐音符**表（`hand,pitch,onset_ql,reference_part,reference_voice,reference_pitch,reference_onset_ql`），
+故 score 侧坐标只能按音符三元组查得。对全部 1884 行空值逐行核对 `(hand, pitch, onset_ql)`：
+
+- **0 行**属于"三元组本可命中却没有值" ⇒ **不是工具缺陷**；
+- 1789 行（95%）落在对齐覆盖范围内、同一 `(hand, pitch)` 出现过，但该 onset 未被对齐
+  （即 S2 外部对齐的 unmatched / ambiguous-candidate 音符）；
+- 78 行该 `(hand, pitch)` 在对齐结果里完全没有出现；
+- 17 行（全部在 S145/2）onset 早于对齐覆盖起点。
+
+按同 `(hand, pitch)` 最近对齐 onset 的距离分层：0 行 ≤0.005、
+53 行 ≤0.25、215 行 ≤0.5、203 行 ≤1.0、1413 行 >1.0 QL。
+
+结论：这些行在**输入对齐里就不存在** score 侧坐标，故第 3 列按构造只能是 `none`，
+任何以第 3 列为对象的核对在此类行上都不构成判定；不影响窗口内判定的正确性。
+E 阶段全量重标时应把"该行有无 score 侧坐标"作为一列显式输出，避免读者把 `none` 误读为"谱面此处无记号"。
+
+**窗口成员规则的代码依据（替代 §7 的粗述）**：`tools/rebuild_segment_reference.py`
+（第 350–353 行）用**整曲非均匀网格**的两端选取 `reference_pedals.csv` 的行：
+
+```python
+pedals   = pedal_events(str(xml_path))
+pedal_lo = starts[first]
+pedal_hi = starts[last + 1] if last + 1 < len(starts) else float("inf")
+sel_pedals = [p for p in pedals if pedal_lo <= p.position_ql < pedal_hi]
+```
+
+`first` / `last` 由 `measure_index_range(starts, score_start_ql, score_end_ql)` 给出，`starts` 来自
+`score_measure_starts()`（逐小节按各自拍号累加，非均匀）。因此：恰落在小节线上的记号归属**后一小节**；
+恰好落在窗口右端之后第一个小节起点上的记号被排除 —— 这就是 §7 里"edge mark"的精确来源。
