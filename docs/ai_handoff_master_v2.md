@@ -362,6 +362,22 @@ I3 踏板归一 / I4 两套容差不得混用 / I5 听辨口径 / I6 隔离）�
     `manifest/` / `models/` / `pieces/` / `summary/`。
 14. **锚定只加哈希、不改文件**，因此把只读冻结档案纳入 CHECKSUMS **不违反 I6**。
 15. **判断「文件是否在库」走 raw.githubusercontent，不走 commits.atom**（陈旧缓存）。
+16. **`rebuild_segment_reference.py --dry-run` 曾非完全只读**。逐段产物确实不写（第 328–330 行提前返回），
+    但 `main()` 第 431–433 行**无条件覆盖** `BASE/evaluation/segment_reference_rebuild.json`。
+    该文件是 40 段 S3 重建的**唯一在库记录**（含 `published_score_pedal_changed`，**合计 96** =
+    `Chopin_Scherzos_20_254` **50** + `Ravel_Miroirs_3_Une_Barque_181` **34** +
+    `Liszt_Transcendental_Etudes_9_67` **12**；与 `docs/trial8_score_source_pedal_audit.md` 的 50/34 吻合）。
+    裸跑 `--dry-run` 会**覆盖并丢失这份证据**（dry-run 记录不含 `n_score_events` / `n_score_pedals` /
+    `published_score_pedal_changed`），且因该文件已锚定而让 `verify_handoff.py` 失败。
+    **2026-10-03 已由主控修复**：dry-run 改写到 `evaluation/segment_reference_rebuild.dryrun.json`。
+17. **`raw.githubusercontent.com` 在写入后可能服务陈旧缓存**。实测：刚 push 的
+    `docs/trial8_full_relabel_plan.md` 经 raw 读回仍是**旧版本**（7805 B / 旧摘要），
+    而 Contents API 与 git tree 的 blob sha 已一致（`3eb49f6473e7`）。
+    → 判断「刚写入的内容」用 **Contents API 或 git tree/blobs API**；批量校验下载内容时用
+    **git blob SHA-1**（`sha1(b"blob <len>\\0" + data)`）与 tree 比对，可彻底排除 CDN 陈旧。
+18. **Contents API 对 > 1 MB 的文件返回 `encoding: "none"` / `content: ""`**。用它做逐字节自检会产生
+    **假阴性**（实测：`data/ASAP/Liszt/Transcendental_Etudes/10/xml_score.musicxml` 2,293,388 B）。
+    → 大文件自检一律走 raw 或 git blobs API。
 
 ## 11. 论文措辞红线
 
@@ -387,6 +403,12 @@ A 类 14 / B 类 26、富集池 235 中含 pedal 64（逐作曲家分布全等�
 `data/` 99.8%；**金标准 40 段 10/641 = 1.6%**、`evals/C/frozen_test` 10/731 = 1.4%、
 `evals/C/pedal_ablation_frozen` 10/971 = 1.0%、`pilot_20260820_v2` **0/130 = 0%**。
 → **全量重标注的基线此前无哈希保护**，这是 D5 = B 的直接依据。
+
+**D5 = B 已执行（2026-10-03）**：补锚 `outputs`(765) + `results`(64) + `data`(6) + `frontend`(12) +
+`audio2score`(2) = **849 件 / 95.6 MiB**，全部通过 **git-blob-SHA1** 校验（0 陈旧 / 0 失败）；
+CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样复核 0 不匹配。
+**金标准 40 段与两份 C 冻结证据现已纳入哈希范围。** 剩余未锚 **1902 件**
+（`evals` 1901 + 根 `CHECKSUMS.sha256` 自身 1），按 D5 = B 单独排期。
 
 ## 13. 对 v1 交接文档的勘误（4 条）
 
@@ -420,3 +442,4 @@ A 类 14 / B 类 26、富集池 235 中含 pedal 64（逐作曲家分布全等�
 | 日期 | 版本 | 说明 |
 | --- | --- | --- |
 | 2026-10-03 | v2.0 | 建档（第二轮主控）：v1 聊天版交接文档入库替代；本轮远端核实 17 项一致 + 4 条勘误 + 锚定覆盖率实测；D2/D3/D5/D7 决策锁定（均 = A、A、B、A）。 |
+| 2026-10-03 | v2.1 | D5 = B 执行完成（CHECKSUMS 4230 → 5079，补锚 849 件，git-blob-SHA1 全通过）；修复 `rebuild_segment_reference.py --dry-run` 的非只读副作用（保住 96 处 ③ 变更的在库记录）；补 §10 坑 16/17/18。 |
