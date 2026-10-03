@@ -197,6 +197,42 @@ def fmt_beat(offset_ql: float, bar_ql: float) -> str:
     return "m.%d beat %.3f" % (measure, beat)
 
 
+def score_measure_numbers(xml_path: Path) -> list[str | None]:
+    """The ``number`` attribute of every measure, in the same order as
+    ``score_measure_starts``.
+
+    The score's own numbering is what the printed score shows; it differs from a
+    uniform-grid index whenever the piece changes metre (see
+    docs/trial8_phase2A_coordinate_conventions.md, section 10).
+    """
+    root = ET.parse(str(xml_path)).getroot()
+    part = root.find("part")
+    if part is None:
+        return []
+    return [m.get("number") for m in part.findall("measure")]
+
+
+def fmt_beat_grid(offset_ql: float, starts: list[float],
+                  numbers: list[str | None], bar_ql: float) -> str:
+    """Label a SCORE QL with the score's own measure number.
+
+    ``starts`` / ``numbers`` come from the full score via
+    ``score_measure_starts`` / ``score_measure_numbers``; the beat part keeps the
+    historical convention ``(ql - measure_start) + 1``.  Falls back to the
+    uniform-grid ``fmt_beat`` when the grid or the numbering is unavailable.
+    """
+    if starts and numbers and len(starts) == len(numbers):
+        index = -1
+        for i, start in enumerate(starts):
+            if start <= offset_ql + 1e-9:
+                index = i
+            else:
+                break
+        if 0 <= index < len(numbers) and numbers[index] is not None:
+            return "m.%s beat %.3f" % (numbers[index], (offset_ql - starts[index]) + 1.0)
+    return fmt_beat(offset_ql, bar_ql)
+
+
 def recompute_score_pedal_column(seg_dir: Path, ref_pedals: list) -> int:
     events_path = seg_dir / "events.csv"
     raw = events_path.read_bytes()
@@ -278,6 +314,7 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
     first, last = measure_index_range(starts, score_start_ql, score_end_ql)
     s_num, s_den = score_time_sig(xml_path)
     score_bar_ql = 4.0 * s_num / s_den
+    meas_numbers = score_measure_numbers(xml_path)
 
     record["perf_start_ql"] = perf_start_ql
     record["perf_end_ql"] = perf_end_ql
@@ -304,7 +341,7 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
             writer.writerow({
                 "hand": e.hand, "pitch": e.pitch,
                 "start_ql": "%.6f" % e.start_ql,
-                "start_location": fmt_beat(e.start_ql, score_bar_ql),
+                "start_location": fmt_beat_grid(e.start_ql, starts, meas_numbers, score_bar_ql),
                 "duration_ql": "%.6f" % e.duration_ql,
                 "part_id": e.part_id, "voice": e.voice,
                 "tie_start": int(e.tie_start), "tie_stop": int(e.tie_stop),
@@ -323,7 +360,7 @@ def rebuild_segment(seg_id: str, dry_run: bool = False) -> dict:
             writer.writerow({
                 "hand": p.hand,
                 "position_ql": "%.6f" % p.position_ql,
-                "position_location": fmt_beat(p.position_ql, score_bar_ql),
+                "position_location": fmt_beat_grid(p.position_ql, starts, meas_numbers, score_bar_ql),
                 "event_type": p.event_type,
             })
 
