@@ -65,3 +65,23 @@ git status --porcelain
 - 若 `git push` 要求凭据或失败：立即停、原样贴回，不要改用其它方式（凭据由主控处理）。
 - 不手工编辑任何入库文件；两份审计 JSON 保持工具原样输出。
 - 提交后贴回：`git diff --cached --shortstat`、`git log --oneline -3`、`git push` 输出、`git status --porcelain`。
+
+## 4 执行结果与入库后核验（2026-10-02，主控侧独立核验）
+
+- **提交**：`39457f51`（父 `4808754c`），`155 files changed, 517926 insertions(+)`，
+  作者 `nx137 <nx137@users.noreply.github.com>`（仓库本地 `git config --local`，未动全局配置）。
+- **入库范围**：`outputs/pedal_expansion/` 三个目录 —— `segments_v1` 67 / `review` 86 / `evaluation` 2，共 155。
+- **字节级核验**：抽查文件在远端的 blob 大小与本地回报**完全一致**：5 份渲染 PDF
+  （70552 / 66061 / 159380 / 90937 / 88420）、`Ravel_..._25.mpos` 5415、
+  `Rachmaninoff_..._24.roundtrip.musicxml` 694438。
+- **行尾归一化（`.gitattributes` 策略，不是内容损失）**：仓库 `.gitattributes` 为
+  `*.py *.md *.txt *.csv *.json *.musicxml *.xml` 等声明 `eol=lf`，因此工作区为 CRLF 的文本文件在入库时
+  被归一为 LF —— 三份工具生成的 JSON 恰好各减少"行数"个字节：
+  `phase2a_extraction_audit.json` 4889 → 4693（=196 行）、`phase2a_score_pedal_audit.json` 5341 → 5069（=272 行）、
+  `phase2a_unlocated_rows.json` 2865 → 2743（=122 行）。**逻辑内容不变**，但工作区文件的 sha256 ≠ blob 的 sha256
+  （对外发校验和时须说明口径）。
+- **行数独立复算**：对 90 个文本文件按 LF 计数得 517898，加上 28 个无末尾换行的文件 = **517926**，
+  与本地 git 回报逐位一致 ⇒ 入库内容与本地工作区逐行一致。
+- **不采信 GitHub API 的 `stats.total = 541050`**：该值与它自己的 `files[].additions` 之和 539470 亦不自洽，
+  属 GitHub 侧统计不精确；以 git 口径 `517926` 为准。
+- 远端 `git status -sb` = `## main...origin/main`，无 ahead / behind。
