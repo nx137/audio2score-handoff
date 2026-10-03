@@ -428,7 +428,9 @@ def main() -> int:
         results.append(rec)
         print(json.dumps(rec, ensure_ascii=False))
 
-    out = BASE / "evaluation" / "segment_reference_rebuild.json"
+    out = BASE / "evaluation" / (
+        "segment_reference_rebuild.dryrun.json" if args.dry_run
+        else "segment_reference_rebuild.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(results, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     n_ok = sum(1 for r in results if r["status"] in ("rebuilt", "dry-run"))
