@@ -434,11 +434,23 @@ CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样�
 另有未跟踪残留：`tools/append_checksums.py`（用户裁决 **B：不入库**）与一个 `$null` 文件
 （PowerShell 把 `> $null` 当成了文件名，属垃圾，可删）。
 
+**本地第二次全量校验（2026-10-03，v2.3）**：换行统一（`core.autocrlf false` / `core.eol lf` + 重检出 6982 件）后仍失败 1 条 ——
+`frontend/piano_transcription/piano_transcription_inference_data/note_F1=0.9677_pedal_F1=0.9186.pth`，`diagnose` 归类 `DIGEST`。
+**远端逐条核实后定因**：该路径在仓库里是 **134 B 的 Git LFS 指针**（blob sha1 `2f8f2e98c52d…`，
+`oid sha256:c3fa9730…6141` / `size 171966578`），`sha256(指针字节) = 983cf471…c2364e` **与 CHECKSUMS 记录逐位一致
+→ 记录本身无误**；而本地工作树被 git-lfs 涂抹成真模型（171,966,578 B），其 sha256 恰为 LFS oid。
+即 **校验器缺 LFS 语义，属口径缺口，不是数据损坏** → v2.3 修（见 §15 坑 22）。
+
+**第 9 步 `git status` 的 ~90 条 ` M `**：根因是这两棵金标准树的部分 `.csv` blob **本身就是 CRLF**
+（实测 `Chopin_Scherzos_20_254.csv` CRLF=4543 / `pedal_intervals.csv` CRLF=13 / `candidate_options.csv` CRLF=586），
+而 `.gitattributes` 声明 `*.csv text eol=lf` → 检出写 LF → 索引(CRLF) ≠ 工作树(LF) → 永久 ` M `。
+文本条目走换行归一口径，**不影响任何 CHECKSUMS 判定**；但**严禁 `git add` 这两棵树**（见 §15 坑 23）。
+
 ## 13. 对 v1 交接文档的勘误（4 条）
 
-1. **`docs/` 实为 17 件，不是 16 件**。v1 §3.5 写「原 14 件 + 新增 2 件 = 16」；
-   实测 17，新增的是 **3 件**（`trial8_full_relabel_plan.md`、`trial8_score_source_pedal_audit.md`、
-   `trial8_pedal_source_plan.md`），14 + 3 = 17。
+1. **`docs/` 实为 18 件，不是 16 件**。v1 §3.5 写「原 14 件 + 新增 2 件 = 16」；
+   实测 17 = 14 + **3 件**（`trial8_full_relabel_plan.md`、`trial8_score_source_pedal_audit.md`、
+   `trial8_pedal_source_plan.md`），再加本文档 `ai_handoff_master_v2.md` 共 **18 件**（v2.3 实测）。
 2. **`outputs/pedal_expansion/` 的字节数不可跨环境比**。v1 §3.4 写 `38,475,735 B`，
    git 内实测 **`37,993,259 B`**（件数 158 一致，差 482,476 B）。最可能是上一任主控在
    **本地 CRLF 检出**的工作树上量的。→ 口径只记**件数**（或记 git blob 字节数）。
@@ -453,7 +465,9 @@ CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样�
 ## 14. 下一步（按序）
 
 1. 本地 AI 同步：`git pull --ff-only` → 回报 `git log -1` → `python tools/verify_handoff.py` 全绿。
-2. **D5 = B**：主控补锚 `outputs` + `results` + `data` + `frontend` + `audio2score`（≈849 件）。
+   v2.3 起该步骤**不应再为 `.pth` 报失败**（LFS 口径已修）；若仍失败先读 §15 坑 22，**不要改本地 `.pth`**。
+2. **D5 = B 已完成**（`f0e7d399`）：补锚 849 件，CHECKSUMS 4230 → 5079；`d8d7ec01` 加 `diagnose_checksums.py` → 5080；
+   v2.3 加 `tools/checksum_digest.py` → **5081**。
 3. **D2 = A**：本地只读跑 `rebuild_segment_reference.py --dry-run`（40 段）+
    `scan_segment_coordinate_mismatch.py`，产出留档。
 4. **P1 pilot（3 首外部补谱）**：`Beethoven_Piano_Sonatas_16-1`、`Mozart_Piano_Sonatas_12-3`、
@@ -461,10 +475,50 @@ CHECKSUMS 由 **4230 → 5079** 条目（657,666 B），写入后 45 条抽样�
 5. **D7 = A**：建 `outputs/pedal_expansion/segments_v2/`，先做 A 类记号 ≥10 的 7 段（零外部依赖）。
 6. 每批产物**同批锚定** CHECKSUMS；提交后让本地 AI 复跑 `verify_handoff.py`。
 
-## 15. 版本记录
+## 15. 运维补充：Git LFS 与换行口径（v2.3，编号接 §10 坑 21 之后）
+
+### 坑 22：本地被 git-lfs 涂抹会让校验器**假报失败**（`frontend/.../*.pth`）
+- 现象：`verify_handoff.py` 报 `[失败] CHECKSUMS.sha256 不匹配或缺失`，只列 1 条 `.pth`；
+  `diagnose_checksums.py` 归类 `DIGEST`（expected / raw_bytes / normalized 三者皆不等）。
+- 关键判据：报出的 `raw_bytes` **恰好等于该文件的 LFS oid**（`c3fa9730…6141`）→ 本地是**实体大文件**，不是指针。
+- 权威口径（2026-10-03 远端核实）：该路径在仓库里是 134 B 的 Git LFS 指针
+  （blob sha1 `2f8f2e98c52d…`，内容 `version` / `oid sha256:c3fa9730…6141` / `size 171966578`），
+  `sha256(指针字节) = 983cf471…c2364e` 与 CHECKSUMS 记录**逐位一致 → 记录本身就是对的**。
+  `.gitattributes` 的唯一 LFS 规则为
+  `frontend/piano_transcription/piano_transcription_inference_data/*.pth filter=lfs diff=lfs merge=lfs -text`。
+- 结论：**不是数据损坏，是校验器缺 LFS 语义**。v2.3 修复 = 新增 `tools/checksum_digest.py`（摘要单一事实源），
+  对 LFS 路径取「指针语义」摘要：指针形态直接哈希；实体形态用 `sha256(文件) + 字节数` **重建指针文本**再哈希。
+  两种形态都等价于「仓库内容 == CHECKSUMS 记录」；实体形态还**额外证明**本地模型与仓库 pin 的 oid/size 一致。
+  **损坏/截断的实体仍判失败**（不放松任何判定，已做反例测试）。
+- **红线**：不要为了过校验去删/改那个 `.pth`（P3 前端推理可能要用），也不要 `git lfs uninstall`。
+- 自检配方（读对象库，不看工作树；PowerShell 原样可用）：
+  `git cat-file -s HEAD:"frontend/piano_transcription/piano_transcription_inference_data/note_F1=0.9677_pedal_F1=0.9186.pth"`
+  → `134` 即指针；`git cat-file -p HEAD:"<同上>"` 打印 `version` / `oid` / `size` 三行。
+  另可用 `certutil -hashfile "<本地该文件>" SHA256` 独立验证本地实体是否等于指针里的 oid。
+
+### 坑 23：金标准树里的 ` M ` 是**仓库自带 CRLF**，不是本地污染
+- 现象：`git status` 在 `outputs/pedal_gold_standard/formal_20260828_v1/`、`pilot_20260820_v2/` 下报约 90 条 ` M `（多为 `*.csv`）。
+- 根因（实测）：这些 `.csv` 的 **blob 本身就是 CRLF**（历史 Windows 提交），而 `.gitattributes` 声明
+  `*.csv text eol=lf` → 检出写 LF → 索引(CRLF) ≠ 工作树(LF) → **永久 ` M `**。
+  与 `core.autocrlf`、与本次换行统一操作**无关**。实测样例：`_alignments/Chopin_Scherzos_20_254.csv` CRLF=4543、
+  `Schubert_Impromptu_op.90_D.899_2_133/pedal_intervals.csv` CRLF=13、`Chopin_Scherzos_20_254/candidate_options.csv` CRLF=586。
+- 影响：文本条目走 universal-newline 归一口径，**判定不受影响**（实测 5080 条里唯一失败是坑 22 那条 `.pth`）。
+- **红线**：**严禁 `git add` / `git commit` / `git stash` 这两棵树** —— 否则会把 90+ 个「不得覆盖」的冻结档案
+  blob 从 CRLF 改写成 LF，改动档案的 blob 身份。可观测计数：`diagnose_checksums.py` 打印的 `eol_only_drift = N`。
+
+### 坑 24：raw 字节口径 + `text eol=lf` 的组合是**潜在**风险（当前未触发）
+- `TEXT_EXTS` 之外的文件走**裸字节**口径。若某 blob 为 CRLF 且被 `.gitattributes` 声明 `text eol=lf`，
+  Windows 检出会写 LF，记录值（来自 blob 裸字节）与工作树不符 → 报 `DIGEST`。
+- 现状核查：v2.3 全量校验只失败坑 22 那 1 条 → 说明现有 `.mpos` / `.invalid_v2_perfdomain` / `.ipynb` /
+  `.aux` / `.out` 的 blob 均为 LF，`5a1c6bb0` 的覆盖缺口修复是安全的。
+- 若将来出现：**先按坑 22 的方法核对远端 blob**（`git cat-file -s/-p HEAD:"<path>"`）再定性，不要凭本地三个哈希猜；
+  该扩展名若要绝对稳定，应改用 `binary`（而非 `text eol=lf`）。
+
+## 16. 版本记录
 
 | 日期 | 版本 | 说明 |
 | --- | --- | --- |
 | 2026-10-03 | v2.0 | 建档（第二轮主控）：v1 聊天版交接文档入库替代；本轮远端核实 17 项一致 + 4 条勘误 + 锚定覆盖率实测；D2/D3/D5/D7 决策锁定（均 = A、A、B、A）。 |
 | 2026-10-03 | v2.1 | D5 = B 执行完成（CHECKSUMS 4230 → 5079，补锚 849 件，git-blob-SHA1 全通过）；修复 `rebuild_segment_reference.py --dry-run` 的非只读副作用（保住 96 处 ③ 变更的在库记录）；补 §10 坑 16/17/18。 |
 | 2026-10-03 | v2.2 | 补 `.gitattributes` 覆盖缺口（根因：Windows 检出把裸字节口径文件写成 CRLF）；新增 `tools/diagnose_checksums.py`；补 §10 坑 19/20/21 与本地首次校验记录。 |
+| 2026-10-03 | v2.3 | **修 LFS 口径缺口**：新增 `tools/checksum_digest.py`（摘要单一事实源，含 Git LFS 指针语义），`verify_handoff.py` / `diagnose_checksums.py` 改为共用（删去各自重复的 `TEXT_EXTS` / `digest`）；`diagnose` 增打 `lfs pointer` / `lfs smudged` / `eol_only_drift` 三项计数；CHECKSUMS 5080 → 5081。根因锁定：本地 `.pth` 被 git-lfs 涂抹，**CHECKSUMS 记录无误**；`git status` 的 ~90 条 ` M ` 系仓库自带 CRLF blob（坑 23）；`docs/` 勘误 ① 更新为 18 件。 |
