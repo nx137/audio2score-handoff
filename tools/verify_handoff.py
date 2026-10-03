@@ -4,13 +4,15 @@ from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import sys
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from checksum_digest import digest  # noqa: E402  （摘要口径单一事实源，含 Git LFS 语义）
 EXPECTED_MODELS = {
     "audio2score/models/p4_asap_cross_piece_v1.txt": "31f58cf9bc022a686eedc60ed9af6c621eac69ba4569cccf24147bdd4877b666",
     "audio2score/models/p4_asap_cross_piece_v1.json": "7dbeadb4fd5549de5e984444d0c77921ad8b3dbdaa44e6798279fcec342c6fe6",
@@ -26,22 +28,7 @@ REQUIRED = [
 ]
 
 
-TEXT_EXTS = {
-    ".txt", ".csv", ".py", ".md", ".json", ".sha256", ".sh", ".tex",
-    ".musicxml", ".xml", ".yml", ".yaml", ".toml", ".rst", ".log",
-    ".cfg", ".ini", ".gitignore", ".gitattributes", ".html", ".css",
-}
-
-
-def digest(path: Path) -> str:
-    """Hash text files after universal newline normalization."""
-    if path.suffix.lower() in TEXT_EXTS:
-        with path.open("r", encoding="utf-8", errors="replace") as f:
-            text = f.read()
-        data = text.encode("utf-8")
-    else:
-        data = path.read_bytes()
-    return hashlib.sha256(data).hexdigest()
+# 摘要口径见 tools/checksum_digest.py（文本/换行归一、裸字节、Git LFS 指针语义），勿在此另立一套。
 
 
 
