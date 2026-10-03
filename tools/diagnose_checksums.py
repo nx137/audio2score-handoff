@@ -9,6 +9,10 @@
   DIGEST_NORM_OK -- digest() 不符，但**换行归一后**摘要与记录相符（仅换行差异）
   DIGEST         -- 内容确实不同（三者皆不符）
 
+摘要口径由 tools/checksum_digest.py 提供（单一事实源），含 Git LFS 指针语义：
+本地被 git-lfs 涂抹成实体大文件的条目按「重建指针」口径判为通过（计入 lfs smudged）；
+仓库 blob 为 CRLF、工作树为 LF 的文本条目按换行归一口径判为通过（计入 eol_only_drift）。
+
 用法：
   python tools/diagnose_checksums.py
   python tools/diagnose_checksums.py --out diagnose_checksums_report.txt
@@ -24,20 +28,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-TEXT_EXTS = {
-    ".txt", ".csv", ".py", ".md", ".json", ".sha256", ".sh", ".tex",
-    ".musicxml", ".xml", ".yml", ".yaml", ".toml", ".rst", ".log",
-    ".cfg", ".ini", ".gitignore", ".gitattributes", ".html", ".css",
-}
-
-
-def digest(path: Path) -> str:
-    """与 verify_handoff.py 完全一致：文本走 universal newline，其余走裸字节。"""
-    if path.suffix.lower() in TEXT_EXTS:
-        with path.open("r", encoding="utf-8", errors="replace") as f:
-            text = f.read()
-        return hashlib.sha256(text.encode("utf-8")).hexdigest()
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from checksum_digest import digest_ex  # noqa: E402  （摘要口径单一事实源，含 Git LFS 语义）
 
 
 def raw_digest(path: Path) -> str:
@@ -69,6 +61,9 @@ def main() -> int:
     lines = args.checksums.read_text(encoding="utf-8").splitlines()
     total = 0
     bad = []
+    lfs_pointer = 0
+    lfs_smudged = 0
+    eol_only_drift = 0
     for line in lines:
         if not line.strip() or line.startswith("#"):
             continue
@@ -78,8 +73,14 @@ def main() -> int:
         if not path.is_file():
             bad.append(("MISSING", rel, expected, "", ""))
             continue
-        got = digest(path)
+        got, mode = digest_ex(path)
         if got == expected:
+            if mode == "lfs-pointer":
+                lfs_pointer += 1
+            elif mode == "lfs-smudged":
+                lfs_smudged += 1
+            elif mode == "text-normalized" and raw_digest(path) != expected:
+                eol_only_drift += 1
             continue
         raw = raw_digest(path)
         norm = norm_digest(path)
@@ -103,6 +104,11 @@ def main() -> int:
     out.append("[diagnose] matching       = %d" % (total - len(bad)))
     out.append("[diagnose] NOT matching   = %d" % len(bad))
     out.append("[diagnose] breakdown      = %s" % dict(Counter(k for k, *_ in bad)))
+    if lfs_pointer or lfs_smudged:
+        out.append("[diagnose] lfs pointer    = %d (repo object is an LFS pointer; hashed as-is)" % lfs_pointer)
+        out.append("[diagnose] lfs smudged    = %d (worktree holds the real LFS object; verified via rebuilt oid+size)" % lfs_smudged)
+    if eol_only_drift:
+        out.append("[diagnose] eol_only_drift = %d (repo blob CRLF vs worktree LF; newline-normalized digest -> PASS)" % eol_only_drift)
     out.append("")
     for kind, rel, exp, raw, norm in bad[: args.max]:
         out.append("%s  %s" % (kind, esc(rel)))
