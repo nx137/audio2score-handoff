@@ -1,6 +1,10 @@
 # Trial-8 全数据集重标注执行方案（草案 v0.1）
 
-> 建档：2026-10-03（主控）｜状态：**草案**，待 §5 决策项 D1-D5 锁定后升 v1.0。
+> 建档：2026-10-03（主控）｜**状态：v1.0（2026-10-03 决策全部锁定）**。
+> 锁定值：D1=A（全量=金标准 40 段）｜D2=A（dry-run 复核，不写产物）｜D3=A（一律 frac=0.30）｜
+> D4=客观数据驱动+抽样复核（不做大规模人工听判）｜D5=B（补 outputs/results/data/frontend/audio2score；evals 单独排期）｜
+> D6=补谱源｜D7=A（`outputs/pedal_expansion/segments_v2/`，先做 A 类 7 段）｜D8/D9 留待 P1 pilot。
+> 决策登记表见 `docs/ai_handoff_master_v2.md` §4。
 > 已完成的两条链：Trial-8 8 段（`outputs/pedal_gold_standard/formal_20260828_v1/`，coordinate-fix 重建，
 > commit `2e1ba411f1`）＋ Phase 2A 5 段扩样（`outputs/pedal_expansion/segments_v1/`，材料 commit `950db2f6`，
 > 锚定 commit `8feb0301f7`）。
