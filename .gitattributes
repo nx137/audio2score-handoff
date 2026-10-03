@@ -15,6 +15,20 @@ frontend/piano_transcription/piano_transcription_inference_data/*.pth filter=lfs
 *.yml text eol=lf
 *.yaml text eol=lf
 *.toml text eol=lf
+# ---- coverage-gap fix 2026-10-03 (main control): these were in NEITHER list, so a Windows
+# ---- checkout with core.autocrlf=true rewrote them as CRLF and broke the raw-byte digests.
+*.ipynb text eol=lf
+*.aux text eol=lf
+*.out text eol=lf
+*.mpos text eol=lf
+*.invalid_v2_perfdomain text eol=lf
+*.cfg text eol=lf
+*.ini text eol=lf
+*.rst text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
 # ---- binary markers (prevent git mis-conversion) ----
 *.mid binary
 *.pdf binary
