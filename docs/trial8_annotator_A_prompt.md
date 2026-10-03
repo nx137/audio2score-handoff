@@ -146,6 +146,24 @@ Yamaha Disklavier 高精度物理捕获，是**客观演奏记录**而非估计�
 
 ## 增补（2026-10-02，两处定点核查 + 一条判定口径）
 
+### ⚠ 读谱前必读：`m.X` 是 performance 域小节号，不是谱面小节号
+
+本增补与第 3 节清单里出现的 `onset_location`（形如 `m.75 beat 4.667`）取自 **performance MIDI** 侧
+（按该段 performance 的 `bar_ql` 均分计算），**不是** `reference_score.musicxml` 的谱面小节号。
+两者在小节长度 ≠ performance `bar_ql` 的段里必然错位（例：Ballades 为 6/8、`score_bar_ql = 3.0`，
+而 performance `bar_ql = 4.0`）。因此：
+
+1. **定位一律用工作表的 `score m.<n>` 列**（该列已逐行与切片谱面自身的小节编号核对一致），
+   或按渲染谱的实际印号定位（先做"步骤 0"确认渲染是否重新编号）。
+2. **绝不可**拿 `onset_location` 的 `m.X` 去 PDF 上数小节——它只描述演奏时间位置。
+3. 确需从 `onset_location` 人工换算时：先按"该行在 performance 窗口内的相对位置"落到对应
+   score 窗口区间，再用 hand / pitch / 节奏上下文在窗口内找同型音符，**不要求逐小节对齐**。
+
+（主控补，2026-10-02。旁证：Miroirs/4 那对带 `<offset>` 的 pedal 记号经独立核对确实位于谱面原生
+m.70，故本增补第 1 条"从切片首小节数到第 36–37 小节"成立；坐标核对记录见
+`docs/trial8_phase2A_coordinate_conventions.md` §9/§10。）
+
+
 1. **Miroirs/4 原生 m.70–m.71 的 pedal 记号**（渲染谱：从切片首个印号 35 数到第 36–37 小节；若 PDF 被重编号，按"步骤 0"换算）。
    这是五个段里**唯一一处带 `<offset>` 位移**的 pedal 记号：m.70 内的一处踩下带 `offset=−512` divisions（相对谱面 −0.5 QL，绝对 221.0），
    m.70 末的松开带 `offset=+512`（+0.5 QL，绝对 222.5，落在 m.71 小节线之后 0.5 QL）。
